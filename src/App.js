@@ -6,10 +6,8 @@ import Inventory from './pages/Inventory';
 import Marketing from './pages/Marketing';
 import SalesRepresentatives from './pages/SalesRepresentatives';
 import AboutUs from './pages/AboutUs';
-import CarDetails from "./components/CarDetails';
-import Footer from './components/Footer";
-import Header from "./components/Header";
-
+import CarDetails from './components/CarDetails';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -29,23 +27,23 @@ function App() {
           <Route path='/aboutUs' element={<AboutUs />} />
         </Routes>
         <Header
-        logo="CAR | "
-        link1="first link, "
-        link2="second link, "
-        link3="third link, "
-        link4="fourth link, "
-        className="sHeader "
-        id="sHeader"
-      />
-      <Header
-        logo="CARSTRO | "
-        link1="first link, "
-        link2="second link, "
-        link3="third link, "
-        link4="fourth link, "
-        className="mlHeader"
-        id="mlHeader"
-      />
+          logo='CAR | '
+          link1='first link, '
+          link2='second link, '
+          link3='third link, '
+          link4='fourth link, '
+          className='sHeader '
+          id='sHeader'
+        />
+        <Header
+          logo='CARSTRO | '
+          link1='first link, '
+          link2='second link, '
+          link3='third link, '
+          link4='fourth link, '
+          className='mlHeader'
+          id='mlHeader'
+        />
 
         <Footer />
       </BrowserRouter>
