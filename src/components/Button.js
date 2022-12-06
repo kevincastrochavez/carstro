@@ -2,9 +2,9 @@
 
 import React from "react";
 
-function Button({ text, className, id }) {
+function Button({ text, padding, margin, id }) {
   return (
-    <button className={`${className && className} btn`} id={id && id}>
+    <button className={`${padding && padding} ${margin && margin} btn`} id={id && id}>
       {text}
     </button>
   );

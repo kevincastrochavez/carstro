@@ -3,6 +3,9 @@
   padding: 0;
   border: none;
   outline-width: 0;
+  list-style: none;
+  box-sizing: border-box;
+  text-decoration: none;
 }
 
 @import './variables.scss';
@@ -11,3 +14,4 @@
 @import './loanCalculator.scss';
 @import './inventory.scss';
 @import './marketing.scss';
+@import './salesRepresentatives.scss';

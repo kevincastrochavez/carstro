@@ -9,6 +9,7 @@ import AboutUs from './pages/AboutUs';
 import CarDetails from './components/CarDetails';
 import Footer from './components/Footer';
 
+
 function App() {
   return (
     <div className='app'>
@@ -26,7 +27,7 @@ function App() {
           />
           <Route path='/aboutUs' element={<AboutUs />} />
         </Routes>
-        <Header
+        {/* <Header
           logo='CAR | '
           link1='first link, '
           link2='second link, '
@@ -43,7 +44,7 @@ function App() {
           link4='fourth link, '
           className='mlHeader'
           id='mlHeader'
-        />
+        /> */}
 
         <Footer />
       </BrowserRouter>
