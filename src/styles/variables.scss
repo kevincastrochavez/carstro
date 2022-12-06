@@ -11,8 +11,8 @@ $lightgrayText: #5c5e62;
 //////////////////////////
 // FONTS
 
-$heading-font: 'Cabin', sans-serif;
-$body-font: 'Raleway', sans-serif;
+$heading-font: 'Raleway', sans-serif;
+$body-font: 'Cabin', sans-serif;
 
 h1,
 h2,
@@ -21,6 +21,8 @@ h4,
 h5,
 button {
   font-family: $heading-font;
+  font-weight: 600;
+  line-height: 1.25;
 }
 
 p,
