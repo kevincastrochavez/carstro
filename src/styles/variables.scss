@@ -1,29 +1,38 @@
-$bgnd-color-darkgray: #222222;
-$bgnd-color-lightgray: #f4f4f4;
-$color-green: #006039;
-$color-blue: #3a435e;
-$color-orange: #ff8427;
+// COLORS
 
-// $font-thin
-// $font-thinitalic
-// $font-extralight
-// $font-extralightitalic
-// $font-light:
-// $font-lightitalic:
-// $font-regular:
-// $font-regularitalic:
-// $font-medium
-// $font-mediumitalic
-// $font-semibold
-// $font-semibolditalic:
-// $font-bold
-// $font-bolditalic:
-// $font-extrabold
-// $font-extrabolditalic:
-// $font-black:
-// $font-blackitalic:
+$bgnd-darkgray: #222222;
+$bgnd-white: #ffffff;
+$bgnd-lightgray: #f4f4f4;
+$green: #006039;
+$divider: #696969;
+$lightIcon: #d9d9d9;
+$lightgrayText: #5c5e62;
 
+//////////////////////////
+// FONTS
+
+$heading-font: 'Cabin', sans-serif;
+$body-font: 'Raleway', sans-serif;
+
+h1,
+h2,
+h3,
+h4,
+h5,
+button {
+  font-family: $heading-font;
+}
+
+p,
+input,
+span,
+a {
+  font-family: $body-font;
+}
+
+//////////////////////////
 // SIZES
+
 $px-4: 4px;
 $px-8: 8px;
 $px-12: 12px;
