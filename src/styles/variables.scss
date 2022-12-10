@@ -1,24 +1,69 @@
-$bgnd-color-darkgray: #222222;
-$bgnd-color-lightgray: #f4f4f4;
-$color-green: #006039;
-$color-blue: #3a435e;
-$color-orange: #ff8427;
+// COLORS
 
-// $font-thin
-// $font-thinitalic
-// $font-extralight
-// $font-extralightitalic
-// $font-light:
-// $font-lightitalic:
-// $font-regular:
-// $font-regularitalic:
-// $font-medium
-// $font-mediumitalic
-// $font-semibold
-// $font-semibolditalic:
-// $font-bold
-// $font-bolditalic:
-// $font-extrabold
-// $font-extrabolditalic:
-// $font-black:
-// $font-blackitalic:
+$bgnd-darkgray: #222222;
+$bgnd-white: #ffffff;
+$bgnd-lightgray: #f4f4f4;
+$green: #006039;
+$divider: #696969;
+$lightIcon: #d9d9d9;
+$lightgrayText: #5c5e62;
+
+//////////////////////////
+// FONTS
+
+$heading-font: 'Raleway', sans-serif;
+$body-font: 'Cabin', sans-serif;
+
+h1,
+h2,
+h3,
+h4,
+h5,
+button {
+  font-family: $heading-font;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+p,
+input,
+span,
+a {
+  font-family: $body-font;
+}
+
+//////////////////////////
+// SIZES
+
+$px-4: 4px;
+$px-8: 8px;
+$px-12: 12px;
+$px-16: 16px;
+$px-20: 20px;
+$px-24: 24px;
+$px-28: 28px;
+$px-32: 32px;
+$px-36: 36px;
+$px-40: 40px;
+$px-44: 44px;
+$px-48: 48px;
+$px-52: 52px;
+$px-56: 56px;
+$px-60: 60px;
+$px-64: 64px;
+$px-68: 68px;
+$px-72: 72px;
+$px-76: 76px;
+$px-80: 80px;
+$px-84: 84px;
+$px-88: 88px;
+$px-92: 92px;
+$px-96: 96px;
+$px-100: 100px;
+
+// MEDIA QUERIES REFERENCE
+
+// Mobile: Up to 549px
+// Tablet: From 720 up to 990
+// Desktop: From 990 up to 1439
+// 4K: After 1440
