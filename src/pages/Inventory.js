@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ViewModuleIcon from '@mui/icons-material/ViewModule';
 import ViewListIcon from '@mui/icons-material/ViewList';
 
@@ -6,6 +6,8 @@ import Button from '../components/Button';
 import CarInventory from '../components/CarInventory';
 
 function Inventory() {
+  const [activeGrid, setActiveGrid] = useState(true);
+
   return (
     <main className='inventory_main'>
       <div className='inventory_header'>
@@ -13,9 +15,9 @@ function Inventory() {
           <h1>Inventory</h1>
 
           <div className='inventory_viewIcons'>
-            <ViewModuleIcon />
+            <ViewModuleIcon id={activeGrid && 'activeLayout'} />
             <div></div>
-            <ViewListIcon />
+            <ViewListIcon id={!activeGrid && 'inactiveLayout'} />
           </div>
         </div>
 

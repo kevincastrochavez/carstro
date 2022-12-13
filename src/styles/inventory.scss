@@ -35,6 +35,7 @@
 
     & svg {
       font-size: 29px;
+      color: $lightIcon;
     }
   }
 
@@ -52,4 +53,9 @@
     display: grid;
     gap: $px-24;
   }
+}
+
+#activeLayout,
+#inactiveLayout {
+  color: black;
 }
