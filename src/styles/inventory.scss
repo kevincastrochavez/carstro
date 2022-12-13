@@ -4,10 +4,20 @@
       display: flex;
       align-items: center;
       padding: 24px;
-      border: 1px solid green;
 
       & h1 {
         flex: 1;
+      }
+    }
+
+    &-bottom {
+      display: flex;
+      justify-content: space-between;
+      padding: 0 24px 24px;
+
+      & button {
+        width: 140px;
+        padding: $px-8 0;
       }
     }
   }
@@ -26,5 +36,15 @@
     & svg {
       font-size: 29px;
     }
+  }
+
+  &_hider {
+    height: $px-8;
+    background-color: $bgnd-lightgray;
+  }
+
+  &_carsContainer {
+    padding: $px-24;
+    background-color: $bgnd-lightgray;
   }
 }

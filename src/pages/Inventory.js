@@ -18,10 +18,12 @@ function Inventory() {
         </div>
 
         <div className='inventory_header-bottom'>
-          <Button text='Filter' />
-          <Button text='Price: Low' />
+          <Button text='Filter' bgColor='grey' />
+          <Button text='Price: Low' bgColor='grey' />
         </div>
       </div>
+      <div className='inventory_hider'></div>
+      <div className='inventory_carsContainer'></div>
     </main>
   );
 }
