@@ -1,7 +1,9 @@
 import React from 'react';
 import ViewModuleIcon from '@mui/icons-material/ViewModule';
 import ViewListIcon from '@mui/icons-material/ViewList';
+
 import Button from '../components/Button';
+import CarInventory from '../components/CarInventory';
 
 function Inventory() {
   return (
@@ -23,7 +25,9 @@ function Inventory() {
         </div>
       </div>
       <div className='inventory_hider'></div>
-      <div className='inventory_carsContainer'></div>
+      <div className='inventory_carsContainer'>
+        <CarInventory />
+      </div>
     </main>
   );
 }

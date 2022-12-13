@@ -1,0 +1,22 @@
+.carInventory {
+  padding: 24px 24px 40px;
+  background-color: $bgnd-white;
+
+  &_top {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+
+    & h4 {
+      font-family: $body-font;
+      line-height: 1.5;
+    }
+
+    & p {
+      font-size: $px-12;
+    }
+
+    &-right {
+      text-align: right;
+    }
+  }
+}
