@@ -38,13 +38,18 @@
     }
   }
 
-  &_hider {
+  &_hiddenBar {
     height: $px-8;
     background-color: $bgnd-lightgray;
+    position: sticky;
+    top: 0;
   }
 
   &_carsContainer {
     padding: $px-24;
     background-color: $bgnd-lightgray;
+
+    display: grid;
+    gap: $px-24;
   }
 }

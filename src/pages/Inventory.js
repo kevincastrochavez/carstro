@@ -24,8 +24,11 @@ function Inventory() {
           <Button text='Price: Low' bgColor='grey' />
         </div>
       </div>
-      <div className='inventory_hider'></div>
+      <div className='inventory_hiddenBar'></div>
       <div className='inventory_carsContainer'>
+        <CarInventory />
+        <CarInventory />
+        <CarInventory />
         <CarInventory />
       </div>
     </main>
