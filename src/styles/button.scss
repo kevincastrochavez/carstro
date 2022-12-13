@@ -1,8 +1,13 @@
 .btn {
   color: #fff;
-  background-color: #006039;
   width: 100%;
 }
 
+.btn__green {
+  background-color: $green;
+}
 
-
+.btn__grey {
+  background-color: $bgnd-lightgray;
+  color: black;
+}

@@ -1,13 +1,9 @@
 // ANDRES
 
-import React from "react";
+import React from 'react';
 
-function Button({ text, padding, margin, id }) {
-  return (
-    <button className={`${padding && padding} ${margin && margin} btn`} id={id && id}>
-      {text}
-    </button>
-  );
+function Button({ text, bgColor, className }) {
+  return <button className={`btn btn__${bgColor} ${className}`}>{text}</button>;
 }
 
 export default Button;
