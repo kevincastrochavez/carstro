@@ -1,6 +1,8 @@
 .carInventory {
   padding: 24px 24px 40px;
   background-color: $bgnd-white;
+  display: grid;
+  grid-template-rows: auto 36px auto 44px auto 40px auto;
 
   &_top {
     display: grid;
@@ -18,5 +20,49 @@
     &-right {
       text-align: right;
     }
+  }
+
+  &_img {
+    grid-row: 3/4;
+
+    width: 70%;
+    justify-self: center;
+  }
+
+  &_features {
+    grid-row: 5/6;
+
+    display: grid;
+    grid-template-columns: 1fr auto 1fr auto 1fr;
+    justify-items: center;
+
+    &-feature {
+      width: 100%;
+    }
+
+    &-divider {
+      width: 1px;
+      background-color: $lightIcon;
+    }
+
+    & p,
+    span {
+      text-align: center;
+    }
+
+    & span {
+      display: block;
+      font-size: $px-12;
+    }
+  }
+
+  &_button {
+    padding: $px-8 0;
+    font-family: $body-font;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.5;
+
+    grid-row: 7/8;
   }
 }
