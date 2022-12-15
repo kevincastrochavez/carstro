@@ -70,3 +70,18 @@
     grid-row: 7/8;
   }
 }
+
+.carInventory_listView {
+  grid-template-rows: auto 36px auto;
+  padding-bottom: $px-28;
+
+  .carInventory_img {
+    width: 30vw;
+    justify-self: end;
+  }
+
+  .carInventory_features,
+  .carInventory_button {
+    display: none;
+  }
+}

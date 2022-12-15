@@ -2,9 +2,9 @@ import React from 'react';
 
 import Button from './Button';
 
-function CarInventory() {
+function CarInventory({ className }) {
   return (
-    <div className='carInventory'>
+    <div className={`carInventory ${className}`}>
       <section className='carInventory_top'>
         <h4>2016 Toyota Corolla</h4>
         <span className='carInventory_top-right'>$54,300</span>
