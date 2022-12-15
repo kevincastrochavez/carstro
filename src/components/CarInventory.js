@@ -13,7 +13,12 @@ function CarInventory() {
         <p>20" wheels</p>
       </section>
 
-      <div className='carInventory_img'>Image</div>
+      <div className='carInventory_img'>
+        <img
+          src='https://raw.githubusercontent.com/kevincastrochavez/carstro-cars-uploader/main/public/carPictures/1FTEX14H0RKA51281.png'
+          alt='Audi car'
+        />
+      </div>
 
       <div className='carInventory_features'>
         <div className='carInventory_features-feature'>
