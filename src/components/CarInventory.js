@@ -1,9 +1,9 @@
 import React from 'react';
+import { useState } from 'react';
 
 import Button from './Button';
 
 function CarInventory({
-  className,
   year,
   brand,
   model,
@@ -14,9 +14,16 @@ function CarInventory({
   acceleration,
   topSpeed,
   mpg,
+  onClick,
+  activeGrid,
 }) {
+  const [carInventoryOpen, setCarInventoryOpen] = useState(false);
+
   return (
-    <div className={`carInventory ${className}`}>
+    <div
+      onClick={() => setCarInventoryOpen(!carInventoryOpen)}
+      className={`carInventory ${!activeGrid && 'carInventory_listView'}`}
+    >
       <section className='carInventory_top'>
         <h4>
           {year} {brand} {model}
@@ -34,34 +41,38 @@ function CarInventory({
         />
       </div>
 
-      <div className='carInventory_features'>
-        <div className='carInventory_features-feature'>
-          <p>
-            <b>{acceleration}</b>s
-          </p>
-          <span>0-60mph</span>
+      {(activeGrid || carInventoryOpen) && (
+        <div className='carInventory_features'>
+          <div className='carInventory_features-feature'>
+            <p>
+              <b>{acceleration}</b>s
+            </p>
+            <span>0-60mph</span>
+          </div>
+          <div className='carInventory_features-divider'></div>
+          <div className='carInventory_features-feature'>
+            <p>
+              <b>{topSpeed}</b>mph
+            </p>
+            <span>Top Speed</span>
+          </div>
+          <div className='carInventory_features-divider'></div>
+          <div className='carInventory_features-feature'>
+            <p>
+              <b>{mpg}</b>mpg
+            </p>
+            <span>Range</span>
+          </div>
         </div>
-        <div className='carInventory_features-divider'></div>
-        <div className='carInventory_features-feature'>
-          <p>
-            <b>{topSpeed}</b>mph
-          </p>
-          <span>Top Speed</span>
-        </div>
-        <div className='carInventory_features-divider'></div>
-        <div className='carInventory_features-feature'>
-          <p>
-            <b>{mpg}</b>mpg
-          </p>
-          <span>Range</span>
-        </div>
-      </div>
+      )}
 
-      <Button
-        className='carInventory_button'
-        text='View Details'
-        bgColor='green'
-      />
+      {(activeGrid || carInventoryOpen) && (
+        <Button
+          className='carInventory_button'
+          text='View Details'
+          bgColor='green'
+        />
+      )}
     </div>
   );
 }

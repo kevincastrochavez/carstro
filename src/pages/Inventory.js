@@ -25,8 +25,6 @@ function Inventory() {
       });
   }, []);
 
-  console.log(carsArray);
-
   return (
     <main className='inventory_main'>
       <div className='inventory_header'>
@@ -55,11 +53,7 @@ function Inventory() {
       <div className='inventory_carsContainer'>
         {carsArray.map((car, index) => {
           return (
-            <CarInventory
-              key={car.vin}
-              {...car}
-              className={!activeGrid ? 'carInventory_listView' : undefined}
-            />
+            <CarInventory key={car.vin} {...car} activeGrid={activeGrid} />
           );
         })}
       </div>
