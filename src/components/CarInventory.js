@@ -81,7 +81,7 @@ function CarInventory({
             <div className='carInventory_features-divider'></div>
             <div className='carInventory_features-feature'>
               <p>
-                <b>{mpg}</b>mpg
+                <b>{mpg.split('/')[1]}</b>mpg
               </p>
               <span>Range</span>
             </div>
