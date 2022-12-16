@@ -66,14 +66,16 @@
     }
   }
 
-  &_button {
+  &_link {
     grid-row: 3/4;
 
-    padding: $px-8 0;
-    font-family: $body-font;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 1.5;
+    & button {
+      padding: $px-8;
+      font-family: $body-font;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 1.5;
+    }
   }
 }
 
