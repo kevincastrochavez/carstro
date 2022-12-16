@@ -1,5 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
+import CurrencyFormat from 'react-currency-format';
 
 import Button from './Button';
 
@@ -14,10 +15,11 @@ function CarInventory({
   acceleration,
   topSpeed,
   mpg,
-  onClick,
   activeGrid,
 }) {
   const [carInventoryOpen, setCarInventoryOpen] = useState(false);
+  const brandWordsQuantity = brand.split(' ').length;
+  const monthlyCost = Math.ceil(price / 6 / 12);
 
   return (
     <div
@@ -26,11 +28,30 @@ function CarInventory({
     >
       <section className='carInventory_top'>
         <h4>
-          {year} {brand} {model}
+          {year} {brand} {brandWordsQuantity < 2 && model}
         </h4>
-        <span className='carInventory_top-right'>${price}</span>
+        <span className='carInventory_top-right'>
+          {
+            <CurrencyFormat
+              value={price}
+              displayType={'text'}
+              thousandSeparator={true}
+              prefix={'$'}
+            />
+          }
+        </span>
         <p>{odometer} mile odometer</p>
-        <p className='carInventory_top-right'>$755/mo</p>
+        <p className='carInventory_top-right'>
+          {
+            <CurrencyFormat
+              value={monthlyCost}
+              displayType={'text'}
+              thousandSeparator={true}
+              prefix={'$'}
+            />
+          }
+          /mo
+        </p>
         <p>{tireSize}" wheels</p>
       </section>
 
