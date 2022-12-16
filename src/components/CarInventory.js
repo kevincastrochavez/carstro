@@ -42,36 +42,36 @@ function CarInventory({
       </div>
 
       {(activeGrid || carInventoryOpen) && (
-        <div className='carInventory_features'>
-          <div className='carInventory_features-feature'>
-            <p>
-              <b>{acceleration}</b>s
-            </p>
-            <span>0-60mph</span>
+        <div className='carInventory_bottomContainer'>
+          <div className='carInventory_features'>
+            <div className='carInventory_features-feature'>
+              <p>
+                <b>{acceleration}</b>s
+              </p>
+              <span>0-60mph</span>
+            </div>
+            <div className='carInventory_features-divider'></div>
+            <div className='carInventory_features-feature'>
+              <p>
+                <b>{topSpeed}</b>mph
+              </p>
+              <span>Top Speed</span>
+            </div>
+            <div className='carInventory_features-divider'></div>
+            <div className='carInventory_features-feature'>
+              <p>
+                <b>{mpg}</b>mpg
+              </p>
+              <span>Range</span>
+            </div>
           </div>
-          <div className='carInventory_features-divider'></div>
-          <div className='carInventory_features-feature'>
-            <p>
-              <b>{topSpeed}</b>mph
-            </p>
-            <span>Top Speed</span>
-          </div>
-          <div className='carInventory_features-divider'></div>
-          <div className='carInventory_features-feature'>
-            <p>
-              <b>{mpg}</b>mpg
-            </p>
-            <span>Range</span>
-          </div>
-        </div>
-      )}
 
-      {(activeGrid || carInventoryOpen) && (
-        <Button
-          className='carInventory_button'
-          text='View Details'
-          bgColor='green'
-        />
+          <Button
+            className='carInventory_button'
+            text='View Details'
+            bgColor='green'
+          />
+        </div>
       )}
     </div>
   );
