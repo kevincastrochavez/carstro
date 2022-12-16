@@ -18,7 +18,7 @@ function Inventory() {
       .get()
       .then((cars) => {
         const carsResults = cars.docs.map((car) => {
-          return car.data();
+          return { ...car.data(), cardId: car.id };
         });
 
         setCarsArray(carsResults);
@@ -51,9 +51,14 @@ function Inventory() {
       </div>
       <div className='inventory_hiddenBar'></div>
       <div className='inventory_carsContainer'>
-        {carsArray.map((car, index) => {
+        {carsArray.map((car) => {
           return (
-            <CarInventory key={car.vin} {...car} activeGrid={activeGrid} />
+            <CarInventory
+              carId={car.cardId}
+              key={car.cardId}
+              {...car}
+              activeGrid={activeGrid}
+            />
           );
         })}
       </div>

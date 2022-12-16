@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import CurrencyFormat from 'react-currency-format';
+import { Link } from 'react-router-dom';
 
 import Button from './Button';
 
@@ -16,6 +17,7 @@ function CarInventory({
   topSpeed,
   mpg,
   activeGrid,
+  carId,
 }) {
   const [carInventoryOpen, setCarInventoryOpen] = useState(false);
   const brandWordsQuantity = brand.split(' ').length;
@@ -87,11 +89,9 @@ function CarInventory({
             </div>
           </div>
 
-          <Button
-            className='carInventory_button'
-            text='View Details'
-            bgColor='green'
-          />
+          <Link to={carId} className='carInventory_link'>
+            <Button text='View Details' bgColor='green' />
+          </Link>
         </div>
       )}
     </div>
