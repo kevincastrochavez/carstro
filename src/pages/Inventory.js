@@ -37,7 +37,9 @@ function Inventory() {
       </div>
       <div className='inventory_hiddenBar'></div>
       <div className='inventory_carsContainer'>
-        <CarInventory />
+        <CarInventory
+          className={!activeGrid ? 'carInventory_listView' : undefined}
+        />
         <CarInventory />
         <CarInventory />
         <CarInventory />
