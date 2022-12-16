@@ -1,53 +1,78 @@
 import React from 'react';
+import { useState } from 'react';
 
 import Button from './Button';
 
-function CarInventory({ className }) {
+function CarInventory({
+  year,
+  brand,
+  model,
+  price,
+  odometer,
+  tireSize,
+  vin,
+  acceleration,
+  topSpeed,
+  mpg,
+  onClick,
+  activeGrid,
+}) {
+  const [carInventoryOpen, setCarInventoryOpen] = useState(false);
+
   return (
-    <div className={`carInventory ${className}`}>
+    <div
+      onClick={() => setCarInventoryOpen(!carInventoryOpen)}
+      className={`carInventory ${!activeGrid && 'carInventory_listView'}`}
+    >
       <section className='carInventory_top'>
-        <h4>2016 Toyota Corolla</h4>
-        <span className='carInventory_top-right'>$54,300</span>
-        <p>33,239 mile odometer</p>
+        <h4>
+          {year} {brand} {model}
+        </h4>
+        <span className='carInventory_top-right'>${price}</span>
+        <p>{odometer} mile odometer</p>
         <p className='carInventory_top-right'>$755/mo</p>
-        <p>20" wheels</p>
+        <p>{tireSize}" wheels</p>
       </section>
 
       <div className='carInventory_img'>
         <img
-          src='https://raw.githubusercontent.com/kevincastrochavez/carstro-cars-uploader/main/public/carPictures/1FTEX14H0RKA51281.png'
-          alt='Audi car'
+          src={`https://raw.githubusercontent.com/kevincastrochavez/carstro-cars-uploader/main/public/carPictures/${vin}.png`}
+          alt={`${year} ${brand} ${model} car`}
         />
       </div>
 
-      <div className='carInventory_features'>
-        <div className='carInventory_features-feature'>
-          <p>
-            <b>5.5</b>s
-          </p>
-          <span>0-60mph</span>
-        </div>
-        <div className='carInventory_features-divider'></div>
-        <div className='carInventory_features-feature'>
-          <p>
-            <b>140</b>mph
-          </p>
-          <span>Top Speed</span>
-        </div>
-        <div className='carInventory_features-divider'></div>
-        <div className='carInventory_features-feature'>
-          <p>
-            <b>36</b>mpg
-          </p>
-          <span>Range</span>
-        </div>
-      </div>
+      {(activeGrid || carInventoryOpen) && (
+        <div className='carInventory_bottomContainer'>
+          <div className='carInventory_features'>
+            <div className='carInventory_features-feature'>
+              <p>
+                <b>{acceleration}</b>s
+              </p>
+              <span>0-60mph</span>
+            </div>
+            <div className='carInventory_features-divider'></div>
+            <div className='carInventory_features-feature'>
+              <p>
+                <b>{topSpeed}</b>mph
+              </p>
+              <span>Top Speed</span>
+            </div>
+            <div className='carInventory_features-divider'></div>
+            <div className='carInventory_features-feature'>
+              <p>
+                <b>{mpg}</b>mpg
+              </p>
+              <span>Range</span>
+            </div>
+          </div>
 
-      <Button
-        className='carInventory_button'
-        text='View Details'
-        bgColor='green'
-      />
+          <Button
+            className='carInventory_button'
+            text='View Details'
+            bgColor='green'
+          />
+        </div>
+      )}
     </div>
   );
 }
