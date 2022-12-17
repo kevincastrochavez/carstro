@@ -4,14 +4,17 @@ import ViewListIcon from '@mui/icons-material/ViewList';
 
 import Button from '../components/Button';
 import CarInventory from '../components/CarInventory';
+import Filters from '../components/Filters';
 import db from '../firebase';
 
 function Inventory() {
   const [activeGrid, setActiveGrid] = useState(true);
   const [carsArray, setCarsArray] = useState([]);
+  const [hideFilters, setHideFilters] = useState(true);
 
   const showListLayout = () => setActiveGrid(false);
   const showGridLayout = () => setActiveGrid(true);
+  const toggleFilters = () => setHideFilters(!hideFilters);
 
   useEffect(() => {
     db.collection('cars')
@@ -45,7 +48,7 @@ function Inventory() {
         </div>
 
         <div className='inventory_header-bottom'>
-          <Button text='Filter' bgColor='grey' />
+          <Button onClick={toggleFilters} text='Filter' bgColor='grey' />
           <Button text='Price: Low' bgColor='grey' />
         </div>
       </div>
@@ -62,6 +65,8 @@ function Inventory() {
           );
         })}
       </div>
+
+      <Filters hideFilters={hideFilters} />
     </main>
   );
 }
