@@ -1,5 +1,25 @@
+
 .salesRepresentatives_main{
-    background-color: aqua;
     padding: 0px 24px;
 }
+
+.main_h1{
+    padding: $px-24 0px $px-52;
+}
+
+.div_ul_li{
+    border-top: 1px solid $divider;
+    padding: $px-12 0px;
+    font-family: $body-font; 
+}
+
+// Google Map styles
+#map {
+    height: 50%;
+  }
+  html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
 

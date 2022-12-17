@@ -1,0 +1,41 @@
+.saleRepresentativeCard_div{
+display: flex;
+padding: $px-12 0px;
+align-items: center;
+}
+
+.saleRepresentativeCard_div--picturesContainer{
+width: 40%;
+padding-right: 5%;   
+}
+
+.saleRepresentativeCard_div_img{
+border-radius: 300px;
+width: 100%;
+}
+
+.saleRepresentativeCard_div--locationsContainer{
+width: 60%;   
+}
+
+.saleRepresentativeCard_ul_li{
+font-family: $body-font;
+font-size: 14px;
+color:#5C5E62;
+}
+
+.saleRepresentativeCard_div_img_h4{
+font-family: $heading-font;
+font-size: $px-20;
+font-weight: 600;
+margin-bottom: $px-12;
+}
+
+
+.btn_green{
+    font-family: $heading-font;
+    font-weight: 00;
+    background-color: #006039;
+    width: 100%;
+    padding: 10px 0px;    
+}
