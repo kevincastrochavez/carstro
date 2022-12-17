@@ -36,6 +36,7 @@
   &_bottomContainer {
     grid-row: 5/6;
 
+    // Check margin
     margin-top: $px-28;
     display: grid;
     grid-template-rows: auto $px-40 auto;
