@@ -79,6 +79,12 @@ function AboutUs() {
 
       <div className="about-us-out-team">
         <h1 className="about-us-team-h1-title">Our People</h1>
+        <div className="about-us-card-representative">
+          <section className="about-us-representative"></section>
+          <section className="about-us-representative"></section>
+          <section className="about-us-representative"></section>
+          <section className="about-us-representative"></section>
+        </div>
 
       </div>
     </div>

@@ -53,6 +53,17 @@
     padding-left: 8px;
 }
 
+.about-us-card-representative{
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.about-us-representative{
+    background-color: grey;
+    height: 300px;
+    margin: 10px;
+}
+
 
 @media only screen and (min-width: 768px) {
     .about-us-car-img, .about-us-car-img-large{
@@ -81,6 +92,10 @@
     .about-us-p, .about-us-li{
         font-size: 15px;
         line-height: 22.5px;
+    }
+
+    .about-us-card-representative{
+        grid-template-columns: 1fr 1fr;
     }
 }
 
@@ -115,10 +130,14 @@
         font-size: 16px;
         line-height: 24px;
     }
+
+    .about-us-card-representative{
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
 }
 
 @media only screen and (min-width: 1150px){
     .about-us-info-wrap {
-        height: 395px;
+        height: 500px;
     }
 }
