@@ -36,7 +36,7 @@ let saleRepresntative = [
 
   {
     name: "Ignacio Villar ",
-    location: "Denver, CO",
+    location: "Los Angeles. LA",
     email: "ignacio@gmail.com",
     hours: "8:00am - 5:00pm",
     phone: "12354353454",
@@ -49,18 +49,21 @@ function SalesRepresentatives() {
   return (
     <main className="salesRepresentatives_main">
       <h1 className="main_h1">Sales Representatives</h1>
-      <section className="main_section">
-        <div>
-          <ul id="salesRepresentatives_ul">
-            {saleRepresntative.map((item) => (
-              <SaleRepresentativeCard {...item} />
-            ))}
-          </ul>
-        </div>
-      </section>
-      <section>
-        <Map />
-      </section>
+      <div className="salesRepresentatives_main_div">
+        <section className="main_section_representatives">
+          <div>
+            <ul id="salesRepresentatives_ul">
+              {saleRepresntative.map((item) => (
+                <SaleRepresentativeCard {...item} />
+              ))}
+            </ul>
+          </div>
+        </section>
+        <section className="main_section_map">
+          <h2 className="salesRepresentatives_section_h2"> Find your Dealer</h2>
+          <Map />
+        </section>
+      </div>
     </main>
   );
 }
