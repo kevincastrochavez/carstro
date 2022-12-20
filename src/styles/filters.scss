@@ -29,6 +29,31 @@
     margin-top: $px-24;
     margin-bottom: $px-32;
   }
+
+  &_form {
+    & section {
+      margin-bottom: $px-24;
+    }
+
+    & h5 {
+      font-size: 14px;
+      font-family: $body-font;
+      line-height: 1.5;
+      margin-bottom: $px-8;
+    }
+  }
+
+  &_checkbox {
+    display: flex;
+    align-items: center;
+    gap: $px-8;
+    margin-bottom: $px-4;
+
+    & input {
+      height: $px-24;
+      width: $px-24;
+    }
+  }
 }
 
 .filters_hidden {
