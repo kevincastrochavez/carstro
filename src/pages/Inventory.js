@@ -12,8 +12,6 @@ function Inventory() {
   const [{ carsResults }, dispatch] = useStateValue();
   const [activeGrid, setActiveGrid] = useState(true);
 
-  console.log(carsResults);
-
   const showListLayout = () => setActiveGrid(false);
   const showGridLayout = () => setActiveGrid(true);
 

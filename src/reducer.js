@@ -1,6 +1,8 @@
 export const initialState = {
   showFilters: false,
   carsResults: [],
+  brandsFilters: [],
+  modelYearsFilters: [],
 };
 
 const reducer = (state, action) => {
@@ -14,6 +16,16 @@ const reducer = (state, action) => {
       return {
         ...state,
         carsResults: action.carsResults,
+      };
+    case 'SET_BRANDS_FILTERS':
+      return {
+        ...state,
+        brandsFilters: action.brandsFilters,
+      };
+    case 'SET_MODEL_YEARS_FILTERS':
+      return {
+        ...state,
+        modelYearsFilters: action.modelYearsFilters,
       };
     default:
       return state;
