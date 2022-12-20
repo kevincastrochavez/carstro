@@ -9,11 +9,9 @@ import Filters from '../components/Filters';
 import db from '../firebase';
 
 function Inventory() {
-  const [{ showFilters }, dispatch] = useStateValue();
-  console.log(showFilters);
+  const [{ showFilters, carsResults }, dispatch] = useStateValue();
 
   const [activeGrid, setActiveGrid] = useState(true);
-  const [carsArray, setCarsArray] = useState([]);
 
   const showListLayout = () => setActiveGrid(false);
   const showGridLayout = () => setActiveGrid(true);
@@ -24,18 +22,6 @@ function Inventory() {
       showFilters: true,
     });
   };
-
-  useEffect(() => {
-    db.collection('cars')
-      .get()
-      .then((cars) => {
-        const carsResults = cars.docs.map((car) => {
-          return { ...car.data(), cardId: car.id };
-        });
-
-        setCarsArray(carsResults);
-      });
-  }, []);
 
   return (
     <main className='inventory_main'>
@@ -68,7 +54,7 @@ function Inventory() {
       </div>
       <div className='inventory_hiddenBar'></div>
       <div className='inventory_carsContainer'>
-        {carsArray.map((car) => {
+        {carsResults.map((car) => {
           return (
             <CarInventory
               carId={car.cardId}
