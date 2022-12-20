@@ -17,6 +17,7 @@ function Inventory() {
 
   const showListLayout = () => setActiveGrid(false);
   const showGridLayout = () => setActiveGrid(true);
+
   const displayFilters = () => {
     dispatch({
       type: 'TOGGLE_FILTERS',
