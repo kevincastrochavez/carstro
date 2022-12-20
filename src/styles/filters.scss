@@ -20,6 +20,10 @@
     }
   }
 
+  &_closeBtn {
+    cursor: pointer;
+  }
+
   &_button {
     padding: $px-8;
     margin-top: $px-24;

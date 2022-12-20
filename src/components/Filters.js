@@ -18,7 +18,7 @@ function Filters() {
     <section className={`filters ${!showFilters && 'filters_hidden'}`}>
       <div className='filters_top'>
         <h2>Filters</h2>
-        <CloseIcon onClick={hideFilters} />
+        <CloseIcon className='filters_closeBtn' onClick={hideFilters} />
       </div>
 
       <Button className='filters_button' text={'Clear All'} bgColor='green' />
