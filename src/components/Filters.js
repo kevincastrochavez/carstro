@@ -19,22 +19,38 @@ function Filters() {
     });
   };
 
-  const handleChange = (e, fieldArray) => {
+  const handleBrandChange = (e) => {
     const { value, checked } = e.target;
-    const field = filtersInfo[fieldArray];
+    const { brands, years } = filtersInfo;
 
-    console.log(field);
-    console.log(fieldArray);
+    if (checked) {
+      setFiltersInfo({
+        brands: [...brands, value],
+        years: [...years],
+      });
+    } else {
+      setFiltersInfo({
+        brands: brands.filter((e) => e !== value),
+        years: years,
+      });
+    }
+  };
 
-    // if (checked) {
-    //   setFiltersInfo({
-    //     fieldArray: [...field, value],
-    //   });
-    // } else {
-    //   setFiltersInfo({
-    //     fieldArray: field.filter((e) => e !== value),
-    //   });
-    // }
+  const handleYearChange = (e) => {
+    const { value, checked } = e.target;
+    const { years, brands } = filtersInfo;
+
+    if (checked) {
+      setFiltersInfo({
+        years: [...years, value],
+        brands: [...brands],
+      });
+    } else {
+      setFiltersInfo({
+        years: years.filter((e) => e !== value),
+        brands: brands,
+      });
+    }
   };
 
   return (
@@ -46,18 +62,18 @@ function Filters() {
 
       <Button className='filters_button' text={'Clear All'} bgColor='green' />
 
-      <form className='filters_form'>
+      <div className='filters_form'>
         <section>
           <h5>Brand</h5>
 
-          <div className='filters_checkboxes'>
+          <form className='filters_checkboxes'>
             <div className='filters_checkbox'>
               <input
                 type='checkbox'
                 id='kia'
                 name='brands'
                 value='kia'
-                onChange={(e) => handleChange(e, 'brands')}
+                onChange={handleBrandChange}
               />
               <label for='kia'>Kia</label>
             </div>
@@ -67,7 +83,7 @@ function Filters() {
                 id='bmw'
                 name='brands'
                 value='bmw'
-                onChange={(e) => handleChange(e, 'brands')}
+                onChange={handleBrandChange}
               />
               <label for='bmw'>BMW</label>
             </div>
@@ -77,24 +93,24 @@ function Filters() {
                 id='audi'
                 name='brands'
                 value='audi'
-                onChange={(e) => handleChange(e, 'brands')}
+                onChange={handleBrandChange}
               />
               <label for='audi'>audi</label>
             </div>
-          </div>
+          </form>
         </section>
 
         <section>
           <h5>Model Year</h5>
 
-          <div className='filters_checkboxes'>
+          <form className='filters_checkboxes'>
             <div className='filters_checkbox'>
               <input
                 type='checkbox'
                 id='2010'
                 name='brands'
                 value='2010'
-                onChange={(e) => handleChange(e, 'years')}
+                onChange={handleYearChange}
               />
               <label for='2010'>2010</label>
             </div>
@@ -104,7 +120,7 @@ function Filters() {
                 id='2011'
                 name='brands'
                 value='2011'
-                onChange={(e) => handleChange(e, 'years')}
+                onChange={handleYearChange}
               />
               <label for='2011'>2011</label>
             </div>
@@ -114,13 +130,13 @@ function Filters() {
                 id='2012'
                 name='brands'
                 value='2012'
-                onChange={(e) => handleChange(e, 'years')}
+                onChange={handleYearChange}
               />
               <label for='2012'>2012</label>
             </div>
-          </div>
+          </form>
         </section>
-      </form>
+      </div>
     </section>
   );
 }
