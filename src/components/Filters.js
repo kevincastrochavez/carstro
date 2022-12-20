@@ -75,7 +75,7 @@ function Filters() {
                 value='kia'
                 onChange={handleBrandChange}
               />
-              <label for='kia'>Kia</label>
+              <label htmlFor='kia'>Kia</label>
             </div>
             <div className='filters_checkbox'>
               <input
@@ -85,7 +85,7 @@ function Filters() {
                 value='bmw'
                 onChange={handleBrandChange}
               />
-              <label for='bmw'>BMW</label>
+              <label htmlFor='bmw'>BMW</label>
             </div>
             <div className='filters_checkbox'>
               <input
@@ -95,7 +95,7 @@ function Filters() {
                 value='audi'
                 onChange={handleBrandChange}
               />
-              <label for='audi'>audi</label>
+              <label htmlFor='audi'>audi</label>
             </div>
           </form>
         </section>
@@ -112,7 +112,7 @@ function Filters() {
                 value='2010'
                 onChange={handleYearChange}
               />
-              <label for='2010'>2010</label>
+              <label htmlFor='2010'>2010</label>
             </div>
             <div className='filters_checkbox'>
               <input
@@ -122,7 +122,7 @@ function Filters() {
                 value='2011'
                 onChange={handleYearChange}
               />
-              <label for='2011'>2011</label>
+              <label htmlFor='2011'>2011</label>
             </div>
             <div className='filters_checkbox'>
               <input
@@ -132,7 +132,7 @@ function Filters() {
                 value='2012'
                 onChange={handleYearChange}
               />
-              <label for='2012'>2012</label>
+              <label htmlFor='2012'>2012</label>
             </div>
           </form>
         </section>

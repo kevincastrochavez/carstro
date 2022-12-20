@@ -1,5 +1,6 @@
 export const initialState = {
   showFilters: false,
+  carsResults: [],
 };
 
 const reducer = (state, action) => {
@@ -7,6 +8,10 @@ const reducer = (state, action) => {
     case 'TOGGLE_FILTERS':
       return {
         showFilters: action.showFilters,
+      };
+    case 'SET_CARS_RESULTS':
+      return {
+        carsResults: action.carsResults,
       };
     default:
       return state;
