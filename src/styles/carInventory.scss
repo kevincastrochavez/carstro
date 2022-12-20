@@ -36,12 +36,13 @@
   &_bottomContainer {
     grid-row: 5/6;
 
-    margin-top: $px-28;
     display: grid;
-    grid-template-rows: auto $px-40 auto;
+    grid-template-rows: $px-28 auto $px-40 auto;
   }
 
   &_features {
+    grid-row: 2/3;
+
     display: grid;
     grid-template-columns: 1fr auto 1fr auto 1fr;
     justify-items: center;
@@ -67,7 +68,7 @@
   }
 
   &_link {
-    grid-row: 3/4;
+    grid-row: 4/5;
 
     & button {
       padding: $px-8;

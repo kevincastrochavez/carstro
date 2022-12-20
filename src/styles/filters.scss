@@ -1,0 +1,38 @@
+.filters {
+  padding: $px-24;
+  background-color: #fff;
+  transition: all 0.5s ease-in-out;
+  opacity: 1;
+
+  position: absolute;
+  top: $px-44;
+  right: 0;
+  left: 0;
+
+  &_top {
+    display: flex;
+
+    & h2 {
+      flex: 1;
+      height: auto;
+      align-self: flex-end;
+      font-size: $px-24;
+    }
+  }
+
+  &_button {
+    padding: $px-8;
+    margin-top: $px-24;
+    margin-bottom: $px-32;
+  }
+}
+
+.filters_hidden {
+  transition: all 0.5s ease-in-out;
+  position: absolute;
+  right: 0;
+  left: 0;
+  top: 100%;
+  z-index: -1;
+  opacity: 0;
+}
