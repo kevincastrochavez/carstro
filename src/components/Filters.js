@@ -2,11 +2,15 @@ import React, { useEffect, useState } from 'react';
 import CloseIcon from '@mui/icons-material/Close';
 
 import Button from '../components/Button';
+import Checkbox from '../components/Checkbox';
 import { useStateValue } from '../StateProvider';
 import db from '../firebase';
 
 function Filters() {
   const [{ showFilters }, dispatch] = useStateValue();
+
+  const [isChecked, setIsChecked] = useState(false);
+  const [clearAllFilters, setClearAllFilters] = useState(false);
 
   const [brandFilterOptions, setBrandFilterOptions] = useState([]);
   const [yearsFilterOptions, setYearsFilterOptions] = useState([]);
@@ -17,8 +21,7 @@ function Filters() {
     wheels: [],
   });
 
-  console.log(filtersInfo);
-
+  // Pulls data from db to populate unique filter options dynamically
   useEffect(() => {
     db.collection('cars')
       .get()
@@ -43,6 +46,20 @@ function Filters() {
       });
   }, []);
 
+  // In charge of resetting all the checkboxes when the Clear All button is pressed
+  useEffect(() => {
+    if (clearAllFilters) {
+      setFiltersInfo({
+        brands: [],
+        years: [],
+        wheels: [],
+      });
+
+      setClearAllFilters(false);
+    }
+  }, [clearAllFilters]);
+
+  // Hides the filter component
   const hideFilters = () => {
     dispatch({
       type: 'TOGGLE_FILTERS',
@@ -115,7 +132,12 @@ function Filters() {
         <CloseIcon className='filters_closeBtn' onClick={hideFilters} />
       </div>
 
-      <Button className='filters_button' text={'Clear All'} bgColor='green' />
+      <Button
+        onClick={() => setClearAllFilters(true)}
+        className='filters_button'
+        text={'Clear All'}
+        bgColor='green'
+      />
 
       <div className='filters_form'>
         <section>
@@ -125,12 +147,14 @@ function Filters() {
             {brandFilterOptions.map((brand) => {
               return (
                 <div className='filters_checkbox'>
-                  <input
-                    type='checkbox'
-                    id={`${brand}-car`}
+                  <Checkbox
+                    id={brand}
                     name='brands'
                     value={brand}
+                    checked={isChecked}
                     onChange={handleBrandChange}
+                    clearAll={clearAllFilters}
+                    onClick={() => setIsChecked(!isChecked)}
                   />
                   <label htmlFor={`${brand}-car`}>{brand}</label>
                 </div>
@@ -146,12 +170,14 @@ function Filters() {
             {yearsFilterOptions.map((year) => {
               return (
                 <div className='filters_checkbox'>
-                  <input
-                    type='checkbox'
-                    id={`${year}-car`}
+                  <Checkbox
+                    id={year}
                     name='years'
                     value={year}
+                    checked={isChecked}
                     onChange={handleYearChange}
+                    clearAll={clearAllFilters}
+                    onClick={() => setIsChecked(!isChecked)}
                   />
                   <label htmlFor={`${year}-car`}>{year}</label>
                 </div>
@@ -167,12 +193,14 @@ function Filters() {
             {wheelsFilterOptions.map((wheel) => {
               return (
                 <div className='filters_checkbox'>
-                  <input
-                    type='checkbox'
-                    id={`${wheel}-car`}
+                  <Checkbox
+                    id={wheel}
                     name='wheels'
                     value={wheel}
+                    checked={isChecked}
                     onChange={handleWheelChange}
+                    clearAll={clearAllFilters}
+                    onClick={() => setIsChecked(!isChecked)}
                   />
                   <label htmlFor={`${wheel}-car`}>{wheel}" Wheels</label>
                 </div>
