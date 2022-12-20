@@ -57,7 +57,12 @@ function Inventory() {
         </div>
 
         <div className='inventory_header-bottom'>
-          <Button onClick={displayFilters} text='Filter' bgColor='grey' />
+          <Button
+            className='inventory_filtersBtn'
+            onClick={displayFilters}
+            text='Filter'
+            bgColor='grey'
+          />
           <Button text='Price: Low' bgColor='grey' />
         </div>
       </div>
