@@ -1,5 +1,40 @@
-.salesRepresentatives_main{
-    background-color: aqua;
-    padding: 0px 24px;
+.salesRepresentatives_main {
+  padding: 0px 24px;
 }
 
+.main_h1 {
+  padding: $px-24 0px $px-52;
+}
+
+// Google Map styles
+#map {
+  height: 50%;
+}
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+//Laptop
+@media only screen and (min-width: 1200px) {
+  .salesRepresentatives_main {
+    padding: 0px 10%;
+  }
+
+  .salesRepresentatives_main_div {
+    display: flex;
+  }
+
+  .main_section_representatives {
+    width: 35%;
+    height: 650px;
+    margin-right: 2%;
+    overflow-y: scroll;
+  }
+
+  .main_section_map {
+    width: 62%;
+  }
+}
