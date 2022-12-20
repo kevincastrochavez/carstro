@@ -10,7 +10,6 @@ function Filters() {
     brands: [],
     years: [],
   });
-  console.log(filtersInfo);
 
   const hideFilters = () => {
     dispatch({
