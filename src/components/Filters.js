@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import CloseIcon from '@mui/icons-material/Close';
 
+import db from '../firebase';
+import { useStateValue } from '../StateProvider';
+import FilterLabel from './FilterLabel';
 import Button from '../components/Button';
 import Checkbox from '../components/Checkbox';
-import { useStateValue } from '../StateProvider';
-import db from '../firebase';
 
 function Filters() {
   const [{ showFilters }, dispatch] = useStateValue();
@@ -60,6 +61,7 @@ function Filters() {
         brands: [],
         years: [],
         wheels: [],
+        colors: [],
       });
 
       setClearAllFilters(false);
@@ -190,7 +192,7 @@ function Filters() {
                     clearAll={clearAllFilters}
                     onClick={() => setIsChecked(!isChecked)}
                   />
-                  <label htmlFor={`${brand}-car`}>{brand}</label>
+                  <FilterLabel option={brand} text={brand} />
                 </div>
               );
             })}
@@ -213,7 +215,7 @@ function Filters() {
                     clearAll={clearAllFilters}
                     onClick={() => setIsChecked(!isChecked)}
                   />
-                  <label htmlFor={`${year}-car`}>{year}</label>
+                  <FilterLabel option={year} text={year} />
                 </div>
               );
             })}
@@ -236,7 +238,8 @@ function Filters() {
                     clearAll={clearAllFilters}
                     onClick={() => setIsChecked(!isChecked)}
                   />
-                  <label htmlFor={`${wheel}-car`}>{wheel}" Wheels</label>
+
+                  <FilterLabel option={wheel} text={`${wheel}" Wheels`} />
                 </div>
               );
             })}
@@ -260,16 +263,7 @@ function Filters() {
                     onClick={() => setIsChecked(!isChecked)}
                     hidden
                   />
-                  <label
-                    className={isChecked ? 'filters_color-selected' : ''}
-                    htmlFor={`${color}-car`}
-                  >
-                    <img
-                      className='filters_colorImg'
-                      src={`https://raw.githubusercontent.com/kevincastrochavez/carstro-cars-uploader/main/public/carColors/${color.toLowerCase()}.png`}
-                      alt={`Color ${color} for filtering by such`}
-                    />
-                  </label>
+                  <FilterLabel option={color} colors={true} />
                 </div>
               );
             })}
