@@ -1,6 +1,15 @@
 import React from 'react';
 
-function Checkbox({ id, name, value, onChange, onClick, isChecked, clearAll }) {
+function Checkbox({
+  id,
+  name,
+  value,
+  onChange,
+  onClick,
+  isChecked,
+  clearAll,
+  hidden,
+}) {
   return (
     <input
       type='checkbox'
@@ -10,6 +19,7 @@ function Checkbox({ id, name, value, onChange, onClick, isChecked, clearAll }) {
       checked={clearAll ? false : isChecked}
       onChange={onChange}
       onClick={onClick}
+      hidden={hidden && true}
     />
   );
 }

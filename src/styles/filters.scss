@@ -54,6 +54,21 @@
       height: $px-24;
       width: $px-24;
     }
+
+    & label {
+      font-size: 14px;
+    }
+  }
+
+  &_colors {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $px-24;
+
+    .filters_checkbox {
+      margin-bottom: 0;
+      height: $px-40;
+    }
   }
 }
 

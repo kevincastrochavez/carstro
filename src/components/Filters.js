@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import CloseIcon from '@mui/icons-material/Close';
 
+import db from '../firebase';
+import { useStateValue } from '../StateProvider';
+import FilterLabel from './FilterLabel';
 import Button from '../components/Button';
 import Checkbox from '../components/Checkbox';
-import { useStateValue } from '../StateProvider';
-import db from '../firebase';
 
 function Filters() {
   const [{ showFilters }, dispatch] = useStateValue();
@@ -15,11 +16,15 @@ function Filters() {
   const [brandFilterOptions, setBrandFilterOptions] = useState([]);
   const [yearsFilterOptions, setYearsFilterOptions] = useState([]);
   const [wheelsFilterOptions, setWheelsFilterOptions] = useState([]);
+  const [colorsFilterOptions, setColorsFilterOptions] = useState([]);
   const [filtersInfo, setFiltersInfo] = useState({
     brands: [],
     years: [],
     wheels: [],
+    colors: [],
   });
+
+  console.log(filtersInfo);
 
   // Pulls data from db to populate unique filter options dynamically
   useEffect(() => {
@@ -33,16 +38,19 @@ function Filters() {
         let brands = [];
         let years = [];
         let wheels = [];
+        let colors = [];
 
         carsResults.forEach((result) => {
           brands.push(result.brand);
           years.push(result.year);
           wheels.push(result.tireSize);
+          colors.push(result.color);
         });
 
         setBrandFilterOptions([...new Set(brands)]);
         setYearsFilterOptions([...new Set(years)]);
         setWheelsFilterOptions([...new Set(wheels)]);
+        setColorsFilterOptions([...new Set(colors)]);
       });
   }, []);
 
@@ -53,6 +61,7 @@ function Filters() {
         brands: [],
         years: [],
         wheels: [],
+        colors: [],
       });
 
       setClearAllFilters(false);
@@ -70,57 +79,84 @@ function Filters() {
   // These handle functions keep track of which checkboxes are checked across the several forms for the different fields
   const handleBrandChange = (e) => {
     const { value, checked } = e.target;
-    const { brands, years, wheels } = filtersInfo;
+    const { brands, years, wheels, colors } = filtersInfo;
 
     if (checked) {
       setFiltersInfo({
         brands: [...brands, value],
         years: [...years],
         wheels: [...wheels],
+        colors: [...colors],
       });
     } else {
       setFiltersInfo({
         brands: brands.filter((e) => e !== value),
         years: years,
         wheels: wheels,
+        colors: colors,
       });
     }
   };
 
   const handleYearChange = (e) => {
     const { value, checked } = e.target;
-    const { brands, years, wheels } = filtersInfo;
+    const { brands, years, wheels, colors } = filtersInfo;
 
     if (checked) {
       setFiltersInfo({
         years: [...years, value],
         brands: [...brands],
         wheels: [...wheels],
+        colors: [...colors],
       });
     } else {
       setFiltersInfo({
         years: years.filter((e) => e !== value),
         brands: brands,
         wheels: wheels,
+        colors: colors,
       });
     }
   };
 
   const handleWheelChange = (e) => {
     const { value, checked } = e.target;
-    const { years, brands, wheels } = filtersInfo;
+    const { years, brands, wheels, colors } = filtersInfo;
 
     if (checked) {
       setFiltersInfo({
         wheels: [...wheels, value],
         brands: [...brands],
         years: [...years],
+        colors: [...colors],
       });
     } else {
       setFiltersInfo({
         wheels: wheels.filter((e) => e !== value),
         brands: brands,
         years: years,
+        colors: colors,
+      });
+    }
+  };
+
+  const handleColorChange = (e) => {
+    const { value, checked } = e.target;
+    const { years, brands, wheels, colors } = filtersInfo;
+
+    if (checked) {
+      setFiltersInfo({
+        colors: [...colors, value],
+        brands: [...brands],
+        years: [...years],
+        wheels: [...wheels],
+      });
+    } else {
+      setFiltersInfo({
+        colors: colors.filter((e) => e !== value),
+        brands: brands,
+        years: years,
+        wheels: wheels,
       });
     }
   };
@@ -156,7 +192,7 @@ function Filters() {
                     clearAll={clearAllFilters}
                     onClick={() => setIsChecked(!isChecked)}
                   />
-                  <label htmlFor={`${brand}-car`}>{brand}</label>
+                  <FilterLabel option={brand} text={brand} />
                 </div>
               );
             })}
@@ -179,7 +215,7 @@ function Filters() {
                     clearAll={clearAllFilters}
                     onClick={() => setIsChecked(!isChecked)}
                   />
-                  <label htmlFor={`${year}-car`}>{year}</label>
+                  <FilterLabel option={year} text={year} />
                 </div>
               );
             })}
@@ -202,7 +238,32 @@ function Filters() {
                     clearAll={clearAllFilters}
                     onClick={() => setIsChecked(!isChecked)}
                   />
-                  <label htmlFor={`${wheel}-car`}>{wheel}" Wheels</label>
+
+                  <FilterLabel option={wheel} text={`${wheel}" Wheels`} />
+                </div>
+              );
+            })}
+          </form>
+        </section>
+
+        <section>
+          <h5>Color</h5>
+
+          <form className='filters_checkboxes filters_colors'>
+            {colorsFilterOptions.map((color) => {
+              return (
+                <div className='filters_checkbox'>
+                  <Checkbox
+                    id={color}
+                    name='colors'
+                    value={color}
+                    checked={isChecked}
+                    onChange={handleColorChange}
+                    clearAll={clearAllFilters}
+                    onClick={() => setIsChecked(!isChecked)}
+                    hidden
+                  />
+                  <FilterLabel option={color} colors={true} />
                 </div>
               );
             })}
