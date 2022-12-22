@@ -1,16 +1,9 @@
 import React, { useState } from 'react';
 
-function Checkbox({
-  id,
-  name,
-  value,
-  onChange,
-  // onClick,
-  // isChecked,
-  clearAll,
-  hidden,
-}) {
+function Checkbox({ id, name, value, onChange, clearAll, hidden }) {
   const [isChecked, setIsChecked] = useState(false);
+
+  console.log(name);
 
   return (
     <input

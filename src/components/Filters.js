@@ -181,7 +181,7 @@ function Filters() {
           <form className='filters_checkboxes'>
             {brandFilterOptions.map((brand) => {
               return (
-                <div className='filters_checkbox'>
+                <div key={brand} className='filters_checkbox'>
                   <Checkbox
                     id={brand}
                     name='brands'
@@ -202,7 +202,7 @@ function Filters() {
           <form className='filters_checkboxes'>
             {yearsFilterOptions.map((year) => {
               return (
-                <div className='filters_checkbox'>
+                <div key={year} className='filters_checkbox'>
                   <Checkbox
                     id={year}
                     name='years'
@@ -223,7 +223,7 @@ function Filters() {
           <form className='filters_checkboxes'>
             {wheelsFilterOptions.map((wheel) => {
               return (
-                <div className='filters_checkbox'>
+                <div key={wheel} className='filters_checkbox'>
                   <Checkbox
                     id={wheel}
                     name='wheels'
@@ -245,7 +245,7 @@ function Filters() {
           <form className='filters_checkboxes filters_colors'>
             {colorsFilterOptions.map((color) => {
               return (
-                <div className='filters_checkbox'>
+                <div key={color} className='filters_checkbox'>
                   <Checkbox
                     id={color}
                     name='colors'
