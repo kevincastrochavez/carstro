@@ -66,6 +66,14 @@ const reducer = (state, action) => {
         ...state,
         colors: state.colors.filter((item) => item !== action.colors),
       };
+    case 'CLEAR_FILTERS':
+      return {
+        ...state,
+        brandsFilters: [],
+        modelYearsFilters: [],
+        tireSize: [],
+        colors: [],
+      };
     default:
       return state;
   }
