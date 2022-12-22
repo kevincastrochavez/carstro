@@ -3,6 +3,8 @@ export const initialState = {
   carsResults: [],
   brandsFilters: [],
   modelYearsFilters: [],
+  tireSize: [],
+  colors: [],
 };
 
 const reducer = (state, action) => {
@@ -17,15 +19,52 @@ const reducer = (state, action) => {
         ...state,
         carsResults: action.carsResults,
       };
-    case 'SET_BRANDS_FILTERS':
+    case 'SET_BRAND_FILTER':
       return {
         ...state,
-        brandsFilters: action.brandsFilters,
+        brandsFilters: [...state.brandsFilters, action.brandsFilters],
       };
-    case 'SET_MODEL_YEARS_FILTERS':
+    case 'REMOVE_BRAND_FILTER':
       return {
         ...state,
-        modelYearsFilters: action.modelYearsFilters,
+        brandsFilters: state.brandsFilters.filter(
+          (item) => item !== action.brandsFilters
+        ),
+      };
+    case 'SET_MODEL_YEAR_FILTER':
+      return {
+        ...state,
+        modelYearsFilters: [
+          ...state.modelYearsFilters,
+          action.modelYearsFilters,
+        ],
+      };
+    case 'REMOVE_MODEL_YEAR_FILTER':
+      return {
+        ...state,
+        modelYearsFilters: state.modelYearsFilters.filter(
+          (item) => item !== action.modelYearsFilters
+        ),
+      };
+    case 'SET_TIRE_SIZE_FILTER':
+      return {
+        ...state,
+        tireSize: [...state.tireSize, action.tireSize],
+      };
+    case 'REMOVE_TIRE_SIZE_FILTER':
+      return {
+        ...state,
+        tireSize: state.tireSize.filter((item) => item !== action.tireSize),
+      };
+    case 'SET_COLOR_FILTER':
+      return {
+        ...state,
+        colors: [...state.colors, action.colors],
+      };
+    case 'REMOVE_COLOR_FILTER':
+      return {
+        ...state,
+        colors: state.colors.filter((item) => item !== action.colors),
       };
     default:
       return state;
