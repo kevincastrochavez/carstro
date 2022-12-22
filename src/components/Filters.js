@@ -53,6 +53,11 @@ function Filters() {
     });
   };
 
+  const clearFilters = () => {
+    setClearAllFilters(true);
+    dispatch({ type: 'CLEAR_FILTERS' });
+  };
+
   return (
     <section className={`filters ${!showFilters && 'filters_hidden'}`}>
       <div className='filters_top'>
@@ -61,7 +66,7 @@ function Filters() {
       </div>
 
       <Button
-        onClick={() => setClearAllFilters(true)}
+        onClick={clearFilters}
         className='filters_button'
         text={'Clear All'}
         bgColor='green'
@@ -143,7 +148,7 @@ function Filters() {
                     clearAll={clearAllFilters}
                     hidden
                   />
-                  <FilterLabel option={color} colors={true} />
+                  <FilterLabel option={color} colorsProp={true} />
                 </div>
               );
             })}
