@@ -16,14 +16,6 @@ function Filters() {
   const [yearsFilterOptions, setYearsFilterOptions] = useState([]);
   const [wheelsFilterOptions, setWheelsFilterOptions] = useState([]);
   const [colorsFilterOptions, setColorsFilterOptions] = useState([]);
-  const [filtersInfo, setFiltersInfo] = useState({
-    brands: [],
-    years: [],
-    wheels: [],
-    colors: [],
-  });
-
-  console.log(filtersInfo);
 
   // Pulls data from db to populate unique filter options dynamically
   useEffect(() => {
@@ -53,111 +45,12 @@ function Filters() {
       });
   }, []);
 
-  // In charge of resetting all the checkboxes when the Clear All button is pressed
-  useEffect(() => {
-    if (clearAllFilters) {
-      setFiltersInfo({
-        brands: [],
-        years: [],
-        wheels: [],
-        colors: [],
-      });
-
-      setClearAllFilters(false);
-    }
-  }, [clearAllFilters]);
-
   // Hides the filter component
   const hideFilters = () => {
     dispatch({
       type: 'TOGGLE_FILTERS',
       showFilters: false,
     });
-  };
-
-  // These handle functions keep track of which checkboxes are checked across the several forms for the different fields
-  const handleBrandChange = (e) => {
-    const { value, checked } = e.target;
-    const { brands, years, wheels, colors } = filtersInfo;
-
-    if (checked) {
-      setFiltersInfo({
-        brands: [...brands, value],
-        years: [...years],
-        wheels: [...wheels],
-        colors: [...colors],
-      });
-    } else {
-      setFiltersInfo({
-        brands: brands.filter((e) => e !== value),
-        years: years,
-        wheels: wheels,
-        colors: colors,
-      });
-    }
-  };
-
-  const handleYearChange = (e) => {
-    const { value, checked } = e.target;
-    const { brands, years, wheels, colors } = filtersInfo;
-
-    if (checked) {
-      setFiltersInfo({
-        years: [...years, value],
-        brands: [...brands],
-        wheels: [...wheels],
-        colors: [...colors],
-      });
-    } else {
-      setFiltersInfo({
-        years: years.filter((e) => e !== value),
-        brands: brands,
-        wheels: wheels,
-        colors: colors,
-      });
-    }
-  };
-
-  const handleWheelChange = (e) => {
-    const { value, checked } = e.target;
-    const { years, brands, wheels, colors } = filtersInfo;
-
-    if (checked) {
-      setFiltersInfo({
-        wheels: [...wheels, value],
-        brands: [...brands],
-        years: [...years],
-        colors: [...colors],
-      });
-    } else {
-      setFiltersInfo({
-        wheels: wheels.filter((e) => e !== value),
-        brands: brands,
-        years: years,
-        colors: colors,
-      });
-    }
-  };
-
-  const handleColorChange = (e) => {
-    const { value, checked } = e.target;
-    const { years, brands, wheels, colors } = filtersInfo;
-
-    if (checked) {
-      setFiltersInfo({
-        colors: [...colors, value],
-        brands: [...brands],
-        years: [...years],
-        wheels: [...wheels],
-      });
-    } else {
-      setFiltersInfo({
-        colors: colors.filter((e) => e !== value),
-        brands: brands,
-        years: years,
-        wheels: wheels,
-      });
-    }
   };
 
   return (
@@ -186,7 +79,6 @@ function Filters() {
                     id={brand}
                     name='brands'
                     value={brand}
-                    onChange={handleBrandChange}
                     clearAll={clearAllFilters}
                   />
                   <FilterLabel option={brand} text={brand} />
@@ -207,7 +99,6 @@ function Filters() {
                     id={year}
                     name='years'
                     value={year}
-                    onChange={handleYearChange}
                     clearAll={clearAllFilters}
                   />
                   <FilterLabel option={year} text={year} />
@@ -228,7 +119,6 @@ function Filters() {
                     id={wheel}
                     name='wheels'
                     value={wheel}
-                    onChange={handleWheelChange}
                     clearAll={clearAllFilters}
                   />
 
@@ -250,7 +140,6 @@ function Filters() {
                     id={color}
                     name='colors'
                     value={color}
-                    onChange={handleColorChange}
                     clearAll={clearAllFilters}
                     hidden
                   />
