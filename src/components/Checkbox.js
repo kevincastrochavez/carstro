@@ -1,15 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 function Checkbox({
   id,
   name,
   value,
   onChange,
-  onClick,
-  isChecked,
+  // onClick,
+  // isChecked,
   clearAll,
   hidden,
 }) {
+  const [isChecked, setIsChecked] = useState(false);
+
   return (
     <input
       type='checkbox'
@@ -18,7 +20,7 @@ function Checkbox({
       value={value}
       checked={clearAll ? false : isChecked}
       onChange={onChange}
-      onClick={onClick}
+      onClick={() => setIsChecked(!isChecked)}
       hidden={hidden && true}
     />
   );

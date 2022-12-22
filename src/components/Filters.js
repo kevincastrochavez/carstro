@@ -10,7 +10,6 @@ import Checkbox from '../components/Checkbox';
 function Filters() {
   const [{ showFilters }, dispatch] = useStateValue();
 
-  const [isChecked, setIsChecked] = useState(false);
   const [clearAllFilters, setClearAllFilters] = useState(false);
 
   const [brandFilterOptions, setBrandFilterOptions] = useState([]);
@@ -187,10 +186,8 @@ function Filters() {
                     id={brand}
                     name='brands'
                     value={brand}
-                    checked={isChecked}
                     onChange={handleBrandChange}
                     clearAll={clearAllFilters}
-                    onClick={() => setIsChecked(!isChecked)}
                   />
                   <FilterLabel option={brand} text={brand} />
                 </div>
@@ -210,10 +207,8 @@ function Filters() {
                     id={year}
                     name='years'
                     value={year}
-                    checked={isChecked}
                     onChange={handleYearChange}
                     clearAll={clearAllFilters}
-                    onClick={() => setIsChecked(!isChecked)}
                   />
                   <FilterLabel option={year} text={year} />
                 </div>
@@ -233,10 +228,8 @@ function Filters() {
                     id={wheel}
                     name='wheels'
                     value={wheel}
-                    checked={isChecked}
                     onChange={handleWheelChange}
                     clearAll={clearAllFilters}
-                    onClick={() => setIsChecked(!isChecked)}
                   />
 
                   <FilterLabel option={wheel} text={`${wheel}" Wheels`} />
@@ -257,10 +250,8 @@ function Filters() {
                     id={color}
                     name='colors'
                     value={color}
-                    checked={isChecked}
                     onChange={handleColorChange}
                     clearAll={clearAllFilters}
-                    onClick={() => setIsChecked(!isChecked)}
                     hidden
                   />
                   <FilterLabel option={color} colors={true} />
