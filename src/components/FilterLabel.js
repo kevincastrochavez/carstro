@@ -1,17 +1,21 @@
 import React, { useState } from 'react';
 
-function FilterLabel({ option, colors, text }) {
+import { useStateValue } from '../StateProvider';
+
+function FilterLabel({ option, colorsProp, text }) {
+  const [{ colors }] = useStateValue();
   const [isSelected, setIsSelected] = useState(false);
 
   return (
     <label
       className={`${
-        colors && isSelected && 'filterLabel_selected'
+        // Adds class if the label option is included in the state layer (if the color was clicked)
+        colors.includes(option) && 'filterLabel_selected'
       } filterLabel`}
-      onClick={() => colors && setIsSelected(!isSelected)}
+      onClick={() => colorsProp && setIsSelected(!isSelected)}
       htmlFor={`${option}-car`}
     >
-      {colors ? (
+      {colorsProp ? (
         <img
           className='filterLabel_colorImg'
           src={`https://raw.githubusercontent.com/kevincastrochavez/carstro-cars-uploader/main/public/carColors/${option.toLowerCase()}.png`}

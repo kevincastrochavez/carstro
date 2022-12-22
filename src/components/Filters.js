@@ -148,7 +148,7 @@ function Filters() {
                     clearAll={clearAllFilters}
                     hidden
                   />
-                  <FilterLabel option={color} colors={true} />
+                  <FilterLabel option={color} colorsProp={true} />
                 </div>
               );
             })}
