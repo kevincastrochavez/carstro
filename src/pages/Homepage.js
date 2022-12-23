@@ -20,6 +20,13 @@ function Homepage() {
         const minPrice = Math.min(...pricesArray);
         const maxPrice = Math.max(...pricesArray);
 
+        const milesArray = carsResults.map((car) => Number(car.odometer));
+        const minMileage = Math.min(...milesArray);
+        const maxMileage = Math.max(...milesArray);
+
+        console.log(minMileage);
+        console.log(maxMileage);
+
         dispatch({
           type: 'SET_CARS_RESULTS',
           carsResults,
@@ -28,6 +35,11 @@ function Homepage() {
         dispatch({
           type: 'SET_MIN_MAX_PRICE_FILTER',
           minMaxPrice: [minPrice, maxPrice],
+        });
+
+        dispatch({
+          type: 'SET_MIN_MAX_MILEAGE_FILTER',
+          minMaxMileage: [minMileage, maxMileage],
         });
       });
   }, []);
