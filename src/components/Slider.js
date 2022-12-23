@@ -1,9 +1,16 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Slider from '@mui/material/Slider';
 import CurrencyFormat from 'react-currency-format';
 
-function SliderRange() {
-  const [value, setValue] = useState([10, 4000]);
+function SliderRange({ minMaxPrice }) {
+  const [value, setValue] = useState(minMaxPrice);
+
+  const minPrice = minMaxPrice[0];
+  const maxPrice = minMaxPrice[1];
+
+  useEffect(() => {
+    setValue([minPrice, maxPrice]);
+  }, [minMaxPrice]);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -37,8 +44,8 @@ function SliderRange() {
         aria-label='Car price range'
         getAriaLabel={() => 'Car price range'}
         value={value}
-        min={10}
-        max={4000}
+        min={minPrice}
+        max={maxPrice}
         onChange={handleChange}
         valueLabelDisplay='off'
         disableSwap

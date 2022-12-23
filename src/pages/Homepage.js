@@ -16,9 +16,18 @@ function Homepage() {
           return { ...car.data(), cardId: car.id };
         });
 
+        const pricesArray = carsResults.map((car) => Number(car.price));
+        const minPrice = Math.min(...pricesArray);
+        const maxPrice = Math.max(...pricesArray);
+
         dispatch({
           type: 'SET_CARS_RESULTS',
           carsResults,
+        });
+
+        dispatch({
+          type: 'SET_MIN_MAX_PRICE_FILTER',
+          minMaxPrice: [minPrice, maxPrice],
         });
       });
   }, []);

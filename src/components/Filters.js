@@ -9,7 +9,7 @@ import Checkbox from '../components/Checkbox';
 import SliderRange from './Slider';
 
 function Filters() {
-  const [{ showFilters }, dispatch] = useStateValue();
+  const [{ showFilters, minMaxPrice }, dispatch] = useStateValue();
 
   const [clearAllFilters, setClearAllFilters] = useState(false);
 
@@ -160,7 +160,7 @@ function Filters() {
           <h5>Price</h5>
 
           <form className='filters_checkboxes'>
-            <SliderRange />
+            <SliderRange minMaxPrice={minMaxPrice} />
           </form>
         </section>
       </div>

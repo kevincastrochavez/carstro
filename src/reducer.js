@@ -5,6 +5,7 @@ export const initialState = {
   modelYearsFilters: [],
   tireSize: [],
   colors: [],
+  minMaxPrice: [0, 0],
 };
 
 const reducer = (state, action) => {
@@ -65,6 +66,11 @@ const reducer = (state, action) => {
       return {
         ...state,
         colors: state.colors.filter((item) => item !== action.colors),
+      };
+    case 'SET_MIN_MAX_PRICE_FILTER':
+      return {
+        ...state,
+        minMaxPrice: action.minMaxPrice,
       };
     case 'CLEAR_FILTERS':
       return {
