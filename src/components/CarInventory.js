@@ -42,7 +42,16 @@ function CarInventory({
             />
           }
         </span>
-        <p>{odometer} mile odometer</p>
+        <p>
+          {
+            <CurrencyFormat
+              value={odometer}
+              displayType={'text'}
+              thousandSeparator={true}
+            />
+          }{' '}
+          mile odometer
+        </p>
         <p className='carInventory_top-right'>
           {
             <CurrencyFormat

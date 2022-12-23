@@ -58,7 +58,7 @@ function Inventory() {
 
           dispatch({
             type: 'SET_MIN_MAX_MILEAGE_FILTER',
-            minMaxPrice: [minMileage, maxMileage],
+            minMaxMileage: [minMileage, maxMileage],
           });
         });
     }

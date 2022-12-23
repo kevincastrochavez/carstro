@@ -4,6 +4,7 @@ import CurrencyFormat from 'react-currency-format';
 
 function SliderRange({ range, text, price }) {
   const [value, setValue] = useState(range);
+  console.log(range);
 
   const minPrice = range[0];
   const maxPrice = range[1];
