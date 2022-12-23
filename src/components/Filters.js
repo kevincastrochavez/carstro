@@ -6,6 +6,7 @@ import { useStateValue } from '../StateProvider';
 import FilterLabel from './FilterLabel';
 import Button from '../components/Button';
 import Checkbox from '../components/Checkbox';
+import SliderRange from './Slider';
 
 function Filters() {
   const [{ showFilters }, dispatch] = useStateValue();
@@ -152,6 +153,14 @@ function Filters() {
                 </div>
               );
             })}
+          </form>
+        </section>
+
+        <section>
+          <h5>Price</h5>
+
+          <form className='filters_checkboxes'>
+            <SliderRange />
           </form>
         </section>
       </div>

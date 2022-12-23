@@ -1,0 +1,12 @@
+.slider {
+  &_minMax {
+    display: flex;
+    justify-content: space-between;
+
+    & span {
+      font-size: 14px;
+      font-family: $heading-font;
+      line-height: 1.25;
+    }
+  }
+}
