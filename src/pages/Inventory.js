@@ -38,9 +38,27 @@ function Inventory() {
             return { ...car.data(), cardId: car.id };
           });
 
+          const pricesArray = carsResults.map((car) => Number(car.price));
+          const minPrice = Math.min(...pricesArray);
+          const maxPrice = Math.max(...pricesArray);
+
+          const milesArray = carsResults.map((car) => Number(car.odometer));
+          const minMileage = Math.min(...milesArray);
+          const maxMileage = Math.max(...milesArray);
+
           dispatch({
             type: 'SET_CARS_RESULTS',
             carsResults,
+          });
+
+          dispatch({
+            type: 'SET_MIN_MAX_PRICE_FILTER',
+            minMaxPrice: [minPrice, maxPrice],
+          });
+
+          dispatch({
+            type: 'SET_MIN_MAX_MILEAGE_FILTER',
+            minMaxPrice: [minMileage, maxMileage],
           });
         });
     }

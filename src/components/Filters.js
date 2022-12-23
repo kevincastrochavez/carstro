@@ -6,9 +6,11 @@ import { useStateValue } from '../StateProvider';
 import FilterLabel from './FilterLabel';
 import Button from '../components/Button';
 import Checkbox from '../components/Checkbox';
+import SliderRange from './Slider';
 
 function Filters() {
-  const [{ showFilters }, dispatch] = useStateValue();
+  const [{ showFilters, minMaxPrice, minMaxMileage }, dispatch] =
+    useStateValue();
 
   const [clearAllFilters, setClearAllFilters] = useState(false);
 
@@ -152,6 +154,22 @@ function Filters() {
                 </div>
               );
             })}
+          </form>
+        </section>
+
+        <section>
+          <h5>Price</h5>
+
+          <form className='filters_checkboxes'>
+            <SliderRange range={minMaxPrice} price text='price' />
+          </form>
+        </section>
+
+        <section>
+          <h5>Mileage</h5>
+
+          <form className='filters_checkboxes'>
+            <SliderRange range={minMaxMileage} text='mileage' />
           </form>
         </section>
       </div>
