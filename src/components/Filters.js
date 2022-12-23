@@ -160,7 +160,7 @@ function Filters() {
           <h5>Price</h5>
 
           <form className='filters_checkboxes'>
-            <SliderRange minMaxPrice={minMaxPrice} />
+            <SliderRange priceRange={minMaxPrice} />
           </form>
         </section>
       </div>

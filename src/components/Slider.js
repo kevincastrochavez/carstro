@@ -2,15 +2,15 @@ import React, { useEffect, useState } from 'react';
 import Slider from '@mui/material/Slider';
 import CurrencyFormat from 'react-currency-format';
 
-function SliderRange({ minMaxPrice }) {
-  const [value, setValue] = useState(minMaxPrice);
+function SliderRange({ priceRange }) {
+  const [value, setValue] = useState(priceRange);
 
-  const minPrice = minMaxPrice[0];
-  const maxPrice = minMaxPrice[1];
+  const minPrice = priceRange[0];
+  const maxPrice = priceRange[1];
 
   useEffect(() => {
     setValue([minPrice, maxPrice]);
-  }, [minMaxPrice]);
+  }, [priceRange]);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
