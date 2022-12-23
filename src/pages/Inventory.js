@@ -9,7 +9,7 @@ import Filters from '../components/Filters';
 import db from '../firebase';
 
 function Inventory() {
-  const [{ carsResults }, dispatch] = useStateValue();
+  const [{ carsResults, showFilters }, dispatch] = useStateValue();
   const [activeGrid, setActiveGrid] = useState(true);
 
   const showListLayout = () => setActiveGrid(false);
@@ -19,6 +19,13 @@ function Inventory() {
     dispatch({
       type: 'TOGGLE_FILTERS',
       showFilters: true,
+    });
+  };
+
+  const overlayClick = () => {
+    dispatch({
+      type: 'TOGGLE_FILTERS',
+      showFilters: false,
     });
   };
 
@@ -41,6 +48,9 @@ function Inventory() {
 
   return (
     <main className='inventory_main'>
+      {showFilters && (
+        <div onClick={overlayClick} className='inventory_overlay'></div>
+      )}
       <div className='inventory_header'>
         <div className='inventory_header-top'>
           <h1>Inventory</h1>
