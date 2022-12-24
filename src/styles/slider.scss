@@ -9,4 +9,11 @@
       line-height: 1.25;
     }
   }
+
+  & > span {
+    display: flex;
+    justify-content: center;
+    width: calc(100% - 20px);
+    margin-left: 10px;
+  }
 }

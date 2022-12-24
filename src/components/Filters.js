@@ -8,6 +8,11 @@ import Button from '../components/Button';
 import Checkbox from '../components/Checkbox';
 import SliderRange from './Slider';
 
+// TODO
+
+// Figure out how to send the slider values to the state layer every time they change
+// Pull all the filters from state and render the cars that meet such criteria
+
 function Filters() {
   const [{ showFilters, minMaxPrice, minMaxMileage }, dispatch] =
     useStateValue();
@@ -73,6 +78,8 @@ function Filters() {
         text={'Clear All'}
         bgColor='green'
       />
+
+      <div className='filters_divider'></div>
 
       <div className='filters_form'>
         <section>
