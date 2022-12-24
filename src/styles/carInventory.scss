@@ -76,6 +76,8 @@
       font-weight: 400;
       font-size: 14px;
       line-height: 1.5;
+      box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+      cursor: pointer;
     }
   }
 }
@@ -83,6 +85,7 @@
 .carInventory_listView {
   grid-template-rows: auto $px-12 auto;
   padding-bottom: $px-28;
+  cursor: pointer;
 
   .carInventory_img {
     width: 30vw;
