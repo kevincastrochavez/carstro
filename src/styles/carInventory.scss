@@ -119,4 +119,9 @@
       // width: 50%; Tentatively
     }
   }
+
+  .carInventory_listView {
+    grid-template-rows: auto 12px auto;
+    padding-bottom: $px-32;
+  }
 }
