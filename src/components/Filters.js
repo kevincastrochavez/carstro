@@ -18,6 +18,7 @@ function Filters() {
     useStateValue();
 
   const [clearAllFilters, setClearAllFilters] = useState(false);
+  const [windowWidth, setWindowWidth] = useState(false);
 
   const [brandFilterOptions, setBrandFilterOptions] = useState([]);
   const [yearsFilterOptions, setYearsFilterOptions] = useState([]);
@@ -54,10 +55,21 @@ function Filters() {
 
   // Handling the scroll behavior when filters are open
   useEffect(() => {
-    if (showFilters) {
+    if (showFilters && windowWidth < 990) {
       document.body.style.overflow = 'hidden';
     } else {
       document.body.style.overflow = 'unset';
+    }
+  });
+
+  useEffect(() => {
+    setWindowWidth(window.innerWidth);
+
+    if (window.innerWidth >= 990) {
+      dispatch({
+        type: 'TOGGLE_FILTERS',
+        showFilters: true,
+      });
     }
   });
 

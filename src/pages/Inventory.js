@@ -11,8 +11,7 @@ import db from '../firebase';
 function Inventory() {
   const [{ carsResults, showFilters }, dispatch] = useStateValue();
   const [activeGrid, setActiveGrid] = useState(true);
-
-  console.log(showFilters);
+  const [windowWidth, setWindowWidth] = useState(0);
 
   const showListLayout = () => setActiveGrid(false);
   const showGridLayout = () => setActiveGrid(true);
@@ -66,9 +65,13 @@ function Inventory() {
     }
   }, []);
 
+  useEffect(() => {
+    setWindowWidth(window.innerWidth);
+  });
+
   return (
     <main className='inventory_main'>
-      {showFilters && (
+      {showFilters && windowWidth < 990 && (
         <div onClick={overlayClick} className='inventory_overlay'></div>
       )}
       <div className='inventory_header'>

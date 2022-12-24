@@ -103,3 +103,25 @@
     }
   }
 }
+
+@media screen and (min-width: 990px) {
+  .inventory {
+    &_main {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    &_header,
+    &_hiddenBar {
+      grid-column: 1/-1;
+    }
+
+    &_carsContainer {
+      grid-column: 2/4;
+    }
+
+    &_filtersBtn {
+      display: none;
+    }
+  }
+}
