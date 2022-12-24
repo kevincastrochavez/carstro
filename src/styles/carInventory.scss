@@ -20,6 +20,10 @@
     &-right {
       text-align: right;
     }
+
+    & > span {
+      font-weight: bold;
+    }
   }
 
   &_img {
@@ -90,5 +94,17 @@
   .carInventory_img {
     width: 30vw;
     justify-self: end;
+  }
+}
+
+@media screen and (min-width: 720px) {
+  .carInventory {
+    padding: $px-32 $px-32 $px-44;
+    grid-template-rows: auto $px-32 auto $px-40 auto;
+
+    &_img {
+      width: 60%;
+      // width: 50%; Tentatively
+    }
   }
 }

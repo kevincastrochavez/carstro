@@ -75,3 +75,25 @@
 #inactiveLayout {
   color: black;
 }
+
+@media screen and (min-width: 720px) {
+  .inventory {
+    &_header {
+      &-top {
+        padding: $px-24 $px-32 $px-48;
+      }
+
+      &-bottom {
+        padding: 0 $px-32 $px-32;
+      }
+    }
+
+    &_hiddenBar {
+      height: $px-12;
+    }
+
+    &_carsContainer {
+      padding: $px-36 $px-32 $px-32 $px-32;
+    }
+  }
+}

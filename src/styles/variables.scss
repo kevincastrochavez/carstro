@@ -63,6 +63,19 @@ $px-92: 92px;
 $px-96: 96px;
 $px-100: 100px;
 
+//////////////////////////////
+// FONT SIZES
+
+h1 {
+  font-size: $px-32;
+}
+
+@media screen and (min-width: 720px) {
+  h1 {
+    font-size: $px-40;
+  }
+}
+
 // MEDIA QUERIES REFERENCE
 
 // Mobile: Up to 719px
