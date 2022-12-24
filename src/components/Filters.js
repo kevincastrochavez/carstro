@@ -52,6 +52,15 @@ function Filters() {
       });
   }, []);
 
+  // Handling the scroll behavior when filters are open
+  useEffect(() => {
+    if (showFilters) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+  });
+
   // Hides the filter component
   const hideFilters = () => {
     dispatch({

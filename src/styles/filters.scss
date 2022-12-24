@@ -104,3 +104,19 @@
   z-index: -1;
   opacity: 0;
 }
+
+@media screen and (min-width: 720px) {
+  .filters {
+    width: calc(100% - 96px);
+    max-width: 720px;
+    margin: 0 auto;
+
+    &_button {
+      margin-bottom: $px-24;
+    }
+
+    &_form {
+      margin-top: $px-24;
+    }
+  }
+}
