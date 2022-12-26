@@ -75,20 +75,18 @@ function Inventory() {
         <div onClick={overlayClick} className='inventory_overlay'></div>
       )}
       <div className='inventory_header'>
-        <div className='inventory_header-top'>
-          <h1>Inventory</h1>
+        <h1>Inventory</h1>
 
-          <div className='inventory_viewIcons'>
-            <ViewModuleIcon
-              id={activeGrid ? 'activeLayout' : undefined}
-              onClick={showGridLayout}
-            />
-            <div></div>
-            <ViewListIcon
-              id={!activeGrid ? 'inactiveLayout' : undefined}
-              onClick={showListLayout}
-            />
-          </div>
+        <div className='inventory_viewIcons'>
+          <ViewModuleIcon
+            id={activeGrid ? 'activeLayout' : undefined}
+            onClick={showGridLayout}
+          />
+          <div></div>
+          <ViewListIcon
+            id={!activeGrid ? 'inactiveLayout' : undefined}
+            onClick={showListLayout}
+          />
         </div>
 
         <div className='inventory_header-bottom'>
