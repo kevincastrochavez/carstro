@@ -122,22 +122,35 @@
     }
 
     &_header {
-      grid-template-columns: $px-32 1fr $px-32;
+      grid-template-columns: $px-32 1fr auto auto $px-32;
 
       grid-column: 1/6;
       background-color: $bgnd-white;
+      padding: $px-24 0;
 
-      &-top {
-        max-width: 1310px;
-        // margin: 0 auto;
-        padding: $px-24 0 $px-32;
+      & h1 {
+        margin-top: 0;
       }
 
       &-bottom {
-        max-width: 1310px;
-        // margin: 0 auto;
-        padding: 0 0 $px-32;
+        grid-column: 3/4;
+        grid-row: 1;
+        padding: 0;
+        margin-right: $px-40;
+
+        & button {
+          width: 165px;
+          height: 40px;
+
+          align-self: center;
+        }
       }
+    }
+
+    &_viewIcons {
+      grid-column: 4/5;
+      grid-row: 1;
+      margin-top: 0;
     }
 
     &_hiddenBar {
@@ -151,7 +164,7 @@
 
       display: flex;
       flex-wrap: wrap;
-      justify-content: center;
+      justify-content: end;
 
       // grid-template-columns: 1fr 1fr;
     }
