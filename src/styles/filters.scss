@@ -129,10 +129,10 @@
     position: unset;
     margin-top: $px-36;
     margin-left: 0;
-    width: 75%;
-    // width: calc(75% + $px-40);
+    width: 80%;
     padding: 0;
     background-color: $bgnd-lightgray;
+    height: 680px;
 
     &_button {
       &-desktop {

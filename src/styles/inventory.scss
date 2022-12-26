@@ -116,9 +116,8 @@
     &_main {
       background-color: $bgnd-lightgray;
       display: grid;
-      grid-template-columns:
-        minmax($px-32, auto) 290px minmax(318px, 510px)
-        minmax(318px, 510px) minmax($px-32, auto);
+      grid-template-columns: $px-32 290px 1fr 1fr $px-32;
+      grid-template-rows: auto $px-12 auto;
     }
 
     &_header {
@@ -160,17 +159,42 @@
     &_carsContainer {
       grid-column: 3/5;
       padding: 0;
-      margin-top: $px-36;
+      padding-top: $px-36;
 
       display: flex;
       flex-wrap: wrap;
-      justify-content: end;
+      justify-content: center;
 
-      // grid-template-columns: 1fr 1fr;
+      height: 680px;
+      overflow: scroll;
+      overflow-x: hidden;
+
+      // Hide scrollbar
+      -ms-overflow-style: none; // IE and Edge
+      scrollbar-width: none; // Firefox
+
+      // Chrome, Safari and Opera
+      &::-webkit-scrollbar {
+        display: none;
+      }
     }
 
     &_filtersBtn {
       display: none;
+    }
+  }
+}
+
+@media screen and (min-width: 1374px) {
+  .inventory {
+    &_main {
+      grid-template-columns:
+        1fr 290px 510px
+        510px 1fr;
+    }
+
+    &_header {
+      grid-template-columns: 1fr 1026px auto auto 1fr;
     }
   }
 }
