@@ -107,17 +107,44 @@
 @media screen and (min-width: 990px) {
   .inventory {
     &_main {
+      background-color: $bgnd-lightgray;
       display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-columns:
+        minmax($px-32, auto) 290px minmax(318px, 510px)
+        minmax(318px, 510px) minmax($px-32, auto);
     }
 
-    &_header,
+    &_header {
+      grid-column: 2/5;
+      background-color: $bgnd-white;
+
+      &-top {
+        max-width: 1310px;
+        margin: 0 auto;
+        padding: $px-24 0 $px-32;
+      }
+
+      &-bottom {
+        max-width: 1310px;
+        margin: 0 auto;
+        padding: 0 0 $px-32;
+      }
+    }
+
     &_hiddenBar {
       grid-column: 1/-1;
     }
 
     &_carsContainer {
-      grid-column: 2/4;
+      grid-column: 3/5;
+      padding: 0;
+      margin-top: $px-36;
+
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+
+      // grid-template-columns: 1fr 1fr;
     }
 
     &_filtersBtn {

@@ -60,8 +60,9 @@ function Filters() {
     } else {
       document.body.style.overflow = 'unset';
     }
-  });
+  }, []);
 
+  // Opening filters by default if window is in the desktop view
   useEffect(() => {
     setWindowWidth(window.innerWidth);
 
@@ -71,7 +72,7 @@ function Filters() {
         showFilters: true,
       });
     }
-  });
+  }, []);
 
   // Hides the filter component
   const hideFilters = () => {
@@ -81,6 +82,7 @@ function Filters() {
     });
   };
 
+  // Clears all filters
   const clearFilters = () => {
     setClearAllFilters(true);
     dispatch({ type: 'CLEAR_FILTERS' });
@@ -89,13 +91,17 @@ function Filters() {
   return (
     <section className={`filters ${!showFilters && 'filters_hidden'}`}>
       <div className='filters_top'>
-        <h2>Filters</h2>
-        <CloseIcon className='filters_closeBtn' onClick={hideFilters} />
+        {windowWidth < 990 && <h2>Filters</h2>}
+        {windowWidth < 990 && (
+          <CloseIcon className='filters_closeBtn' onClick={hideFilters} />
+        )}
       </div>
 
       <Button
         onClick={clearFilters}
-        className='filters_button'
+        className={`filters_button ${
+          windowWidth >= 990 && 'filters_button-desktop'
+        }`}
         text={'Clear All'}
         bgColor='green'
       />

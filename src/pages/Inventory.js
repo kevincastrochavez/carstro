@@ -67,7 +67,7 @@ function Inventory() {
 
   useEffect(() => {
     setWindowWidth(window.innerWidth);
-  });
+  }, []);
 
   return (
     <main className='inventory_main'>
