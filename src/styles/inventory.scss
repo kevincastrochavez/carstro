@@ -89,12 +89,14 @@
 @media screen and (min-width: 720px) {
   .inventory {
     &_header {
+      row-gap: $px-48;
+
       &-top {
-        padding: $px-24 $px-32 $px-48;
+        padding: 0;
       }
 
       &-bottom {
-        padding: 0 $px-32 $px-32;
+        padding: 0 0 $px-24;
 
         & button {
           width: 40%;
