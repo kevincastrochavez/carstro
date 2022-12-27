@@ -4,23 +4,50 @@
   font-family: $body-font;
 }
 
+.li_div--locationContainer {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
 .saleRepresentativeCard_li:last-of-type {
   border-bottom: 1px solid #c8c8c8;
   margin-bottom: 50px;
 }
 
+// Location color and size
 .saleRepresentativeCard_li_p {
-  color: #000;
+  color: #5c5e62;
+  display: inline-block;
+  font-size: 20px;
+}
+
+.saleRepresentativeCard_li_location {
+  color: #5c5e62;
+  padding-top: 5px;
+}
+
+// Icons arrow icon color and size
+.saleRepresentativeCard_li_arrow {
+  color: #5c5e62;
+}
+
+// Size of the Icones in the location description
+.saleRepresentativeCard_ul_li .li_icon {
+  margin-right: 5px;
+  font-size: 14px;
 }
 
 .saleRepresentativeCard_div {
-  display: flex;
   padding: $px-12 0px;
+  display: grid;
+  grid-template-columns: 0.4fr 0.65fr;
+  grid-template-rows: 0.8fr 0.2fr;
   align-items: center;
 }
 
 .saleRepresentativeCard_div--picturesContainer {
-  width: 40%;
+  width: 90%;
   padding-right: 5%;
 }
 
@@ -35,7 +62,7 @@
 
 .saleRepresentativeCard_ul_li {
   font-family: $body-font;
-  font-size: 14px;
+  font-size: 11px;
   color: #5c5e62;
 }
 
@@ -43,7 +70,14 @@
   font-family: $heading-font;
   font-size: $px-20;
   font-weight: 600;
-  margin-bottom: $px-12;
+  margin-bottom: $px-8;
+}
+
+.saleRepresentativeCard_div--button {
+  background-color: #006039;
+  grid-column-start: 1;
+  grid-column-end: 3;
+  margin-top: 20px;
 }
 
 .btn_green {
@@ -53,41 +87,61 @@
   padding: 10px 0px;
 }
 
-// green button
-.rq_tablet {
-  display: none;
+// Modal Window
+.ModalWindow_overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+form {
+  background-color: white;
+  width: 95%;
+  padding: 5%;
 }
 
 // Tablet view styles
 @media screen and (min-width: 720px) {
+  .saleRepresentativeCard_div {
+    display: grid;
+    grid-template-columns: 0.45fr 0.6fr;
+    grid-template-rows: 0.8fr 0.2fr;
+    justify-items: center;
+  }
+
   .saleRepresentativeCard_div--picturesContainer {
-    width: 40%;
+    width: 60%;
     padding-right: 5%;
   }
 
   .saleRepresentativeCard_div--picturesContainer {
-    display: flex;
-    justify-content: center;
+    grid-row-start: 1;
+    grid-row-end: 3;
   }
 
   .saleRepresentativeCard_div_img {
     border-radius: 300px;
-    width: 80%;
   }
 
   .saleRepresentativeCard_div--locationsContainer {
-    width: 50%;
+    width: 100%;
+  }
+
+  .saleRepresentativeCard_div_img_h4 {
+    font-size: $px-24;
+    margin-bottom: $px-8;
   }
 
   .saleRepresentativeCard_ul {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 35px;
-  }
-
-  .saleRepresentativeCard_div_img_h4 {
-    font-size: $px-24;
-    margin-bottom: $px-12;
   }
 
   .saleRepresentativeCard_ul_li {
@@ -95,17 +149,53 @@
     padding-bottom: 10px;
   }
 
-  .btn_green {
-    display: none;
-  }
-  .rq_tablet {
-    display: block;
+  .saleRepresentativeCard_div--button {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    margin-top: 20px;
+    width: 100%;
   }
 }
 
 //Laptop
-@media only screen and (min-width: 1200px) {
-  .salesRepresentatives_section_h2 {
-    display: none;
+@media screen and (min-width: 1200px) {
+  .saleRepresentativeCard_li {
+    display: block;
+  }
+
+  .saleRepresentativeCard_div {
+    padding: $px-12 0px;
+    display: grid;
+    grid-template-columns: 0.4fr 0.65fr;
+    grid-template-rows: 0.8fr 0.2fr;
+    align-items: center;
+  }
+
+  .saleRepresentativeCard_ul {
+    display: block;
+  }
+
+  .saleRepresentativeCard_div--picturesContainer {
+    width: 90%;
+    padding-right: 3%;
+  }
+
+  .saleRepresentativeCard_div_img_h4 {
+    font-size: $px-16;
+    font-weight: 600;
+    margin-bottom: $px-8;
+  }
+
+  .saleRepresentativeCard_ul_li {
+    font-family: $body-font;
+    font-size: 14px;
+    color: #5c5e62;
+    padding-bottom: 5px;
+  }
+
+  .saleRepresentativeCard_div--button {
+    background-color: #006039;
+    grid-column-start: 1;
+    grid-column-end: 3;
   }
 }
