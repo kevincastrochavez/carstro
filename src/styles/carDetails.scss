@@ -1,0 +1,99 @@
+.carDetails {
+  &_imgContainer {
+    padding: $px-24;
+    display: flex;
+    justify-content: center;
+    box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+    // border-bottom: 1px solid $lightIcon; // Pending
+    // background-color: $bgnd-lightgray; // Pending
+
+    & img {
+      width: 55%;
+    }
+  }
+
+  &_info {
+    padding: $px-24;
+  }
+
+  &_linkBack {
+    font-size: $px-12;
+    display: flex;
+    align-items: center;
+    color: $green;
+
+    & svg {
+      font-size: $px-12;
+      transform: translateY(-1px);
+      margin-right: $px-8;
+    }
+  }
+
+  &_features {
+    margin-top: $px-16;
+
+    display: grid;
+    grid-template-rows: auto auto 52px;
+    gap: $px-16;
+
+    &-heading {
+      & h1 {
+        font-size: 18px;
+        font-family: $body-font;
+        font-weight: 500;
+      }
+    }
+
+    &-numbers {
+      margin-top: $px-4;
+      display: flex;
+      gap: 10px;
+
+      & span {
+        font-size: $px-12;
+      }
+    }
+
+    &-divider {
+      width: 2px;
+      height: 10px;
+      background-color: $lightIcon;
+      align-self: center;
+    }
+
+    &-price {
+      display: flex;
+      gap: $px-20;
+    }
+
+    &-bigPrice {
+      font-size: $px-36;
+    }
+
+    &-bigDivider {
+      width: 1px;
+      height: 47px;
+      align-self: center;
+      background-color: $lightIcon;
+    }
+
+    &-offer {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      & span {
+        font-size: $px-12;
+      }
+
+      & p {
+        color: $green;
+        font-size: $px-12;
+      }
+
+      & > span {
+        font-size: $px-16;
+      }
+    }
+  }
+}
