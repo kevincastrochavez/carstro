@@ -18,16 +18,38 @@ function CarInventory({
   mpg,
   activeGrid,
   carId,
+  windowSize,
 }) {
   const [carInventoryOpen, setCarInventoryOpen] = useState(false);
   const brandWordsQuantity = brand.split(' ').length;
   const monthlyCost = Math.ceil(price / 6 / 12);
 
+  /*
+  !activeGrid && !carInventoryOpen && windowSize >= 990
+  Elements with the conditions above will only render
+  when the device is usually a desktop view, the user selected
+  the list view to see the cars, and the carInventory card is closed
+  */
+
   return (
     <div
       onClick={() => setCarInventoryOpen(!carInventoryOpen)}
-      className={`carInventory ${!activeGrid && 'carInventory_listView'}`}
+      className={`carInventory ${!activeGrid && 'carInventory_listView'} ${
+        !activeGrid &&
+        !carInventoryOpen &&
+        windowSize >= 990 &&
+        'carInventory_listView-desktop'
+      }`}
     >
+      {!activeGrid && !carInventoryOpen && windowSize >= 990 && (
+        <div className='carInventory_img-side'>
+          <img
+            src={`https://raw.githubusercontent.com/kevincastrochavez/carstro-cars-uploader/main/public/carPictures/${vin}.png`}
+            alt={`${year} ${brand} ${model} car`}
+          />
+        </div>
+      )}
+
       <section className='carInventory_top'>
         <h4>
           {year} {brand} {brandWordsQuantity < 2 && model}
@@ -64,14 +86,24 @@ function CarInventory({
           /mo
         </p>
         <p>{tireSize}" wheels</p>
+        {!activeGrid && windowSize >= 990 && (
+          <p className='carInventory_top-range'>
+            {mpg.split('/')[1]} mpg range
+          </p>
+        )}
+        {!activeGrid && windowSize >= 990 && (
+          <p className='carInventory_top-speed'>{topSpeed} mph</p>
+        )}
       </section>
 
-      <div className='carInventory_img'>
-        <img
-          src={`https://raw.githubusercontent.com/kevincastrochavez/carstro-cars-uploader/main/public/carPictures/${vin}.png`}
-          alt={`${year} ${brand} ${model} car`}
-        />
-      </div>
+      {!carInventoryOpen && !activeGrid && windowSize >= 990 ? null : (
+        <div className='carInventory_img'>
+          <img
+            src={`https://raw.githubusercontent.com/kevincastrochavez/carstro-cars-uploader/main/public/carPictures/${vin}.png`}
+            alt={`${year} ${brand} ${model} car`}
+          />
+        </div>
+      )}
 
       {(activeGrid || carInventoryOpen) && (
         <div className='carInventory_bottomContainer'>

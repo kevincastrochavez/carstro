@@ -45,15 +45,6 @@
     height: calc(100vh - 186.6px);
     margin-top: $px-16;
 
-    // Hide scrollbar
-    -ms-overflow-style: none; // IE and Edge
-    scrollbar-width: none; // Firefox
-
-    // Chrome, Safari and Opera
-    &::-webkit-scrollbar {
-      display: none;
-    }
-
     & section {
       margin-bottom: $px-24;
     }
@@ -121,10 +112,44 @@
   }
 }
 
+@media screen and (max-width: 990px) {
+  .filters {
+    &_form {
+      // Hide scrollbar
+      -ms-overflow-style: none; // IE and Edge
+      scrollbar-width: none; // Firefox
+
+      // Chrome, Safari and Opera
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+  }
+}
+
 @media screen and (min-width: 990px) {
   .filters {
-    grid-column: 1/2;
+    grid-column: 2/3;
     grid-row: 3/4;
-    position: unset;
+
+    position: sticky;
+    margin-top: $px-36;
+    margin-left: 0;
+    width: 90%;
+    padding: 0;
+    height: 910px;
+    background-color: $bgnd-lightgray;
+
+    &_form {
+      height: 100vh;
+    }
+
+    &_button {
+      box-shadow: none;
+
+      &-desktop {
+        margin-top: 0;
+      }
+    }
   }
 }

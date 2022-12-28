@@ -7,25 +7,25 @@
     right: 0;
     background-color: rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(3px);
-    // transition: all 0.5s ease-in-out;
     z-index: 1;
   }
 
   &_header {
-    &-top {
-      display: flex;
-      align-items: center;
-      padding: 24px;
+    display: grid;
+    grid-template-columns: $px-24 1fr 1fr $px-24;
+    row-gap: $px-24;
 
-      & h1 {
-        flex: 1;
-      }
+    & h1 {
+      grid-column: 2;
+      margin-top: $px-24;
     }
 
     &-bottom {
+      grid-column: 2/4;
+
       display: flex;
       justify-content: space-between;
-      padding: 0 24px 24px;
+      padding: 0 0 $px-24;
 
       & button {
         width: 140px;
@@ -39,9 +39,13 @@
   }
 
   &_viewIcons {
+    grid-column: 3;
+
     display: flex;
     align-items: center;
+    justify-content: end;
     gap: 10px;
+    margin-top: $px-24;
 
     & div {
       width: 1px;
@@ -69,6 +73,10 @@
 
     display: grid;
     gap: $px-24;
+
+    &-reducedGap {
+      gap: $px-8;
+    }
   }
 }
 
@@ -80,12 +88,14 @@
 @media screen and (min-width: 720px) {
   .inventory {
     &_header {
+      row-gap: $px-48;
+
       &-top {
-        padding: $px-24 $px-32 $px-48;
+        padding: 0;
       }
 
       &-bottom {
-        padding: 0 $px-32 $px-32;
+        padding: 0 0 $px-24;
 
         & button {
           width: 40%;
@@ -100,6 +110,10 @@
     &_carsContainer {
       padding: $px-36 $px-32 $px-32 $px-32;
       gap: $px-32;
+
+      &-reducedGap {
+        gap: $px-8;
+      }
     }
   }
 }
@@ -107,21 +121,73 @@
 @media screen and (min-width: 990px) {
   .inventory {
     &_main {
+      background-color: $bgnd-lightgray;
       display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-columns: $px-32 290px 1fr 1fr $px-32;
+      grid-template-rows: auto $px-12 auto;
     }
 
-    &_header,
+    &_header {
+      grid-template-columns: $px-32 1fr auto auto $px-32;
+
+      grid-column: 1/6;
+      background-color: $bgnd-white;
+      padding: $px-24 0;
+
+      & h1 {
+        margin-top: 0;
+      }
+
+      &-bottom {
+        grid-column: 3/4;
+        grid-row: 1;
+        padding: 0;
+        margin-right: $px-40;
+
+        & button {
+          width: 165px;
+          height: 40px;
+
+          align-self: center;
+        }
+      }
+    }
+
+    &_viewIcons {
+      grid-column: 4/5;
+      grid-row: 1;
+      margin-top: 0;
+    }
+
     &_hiddenBar {
       grid-column: 1/-1;
     }
 
     &_carsContainer {
-      grid-column: 2/4;
+      grid-column: 3/5;
+      padding: $px-36 0;
+
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
     }
 
     &_filtersBtn {
       display: none;
+    }
+  }
+}
+
+@media screen and (min-width: 1374px) {
+  .inventory {
+    &_main {
+      grid-template-columns:
+        1fr 290px 510px
+        510px 1fr;
+    }
+
+    &_header {
+      grid-template-columns: 1fr 1026px auto auto 1fr;
     }
   }
 }

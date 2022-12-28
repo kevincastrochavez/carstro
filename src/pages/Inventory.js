@@ -67,7 +67,7 @@ function Inventory() {
 
   useEffect(() => {
     setWindowWidth(window.innerWidth);
-  });
+  }, []);
 
   return (
     <main className='inventory_main'>
@@ -75,20 +75,18 @@ function Inventory() {
         <div onClick={overlayClick} className='inventory_overlay'></div>
       )}
       <div className='inventory_header'>
-        <div className='inventory_header-top'>
-          <h1>Inventory</h1>
+        <h1>Inventory</h1>
 
-          <div className='inventory_viewIcons'>
-            <ViewModuleIcon
-              id={activeGrid ? 'activeLayout' : undefined}
-              onClick={showGridLayout}
-            />
-            <div></div>
-            <ViewListIcon
-              id={!activeGrid ? 'inactiveLayout' : undefined}
-              onClick={showListLayout}
-            />
-          </div>
+        <div className='inventory_viewIcons'>
+          <ViewModuleIcon
+            id={activeGrid ? 'activeLayout' : undefined}
+            onClick={showGridLayout}
+          />
+          <div></div>
+          <ViewListIcon
+            id={!activeGrid ? 'inactiveLayout' : undefined}
+            onClick={showListLayout}
+          />
         </div>
 
         <div className='inventory_header-bottom'>
@@ -102,7 +100,11 @@ function Inventory() {
         </div>
       </div>
       <div className='inventory_hiddenBar'></div>
-      <div className='inventory_carsContainer'>
+      <div
+        className={`inventory_carsContainer ${
+          !activeGrid && 'inventory_carsContainer-reducedGap'
+        }`}
+      >
         {carsResults?.map((car) => {
           return (
             <CarInventory
@@ -110,6 +112,7 @@ function Inventory() {
               key={car.cardId}
               {...car}
               activeGrid={activeGrid}
+              windowSize={windowWidth}
             />
           );
         })}

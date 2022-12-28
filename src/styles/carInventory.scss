@@ -3,6 +3,7 @@
   background-color: $bgnd-white;
   display: grid;
   grid-template-rows: auto $px-36 auto $px-44 auto;
+  box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
 
   &_top {
     display: grid;
@@ -123,5 +124,87 @@
   .carInventory_listView {
     grid-template-rows: auto 12px auto;
     padding-bottom: $px-32;
+  }
+}
+
+@media screen and (min-width: 990px) {
+  .carInventory {
+    width: 300px;
+    padding: $px-24;
+
+    &_top {
+      &-range {
+        grid-row: 4;
+      }
+
+      &-speed {
+        grid-row: 5;
+      }
+    }
+
+    &_bottomContainer {
+      grid-template-rows: 1fr;
+      align-items: center;
+    }
+
+    &_features,
+    &_link {
+      grid-row: 1;
+      grid-column: 1/-1;
+      transition: all 0.3s ease-in-out;
+    }
+
+    &_link {
+      opacity: 0;
+
+      & button {
+        box-shadow: none;
+        height: 42px;
+      }
+    }
+
+    &:hover {
+      .carInventory_features {
+        opacity: 0;
+      }
+      .carInventory_link {
+        opacity: 1;
+        z-index: 2;
+      }
+    }
+
+    &_img {
+      width: 80%;
+    }
+
+    &_img-side {
+      & img {
+        width: 100%;
+      }
+    }
+
+    &_listView {
+      width: 100%;
+
+      .carInventory_img {
+        justify-self: center;
+      }
+
+      .carInventory_link {
+        opacity: 1;
+      }
+
+      &:hover {
+        .carInventory_features {
+          opacity: 1;
+        }
+      }
+    }
+
+    &_listView-desktop {
+      grid-template-columns: 126px 1fr;
+      grid-template-rows: 1fr;
+      column-gap: $px-24;
+    }
   }
 }
