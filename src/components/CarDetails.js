@@ -1,16 +1,23 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
-import LocalGasStationIcon from '@mui/icons-material/LocalGasStation';
 import SpeedIcon from '@mui/icons-material/Speed';
 import CurrencyFormat from 'react-currency-format';
 
 import db from '../firebase';
 import Button from '../components/Button';
+import GasStation from '../svg/GasStation';
+import Engine from '../svg/Engine';
+import Shift from '../svg/Shift';
+import HeatedSeat from '../svg/HeatedSeat';
+import Breaks from '../svg/Breaks';
+import TopSpeed from '../svg/TopSpeed';
 
 function CarDetails() {
   const { id } = useParams();
   const [carDetailsInfo, setCarDetailsInfo] = useState({});
+
+  console.log(carDetailsInfo);
 
   useEffect(() => {
     db.collection('cars')
@@ -89,11 +96,35 @@ function CarDetails() {
 
         <div className='carDetails_iconsContainer'>
           <div className='carDetails_icon'>
-            <LocalGasStationIcon />
+            <GasStation />
+            <p>{carDetailsInfo.mpg}</p>
+            <p>est. MPG</p>
           </div>
 
           <div className='carDetails_icon'>
-            <SpeedIcon />
+            <TopSpeed />
+            <p>{carDetailsInfo.topSpeed}</p>
+            <p>Top Speed</p>
+          </div>
+
+          <div className='carDetails_icon'>
+            <Engine />
+            <p>{carDetailsInfo.cylinders} Cylinders</p>
+          </div>
+
+          <div className='carDetails_icon'>
+            <Shift />
+            <p>{carDetailsInfo.transmission}</p>
+          </div>
+
+          <div className='carDetails_icon'>
+            <HeatedSeat />
+            <p>Heated Seats</p>
+          </div>
+
+          <div className='carDetails_icon'>
+            <Breaks />
+            <p>ABS Breaks</p>
           </div>
         </div>
       </div>

@@ -96,4 +96,32 @@
       }
     }
   }
+
+  &_iconsContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: $px-20;
+
+    padding: 0 $px-16;
+    margin: $px-48 0;
+  }
+
+  &_icon {
+    justify-self: center;
+
+    display: flex;
+    flex-direction: column;
+
+    & svg {
+      color: $green;
+      margin-bottom: $px-8;
+    }
+
+    & p {
+      color: $green;
+      font-size: $px-12;
+      text-align: center;
+    }
+  }
 }
