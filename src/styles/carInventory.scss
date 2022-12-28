@@ -130,6 +130,7 @@
   .carInventory {
     width: 300px;
     padding: $px-24;
+    box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
 
     &_bottomContainer {
       grid-template-rows: 1fr;
@@ -147,6 +148,7 @@
       opacity: 0;
 
       & button {
+        box-shadow: none;
         height: 42px;
       }
     }
