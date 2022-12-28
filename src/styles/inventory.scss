@@ -158,25 +158,11 @@
 
     &_carsContainer {
       grid-column: 3/5;
-      padding: 0;
-      padding-top: $px-36;
+      padding: $px-36 0;
 
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-
-      height: 680px;
-      overflow: scroll;
-      overflow-x: hidden;
-
-      // Hide scrollbar
-      -ms-overflow-style: none; // IE and Edge
-      scrollbar-width: none; // Firefox
-
-      // Chrome, Safari and Opera
-      &::-webkit-scrollbar {
-        display: none;
-      }
     }
 
     &_filtersBtn {
