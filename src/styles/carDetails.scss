@@ -13,7 +13,7 @@
   }
 
   &_info {
-    padding: $px-24;
+    padding: $px-16 $px-24 $px-24;
   }
 
   &_linkBack {
@@ -55,7 +55,7 @@
     }
 
     &-divider {
-      width: 2px;
+      width: 1px;
       height: 10px;
       background-color: $lightIcon;
       align-self: center;
@@ -71,7 +71,7 @@
     }
 
     &-bigDivider {
-      width: 1px;
+      width: 2px;
       height: 47px;
       align-self: center;
       background-color: $lightIcon;

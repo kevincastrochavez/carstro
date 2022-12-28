@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
+import LocalGasStationIcon from '@mui/icons-material/LocalGasStation';
+import SpeedIcon from '@mui/icons-material/Speed';
 import CurrencyFormat from 'react-currency-format';
 
 import db from '../firebase';
@@ -83,6 +85,16 @@ function CarDetails() {
             bgColor='green'
             text={'Contact Dealer'}
           />
+        </div>
+
+        <div className='carDetails_iconsContainer'>
+          <div className='carDetails_icon'>
+            <LocalGasStationIcon />
+          </div>
+
+          <div className='carDetails_icon'>
+            <SpeedIcon />
+          </div>
         </div>
       </div>
     </main>
