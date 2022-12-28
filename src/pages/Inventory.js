@@ -100,7 +100,11 @@ function Inventory() {
         </div>
       </div>
       <div className='inventory_hiddenBar'></div>
-      <div className='inventory_carsContainer'>
+      <div
+        className={`inventory_carsContainer ${
+          !activeGrid && 'inventory_carsContainer-reducedGap'
+        }`}
+      >
         {carsResults?.map((car) => {
           return (
             <CarInventory

@@ -177,6 +177,12 @@
       width: 80%;
     }
 
+    &_img-side {
+      & img {
+        width: 100%;
+      }
+    }
+
     &_listView {
       width: 100%;
 
@@ -193,6 +199,12 @@
           opacity: 1;
         }
       }
+    }
+
+    &_listView-desktop {
+      grid-template-columns: 126px 1fr;
+      grid-template-rows: 1fr;
+      column-gap: $px-24;
     }
   }
 }
