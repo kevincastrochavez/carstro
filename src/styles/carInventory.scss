@@ -129,5 +129,40 @@
 @media screen and (min-width: 990px) {
   .carInventory {
     width: 300px;
+    padding: $px-24;
+
+    &_bottomContainer {
+      grid-template-rows: 1fr;
+      align-items: center;
+    }
+
+    &_features,
+    &_link {
+      grid-row: 1;
+      grid-column: 1/-1;
+      transition: all 0.3s ease-in-out;
+    }
+
+    &_link {
+      opacity: 0;
+
+      & button {
+        height: 42px;
+      }
+    }
+
+    &:hover {
+      .carInventory_features {
+        opacity: 0;
+      }
+      .carInventory_link {
+        opacity: 1;
+        z-index: 2;
+      }
+    }
+
+    &_img {
+      width: 80%;
+    }
   }
 }

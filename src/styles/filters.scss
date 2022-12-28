@@ -140,6 +140,10 @@
     height: 910px;
     background-color: $bgnd-lightgray;
 
+    &_form {
+      height: 100vh;
+    }
+
     &_button {
       &-desktop {
         margin-top: 0;
