@@ -3,6 +3,7 @@
   background-color: $bgnd-white;
   display: grid;
   grid-template-rows: auto $px-36 auto $px-44 auto;
+  box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
 
   &_top {
     display: grid;
@@ -130,7 +131,16 @@
   .carInventory {
     width: 300px;
     padding: $px-24;
-    box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+
+    &_top {
+      &-range {
+        grid-row: 4;
+      }
+
+      &-speed {
+        grid-row: 5;
+      }
+    }
 
     &_bottomContainer {
       grid-template-rows: 1fr;
@@ -165,6 +175,24 @@
 
     &_img {
       width: 80%;
+    }
+
+    &_listView {
+      width: 100%;
+
+      .carInventory_img {
+        justify-self: center;
+      }
+
+      .carInventory_link {
+        opacity: 1;
+      }
+
+      &:hover {
+        .carInventory_features {
+          opacity: 1;
+        }
+      }
     }
   }
 }

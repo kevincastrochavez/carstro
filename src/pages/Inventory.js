@@ -108,6 +108,7 @@ function Inventory() {
               key={car.cardId}
               {...car}
               activeGrid={activeGrid}
+              windowSize={windowWidth}
             />
           );
         })}

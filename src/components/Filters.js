@@ -53,14 +53,14 @@ function Filters() {
       });
   }, []);
 
-  // Handling the scroll behavior when filters are open
-  useEffect(() => {
-    if (showFilters && windowWidth < 990) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'unset';
-    }
-  }, []);
+  // // Handling the scroll behavior when filters are open
+  // useEffect(() => {
+  //   if (showFilters && windowWidth < 990) {
+  //     document.body.style.overflow = 'hidden';
+  //   } else {
+  //     document.body.style.overflow = 'unset';
+  //   }
+  // }, []);
 
   // Opening filters by default if window is in the desktop view
   useEffect(() => {

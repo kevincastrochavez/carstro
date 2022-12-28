@@ -18,10 +18,13 @@ function CarInventory({
   mpg,
   activeGrid,
   carId,
+  windowSize,
 }) {
   const [carInventoryOpen, setCarInventoryOpen] = useState(false);
   const brandWordsQuantity = brand.split(' ').length;
   const monthlyCost = Math.ceil(price / 6 / 12);
+
+  // console.log(carInventoryOpen);
 
   return (
     <div
@@ -64,14 +67,24 @@ function CarInventory({
           /mo
         </p>
         <p>{tireSize}" wheels</p>
+        {!activeGrid && windowSize >= 990 && (
+          <p className='carInventory_top-range'>
+            {mpg.split('/')[1]} mpg range
+          </p>
+        )}
+        {!activeGrid && windowSize >= 990 && (
+          <p className='carInventory_top-speed'>{topSpeed} mph</p>
+        )}
       </section>
 
-      <div className='carInventory_img'>
-        <img
-          src={`https://raw.githubusercontent.com/kevincastrochavez/carstro-cars-uploader/main/public/carPictures/${vin}.png`}
-          alt={`${year} ${brand} ${model} car`}
-        />
-      </div>
+      {!carInventoryOpen && !activeGrid && windowSize >= 990 ? null : (
+        <div className='carInventory_img'>
+          <img
+            src={`https://raw.githubusercontent.com/kevincastrochavez/carstro-cars-uploader/main/public/carPictures/${vin}.png`}
+            alt={`${year} ${brand} ${model} car`}
+          />
+        </div>
+      )}
 
       {(activeGrid || carInventoryOpen) && (
         <div className='carInventory_bottomContainer'>
