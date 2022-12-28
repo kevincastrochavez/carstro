@@ -13,7 +13,7 @@ function Homepage() {
       .get()
       .then((cars) => {
         const carsResults = cars.docs.map((car) => {
-          return { ...car.data(), cardId: car.id };
+          return { ...car.data(), carId: car.id };
         });
 
         const pricesArray = carsResults.map((car) => Number(car.price));
