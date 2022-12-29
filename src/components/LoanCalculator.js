@@ -1,13 +1,26 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import CurrencyFormat from 'react-currency-format';
 import CurrencyInput from 'react-currency-input-field';
 import { Link } from 'react-router-dom';
 
 function LoanCalculator({ className, carYear, carBrand, carPrice }) {
   const [creditScore, setCreditScore] = useState(6.96);
   const [termLength, setTermLength] = useState(24);
-  const [cashDown, setCashDown] = useState(0);
+  const [cashDown, setCashDown] = useState(5000);
+  const [monthlyPayment, setMonthlyPayment] = useState(0);
 
-  console.log(cashDown);
+  useEffect(() => {
+    const principal = +carPrice - cashDown;
+    const rate = +creditScore / 12 / 100;
+    const numberOfMonths = +termLength;
+
+    // Formula to get the loan amortization
+    const monthlyCost =
+      (principal * (rate * Math.pow(1 + rate, numberOfMonths))) /
+      (Math.pow(1 + rate, numberOfMonths) - 1);
+
+    setMonthlyPayment(monthlyCost);
+  }, [carPrice, cashDown, creditScore, termLength]);
 
   const handleCreditScoreChange = (e) => {
     setCreditScore(e.target.value);
@@ -47,8 +60,8 @@ function LoanCalculator({ className, carYear, carBrand, carPrice }) {
             <label>Cash Down</label>
             <CurrencyInput
               name='cashDown'
-              placeholder='$2,000'
-              defaultValue={2000}
+              placeholder='$5,000'
+              defaultValue={5000}
               allowDecimals={false}
               allowNegativeValue={false}
               onValueChange={handleCashDownChange}
@@ -82,7 +95,17 @@ function LoanCalculator({ className, carYear, carBrand, carPrice }) {
         <div className='loanCalculator_result-divider'></div>
 
         <p className='loanCalculator_result-price'>
-          <span>$680</span>/month
+          <span>
+            $
+            {
+              <CurrencyFormat
+                value={monthlyPayment.toFixed(0)}
+                displayType={'text'}
+                thousandSeparator={true}
+              />
+            }
+          </span>
+          /month
         </p>
 
         <span>
