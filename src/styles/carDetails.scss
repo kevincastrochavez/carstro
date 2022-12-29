@@ -1,4 +1,6 @@
 .carDetails {
+  padding-bottom: $px-24;
+
   &_imgContainer {
     padding: $px-24;
     display: flex;
@@ -94,6 +96,14 @@
       & > span {
         font-size: $px-16;
       }
+    }
+
+    &-btn {
+      background-color: $green;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
   }
 

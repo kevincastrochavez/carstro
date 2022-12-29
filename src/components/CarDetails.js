@@ -86,11 +86,9 @@ function CarDetails() {
             </div>
           </div>
 
-          <Button
-            className={`carDetails_features-btn`}
-            bgColor='green'
-            text={'Contact Dealer'}
-          />
+          <Link className='carDetails_features-btn' to='/salesRepresentatives'>
+            Contact Dealer
+          </Link>
         </div>
 
         <div className='carDetails_iconsContainer'>

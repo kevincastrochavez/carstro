@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
+import CurrencyInput from 'react-currency-input-field';
+import { Link } from 'react-router-dom';
 
 function LoanCalculator({ className, carYear, carBrand, carPrice }) {
   const [creditScore, setCreditScore] = useState(6.96);
   const [termLength, setTermLength] = useState(24);
+  const [cashDown, setCashDown] = useState(0);
 
-  console.log(termLength);
+  console.log(cashDown);
 
   const handleCreditScoreChange = (e) => {
     setCreditScore(e.target.value);
@@ -12,6 +15,10 @@ function LoanCalculator({ className, carYear, carBrand, carPrice }) {
 
   const handleTermLengthChange = (e) => {
     setTermLength(e.target.value);
+  };
+
+  const handleCashDownChange = (value) => {
+    setCashDown(value);
   };
 
   return (
@@ -37,8 +44,16 @@ function LoanCalculator({ className, carYear, carBrand, carPrice }) {
           </div>
 
           <div className='loanCalculator_field'>
-            <label>Estimated Credit Score</label>
-            <input type='text' />
+            <label>Cash Down</label>
+            <CurrencyInput
+              name='cashDown'
+              placeholder='$2,000'
+              defaultValue={2000}
+              allowDecimals={false}
+              allowNegativeValue={false}
+              onValueChange={handleCashDownChange}
+              prefix='$'
+            />
           </div>
 
           <div className='loanCalculator_field'>
@@ -53,16 +68,30 @@ function LoanCalculator({ className, carYear, carBrand, carPrice }) {
           </div>
 
           <div className='loanCalculator_field'>
-            <label>Estimated Credit Score</label>
-            <input type='text' />
+            <label>Estimated APR</label>
+            <input type='text' value={`${creditScore}%`} disabled />
           </div>
         </div>
       </div>
 
       <div className='loanCalculator_result'>
-        <h2>
+        <h3>
           {carYear} {carBrand}
-        </h2>
+        </h3>
+
+        <div className='loanCalculator_result-divider'></div>
+
+        <p className='loanCalculator_result-price'>
+          <span>$680</span>/month
+        </p>
+
+        <span>
+          Payments may vary based on actual vehicle, model & options selected.
+        </span>
+      </div>
+
+      <div className='loanCalculator_link'>
+        <Link to='/salesRepresentatives'>Contact Dealer</Link>
       </div>
     </section>
   );
