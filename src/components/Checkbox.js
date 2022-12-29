@@ -8,8 +8,6 @@ function Checkbox({ id, name, value, onChange, clearAll, hidden }) {
 
   const [isChecked, setIsChecked] = useState(false);
 
-  // console.log(brandsFilters, modelYearsFilters, tireSize, colors);
-
   useEffect(() => {
     // First condition checks is the checkbox was checked and if it corresponds to the right form field according to the filters. If that is true, then adds its value to the state layer
     if (isChecked && name === 'brands') {

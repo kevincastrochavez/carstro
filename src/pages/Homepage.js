@@ -13,7 +13,7 @@ function Homepage() {
       .get()
       .then((cars) => {
         const carsResults = cars.docs.map((car) => {
-          return { ...car.data(), cardId: car.id };
+          return { ...car.data(), carId: car.id };
         });
 
         const pricesArray = carsResults.map((car) => Number(car.price));
@@ -23,9 +23,6 @@ function Homepage() {
         const milesArray = carsResults.map((car) => Number(car.odometer));
         const minMileage = Math.min(...milesArray);
         const maxMileage = Math.max(...milesArray);
-
-        console.log(minMileage);
-        console.log(maxMileage);
 
         dispatch({
           type: 'SET_CARS_RESULTS',

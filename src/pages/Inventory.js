@@ -30,13 +30,14 @@ function Inventory() {
     });
   };
 
+  // Fetching data from database if user access website directly through this page
   useEffect(() => {
     if (carsResults.length === 0) {
       db.collection('cars')
         .get()
         .then((cars) => {
           const carsResults = cars.docs.map((car) => {
-            return { ...car.data(), cardId: car.id };
+            return { ...car.data(), carId: car.id };
           });
 
           const pricesArray = carsResults.map((car) => Number(car.price));
