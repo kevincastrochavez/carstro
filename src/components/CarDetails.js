@@ -12,12 +12,11 @@ import Shift from '../svg/Shift';
 import HeatedSeat from '../svg/HeatedSeat';
 import Breaks from '../svg/Breaks';
 import TopSpeed from '../svg/TopSpeed';
+import LoanCalculator from './LoanCalculator';
 
 function CarDetails() {
   const { id } = useParams();
   const [carDetailsInfo, setCarDetailsInfo] = useState({});
-
-  console.log(carDetailsInfo);
 
   useEffect(() => {
     db.collection('cars')
@@ -128,6 +127,13 @@ function CarDetails() {
           </div>
         </div>
       </div>
+
+      <LoanCalculator
+        className='carDetails_calculator'
+        carYear={carDetailsInfo.year}
+        carBrand={carDetailsInfo.brand}
+        carPrice={carDetailsInfo.price}
+      />
     </main>
   );
 }

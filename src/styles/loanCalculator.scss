@@ -1,0 +1,46 @@
+.loanCalculator {
+  &_estimator {
+    padding: $px-24;
+
+    & h2 {
+      font-size: $px-32;
+      font-weight: 500;
+      font-family: $body-font;
+      text-align: center;
+    }
+  }
+
+  &_calculator {
+    margin-top: $px-32;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: $px-32;
+  }
+
+  &_field {
+    // margin: 0 !important;
+
+    & label {
+      font-size: $px-12;
+    }
+
+    & select,
+    & input {
+      width: 100%;
+      font-size: $px-16;
+      font-family: $body-font;
+      line-height: 1.5;
+      padding: $px-12;
+
+      //   -webkit-appearance: none;
+      //   -moz-appearance: none;
+    }
+  }
+
+  &_result {
+    background-color: white;
+    padding: $px-24;
+  }
+}

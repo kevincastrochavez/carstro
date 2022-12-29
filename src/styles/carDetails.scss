@@ -104,7 +104,7 @@
     gap: $px-20;
 
     padding: 0 $px-16;
-    margin: $px-48 0;
+    margin: $px-48 0 $px-24;
   }
 
   &_icon {
@@ -123,5 +123,9 @@
       font-size: $px-12;
       text-align: center;
     }
+  }
+
+  &_calculator {
+    background-color: $bgnd-lightgray;
   }
 }
