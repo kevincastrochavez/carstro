@@ -24,9 +24,6 @@ function Homepage() {
         const minMileage = Math.min(...milesArray);
         const maxMileage = Math.max(...milesArray);
 
-        console.log(minMileage);
-        console.log(maxMileage);
-
         dispatch({
           type: 'SET_CARS_RESULTS',
           carsResults,

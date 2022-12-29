@@ -19,12 +19,8 @@ function SaleRepresentativeCard({
   address,
 }) {
   const [saleCardOpen, setSaleCarOpen] = useState(false);
-  console.log(saleCardOpen);
   const [modalWindowOpen, setModalWindowOpen] = useState(false);
-  console.log(modalWindowOpen);
   const [deviceWidth, setDeviceWidth] = useState(0);
-
-  console.log(deviceWidth);
 
   useEffect(() => {
     setDeviceWidth(window.innerWidth);
