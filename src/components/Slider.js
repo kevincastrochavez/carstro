@@ -1,18 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import Slider from '@mui/material/Slider';
 import CurrencyFormat from 'react-currency-format';
+import { createSearchParams, useSearchParams } from 'react-router-dom';
 
 import { useStateValue } from '../StateProvider';
 
 function SliderRange({ range, text, price }) {
-  const [{ minMaxPrice, minMaxMileage }, dispatch] = useStateValue();
+  const [{ minMaxPrice, minMaxMileage }] = useStateValue();
+  const [searchParams, setSearchParams] = useSearchParams();
   const [value, setValue] = useState(range);
 
   const minPrice = range[0];
   const maxPrice = range[1];
-
-  console.log(minMaxPrice);
-  console.log(minMaxMileage);
 
   useEffect(() => {
     setValue([minPrice, maxPrice]);
@@ -24,15 +23,23 @@ function SliderRange({ range, text, price }) {
 
   const handleChangeCommitted = (event, newValue) => {
     if (price) {
-      dispatch({
-        type: 'SET_MIN_MAX_PRICE_FILTER',
-        minMaxPrice: newValue,
-      });
+      setSearchParams(
+        createSearchParams({
+          minPrice: newValue[0],
+          maxPrice: newValue[1],
+          minMileage: searchParams.get('minMileage') ?? minMaxMileage[0],
+          maxMileage: searchParams.get('maxMileage') ?? minMaxMileage[1],
+        })
+      );
     } else {
-      dispatch({
-        type: 'SET_MIN_MAX_MILEAGE_FILTER',
-        minMaxMileage: newValue,
-      });
+      setSearchParams(
+        createSearchParams({
+          minPrice: searchParams.get('minPrice') ?? minMaxPrice[0],
+          maxPrice: searchParams.get('maxPrice') ?? minMaxPrice[1],
+          minMileage: newValue[0],
+          maxMileage: newValue[1],
+        })
+      );
     }
   };
 
