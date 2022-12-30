@@ -70,6 +70,14 @@ function Inventory() {
     setWindowWidth(window.innerWidth);
   }, []);
 
+  useEffect(() => {
+    if (showFilters) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+  }, [showFilters]);
+
   return (
     <main className='inventory_main'>
       {showFilters && windowWidth < 990 && (
