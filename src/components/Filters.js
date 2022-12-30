@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import CloseIcon from '@mui/icons-material/Close';
+import { useNavigate } from 'react-router-dom';
 
 import db from '../firebase';
 import { useStateValue } from '../StateProvider';
@@ -19,6 +20,7 @@ function Filters() {
 
   const [clearAllFilters, setClearAllFilters] = useState(false);
   const [windowWidth, setWindowWidth] = useState(false);
+  const navigate = useNavigate();
 
   const [brandFilterOptions, setBrandFilterOptions] = useState([]);
   const [yearsFilterOptions, setYearsFilterOptions] = useState([]);
@@ -76,6 +78,11 @@ function Filters() {
   // Clears all filters
   const clearFilters = () => {
     setClearAllFilters(true);
+    // Resets the values for the minmax price and mileage
+    navigate(
+      `/inventory?minPrice=${minMaxPrice[0]}&maxPrice=${minMaxPrice[1]}&minMileage=${minMaxMileage[0]}&maxMileage=${minMaxMileage[1]}`
+    );
+
     dispatch({ type: 'CLEAR_FILTERS' });
   };
 

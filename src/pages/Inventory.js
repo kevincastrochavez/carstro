@@ -97,10 +97,10 @@ function Inventory() {
         (colors.length > 0 ? colors.includes(car.color) : car) &&
         Number(car.price) >= (searchParams.get('minPrice') ?? minMaxPrice[0]) &&
         (Number(car.price) <= searchParams.get('maxPrice') ?? minMaxPrice[1]) &&
-        (Number(car.odometer) >= searchParams.get('minMileage') ??
-          minMaxMileage[0]) &&
-        (Number(car.odometer) <= searchParams.get('maxMileage') ??
-          minMaxMileage[1])
+        Number(car.odometer) >=
+          (searchParams.get('minMileage') ?? minMaxMileage[0]) &&
+        Number(car.odometer) <=
+          (searchParams.get('maxMileage') ?? minMaxMileage[1])
       );
     });
 
