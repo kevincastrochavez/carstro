@@ -53,6 +53,7 @@ function Inventory() {
             carsResults,
           });
 
+          // Setting the min and max for the price and mileage
           dispatch({
             type: 'SET_MIN_MAX_PRICE_FILTER',
             minMaxPrice: [minPrice, maxPrice],
