@@ -11,11 +11,13 @@ import HeatedSeat from '../svg/HeatedSeat';
 import Breaks from '../svg/Breaks';
 import TopSpeed from '../svg/TopSpeed';
 import LoanCalculator from './LoanCalculator';
+import { useStateValue } from '../StateProvider';
 
 // TODO
 // Fix scrolling behavior when going from inventory to car details
 
 function CarDetails() {
+  const [{ minMaxPrice, minMaxMileage }, dispatch] = useStateValue();
   const { id } = useParams();
   const [carDetailsInfo, setCarDetailsInfo] = useState({});
 
@@ -38,7 +40,10 @@ function CarDetails() {
       </div>
 
       <div className='carDetails_info'>
-        <Link to={'/inventory'} className='carDetails_linkBack'>
+        <Link
+          to={`/inventory?minPrice=${minMaxPrice[0]}&maxPrice=${minMaxPrice[1]}&minMileage=${minMaxMileage[0]}&maxMileage=${minMaxMileage[1]}`}
+          className='carDetails_linkBack'
+        >
           <ArrowBackIosNewIcon /> Back to Inventory
         </Link>
 
