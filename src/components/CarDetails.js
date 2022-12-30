@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
-import SpeedIcon from '@mui/icons-material/Speed';
 import CurrencyFormat from 'react-currency-format';
 
 import db from '../firebase';
-import Button from '../components/Button';
 import GasStation from '../svg/GasStation';
 import Engine from '../svg/Engine';
 import Shift from '../svg/Shift';
@@ -13,6 +11,9 @@ import HeatedSeat from '../svg/HeatedSeat';
 import Breaks from '../svg/Breaks';
 import TopSpeed from '../svg/TopSpeed';
 import LoanCalculator from './LoanCalculator';
+
+// TODO
+// Fix scrolling behavior when going from inventory to car details
 
 function CarDetails() {
   const { id } = useParams();
