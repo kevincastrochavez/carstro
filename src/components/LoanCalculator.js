@@ -2,6 +2,9 @@ import React, { useEffect, useState } from 'react';
 import CurrencyFormat from 'react-currency-format';
 import CurrencyInput from 'react-currency-input-field';
 import { Link } from 'react-router-dom';
+import CountUp from 'react-countup';
+
+// https://www.npmjs.com/package/react-countup
 
 function LoanCalculator({ className, carInfo }) {
   const [creditScore, setCreditScore] = useState(6.96);
@@ -163,10 +166,11 @@ function LoanCalculator({ className, carInfo }) {
             <div className='loanCalculator_resultExpanded-item'>
               <span>
                 {
-                  <CurrencyFormat
-                    value={monthlyPayment.toFixed(0)}
-                    displayType={'text'}
-                    thousandSeparator={true}
+                  <CountUp
+                    end={monthlyPayment.toFixed(0)}
+                    duration={2}
+                    preserveValue={true}
+                    separator=','
                     prefix='$'
                   />
                 }{' '}
@@ -189,10 +193,11 @@ function LoanCalculator({ className, carInfo }) {
             <span>
               $
               {
-                <CurrencyFormat
-                  value={monthlyPayment.toFixed(0)}
-                  displayType={'text'}
-                  thousandSeparator={true}
+                <CountUp
+                  end={monthlyPayment.toFixed(0)}
+                  duration={2}
+                  preserveValue={true}
+                  separator=','
                 />
               }
             </span>

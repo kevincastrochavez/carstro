@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import ViewModuleIcon from '@mui/icons-material/ViewModule';
 import ViewListIcon from '@mui/icons-material/ViewList';
+import { useSearchParams, useLocation } from 'react-router-dom';
 
 import { useStateValue } from '../StateProvider';
 import Button from '../components/Button';
@@ -9,9 +10,24 @@ import Filters from '../components/Filters';
 import db from '../firebase';
 
 function Inventory() {
-  const [{ carsResults, showFilters }, dispatch] = useStateValue();
+  const [
+    {
+      carsResults,
+      showFilters,
+      brandsFilters,
+      modelYearsFilters,
+      tireSize,
+      colors,
+      minMaxPrice,
+      minMaxMileage,
+    },
+    dispatch,
+  ] = useStateValue();
   const [activeGrid, setActiveGrid] = useState(true);
   const [windowWidth, setWindowWidth] = useState(0);
+  const [carsToRender, setCarsToRender] = useState([]);
+  const [searchParams, setSearchParams] = useSearchParams();
+  const location = useLocation();
 
   const showListLayout = () => setActiveGrid(false);
   const showGridLayout = () => setActiveGrid(true);
@@ -53,6 +69,7 @@ function Inventory() {
             carsResults,
           });
 
+          // Setting the min and max for the price and mileage
           dispatch({
             type: 'SET_MIN_MAX_PRICE_FILTER',
             minMaxPrice: [minPrice, maxPrice],
@@ -66,9 +83,43 @@ function Inventory() {
     }
   }, []);
 
+  console.log(searchParams.get('minPrice') ?? minMaxPrice[0]);
+
+  useEffect(() => {
+    // Performs the final filtering before rendering the CarInventory component
+    const filteredCars = carsResults.filter((car) => {
+      return (
+        (brandsFilters.length > 0 ? brandsFilters.includes(car.brand) : car) &&
+        (modelYearsFilters.length > 0
+          ? modelYearsFilters.includes(car.year)
+          : car) &&
+        (tireSize.length > 0 ? tireSize.includes(car.tireSize) : car) &&
+        (colors.length > 0 ? colors.includes(car.color) : car) &&
+        Number(car.price) >= (searchParams.get('minPrice') ?? minMaxPrice[0]) &&
+        (Number(car.price) <= searchParams.get('maxPrice') ?? minMaxPrice[1]) &&
+        Number(car.odometer) >=
+          (searchParams.get('minMileage') ?? minMaxMileage[0]) &&
+        Number(car.odometer) <=
+          (searchParams.get('maxMileage') ?? minMaxMileage[1])
+      );
+    });
+
+    console.log(filteredCars);
+
+    setCarsToRender(filteredCars);
+  }, [brandsFilters, modelYearsFilters, tireSize, colors, location]);
+
   useEffect(() => {
     setWindowWidth(window.innerWidth);
   }, []);
+
+  useEffect(() => {
+    if (showFilters) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+  }, [showFilters]);
 
   return (
     <main className='inventory_main'>
@@ -106,7 +157,7 @@ function Inventory() {
           !activeGrid && 'inventory_carsContainer-reducedGap'
         }`}
       >
-        {carsResults?.map((car) => {
+        {carsToRender?.map((car) => {
           return (
             <CarInventory
               carId={car.cardId}

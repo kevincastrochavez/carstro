@@ -70,6 +70,7 @@
     }
 
     & label {
+      -webkit-tap-highlight-color: transparent;
       font-size: 14px;
     }
   }
@@ -78,6 +79,7 @@
     display: flex;
     flex-wrap: wrap;
     gap: $px-24;
+    padding: 0 6px;
 
     .filters_checkbox {
       margin-bottom: 0;
