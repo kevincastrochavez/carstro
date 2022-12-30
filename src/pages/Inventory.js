@@ -9,9 +9,20 @@ import Filters from '../components/Filters';
 import db from '../firebase';
 
 function Inventory() {
-  const [{ carsResults, showFilters }, dispatch] = useStateValue();
+  const [
+    {
+      carsResults,
+      showFilters,
+      brandsFilters,
+      modelYearsFilters,
+      tireSize,
+      colors,
+    },
+    dispatch,
+  ] = useStateValue();
   const [activeGrid, setActiveGrid] = useState(true);
   const [windowWidth, setWindowWidth] = useState(0);
+  const [carsToRender, setCarsToRender] = useState([]);
 
   const showListLayout = () => setActiveGrid(false);
   const showGridLayout = () => setActiveGrid(true);
@@ -68,6 +79,22 @@ function Inventory() {
   }, []);
 
   useEffect(() => {
+    // Performs the final filtering before rendering the CarInventory component
+    const filteredCars = carsResults.filter((car) => {
+      return (
+        (brandsFilters.length > 0 ? brandsFilters.includes(car.brand) : car) &&
+        (modelYearsFilters.length > 0
+          ? modelYearsFilters.includes(car.year)
+          : car) &&
+        (tireSize.length > 0 ? tireSize.includes(car.tireSize) : car) &&
+        (colors.length > 0 ? colors.includes(car.color) : car)
+      );
+    });
+
+    setCarsToRender(filteredCars);
+  }, [brandsFilters, modelYearsFilters, tireSize, colors]);
+
+  useEffect(() => {
     setWindowWidth(window.innerWidth);
   }, []);
 
@@ -115,7 +142,7 @@ function Inventory() {
           !activeGrid && 'inventory_carsContainer-reducedGap'
         }`}
       >
-        {carsResults?.map((car) => {
+        {carsToRender?.map((car) => {
           return (
             <CarInventory
               carId={car.cardId}
