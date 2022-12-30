@@ -2,14 +2,14 @@ import React, { useEffect, useState } from 'react';
 
 import { useStateValue } from '../StateProvider';
 
-function Checkbox({ id, name, value, onChange, clearAll, hidden }) {
+function Checkbox({ id, name, value, clearAll, hidden }) {
   const [{ brandsFilters, modelYearsFilters, tireSize, colors }, dispatch] =
     useStateValue();
 
   const [isChecked, setIsChecked] = useState(false);
 
   useEffect(() => {
-    // First condition checks is the checkbox was checked and if it corresponds to the right form field according to the filters. If that is true, then adds its value to the state layer
+    // First condition checks if the checkbox was checked and if it corresponds to the right form field according to the filters. If that is true, then adds its value to the state layer
     if (isChecked && name === 'brands') {
       dispatch({
         type: 'SET_BRAND_FILTER',
@@ -60,15 +60,24 @@ function Checkbox({ id, name, value, onChange, clearAll, hidden }) {
     }
   }, [isChecked]);
 
+  useEffect(() => {
+    if (clearAll) {
+      setIsChecked(false);
+    }
+  }, [clearAll]);
+
+  const handleClick = () => {
+    setIsChecked(!isChecked);
+  };
+
   return (
     <input
       type='checkbox'
       id={`${id}-car`}
       name={name}
       value={value}
-      checked={clearAll ? false : isChecked}
-      onChange={onChange}
-      onClick={() => setIsChecked(!isChecked)}
+      checked={isChecked}
+      onClick={handleClick}
       hidden={hidden && true}
     />
   );
