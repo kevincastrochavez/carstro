@@ -81,3 +81,111 @@
     }
   }
 }
+
+@media screen and (min-width: 720px) {
+  .loanCalculator {
+    &_estimator {
+      padding: $px-32;
+
+      &-details {
+        margin-top: $px-8;
+        display: flex;
+        justify-content: center;
+        gap: $px-12;
+
+        font-size: $px-12;
+        font-family: $body-font;
+        line-height: 1.5;
+      }
+
+      &-divider {
+        width: 1px;
+        background-color: #a49d9d;
+      }
+    }
+
+    &_calculator {
+      margin-top: $px-48;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: 1fr;
+      gap: $px-48;
+    }
+
+    &_resultExpanded {
+      background-color: white;
+      padding: $px-64 $px-32;
+
+      display: flex;
+      justify-content: space-between;
+
+      &-img {
+        width: 20vw;
+
+        & img {
+          width: 100%;
+        }
+      }
+
+      &-details {
+        display: grid;
+        grid-template-columns: repeat(7, auto);
+        grid-template-rows: $px-24 76px;
+        column-gap: $px-24;
+      }
+
+      &-item {
+        display: grid;
+
+        & span {
+          font-size: $px-32;
+        }
+
+        & p {
+          font-size: $px-16;
+        }
+      }
+
+      &-divider {
+        width: 1px;
+        background-color: $lightIcon;
+      }
+
+      &-finance {
+        grid-row: 1;
+        grid-column: 1/-1;
+        text-align: end;
+        margin-right: 20px;
+      }
+    }
+
+    &_link {
+      padding-bottom: $px-32;
+
+      & a {
+        margin: 0 auto;
+        width: 360px;
+      }
+    }
+
+    &_terms {
+      background-color: white;
+      border-top: 1px solid $lightIcon;
+      padding-top: $px-48;
+
+      & h4 {
+        text-align: center;
+        font-size: 12px;
+        margin-bottom: 4px;
+      }
+
+      & p {
+        text-align: center;
+        font-size: 10px;
+        padding: 0 32px;
+        line-height: 1.5;
+        max-width: 820px;
+        margin: 0 auto;
+      }
+    }
+  }
+}

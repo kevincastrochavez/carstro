@@ -106,7 +106,8 @@ function CarDetails() {
 
           <div className='carDetails_icon'>
             <Engine />
-            <p>{carDetailsInfo.cylinders} Cylinders</p>
+            <p>{carDetailsInfo.cylinders}</p>
+            <p>Cylinders</p>
           </div>
 
           <div className='carDetails_icon'>
@@ -128,9 +129,7 @@ function CarDetails() {
 
       <LoanCalculator
         className='carDetails_calculator'
-        carYear={carDetailsInfo.year}
-        carBrand={carDetailsInfo.brand}
-        carPrice={carDetailsInfo.price}
+        carInfo={carDetailsInfo}
       />
     </main>
   );

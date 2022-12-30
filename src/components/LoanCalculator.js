@@ -3,14 +3,15 @@ import CurrencyFormat from 'react-currency-format';
 import CurrencyInput from 'react-currency-input-field';
 import { Link } from 'react-router-dom';
 
-function LoanCalculator({ className, carYear, carBrand, carPrice }) {
+function LoanCalculator({ className, carInfo }) {
   const [creditScore, setCreditScore] = useState(6.96);
   const [termLength, setTermLength] = useState(24);
   const [cashDown, setCashDown] = useState(5000);
   const [monthlyPayment, setMonthlyPayment] = useState(0);
+  const [windowWidth, setWindowWidth] = useState(0);
 
   useEffect(() => {
-    const principal = +carPrice - cashDown;
+    const principal = +carInfo.price - cashDown;
     const rate = +creditScore / 12 / 100;
     const numberOfMonths = +termLength;
 
@@ -20,7 +21,11 @@ function LoanCalculator({ className, carYear, carBrand, carPrice }) {
       (Math.pow(1 + rate, numberOfMonths) - 1);
 
     setMonthlyPayment(monthlyCost);
-  }, [carPrice, cashDown, creditScore, termLength]);
+  }, [carInfo.price, cashDown, creditScore, termLength]);
+
+  useEffect(() => {
+    setWindowWidth(window.innerWidth);
+  }, []);
 
   const handleCreditScoreChange = (e) => {
     setCreditScore(e.target.value);
@@ -38,8 +43,43 @@ function LoanCalculator({ className, carYear, carBrand, carPrice }) {
     <section className={`${className} loanCalculator_container`}>
       <div className='loanCalculator_estimator'>
         <h2>
-          Payment Estimator {carYear} {carBrand}
+          Payment Estimator {carInfo.year} {carInfo.brand}
         </h2>
+
+        {windowWidth >= 720 && (
+          <div className='loanCalculator_estimator-details'>
+            <div className='loanCalculator_estimator-vin'>
+              VIN#: {carInfo.vin}
+            </div>
+
+            <div className='loanCalculator_estimator-divider'></div>
+
+            <div className='loanCalculator_estimator-mileage'>
+              Mileage:{' '}
+              {
+                <CurrencyFormat
+                  value={carInfo.odometer}
+                  displayType={'text'}
+                  thousandSeparator={true}
+                />
+              }
+            </div>
+
+            <div className='loanCalculator_estimator-divider'></div>
+
+            <div className='loanCalculator_estimator-price'>
+              {
+                <CurrencyFormat
+                  value={carInfo.price}
+                  displayType={'text'}
+                  thousandSeparator={true}
+                  prefix='$'
+                />
+              }{' '}
+              Estimated Price
+            </div>
+          </div>
+        )}
 
         <div className='loanCalculator_calculator'>
           <div className='loanCalculator_field'>
@@ -70,7 +110,7 @@ function LoanCalculator({ className, carYear, carBrand, carPrice }) {
           </div>
 
           <div className='loanCalculator_field'>
-            <label>Estimated Credit Score</label>
+            <label>Term Length</label>
             <select onChange={handleTermLengthChange}>
               <option value={24}>24 Months</option>
               <option value={36}>36 Months</option>
@@ -86,36 +126,104 @@ function LoanCalculator({ className, carYear, carBrand, carPrice }) {
           </div>
         </div>
       </div>
+      {windowWidth >= 720 ? (
+        <div className='loanCalculator_resultExpanded'>
+          <div className='loanCalculator_resultExpanded-img'>
+            <img
+              src={`https://raw.githubusercontent.com/kevincastrochavez/carstro-cars-uploader/main/public/carPictures/${carInfo?.vin}.png`}
+              alt=''
+            />
+          </div>
 
-      <div className='loanCalculator_result'>
-        <h3>
-          {carYear} {carBrand}
-        </h3>
+          <div className='loanCalculator_resultExpanded-details'>
+            <div className='loanCalculator_resultExpanded-item'>
+              <span>{termLength}</span>
+              <p>Months</p>
+            </div>
+            <div className='loanCalculator_resultExpanded-divider'></div>
+            <div className='loanCalculator_resultExpanded-item'>
+              <span>{creditScore} %</span>
+              <p>Estimated APR</p>
+            </div>
+            <div className='loanCalculator_resultExpanded-divider'></div>
+            <div className='loanCalculator_resultExpanded-item'>
+              <span>
+                {
+                  <CurrencyFormat
+                    value={cashDown}
+                    displayType={'text'}
+                    thousandSeparator={true}
+                    prefix='$'
+                  />
+                }
+              </span>
+              <p>Down Payment</p>
+            </div>
+            <div className='loanCalculator_resultExpanded-divider'></div>
+            <div className='loanCalculator_resultExpanded-item'>
+              <span>
+                {
+                  <CurrencyFormat
+                    value={monthlyPayment.toFixed(0)}
+                    displayType={'text'}
+                    thousandSeparator={true}
+                    prefix='$'
+                  />
+                }{' '}
+                <p>/month</p>
+              </span>
+            </div>
 
-        <div className='loanCalculator_result-divider'></div>
+            <p className='loanCalculator_resultExpanded-finance'>Finance for</p>
+          </div>
+        </div>
+      ) : (
+        <div className='loanCalculator_result'>
+          <h3>
+            {carInfo.year} {carInfo.brand}
+          </h3>
 
-        <p className='loanCalculator_result-price'>
+          <div className='loanCalculator_result-divider'></div>
+
+          <p className='loanCalculator_result-price'>
+            <span>
+              $
+              {
+                <CurrencyFormat
+                  value={monthlyPayment.toFixed(0)}
+                  displayType={'text'}
+                  thousandSeparator={true}
+                />
+              }
+            </span>
+            /month
+          </p>
+
           <span>
-            $
-            {
-              <CurrencyFormat
-                value={monthlyPayment.toFixed(0)}
-                displayType={'text'}
-                thousandSeparator={true}
-              />
-            }
+            Payments may vary based on actual vehicle, model & options selected.
           </span>
-          /month
-        </p>
-
-        <span>
-          Payments may vary based on actual vehicle, model & options selected.
-        </span>
-      </div>
+        </div>
+      )}
 
       <div className='loanCalculator_link'>
         <Link to='/salesRepresentatives'>Contact Dealer</Link>
       </div>
+
+      {windowWidth >= 720 && (
+        <div className='loanCalculator_terms'>
+          <h4>Finance Terms</h4>
+
+          <p>
+            Payments calculated using this tool are ESTIMATES ONLY and do not
+            include applicable taxes, title, licensing and fees. ACTUAL PRICES
+            AND PAYMENTS MAY BE DIFFERENT. Financing payment calculations are
+            based on APR and term. Available on approved credit to very well
+            qualified customers through Toyota Financial Services and
+            participating Toyota dealers on a new vehicle. Not all customers
+            will qualify.
+          </p>
+        </div>
+      )}
     </section>
   );
 }
