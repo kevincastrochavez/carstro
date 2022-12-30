@@ -22,16 +22,19 @@ function SliderRange({ range, text, price }) {
   };
 
   const handleChangeCommitted = (event, newValue) => {
+    // Determine if slider is about price or mileage
     if (price) {
+      // Send params based on the new values for the price
       setSearchParams(
         createSearchParams({
           minPrice: newValue[0],
           maxPrice: newValue[1],
-          minMileage: searchParams.get('minMileage') ?? minMaxMileage[0],
+          minMileage: searchParams.get('minMileage') ?? minMaxMileage[0], // The ?? operator returns the value on the right if the value on the left evaluates a nullish value. First time we want the default values pulled from state
           maxMileage: searchParams.get('maxMileage') ?? minMaxMileage[1],
         })
       );
     } else {
+      // Send params based on the new values for the mileage
       setSearchParams(
         createSearchParams({
           minPrice: searchParams.get('minPrice') ?? minMaxPrice[0],
