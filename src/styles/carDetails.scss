@@ -182,3 +182,22 @@
     }
   }
 }
+
+@media screen and (min-width: 990px) {
+  .carDetails {
+    &_imgContainer {
+      & img {
+        width: 30%;
+      }
+    }
+
+    &_info {
+      max-width: 1040px;
+      margin: 0 auto;
+    }
+
+    &_iconsContainer {
+      max-width: 864px;
+    }
+  }
+}
