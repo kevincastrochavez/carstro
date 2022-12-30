@@ -47,8 +47,8 @@ function Filters() {
         });
 
         setBrandFilterOptions([...new Set(brands)]);
-        setYearsFilterOptions([...new Set(years)]);
-        setWheelsFilterOptions([...new Set(wheels)]);
+        setYearsFilterOptions([...new Set(years.sort())]);
+        setWheelsFilterOptions([...new Set(wheels.sort())]);
         setColorsFilterOptions([...new Set(colors)]);
       });
   }, []);
