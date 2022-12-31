@@ -222,5 +222,11 @@
       justify-content: center;
       gap: 106px;
     }
+
+    &_field {
+      & select {
+        cursor: pointer;
+      }
+    }
   }
 }

@@ -30,7 +30,7 @@ function CarDetails() {
       .get()
       .then((car) => {
         setCarDetailsInfo(car.data());
-        // setFetching(false);
+        setFetching(false);
       });
   }, []);
 
