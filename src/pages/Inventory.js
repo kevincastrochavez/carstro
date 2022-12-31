@@ -9,6 +9,7 @@ import CarInventory from '../components/CarInventory';
 import Filters from '../components/Filters';
 import db from '../firebase';
 import InventorySkeleton from '../components/InventorySkeleton';
+import NoCarState from '../components/NoCarState';
 
 function Inventory() {
   const [
@@ -28,6 +29,7 @@ function Inventory() {
   const [windowWidth, setWindowWidth] = useState(0);
   const [carsToRender, setCarsToRender] = useState([]);
   const [searchParams, setSearchParams] = useSearchParams();
+  const [loadingCars, setLoadingCars] = useState(false);
   const location = useLocation();
 
   const showListLayout = () => setActiveGrid(false);
@@ -49,6 +51,8 @@ function Inventory() {
 
   // Fetching data from database if user access website directly through this page
   useEffect(() => {
+    setLoadingCars(true);
+
     if (carsResults.length === 0) {
       db.collection('cars')
         .get()
@@ -80,6 +84,8 @@ function Inventory() {
             type: 'SET_MIN_MAX_MILEAGE_FILTER',
             minMaxMileage: [minMileage, maxMileage],
           });
+
+          setLoadingCars(false);
         });
     }
   }, []);
@@ -159,8 +165,10 @@ function Inventory() {
           !activeGrid && 'inventory_carsContainer-reducedGap'
         }`}
       >
-        {carsToRender.length === 0 ? (
+        {loadingCars ? (
           <InventorySkeleton />
+        ) : carsToRender.length === 0 ? (
+          <NoCarState />
         ) : (
           carsToRender?.map((car) => {
             return (
