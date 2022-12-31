@@ -1,0 +1,33 @@
+.carDetailsSkeleton {
+  padding: 24px;
+
+  &_title {
+    margin-top: 24px !important;
+  }
+
+  &_price {
+    margin: 24px 0 !important;
+    display: flex;
+    justify-content: space-between;
+
+    &-offer {
+      width: 40%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+  }
+
+  &_iconsContainer {
+    margin-top: 48px !important;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    justify-items: center;
+  }
+
+  &_icon {
+    display: grid;
+    gap: 8px;
+  }
+}
