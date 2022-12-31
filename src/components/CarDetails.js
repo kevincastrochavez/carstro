@@ -30,6 +30,10 @@ function CarDetails() {
       });
   }, []);
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <main className='carDetails'>
       <div className='carDetails_imgContainer'>
