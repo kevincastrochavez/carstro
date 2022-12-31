@@ -1,12 +1,14 @@
 import React from "react";
-import Button from "../components/Button";
 import SaleRepresentativeCard from "../components/SaleRepresentativeCard";
 import Map from "../components/Map";
 
-let saleRepresntative = [
+const saleRepresntative = [
   {
+    id: "sl",
     name: "Cindy Castro",
     location: "Salt Lake, UT",
+    lat: "40.770447000000004",
+    lng: "-111.89254654767032",
     email: "cindyc@carstro.com",
     hours: "8:00am - 5:00pm",
     phone: "385-354-1824",
@@ -16,8 +18,11 @@ let saleRepresntative = [
   },
 
   {
+    id: "rx",
     name: "Andres Castro",
     location: "Rexburg, ID",
+    lat: "43.82465852358263",
+    lng: "-111.78084611892702",
     email: "guevaracastroandres@gmail.com",
     hours: "8:00am - 5:00pm",
     phone: "2087603945",
@@ -27,8 +32,11 @@ let saleRepresntative = [
   },
 
   {
+    id: "dv",
     name: "Kevin Castro",
     location: "Denver, CO",
+    lat: "39.7392364",
+    lng: "-104.984862",
     email: "kevin@gmail.com",
     hours: "8:00am - 5:00pm",
     phone: "12354353454",
@@ -38,14 +46,17 @@ let saleRepresntative = [
   },
 
   {
+    id: "la",
     name: "Ignacio Villar ",
-    location: "Los Angeles. LA",
+    location: "Los Angeles. CA",
+    lat: "34.0536909",
+    lng: "-118.242766",
     email: "ignacio@gmail.com",
     hours: "8:00am - 5:00pm",
     phone: "12354353454",
     address: "example 234 S 3456",
     image:
-      "https://media.licdn.com/dms/image/D4E35AQEnqE5PgDgTvg/profile-framedphoto-shrink_400_400/0/1634319087952?e=1671775200&v=beta&t=PcFfngmRaKUScQl9PMZGKepveistnT-0DtfBzUke8oQ",
+      "https://media.licdn.com/dms/image/D4E35AQEnqE5PgDgTvg/profile-framedphoto-shrink_400_400/0/1634319087952?e=1672855200&v=beta&t=8-7ioCj9LwSwYLSXKb9W6diL9iSby6U6mnKlJXmaMls",
   },
 ];
 
@@ -65,7 +76,7 @@ function SalesRepresentatives() {
         </section>
         <section className="main_section_map">
           <h2 className="salesRepresentatives_section_h2"> Find your Dealer</h2>
-          <Map />
+          <Map data={saleRepresntative} />
         </section>
       </div>
     </main>

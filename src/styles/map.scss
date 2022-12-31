@@ -4,6 +4,21 @@
   height: 200px;
 }
 
+.map_pin {
+  color: red;
+  display: block;
+}
+.pin_container {
+  width: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  border-radius: 50px;
+  padding: 10px;
+  font-weight: 700;
+}
+
 @media only screen and (min-width: 1200px) {
   .map {
     margin: 0;
