@@ -3,6 +3,7 @@ import CurrencyFormat from 'react-currency-format';
 import CurrencyInput from 'react-currency-input-field';
 import { Link } from 'react-router-dom';
 import CountUp from 'react-countup';
+import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 
 // https://www.npmjs.com/package/react-countup
 
@@ -87,6 +88,7 @@ function LoanCalculator({ className, carInfo }) {
         <div className='loanCalculator_calculator'>
           <div className='loanCalculator_field'>
             <label>Estimated Credit Score</label>
+
             <select onChange={handleCreditScoreChange}>
               <option value={6.96}>Excellent 720+</option>
               <option value={7.9}>Great 719-690</option>
@@ -97,6 +99,8 @@ function LoanCalculator({ className, carInfo }) {
               <option value={16.74}>Poor 609-580</option>
               <option value={20.61}>Extremely Poor 579-520</option>
             </select>
+
+            <PlayArrowIcon />
           </div>
 
           <div className='loanCalculator_field'>
@@ -114,6 +118,7 @@ function LoanCalculator({ className, carInfo }) {
 
           <div className='loanCalculator_field'>
             <label>Term Length</label>
+
             <select onChange={handleTermLengthChange}>
               <option value={24}>24 Months</option>
               <option value={36}>36 Months</option>
@@ -121,6 +126,8 @@ function LoanCalculator({ className, carInfo }) {
               <option value={60}>60 Months</option>
               <option value={72}>72 Months</option>
             </select>
+
+            <PlayArrowIcon />
           </div>
 
           <div className='loanCalculator_field'>
