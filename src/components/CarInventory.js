@@ -24,9 +24,6 @@ function CarInventory({
   const brandWordsQuantity = brand.split(' ').length;
   const monthlyCost = Math.ceil(price / 6 / 12);
 
-  console.log(windowSize);
-  console.log(activeGrid);
-
   /*
   !activeGrid && !carInventoryOpen && windowSize >= 990
   Elements with the conditions above will only render

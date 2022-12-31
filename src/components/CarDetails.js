@@ -12,18 +12,25 @@ import Breaks from '../svg/Breaks';
 import TopSpeed from '../svg/TopSpeed';
 import LoanCalculator from './LoanCalculator';
 import { useStateValue } from '../StateProvider';
+import CarDetailsSkeleton from './CarDetailsSkeleton';
 
 function CarDetails() {
   const [{ minMaxPrice, minMaxMileage }, dispatch] = useStateValue();
   const { id } = useParams();
   const [carDetailsInfo, setCarDetailsInfo] = useState({});
+  const [fetching, setFetching] = useState(false);
+
+  console.log(carDetailsInfo);
 
   useEffect(() => {
+    setFetching(true);
+
     db.collection('cars')
       .doc(id)
       .get()
       .then((car) => {
         setCarDetailsInfo(car.data());
+        setFetching(false);
       });
   }, []);
 
@@ -31,7 +38,9 @@ function CarDetails() {
     window.scrollTo(0, 0);
   }, []);
 
-  return (
+  return fetching ? (
+    <CarDetailsSkeleton />
+  ) : (
     <main className='carDetails'>
       <div className='carDetails_imgContainer'>
         <img

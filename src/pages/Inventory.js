@@ -8,6 +8,7 @@ import Button from '../components/Button';
 import CarInventory from '../components/CarInventory';
 import Filters from '../components/Filters';
 import db from '../firebase';
+import InventorySkeleton from '../components/InventorySkeleton';
 
 function Inventory() {
   const [
@@ -158,17 +159,21 @@ function Inventory() {
           !activeGrid && 'inventory_carsContainer-reducedGap'
         }`}
       >
-        {carsToRender?.map((car) => {
-          return (
-            <CarInventory
-              carId={car.cardId}
-              key={car.cardId}
-              {...car}
-              activeGrid={activeGrid}
-              windowSize={windowWidth}
-            />
-          );
-        })}
+        {carsToRender.length === 0 ? (
+          <InventorySkeleton />
+        ) : (
+          carsToRender?.map((car) => {
+            return (
+              <CarInventory
+                carId={car.cardId}
+                key={car.cardId}
+                {...car}
+                activeGrid={activeGrid}
+                windowSize={windowWidth}
+              />
+            );
+          })
+        )}
       </div>
 
       <Filters />
