@@ -1,7 +1,9 @@
+import { Popover } from '@mui/material';
 import React from 'react';
 import { useState } from 'react';
 import CurrencyFormat from 'react-currency-format';
 import { Link } from 'react-router-dom';
+import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
 
 import Button from './Button';
 
@@ -21,6 +23,8 @@ function CarInventory({
   windowSize,
 }) {
   const [carInventoryOpen, setCarInventoryOpen] = useState(false);
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const [openPopover, setOpenPopover] = useState(false);
 
   const brandWordsQuantity = brand.split(' ').length;
   const downPayment = 5000;
@@ -30,6 +34,16 @@ function CarInventory({
   const monthlyCost =
     (principal * (rate * Math.pow(1 + rate, termLength))) /
     (Math.pow(1 + rate, termLength) - 1);
+
+  const handlePopoverOpen = (event) => {
+    setAnchorEl(event.currentTarget);
+    setOpenPopover(true);
+  };
+
+  const handlePopoverClose = () => {
+    setAnchorEl(null);
+    setOpenPopover(false);
+  };
 
   /*
   !activeGrid && !carInventoryOpen && windowSize >= 990
@@ -99,6 +113,32 @@ function CarInventory({
             />
           }
           /mo
+          <InfoOutlinedIcon
+            onMouseEnter={handlePopoverOpen}
+            onMouseLeave={handlePopoverClose}
+          />
+          <Popover
+            className='carInventory_popover'
+            id='mouse-over-popover'
+            sx={{
+              pointerEvents: 'none',
+            }}
+            open={openPopover}
+            anchorEl={anchorEl}
+            anchorOrigin={{
+              vertical: 'bottom',
+              horizontal: 'left',
+            }}
+            transformOrigin={{
+              vertical: 'top',
+              horizontal: 'left',
+            }}
+            onClose={handlePopoverClose}
+            disableRestoreFocus
+          >
+            Calculated based on $5,000 down payment, excellent credit score, and
+            48 months
+          </Popover>
         </p>
         <p>{tireSize}" wheels</p>
         {!activeGrid && windowSize >= 990 && (
