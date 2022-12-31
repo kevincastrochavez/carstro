@@ -1,0 +1,13 @@
+.skeletonContainer {
+  display: grid;
+  gap: 24px;
+
+  &_img {
+    margin: 24px 0 !important;
+    align-self: center;
+  }
+
+  &_btn {
+    margin-top: 20px !important;
+  }
+}

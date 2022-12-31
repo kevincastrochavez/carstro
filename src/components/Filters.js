@@ -13,6 +13,7 @@ import SliderRange from './Slider';
 
 // Figure out how to reset the range sliders
 // Add empty state when there's no car which meets the filters criteria
+// Adjust font sizes
 
 function Filters() {
   const [{ showFilters, minMaxPrice, minMaxMileage }, dispatch] =
