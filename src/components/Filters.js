@@ -8,6 +8,7 @@ import FilterLabel from './FilterLabel';
 import Button from '../components/Button';
 import Checkbox from '../components/Checkbox';
 import SliderRange from './Slider';
+import FiltersSkeleton from './FiltersSkeleton';
 
 // TODO
 
@@ -28,6 +29,7 @@ function Filters() {
 
   const [clearAllFilters, setClearAllFilters] = useState(false);
   const [windowWidth, setWindowWidth] = useState(false);
+  const [loadingFilters, setLoadingFilters] = useState(false);
   const navigate = useNavigate();
 
   const [brandFilterOptions, setBrandFilterOptions] = useState([]);
@@ -37,6 +39,8 @@ function Filters() {
 
   // Pulls data from db to populate unique filter options dynamically
   useEffect(() => {
+    setLoadingFilters(true);
+
     db.collection('cars')
       .get()
       .then((cars) => {
@@ -60,6 +64,8 @@ function Filters() {
         setYearsFilterOptions([...new Set(years.sort())]);
         setWheelsFilterOptions([...new Set(wheels.sort())]);
         setColorsFilterOptions([...new Set(colors)]);
+
+        setLoadingFilters(false);
       });
   }, []);
 
@@ -96,123 +102,129 @@ function Filters() {
 
   return (
     <section className={`filters ${!showFilters && 'filters_hidden'}`}>
-      <div className='filters_top'>
-        {windowWidth < 990 && <h2>Filters</h2>}
-        {windowWidth < 990 && (
-          <CloseIcon className='filters_closeBtn' onClick={hideFilters} />
-        )}
-      </div>
+      {loadingFilters ? (
+        <FiltersSkeleton />
+      ) : (
+        <>
+          <div className='filters_top'>
+            {windowWidth < 990 && <h2>Filters</h2>}
+            {windowWidth < 990 && (
+              <CloseIcon className='filters_closeBtn' onClick={hideFilters} />
+            )}
+          </div>
 
-      <Button
-        onClick={clearFilters}
-        className={`filters_button ${
-          windowWidth >= 990 && 'filters_button-desktop'
-        }`}
-        text={'Clear All'}
-        bgColor='green'
-      />
+          <Button
+            onClick={clearFilters}
+            className={`filters_button ${
+              windowWidth >= 990 && 'filters_button-desktop'
+            }`}
+            text={'Clear All'}
+            bgColor='green'
+          />
 
-      <div className='filters_divider'></div>
+          <div className='filters_divider'></div>
 
-      <div className='filters_form'>
-        <section>
-          <h5>Brand</h5>
+          <div className='filters_form'>
+            <section>
+              <h5>Brand</h5>
 
-          <form className='filters_checkboxes'>
-            {brandFilterOptions.map((brand) => {
-              return (
-                <div key={brand} className='filters_checkbox'>
-                  <Checkbox
-                    id={brand}
-                    name='brands'
-                    value={brand}
-                    clearAll={clearAllFilters}
-                  />
-                  <FilterLabel option={brand} text={brand} />
-                </div>
-              );
-            })}
-          </form>
-        </section>
+              <form className='filters_checkboxes'>
+                {brandFilterOptions.map((brand) => {
+                  return (
+                    <div key={brand} className='filters_checkbox'>
+                      <Checkbox
+                        id={brand}
+                        name='brands'
+                        value={brand}
+                        clearAll={clearAllFilters}
+                      />
+                      <FilterLabel option={brand} text={brand} />
+                    </div>
+                  );
+                })}
+              </form>
+            </section>
 
-        <section>
-          <h5>Model Year</h5>
+            <section>
+              <h5>Model Year</h5>
 
-          <form className='filters_checkboxes'>
-            {yearsFilterOptions.map((year) => {
-              return (
-                <div key={year} className='filters_checkbox'>
-                  <Checkbox
-                    id={year}
-                    name='years'
-                    value={year}
-                    clearAll={clearAllFilters}
-                  />
-                  <FilterLabel option={year} text={year} />
-                </div>
-              );
-            })}
-          </form>
-        </section>
+              <form className='filters_checkboxes'>
+                {yearsFilterOptions.map((year) => {
+                  return (
+                    <div key={year} className='filters_checkbox'>
+                      <Checkbox
+                        id={year}
+                        name='years'
+                        value={year}
+                        clearAll={clearAllFilters}
+                      />
+                      <FilterLabel option={year} text={year} />
+                    </div>
+                  );
+                })}
+              </form>
+            </section>
 
-        <section>
-          <h5>Wheels</h5>
+            <section>
+              <h5>Wheels</h5>
 
-          <form className='filters_checkboxes'>
-            {wheelsFilterOptions.map((wheel) => {
-              return (
-                <div key={wheel} className='filters_checkbox'>
-                  <Checkbox
-                    id={wheel}
-                    name='wheels'
-                    value={wheel}
-                    clearAll={clearAllFilters}
-                  />
+              <form className='filters_checkboxes'>
+                {wheelsFilterOptions.map((wheel) => {
+                  return (
+                    <div key={wheel} className='filters_checkbox'>
+                      <Checkbox
+                        id={wheel}
+                        name='wheels'
+                        value={wheel}
+                        clearAll={clearAllFilters}
+                      />
 
-                  <FilterLabel option={wheel} text={`${wheel}" Wheels`} />
-                </div>
-              );
-            })}
-          </form>
-        </section>
+                      <FilterLabel option={wheel} text={`${wheel}" Wheels`} />
+                    </div>
+                  );
+                })}
+              </form>
+            </section>
 
-        <section>
-          <h5>Color</h5>
+            <section>
+              <h5>Color</h5>
 
-          <form className='filters_checkboxes filters_colors'>
-            {colorsFilterOptions.map((color) => {
-              return (
-                <div key={color} className='filters_checkbox'>
-                  <Checkbox
-                    id={color}
-                    name='colors'
-                    value={color}
-                    clearAll={clearAllFilters}
-                    hidden
-                  />
-                  <FilterLabel option={color} colorsProp={true} />
-                </div>
-              );
-            })}
-          </form>
-        </section>
+              <form className='filters_checkboxes filters_colors'>
+                {colorsFilterOptions.map((color) => {
+                  return (
+                    <div key={color} className='filters_checkbox'>
+                      <Checkbox
+                        id={color}
+                        name='colors'
+                        value={color}
+                        clearAll={clearAllFilters}
+                        hidden
+                      />
+                      <FilterLabel option={color} colorsProp={true} />
+                    </div>
+                  );
+                })}
+              </form>
+            </section>
 
-        <section>
-          <h5>Price</h5>
+            <section>
+              <h5>Price</h5>
 
-          <form className='filters_checkboxes'>
-            <SliderRange range={minMaxPrice} price text='price' />
-          </form>
-        </section>
+              <form className='filters_checkboxes'>
+                <SliderRange range={minMaxPrice} price text='price' />
+              </form>
+            </section>
 
-        <section>
-          <h5>Mileage</h5>
+            <section>
+              <h5>Mileage</h5>
 
-          <form className='filters_checkboxes'>
-            <SliderRange range={minMaxMileage} text='mileage' />
-          </form>
-        </section>
-      </div>
+              <form className='filters_checkboxes'>
+                <SliderRange range={minMaxMileage} text='mileage' />
+              </form>
+            </section>
+          </div>
+        </>
+      )}
     </section>
   );
 }
