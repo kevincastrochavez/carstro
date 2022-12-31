@@ -21,3 +21,11 @@
     gap: 24px;
   }
 }
+
+@media screen and (min-width: 990px) {
+  .filtersSkeleton {
+    &_colors {
+      flex-wrap: wrap;
+    }
+  }
+}
