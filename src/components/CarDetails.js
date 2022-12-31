@@ -13,9 +13,6 @@ import TopSpeed from '../svg/TopSpeed';
 import LoanCalculator from './LoanCalculator';
 import { useStateValue } from '../StateProvider';
 
-// TODO
-// Fix scrolling behavior when going from inventory to car details
-
 function CarDetails() {
   const [{ minMaxPrice, minMaxMileage }, dispatch] = useStateValue();
   const { id } = useParams();

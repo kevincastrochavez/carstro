@@ -3,10 +3,11 @@ import React, { useEffect, useState } from 'react';
 import { useStateValue } from '../StateProvider';
 
 function Checkbox({ id, name, value, clearAll, hidden }) {
-  const [{ brandsFilters, modelYearsFilters, tireSize, colors }, dispatch] =
-    useStateValue();
-
+  const [{}, dispatch] = useStateValue();
   const [isChecked, setIsChecked] = useState(false);
+
+  // TODO
+  // Checkboxes do not uncheck the second time they are cleared
 
   useEffect(() => {
     // First condition checks if the checkbox was checked and if it corresponds to the right form field according to the filters. If that is true, then adds its value to the state layer

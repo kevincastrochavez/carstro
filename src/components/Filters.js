@@ -11,8 +11,8 @@ import SliderRange from './Slider';
 
 // TODO
 
-// Figure out how to send the slider values to the state layer every time they change
-// Pull all the filters from state and render the cars that meet such criteria
+// Figure out how to reset the range sliders
+// Add empty state when there's no car which meets the filters criteria
 
 function Filters() {
   const [{ showFilters, minMaxPrice, minMaxMileage }, dispatch] =

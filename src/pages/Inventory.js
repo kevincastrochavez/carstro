@@ -110,7 +110,7 @@ function Inventory() {
   }, []);
 
   useEffect(() => {
-    if (showFilters) {
+    if (showFilters && window.innerWidth < 720) {
       document.body.style.overflow = 'hidden';
     } else {
       document.body.style.overflow = 'unset';
