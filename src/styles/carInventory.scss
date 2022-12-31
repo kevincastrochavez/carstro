@@ -130,6 +130,7 @@
 @media screen and (min-width: 990px) {
   .carInventory {
     width: 300px;
+    max-height: 365.14px;
     padding: $px-24;
 
     &_top {
@@ -185,6 +186,7 @@
 
     &_listView {
       width: 100%;
+      max-height: 144px;
 
       .carInventory_img {
         justify-self: center;

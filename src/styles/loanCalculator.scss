@@ -20,6 +20,8 @@
   }
 
   &_field {
+    position: relative;
+
     & label {
       font-size: $px-12;
     }
@@ -36,6 +38,22 @@
 
       -webkit-appearance: none;
       -moz-appearance: none;
+    }
+
+    & select {
+      padding-right: 40px;
+      width: 100%;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    & svg {
+      position: absolute;
+      bottom: 12px;
+      right: 12px;
+      transform: rotate(90deg);
+      color: $green;
     }
   }
 

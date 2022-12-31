@@ -83,8 +83,6 @@ function Inventory() {
     }
   }, []);
 
-  console.log(searchParams.get('minPrice') ?? minMaxPrice[0]);
-
   useEffect(() => {
     // Performs the final filtering before rendering the CarInventory component
     const filteredCars = carsResults.filter((car) => {
@@ -104,8 +102,6 @@ function Inventory() {
       );
     });
 
-    console.log(filteredCars);
-
     setCarsToRender(filteredCars);
   }, [brandsFilters, modelYearsFilters, tireSize, colors, location]);
 
@@ -114,7 +110,7 @@ function Inventory() {
   }, []);
 
   useEffect(() => {
-    if (showFilters) {
+    if (showFilters && window.innerWidth < 720) {
       document.body.style.overflow = 'hidden';
     } else {
       document.body.style.overflow = 'unset';
@@ -126,6 +122,7 @@ function Inventory() {
       {showFilters && windowWidth < 990 && (
         <div onClick={overlayClick} className='inventory_overlay'></div>
       )}
+
       <div className='inventory_header'>
         <h1>Inventory</h1>
 
