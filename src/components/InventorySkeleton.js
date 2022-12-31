@@ -7,7 +7,7 @@ function InventorySkeleton() {
     <div className='skeletonContainer'>
       <Stack spacing={1}>
         <Skeleton variant='rounded' width='100%' />
-        <Skeleton variant='text' sx={{ fontSize: '18px' }} width='75%' />
+        <Skeleton variant='text' sx={{ fontSize: '18px' }} width='40%' />
 
         <Skeleton
           className='skeletonContainer_img'
@@ -25,10 +25,10 @@ function InventorySkeleton() {
           height={40}
         />
       </Stack>
-      ;
+
       <Stack spacing={1}>
         <Skeleton variant='rounded' width='100%' />
-        <Skeleton variant='text' sx={{ fontSize: '18px' }} width='75%' />
+        <Skeleton variant='text' sx={{ fontSize: '18px' }} width='40%' />
 
         <Skeleton
           className='skeletonContainer_img'
@@ -46,10 +46,10 @@ function InventorySkeleton() {
           height={40}
         />
       </Stack>
-      ;
+
       <Stack spacing={1}>
         <Skeleton variant='rounded' width='100%' />
-        <Skeleton variant='text' sx={{ fontSize: '18px' }} width='75%' />
+        <Skeleton variant='text' sx={{ fontSize: '18px' }} width='40%' />
 
         <Skeleton
           className='skeletonContainer_img'
@@ -67,10 +67,10 @@ function InventorySkeleton() {
           height={40}
         />
       </Stack>
-      ;
+
       <Stack spacing={1}>
         <Skeleton variant='rounded' width='100%' />
-        <Skeleton variant='text' sx={{ fontSize: '18px' }} width='75%' />
+        <Skeleton variant='text' sx={{ fontSize: '18px' }} width='40%' />
 
         <Skeleton
           className='skeletonContainer_img'
@@ -88,7 +88,6 @@ function InventorySkeleton() {
           height={40}
         />
       </Stack>
-      ;
     </div>
   );
 }

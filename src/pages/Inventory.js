@@ -159,9 +159,9 @@ function Inventory() {
           !activeGrid && 'inventory_carsContainer-reducedGap'
         }`}
       >
-        {/* {carsToRender.length === 0 ? ( */}
-        <InventorySkeleton />
-        {/* ) : (
+        {carsToRender.length === 0 ? (
+          <InventorySkeleton />
+        ) : (
           carsToRender?.map((car) => {
             return (
               <CarInventory
@@ -173,7 +173,7 @@ function Inventory() {
               />
             );
           })
-        )} */}
+        )}
       </div>
 
       <Filters />

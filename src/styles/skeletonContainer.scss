@@ -1,6 +1,6 @@
 .skeletonContainer {
   display: grid;
-  gap: 24px;
+  gap: 48px;
 
   &_img {
     margin: 24px 0 !important;
@@ -9,5 +9,17 @@
 
   &_btn {
     margin-top: 20px !important;
+  }
+}
+
+@media screen and (min-width: 990px) {
+  .skeletonContainer {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+
+    & > div {
+      width: 300px;
+    }
   }
 }
