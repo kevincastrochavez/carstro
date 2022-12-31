@@ -110,7 +110,7 @@ function Inventory() {
   }, []);
 
   useEffect(() => {
-    if (showFilters && window.innerWidth < 720) {
+    if (showFilters && window.innerWidth < 990) {
       document.body.style.overflow = 'hidden';
     } else {
       document.body.style.overflow = 'unset';
@@ -150,6 +150,10 @@ function Inventory() {
       </div>
       <div className='inventory_hiddenBar'></div>
       <div
+        style={{
+          justifyContent: !activeGrid && windowWidth >= 990 && 'unset',
+          flexDirection: !activeGrid && windowWidth >= 990 && 'column',
+        }}
         className={`inventory_carsContainer ${
           !activeGrid && 'inventory_carsContainer-reducedGap'
         }`}
