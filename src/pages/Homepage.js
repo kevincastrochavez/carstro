@@ -1,15 +1,15 @@
 // Cindy
-import React, { useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
 
-import db from '../firebase';
-import { useStateValue } from '../StateProvider';
+import db from "../firebase";
+import { useStateValue } from "../StateProvider";
 
 function Homepage() {
   const [{}, dispatch] = useStateValue();
 
   useEffect(() => {
-    db.collection('cars')
+    db.collection("cars")
       .get()
       .then((cars) => {
         const carsResults = cars.docs.map((car) => {
@@ -25,26 +25,33 @@ function Homepage() {
         const maxMileage = Math.max(...milesArray);
 
         dispatch({
-          type: 'SET_CARS_RESULTS',
+          type: "SET_CARS_RESULTS",
           carsResults,
         });
 
         dispatch({
-          type: 'SET_MIN_MAX_PRICE_FILTER',
+          type: "SET_MIN_MAX_PRICE_FILTER",
           minMaxPrice: [minPrice, maxPrice],
         });
 
         dispatch({
-          type: 'SET_MIN_MAX_MILEAGE_FILTER',
+          type: "SET_MIN_MAX_MILEAGE_FILTER",
           minMaxMileage: [minMileage, maxMileage],
         });
       });
   }, []);
 
   return (
-    <div>
+    <div className="homepage-container">
+      <div className="main-image">
+        <img
+          className="home-mainImage"
+          src="homepageImages/main-l.jpg"
+          alt=""
+        />
+      </div>
       <h1>Home</h1>
-      <Link to='/inventory'>Inventory</Link>
+      <Link to="/inventory">Inventory</Link>
     </div>
   );
 }
