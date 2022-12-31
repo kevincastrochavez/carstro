@@ -21,8 +21,15 @@ function CarInventory({
   windowSize,
 }) {
   const [carInventoryOpen, setCarInventoryOpen] = useState(false);
+
   const brandWordsQuantity = brand.split(' ').length;
-  const monthlyCost = Math.ceil(price / 6 / 12);
+  const downPayment = 5000;
+  const principal = price - downPayment;
+  const rate = 6.96 / 12 / 100;
+  const termLength = 48;
+  const monthlyCost =
+    (principal * (rate * Math.pow(1 + rate, termLength))) /
+    (Math.pow(1 + rate, termLength) - 1);
 
   /*
   !activeGrid && !carInventoryOpen && windowSize >= 990
@@ -85,7 +92,7 @@ function CarInventory({
         <p className='carInventory_top-right'>
           {
             <CurrencyFormat
-              value={monthlyCost}
+              value={monthlyCost.toFixed(0)}
               displayType={'text'}
               thousandSeparator={true}
               prefix={'$'}

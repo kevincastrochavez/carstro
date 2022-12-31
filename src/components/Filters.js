@@ -13,8 +13,6 @@ import FiltersSkeleton from './FiltersSkeleton';
 // TODO
 
 // Figure out how to reset the range sliders
-// Adjust font sizes
-// Adjust monthly payment on the inventory page for the carInventory card
 // Fixed filter scrolling on the desktop view
 // Add button to scroll to top at the bottom of inventory
 // Fix grid size for the inventory page on desktop view (max 1040)
