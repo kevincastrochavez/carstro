@@ -43,9 +43,15 @@ function Homepage() {
         });
     }
   }, []);
-
   return (
-    <div>
+    <div className="homepage-container">
+      <div className="main-image">
+        <img
+          className="home-mainImage"
+          src="homepageImages/main-l.jpg"
+          alt=""
+        />
+      </div>
       <h1>Home</h1>
       <Link
         to={`/inventory?minPrice=${minMaxPrice[0]}&maxPrice=${minMaxPrice[1]}&minMileage=${minMaxMileage[0]}&maxMileage=${minMaxMileage[1]}`}
