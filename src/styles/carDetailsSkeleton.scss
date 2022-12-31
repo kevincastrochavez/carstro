@@ -5,16 +5,28 @@
     margin-top: 24px !important;
   }
 
-  &_price {
-    margin: 24px 0 !important;
-    display: flex;
-    justify-content: space-between;
+  &_info {
+    display: grid;
+    gap: 24px;
 
-    &-offer {
-      width: 40%;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
+    &-top,
+    &-price {
+      display: grid;
+      gap: 8px;
+    }
+
+    &-price {
+      grid-template-columns: 1fr 1fr;
+
+      & span {
+        width: 100% !important;
+      }
+
+      &-offer {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
     }
   }
 
@@ -29,5 +41,36 @@
   &_icon {
     display: grid;
     gap: 8px;
+  }
+}
+
+@media screen and (min-width: 720px) {
+  .carDetailsSkeleton {
+    padding: 32px;
+    max-width: 1040px;
+    margin: 0 auto;
+
+    &_info {
+      margin-top: 24px !important;
+      grid-template-columns: 1fr 250px 100px;
+      grid-template-rows: 52px;
+
+      &-top {
+        & span {
+          margin-top: 0 !important;
+          width: 80% !important;
+        }
+      }
+
+      &-price {
+        & > span {
+          height: 100% !important;
+        }
+      }
+    }
+
+    &_iconsContainer {
+      grid-template-columns: repeat(6, 1fr);
+    }
   }
 }
