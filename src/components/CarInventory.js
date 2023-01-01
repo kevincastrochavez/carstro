@@ -56,14 +56,6 @@ function CarInventory({
 
   return (
     <div
-      // style={{
-      //   maxHeight:
-      //     activeGrid && windowSize >= 990
-      //       ? '365.14px'
-      //       : !activeGrid && !carInventoryOpen && windowSize >= 990
-      //       ? '144px'
-      //       : undefined,
-      // }}
       onClick={() => setCarInventoryOpen(!carInventoryOpen)}
       className={`carInventory ${!activeGrid && 'carInventory_listView'} ${
         !activeGrid &&

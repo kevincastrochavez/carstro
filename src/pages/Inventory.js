@@ -36,8 +36,6 @@ function Inventory() {
   const [offsetHeight, setOffsetHeight] = useState(0);
   const location = useLocation();
 
-  console.log(offsetHeight);
-
   const showListLayout = () => setActiveGrid(false);
   const showGridLayout = () => setActiveGrid(true);
 
