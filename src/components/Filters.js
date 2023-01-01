@@ -12,15 +12,9 @@ import FiltersSkeleton from './FiltersSkeleton';
 
 // TODO
 
-// Skeletons for the filters
-// Figure out how to reset the range sliders
-// Add empty state when there's no car which meets the filters criteria
-// Adjust font sizes
-// Adjust monthly payment on the inventory page for the carInventory card
-// Fixed filter scrolling on the desktop view
-// Add button to scroll to top at the bottom of inventory
-// Fix grid size for the inventory page on desktop view (max 1040)
+// Show details button when opening the carInventory
 
+// Figure out how to reset the range sliders
 // Figure out how to animate components on state change
 
 function Filters() {

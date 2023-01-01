@@ -1,7 +1,9 @@
+import { Popover } from '@mui/material';
 import React from 'react';
 import { useState } from 'react';
 import CurrencyFormat from 'react-currency-format';
 import { Link } from 'react-router-dom';
+import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
 
 import Button from './Button';
 
@@ -21,8 +23,27 @@ function CarInventory({
   windowSize,
 }) {
   const [carInventoryOpen, setCarInventoryOpen] = useState(false);
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const [openPopover, setOpenPopover] = useState(false);
+
   const brandWordsQuantity = brand.split(' ').length;
-  const monthlyCost = Math.ceil(price / 6 / 12);
+  const downPayment = 5000;
+  const principal = price - downPayment;
+  const rate = 6.96 / 12 / 100;
+  const termLength = 48;
+  const monthlyCost =
+    (principal * (rate * Math.pow(1 + rate, termLength))) /
+    (Math.pow(1 + rate, termLength) - 1);
+
+  const handlePopoverOpen = (event) => {
+    setAnchorEl(event.currentTarget);
+    setOpenPopover(true);
+  };
+
+  const handlePopoverClose = () => {
+    setAnchorEl(null);
+    setOpenPopover(false);
+  };
 
   /*
   !activeGrid && !carInventoryOpen && windowSize >= 990
@@ -33,14 +54,14 @@ function CarInventory({
 
   return (
     <div
-      style={{
-        maxHeight:
-          activeGrid && windowSize >= 990
-            ? '365.14px'
-            : !activeGrid && !carInventoryOpen && windowSize >= 990
-            ? '144px'
-            : undefined,
-      }}
+      // style={{
+      //   maxHeight:
+      //     activeGrid && windowSize >= 990
+      //       ? '365.14px'
+      //       : !activeGrid && !carInventoryOpen && windowSize >= 990
+      //       ? '144px'
+      //       : undefined,
+      // }}
       onClick={() => setCarInventoryOpen(!carInventoryOpen)}
       className={`carInventory ${!activeGrid && 'carInventory_listView'} ${
         !activeGrid &&
@@ -85,13 +106,39 @@ function CarInventory({
         <p className='carInventory_top-right'>
           {
             <CurrencyFormat
-              value={monthlyCost}
+              value={monthlyCost.toFixed(0)}
               displayType={'text'}
               thousandSeparator={true}
               prefix={'$'}
             />
           }
           /mo
+          <InfoOutlinedIcon
+            onMouseEnter={handlePopoverOpen}
+            onMouseLeave={handlePopoverClose}
+          />
+          <Popover
+            className='carInventory_popover'
+            id='mouse-over-popover'
+            sx={{
+              pointerEvents: 'none',
+            }}
+            open={openPopover}
+            anchorEl={anchorEl}
+            anchorOrigin={{
+              vertical: 'bottom',
+              horizontal: 'left',
+            }}
+            transformOrigin={{
+              vertical: 'top',
+              horizontal: 'left',
+            }}
+            onClose={handlePopoverClose}
+            disableRestoreFocus
+          >
+            Calculated based on $5,000 down payment, excellent credit score, and
+            48 months
+          </Popover>
         </p>
         <p>{tireSize}" wheels</p>
         {!activeGrid && windowSize >= 990 && (

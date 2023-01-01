@@ -78,6 +78,13 @@
       gap: $px-8;
     }
   }
+
+  &_scrollToTop {
+    transition: all 0.3s ease-in-out !important;
+    position: fixed !important;
+    right: 24px;
+    z-index: 3;
+  }
 }
 
 #activeLayout,
@@ -115,6 +122,10 @@
         gap: $px-8;
       }
     }
+
+    &_scrollToTop {
+      right: 32px;
+    }
   }
 }
 
@@ -123,12 +134,17 @@
     &_main {
       background-color: $bgnd-lightgray;
       display: grid;
-      grid-template-columns: $px-32 290px 1fr 1fr $px-32;
+      grid-template-columns:
+        minmax(32px, 1fr) 290px minmax(310px, 375px) minmax(310px, 375px)
+        minmax(32px, 1fr);
       grid-template-rows: auto $px-12 auto;
     }
 
     &_header {
-      grid-template-columns: $px-32 1fr auto auto $px-32;
+      grid-template-columns: minmax(32px, auto) minmax(642px, 756px) 205px 79px minmax(
+          32px,
+          auto
+        );
 
       grid-column: 1/6;
       background-color: $bgnd-white;
@@ -174,20 +190,6 @@
 
     &_filtersBtn {
       display: none;
-    }
-  }
-}
-
-@media screen and (min-width: 1374px) {
-  .inventory {
-    &_main {
-      grid-template-columns:
-        1fr 290px 510px
-        510px 1fr;
-    }
-
-    &_header {
-      grid-template-columns: 1fr 1026px auto auto 1fr;
     }
   }
 }

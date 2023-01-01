@@ -20,8 +20,6 @@ function CarDetails() {
   const [carDetailsInfo, setCarDetailsInfo] = useState({});
   const [fetching, setFetching] = useState(false);
 
-  console.log(carDetailsInfo);
-
   useEffect(() => {
     setFetching(true);
 
