@@ -12,7 +12,6 @@ import FiltersSkeleton from './FiltersSkeleton';
 
 // TODO
 
-// Fix grid size for the inventory page on desktop view (max 1040)
 // Show details button when opening the carInventory
 
 // Figure out how to reset the range sliders
