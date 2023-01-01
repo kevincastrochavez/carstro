@@ -12,6 +12,8 @@ import FiltersSkeleton from './FiltersSkeleton';
 
 // TODO
 
+// Add tooltips to the colors in the filter component
+
 // MUST
 // Figure out how to reset the range sliders
 
