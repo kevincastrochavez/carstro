@@ -78,6 +78,13 @@
       gap: $px-8;
     }
   }
+
+  &_scrollToTop {
+    transition: all 0.3s ease-in-out !important;
+    position: fixed !important;
+    right: 24px;
+    z-index: 3;
+  }
 }
 
 #activeLayout,
@@ -114,6 +121,10 @@
       &-reducedGap {
         gap: $px-8;
       }
+    }
+
+    &_scrollToTop {
+      right: 32px;
     }
   }
 }

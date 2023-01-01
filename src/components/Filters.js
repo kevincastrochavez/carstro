@@ -14,8 +14,8 @@ import FiltersSkeleton from './FiltersSkeleton';
 
 // Figure out how to reset the range sliders
 // Fixed filter scrolling on the desktop view
-// Add button to scroll to top at the bottom of inventory
 // Fix grid size for the inventory page on desktop view (max 1040)
+// Show details button when opening the carInventory
 
 // Figure out how to animate components on state change
 
