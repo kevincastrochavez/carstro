@@ -12,9 +12,11 @@ import FiltersSkeleton from './FiltersSkeleton';
 
 // TODO
 
-// Show details button when opening the carInventory
-
+// MUST
+// Checkboxes do not uncheck the second time they are cleared
 // Figure out how to reset the range sliders
+
+// Plus
 // Figure out how to animate components on state change
 
 function Filters() {

@@ -100,7 +100,7 @@
 
 .carInventory_listView {
   grid-template-rows: auto $px-12 auto;
-  padding-bottom: $px-28;
+  padding-bottom: 12px;
   cursor: pointer;
 
   .carInventory {
@@ -120,6 +120,30 @@
     &_link {
       grid-row: 5/6;
     }
+
+    &_expand,
+    &_close {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 4px;
+
+      & svg {
+        font-size: 16px;
+      }
+
+      & p {
+        font-size: 12px;
+      }
+    }
+
+    &_expand {
+      grid-row: 4/5;
+    }
+
+    &_close {
+      grid-row: 6/7;
+    }
   }
 }
 
@@ -134,19 +158,19 @@
 
     &_img {
       width: 60%;
-      // width: 50%; Tentatively
     }
   }
 
   .carInventory_listView {
     grid-template-rows: auto 12px auto;
-    padding-bottom: $px-32;
+    padding-bottom: 20px;
   }
 }
 
 @media screen and (min-width: 990px) {
   .carInventory {
     width: 300px;
+    height: fit-content;
     padding: $px-24;
 
     &_top {
@@ -208,7 +232,7 @@
 
     &_listView {
       width: 100%;
-      // max-height: 144px;
+      padding-bottom: 16px;
 
       .carInventory_img {
         justify-self: center;
@@ -229,6 +253,13 @@
       grid-template-columns: 126px 1fr;
       grid-template-rows: 1fr;
       column-gap: $px-24;
+      padding-bottom: 12px;
+    }
+
+    &_expand,
+    &_close {
+      margin-top: 8px;
+      grid-column: 1/-1;
     }
   }
 }
