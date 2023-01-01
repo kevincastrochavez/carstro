@@ -36,8 +36,6 @@ function Inventory() {
   const [offsetHeight, setOffsetHeight] = useState(0);
   const location = useLocation();
 
-  console.log(offsetHeight);
-
   const showListLayout = () => setActiveGrid(false);
   const showGridLayout = () => setActiveGrid(true);
 
@@ -94,6 +92,9 @@ function Inventory() {
           setLoadingCars(false);
         });
     }
+
+    // If cars already were pulled, there's no need to wait for any fetch, so skeleton should disappear
+    setLoadingCars(false);
   }, []);
 
   useEffect(() => {

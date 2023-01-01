@@ -58,6 +58,7 @@ function Checkbox({ id, name, value, clearAll, hidden }) {
     }
   }, [isChecked]);
 
+  // Unchecks the checkboxes when the clear function is fired
   useEffect(() => {
     if (clearAll) {
       setIsChecked(false);

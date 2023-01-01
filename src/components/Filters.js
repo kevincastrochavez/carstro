@@ -12,8 +12,9 @@ import FiltersSkeleton from './FiltersSkeleton';
 
 // TODO
 
+// Add tooltips to the colors in the filter component
+
 // MUST
-// Checkboxes do not uncheck the second time they are cleared
 // Figure out how to reset the range sliders
 
 // Plus
@@ -94,6 +95,11 @@ function Filters() {
     );
 
     dispatch({ type: 'CLEAR_FILTERS' });
+
+    // Sets the clear filters state to false to allow to select filters again and clear them as many times as the user desires
+    setTimeout(() => {
+      setClearAllFilters(false);
+    }, 2000);
   };
 
   return (
