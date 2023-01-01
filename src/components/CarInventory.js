@@ -193,7 +193,7 @@ function CarInventory({
         </div>
       )}
 
-      {!carInventoryOpen && !activeGrid && windowSize < 990 && (
+      {!carInventoryOpen && !activeGrid && (
         <div className='carInventory_expand'>
           <ExpandMore />
 
@@ -201,7 +201,7 @@ function CarInventory({
         </div>
       )}
 
-      {carInventoryOpen && !activeGrid && windowSize < 990 && (
+      {carInventoryOpen && !activeGrid && (
         <div className='carInventory_close'>
           <ExpandLessIcon />
 
