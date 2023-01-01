@@ -158,7 +158,6 @@
 
     &_img {
       width: 60%;
-      // width: 50%; Tentatively
     }
   }
 
@@ -171,6 +170,7 @@
 @media screen and (min-width: 990px) {
   .carInventory {
     width: 300px;
+    height: fit-content;
     padding: $px-24;
 
     &_top {
