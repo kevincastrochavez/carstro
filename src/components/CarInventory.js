@@ -4,6 +4,8 @@ import { useState } from 'react';
 import CurrencyFormat from 'react-currency-format';
 import { Link } from 'react-router-dom';
 import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
+import ExpandMore from '@mui/icons-material/ExpandMore';
+import ExpandLessIcon from '@mui/icons-material/ExpandLess';
 
 import Button from './Button';
 
@@ -188,6 +190,22 @@ function CarInventory({
           <Link to={carId} className='carInventory_link'>
             <Button text='View Details' bgColor='green' />
           </Link>
+        </div>
+      )}
+
+      {!carInventoryOpen && !activeGrid && windowSize < 990 && (
+        <div className='carInventory_expand'>
+          <ExpandMore />
+
+          <p>Show Details</p>
+        </div>
+      )}
+
+      {carInventoryOpen && !activeGrid && windowSize < 990 && (
+        <div className='carInventory_close'>
+          <ExpandLessIcon />
+
+          <p>Close Details</p>
         </div>
       )}
     </div>

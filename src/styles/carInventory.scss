@@ -100,7 +100,7 @@
 
 .carInventory_listView {
   grid-template-rows: auto $px-12 auto;
-  padding-bottom: $px-28;
+  padding-bottom: 12px;
   cursor: pointer;
 
   .carInventory {
@@ -119,6 +119,30 @@
 
     &_link {
       grid-row: 5/6;
+    }
+
+    &_expand,
+    &_close {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 4px;
+
+      & svg {
+        font-size: 16px;
+      }
+
+      & p {
+        font-size: 12px;
+      }
+    }
+
+    &_expand {
+      grid-row: 4/5;
+    }
+
+    &_close {
+      grid-row: 6/7;
     }
   }
 }

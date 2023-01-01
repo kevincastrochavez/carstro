@@ -13,6 +13,7 @@ import FiltersSkeleton from './FiltersSkeleton';
 // TODO
 
 // Show details button when opening the carInventory
+// Fix height of carInventory card when alone on desktop
 
 // Figure out how to reset the range sliders
 // Figure out how to animate components on state change
