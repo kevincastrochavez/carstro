@@ -11,3 +11,17 @@
   background-color: $bgnd-lightgray;
   color: black;
 }
+
+@media screen and (min-width: 990px) {
+  .btn {
+    transition: all 0.3s ease-in-out;
+    background-color: transparent;
+    border: 2px solid $green;
+    color: $green;
+
+    &:hover {
+      background-color: $green;
+      color: white;
+    }
+  }
+}

@@ -1,4 +1,5 @@
 // ANDRES
+
 import React, { useState } from "react";
 import Button from "../components/Button";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
@@ -9,7 +10,7 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import CloseIcon from "@mui/icons-material/Close";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 
-import { useEffect } from "react";
+import { useEffect } from 'react';
 function SaleRepresentativeCard({
   id,
   name,
@@ -23,6 +24,7 @@ function SaleRepresentativeCard({
   address,
 }) {
   const [saleCardOpen, setSaleCarOpen] = useState(false);
+
   console.log(saleCardOpen);
 
   const [modalWindowOpen, setModalWindowOpen] = useState(false);
@@ -38,12 +40,13 @@ function SaleRepresentativeCard({
   console.log("this is the devicewidth:" + deviceWidth);
   console.log("this is the device height:" + screenheight);
 
+
   useEffect(() => {
     setDeviceWidth(window.innerWidth);
   }, []);
   return (
     <li
-      className="saleRepresentativeCard_li"
+      className='saleRepresentativeCard_li'
       onClick={() => setSaleCarOpen(!saleCardOpen)}
     >
       {!saleCardOpen && (
@@ -65,43 +68,45 @@ function SaleRepresentativeCard({
           <div className="saleRepresentativeCard_div">
             <div className="saleRepresentativeCard_div--picturesContainer">
               <img className="saleRepresentativeCard_div_img" src={image}></img>
+
             </div>
-            <div className="saleRepresentativeCard_div--locationsContainer">
-              <h4 className="saleRepresentativeCard_div_img_h4">{name}</h4>
-              <ul className="saleRepresentativeCard_ul">
+            <div className='saleRepresentativeCard_div--locationsContainer'>
+              <h4 className='saleRepresentativeCard_div_img_h4'>{name}</h4>
+              <ul className='saleRepresentativeCard_ul'>
                 <div>
-                  <li className="saleRepresentativeCard_ul_li">
-                    <LocationOnIcon className="li_icon" />
+                  <li className='saleRepresentativeCard_ul_li'>
+                    <LocationOnIcon className='li_icon' />
                     {location}
                   </li>
-                  <li className="saleRepresentativeCard_ul_li">
-                    <MailIcon className="li_icon" />
+                  <li className='saleRepresentativeCard_ul_li'>
+                    <MailIcon className='li_icon' />
                     {email}
                   </li>
                 </div>
                 <div>
-                  <li className="saleRepresentativeCard_ul_li">
-                    <WatchLaterIcon className="li_icon" />
+                  <li className='saleRepresentativeCard_ul_li'>
+                    <WatchLaterIcon className='li_icon' />
                     {hours}
                   </li>
-                  <li className="saleRepresentativeCard_ul_li">
-                    <PhoneIcon className="li_icon" />
+                  <li className='saleRepresentativeCard_ul_li'>
+                    <PhoneIcon className='li_icon' />
                     {phone}
                   </li>
                 </div>
               </ul>
             </div>
-            <div className="saleRepresentativeCard_div--button">
+            <div className='saleRepresentativeCard_div--button'>
               <Button
                 onClick={() => setModalWindowOpen(!modalWindowOpen)}
-                text="Contact Dealer"
-                className="btn_green"
+                text='Contact Dealer'
+                className='btn_green'
               />
             </div>
           </div>
         </div>
       )}
       {modalWindowOpen && (
+
         <div className="modalWindow_overlay">
           <form className="modalWindow_form" action="">
             <div className="form_div-closeContainer">
@@ -168,6 +173,7 @@ function SaleRepresentativeCard({
                 />
               </div>
             </div>
+
           </form>
         </div>
       )}
