@@ -23,6 +23,7 @@ function CarInventory({
   activeGrid,
   carId,
   windowSize,
+  singleResult,
 }) {
   const [carInventoryOpen, setCarInventoryOpen] = useState(false);
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -56,6 +57,7 @@ function CarInventory({
 
   return (
     <div
+      style={{ height: singleResult ? 'fit-content' : 'auto' }}
       onClick={() => setCarInventoryOpen(!carInventoryOpen)}
       className={`carInventory ${!activeGrid && 'carInventory_listView'} ${
         !activeGrid &&

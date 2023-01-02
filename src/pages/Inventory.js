@@ -204,6 +204,7 @@ function Inventory() {
                 {...car}
                 activeGrid={activeGrid}
                 windowSize={windowWidth}
+                singleResult={carsToRender.length > 2 ? false : true}
               />
             );
           })
