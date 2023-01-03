@@ -4,6 +4,7 @@ import ViewListIcon from '@mui/icons-material/ViewList';
 import { useSearchParams, useLocation } from 'react-router-dom';
 import { Fab } from '@mui/material';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
+import FlipMove from 'react-flip-move';
 
 import { useStateValue } from '../StateProvider';
 import Button from '../components/Button';
@@ -182,7 +183,7 @@ function Inventory() {
         </div>
       </div>
       <div className='inventory_hiddenBar'></div>
-      <div
+      <FlipMove
         style={{
           justifyContent: !activeGrid && windowWidth >= 990 && 'unset',
           flexDirection: !activeGrid && windowWidth >= 990 && 'column',
@@ -209,7 +210,7 @@ function Inventory() {
             );
           })
         )}
-      </div>
+      </FlipMove>
 
       <Filters />
 
