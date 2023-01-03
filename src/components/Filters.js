@@ -10,16 +10,6 @@ import Checkbox from '../components/Checkbox';
 import SliderRange from './Slider';
 import FiltersSkeleton from './FiltersSkeleton';
 
-// TODO
-
-// Add tooltips to the colors in the filter component
-
-// MUST
-// Figure out how to reset the range sliders
-
-// Plus
-// Figure out how to animate components on state change
-
 function Filters() {
   const [{ showFilters, minMaxPrice, minMaxMileage }, dispatch] =
     useStateValue();
