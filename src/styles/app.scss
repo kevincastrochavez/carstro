@@ -2,9 +2,16 @@
   &_fab {
     position: fixed !important;
     right: 24px;
-    bottom: 40px;
+    bottom: 24px;
     background-color: $green !important;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
     z-index: 3000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
 
     & svg {
       color: white;
