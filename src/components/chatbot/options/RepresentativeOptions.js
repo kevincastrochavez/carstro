@@ -3,30 +3,23 @@ import { Link } from 'react-router-dom';
 
 import { useStateValue } from '../../../StateProvider';
 
-const IntroductoryOptions = (props) => {
-  const [{ minMaxPrice, minMaxMileage }, dispatch] = useStateValue();
+const RepresentativeOptions = (props) => {
+  const [{}, dispatch] = useStateValue();
 
   const options = [
     {
       text: (
-        <Link
-          to={`/inventory?minPrice=${minMaxPrice[0]}&maxPrice=${minMaxPrice[1]}&minMileage=${minMaxMileage[0]}&maxMileage=${minMaxMileage[1]}`}
-        >
-          Shop a Vehicle
+        <Link to='/salesRepresentatives'>
+          See Sales Representatives Information
         </Link>
       ),
       handler: () => dispatch({ type: 'SHOW_CHAT', showChat: false }),
       id: 1,
     },
     {
-      text: <Link to='/salesRepresentatives'>Find a dealer</Link>,
+      text: <span>Chat with agent</span>,
       handler: () => dispatch({ type: 'SHOW_CHAT', showChat: false }),
       id: 2,
-    },
-    {
-      text: <span>Chat with representative</span>,
-      handler: props.actionProvider.handleChatRepresentative,
-      id: 3,
     },
   ];
 
@@ -39,4 +32,4 @@ const IntroductoryOptions = (props) => {
   return <div className='options_container'>{buttonsMarkup}</div>;
 };
 
-export default IntroductoryOptions;
+export default RepresentativeOptions;
