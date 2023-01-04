@@ -16,20 +16,28 @@ import Chatbot from 'react-chatbot-kit';
 import config from './components/chatbot/config';
 import ActionProvider from './components/chatbot/ActionProvider';
 import MessageParser from './components/chatbot/MessageParser';
+import { useStateValue } from './StateProvider';
 
 function App() {
-  const [openChatbot, setOpenChatbot] = useState(false);
+  const [{ showChat }, dispatch] = useStateValue();
+
+  const toggleChat = () => {
+    dispatch({
+      type: 'SHOW_CHAT',
+      showChat: !showChat,
+    });
+  };
 
   return (
     <div className='app'>
       <BrowserRouter>
         <Header />
 
-        <div className='app_fab' onClick={() => setOpenChatbot(!openChatbot)}>
+        <div className='app_fab' onClick={toggleChat}>
           <TextsmsIcon />
         </div>
 
-        {openChatbot && (
+        {showChat && (
           <Chatbot
             config={config}
             actionProvider={ActionProvider}

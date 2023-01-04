@@ -15,8 +15,14 @@ const IntroductoryOptions = (props) => {
           See Inventory
         </Link>
       ),
+      handler: () => dispatch({ type: 'SHOW_CHAT', showChat: false }),
+      id: 1,
     },
-    { text: <Link to='/salesRepresentatives'>Find a dealer</Link> },
+    {
+      text: <Link to='/salesRepresentatives'>Find a dealer</Link>,
+      handler: () => dispatch({ type: 'SHOW_CHAT', showChat: false }),
+      id: 2,
+    },
   ];
 
   const buttonsMarkup = options.map((option) => (
