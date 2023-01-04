@@ -145,3 +145,19 @@
     }
   }
 }
+
+@media screen and (min-width: 720px) {
+  .app {
+    &_fab {
+      right: 32px;
+      bottom: 32px;
+    }
+  }
+
+  .react-chatbot-kit-chat {
+    &-container {
+      right: 32px;
+      bottom: 88px;
+    }
+  }
+}
