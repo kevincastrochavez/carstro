@@ -1,4 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Fab } from '@mui/material';
+import TextsmsIcon from '@mui/icons-material/Textsms';
 
 import Header from './components/Header';
 import Homepage from './pages/Homepage';
@@ -9,12 +11,21 @@ import AboutUs from './pages/AboutUs';
 import CarDetails from './components/CarDetails';
 import Footer from './components/Footer';
 
-
 function App() {
   return (
     <div className='app'>
       <BrowserRouter>
         <Header />
+
+        <Fab
+          className='app_fab'
+          size='small'
+          aria-label='Scroll to top'
+          // style={{ top: windowHeight, opacity: offsetHeight >= 2000 ? 1 : 0 }}
+          onClick={() => console.log('clicked')}
+        >
+          <TextsmsIcon />
+        </Fab>
 
         <Routes>
           <Route exact path='/' element={<Homepage />} />

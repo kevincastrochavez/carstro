@@ -1,0 +1,13 @@
+.app {
+  &_fab {
+    position: fixed !important;
+    right: 24px;
+    bottom: 40px;
+    background-color: $green !important;
+    z-index: 3000;
+
+    & svg {
+      color: white;
+    }
+  }
+}
