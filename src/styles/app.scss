@@ -7,7 +7,7 @@
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    z-index: 3000;
+    z-index: 2000;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -16,5 +16,70 @@
     & svg {
       color: white;
     }
+  }
+}
+
+.react-chatbot-kit-chat {
+  &-container {
+    background-color: white;
+    // padding: 16px;
+    position: fixed;
+    right: 24px;
+    bottom: 80px;
+    max-width: 300px;
+    z-index: 2;
+  }
+
+  &-header {
+    background-color: $green;
+    color: white;
+    padding: 16px;
+  }
+
+  &-message-container {
+    padding: 16px;
+  }
+
+  &-input-container {
+    // padding: 16px;
+    background-color: #eff1ed;
+  }
+
+  &-input-form {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &-btn-send {
+    padding-right: 16px;
+    width: 32px;
+  }
+
+  &-input {
+    flex: 1;
+    padding: 16px;
+    background-color: #eff1ed;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &-bot-message-container {
+    display: grid;
+    grid-template-columns: 32px 1fr;
+    gap: 8px;
+  }
+
+  &-bot-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: blue;
+    color: white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }
