@@ -1,0 +1,31 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
+
+import { useStateValue } from '../../../StateProvider';
+
+const IntroductoryOptions = (props) => {
+  const [{ minMaxPrice, minMaxMileage }, dispatch] = useStateValue();
+
+  const options = [
+    {
+      text: (
+        <Link
+          to={`/inventory?minPrice=${minMaxPrice[0]}&maxPrice=${minMaxPrice[1]}&minMileage=${minMaxMileage[0]}&maxMileage=${minMaxMileage[1]}`}
+        >
+          See Inventory
+        </Link>
+      ),
+    },
+    { text: <Link to='/salesRepresentatives'>Find a dealer</Link> },
+  ];
+
+  const buttonsMarkup = options.map((option) => (
+    <button key={option.id} onClick={option.handler} className='options_button'>
+      {option.text}
+    </button>
+  ));
+
+  return <div className='options_container'>{buttonsMarkup}</div>;
+};
+
+export default IntroductoryOptions;
