@@ -22,12 +22,18 @@
 .react-chatbot-kit-chat {
   &-container {
     background-color: white;
-    // padding: 16px;
+    height: 350px;
     position: fixed;
     right: 24px;
     bottom: 80px;
     max-width: 300px;
     z-index: 2;
+  }
+
+  &-inner-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
   }
 
   &-header {
@@ -38,6 +44,7 @@
 
   &-message-container {
     padding: 16px;
+    flex: 1;
   }
 
   &-input-container {
@@ -75,11 +82,45 @@
     width: 32px;
     height: 32px;
     border-radius: 50%;
-    background-color: blue;
+    background-color: darkgrey;
     color: white;
 
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+
+  &-bot-message {
+    font-size: 14px;
+  }
+}
+
+.react-chatbot-kit-user {
+  &-chat-message-container {
+    display: grid;
+    grid-template-columns: 1fr 32px;
+    gap: 8px;
+    margin-left: 40px;
+    margin-top: 12px;
+  }
+
+  &-chat-message {
+    font-family: $body-font;
+    font-size: 14px;
+  }
+
+  &-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: darkgrey;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &-container {
+      width: 20px;
+    }
   }
 }
