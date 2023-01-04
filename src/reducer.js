@@ -7,6 +7,7 @@ export const initialState = {
   colors: [],
   minMaxPrice: [0, 0],
   minMaxMileage: [0, 0],
+  showChat: false,
 };
 
 const reducer = (state, action) => {
@@ -15,6 +16,11 @@ const reducer = (state, action) => {
       return {
         ...state,
         showFilters: action.showFilters,
+      };
+    case 'SHOW_CHAT':
+      return {
+        ...state,
+        showChat: action.showChat,
       };
     case 'SET_CARS_RESULTS':
       return {
