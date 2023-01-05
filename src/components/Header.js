@@ -20,7 +20,7 @@
 // import React, { useState } from "react";
 // import header from "./header.module.css";
 import { useNavigate } from "react-router-dom";
-// import Navbar from "./navbar";
+import Hamburger from "./Hamburger";
 // import PropTypes from "prop-types";
 
 function Header(props) {
@@ -95,7 +95,7 @@ function Header(props) {
           {/* <button className={outHam} onClick={() => setShowLinks(!showLinks)}>
             <FaHamburger />
           </button> */}
-          {/* <Navbar /> */}
+          <Hamburger />
         </div>
       </div>
     </div>
