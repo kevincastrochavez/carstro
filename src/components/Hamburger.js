@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import * as FaIcons from "react-icons/fa";
-import * as AiIcons from "react-icons/ai";
+// import * as FaIcons from "react-icons/fa";
+// import * as AiIcons from "react-icons/ai";
 import { useNavigate } from "react-router-dom";
+import MenuIcon from "@mui/icons-material/Menu";
 
 // import "./hamburger.scss";
 
@@ -15,7 +16,7 @@ function Hamburger() {
       <div className="navbar">
         <div className="logoSide">logo</div>
         <a href="#" className="menu-bars">
-          <FaIcons.FaBars onClick={showSidebar} />
+          <MenuIcon onClick={showSidebar} />
         </a>
       </div>
       <nav className={sidebar ? "nav-menu active" : "nav-menu "}>

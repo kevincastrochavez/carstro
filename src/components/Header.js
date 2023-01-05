@@ -48,7 +48,7 @@ function Header(props) {
             <button
               className="dropbtn"
               onClick={() => {
-                navigate("/utilization");
+                navigate("/");
               }}
             >
               Homepage
@@ -59,7 +59,7 @@ function Header(props) {
             <button
               className="dropbtn"
               onClick={() => {
-                navigate("/utilization");
+                navigate("/inventory");
               }}
             >
               Inventory
@@ -70,7 +70,7 @@ function Header(props) {
             <button
               className="dropbtn"
               onClick={() => {
-                navigate("/utilization");
+                navigate("/salesrepresentatives");
               }}
             >
               Sales Representatives
@@ -82,7 +82,7 @@ function Header(props) {
               className="signOut"
               id="dropbtn"
               onClick={() => {
-                navigate("/");
+                navigate("/aboutus");
               }}
             >
               About Us
