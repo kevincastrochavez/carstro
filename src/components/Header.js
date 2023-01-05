@@ -20,7 +20,7 @@
 // import React, { useState } from "react";
 // import header from "./header.module.css";
 import { useNavigate } from "react-router-dom";
-// import Navbar from "./navbar";
+import Hamburger from "./Hamburger";
 // import PropTypes from "prop-types";
 
 function Header(props) {
@@ -48,7 +48,7 @@ function Header(props) {
             <button
               className="dropbtn"
               onClick={() => {
-                navigate("/utilization");
+                navigate("/");
               }}
             >
               Homepage
@@ -59,7 +59,7 @@ function Header(props) {
             <button
               className="dropbtn"
               onClick={() => {
-                navigate("/utilization");
+                navigate("/inventory");
               }}
             >
               Inventory
@@ -70,7 +70,7 @@ function Header(props) {
             <button
               className="dropbtn"
               onClick={() => {
-                navigate("/utilization");
+                navigate("/salesrepresentatives");
               }}
             >
               Sales Representatives
@@ -82,7 +82,7 @@ function Header(props) {
               className="signOut"
               id="dropbtn"
               onClick={() => {
-                navigate("/");
+                navigate("/aboutus");
               }}
             >
               About Us
@@ -95,7 +95,7 @@ function Header(props) {
           {/* <button className={outHam} onClick={() => setShowLinks(!showLinks)}>
             <FaHamburger />
           </button> */}
-          {/* <Navbar /> */}
+          <Hamburger />
         </div>
       </div>
     </div>

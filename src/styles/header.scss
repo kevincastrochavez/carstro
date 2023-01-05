@@ -1,3 +1,19 @@
+.dropbtn:hover {
+  text-shadow: 0 0 10px #ffffff;
+}
+
+.dropbtn {
+  transition: 0.2s;
+}
+
+#dropbtn {
+  transition: 0.2s;
+}
+
+#dropbtn:hover {
+  text-shadow: 0 0 10px #ffffff;
+}
+
 .header-logo {
   height: 30px;
   margin: 0px 20px;
@@ -233,7 +249,7 @@ a {
   height: 2px;
   left: 50%;
   position: absolute;
-  background: #022d53;
+  // background: #022d53;
   transition: width 0.3s ease 0s, left 0.3s ease 0s;
   width: 0;
 }
