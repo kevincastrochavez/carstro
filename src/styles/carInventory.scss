@@ -20,11 +20,24 @@
 
     &-right {
       text-align: right;
+
+      & svg {
+        font-size: 16px;
+        transform: translateY(2px);
+        margin-left: 4px;
+      }
     }
 
     & > span {
       font-weight: bold;
     }
+  }
+
+  &_popover div {
+    padding: 10px;
+    right: 48px !important;
+    max-width: calc(100% - 96px);
+    margin-top: 8px;
   }
 
   &_img {
@@ -87,7 +100,7 @@
 
 .carInventory_listView {
   grid-template-rows: auto $px-12 auto;
-  padding-bottom: $px-28;
+  padding-bottom: 12px;
   cursor: pointer;
 
   .carInventory {
@@ -107,6 +120,30 @@
     &_link {
       grid-row: 5/6;
     }
+
+    &_expand,
+    &_close {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 4px;
+
+      & svg {
+        font-size: 16px;
+      }
+
+      & p {
+        font-size: 12px;
+      }
+    }
+
+    &_expand {
+      grid-row: 4/5;
+    }
+
+    &_close {
+      grid-row: 6/7;
+    }
   }
 }
 
@@ -115,25 +152,34 @@
     padding: $px-32 $px-32 $px-44;
     grid-template-rows: auto $px-32 auto $px-40 auto;
 
+    &_popover div {
+      right: 64px !important;
+    }
+
     &_img {
       width: 60%;
-      // width: 50%; Tentatively
     }
   }
 
   .carInventory_listView {
     grid-template-rows: auto 12px auto;
-    padding-bottom: $px-32;
+    padding-bottom: 20px;
   }
 }
 
 @media screen and (min-width: 990px) {
   .carInventory {
     width: 300px;
-    // max-height: 365.14px;
+    height: fit-content;
     padding: $px-24;
 
     &_top {
+      &-right svg {
+        font-size: 12px;
+        transform: translateY(-2px);
+        margin-left: 0;
+      }
+
       &-range {
         grid-row: 4;
       }
@@ -186,7 +232,7 @@
 
     &_listView {
       width: 100%;
-      // max-height: 144px;
+      padding-bottom: 16px;
 
       .carInventory_img {
         justify-self: center;
@@ -207,6 +253,13 @@
       grid-template-columns: 126px 1fr;
       grid-template-rows: 1fr;
       column-gap: $px-24;
+      padding-bottom: 12px;
+    }
+
+    &_expand,
+    &_close {
+      margin-top: 8px;
+      grid-column: 1/-1;
     }
   }
 }

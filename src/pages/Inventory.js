@@ -2,6 +2,9 @@ import React, { useEffect, useState } from 'react';
 import ViewModuleIcon from '@mui/icons-material/ViewModule';
 import ViewListIcon from '@mui/icons-material/ViewList';
 import { useSearchParams, useLocation } from 'react-router-dom';
+import { Fab } from '@mui/material';
+import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
+import FlipMove from 'react-flip-move';
 
 import { useStateValue } from '../StateProvider';
 import Button from '../components/Button';
@@ -9,6 +12,7 @@ import CarInventory from '../components/CarInventory';
 import Filters from '../components/Filters';
 import db from '../firebase';
 import InventorySkeleton from '../components/InventorySkeleton';
+import NoCarState from '../components/NoCarState';
 
 function Inventory() {
   const [
@@ -26,8 +30,11 @@ function Inventory() {
   ] = useStateValue();
   const [activeGrid, setActiveGrid] = useState(true);
   const [windowWidth, setWindowWidth] = useState(0);
+  const [windowHeight, setWindowHeight] = useState(0);
   const [carsToRender, setCarsToRender] = useState([]);
   const [searchParams, setSearchParams] = useSearchParams();
+  const [loadingCars, setLoadingCars] = useState(false);
+  const [offsetHeight, setOffsetHeight] = useState(0);
   const location = useLocation();
 
   const showListLayout = () => setActiveGrid(false);
@@ -49,6 +56,8 @@ function Inventory() {
 
   // Fetching data from database if user access website directly through this page
   useEffect(() => {
+    setLoadingCars(true);
+
     if (carsResults.length === 0) {
       db.collection('cars')
         .get()
@@ -80,8 +89,13 @@ function Inventory() {
             type: 'SET_MIN_MAX_MILEAGE_FILTER',
             minMaxMileage: [minMileage, maxMileage],
           });
+
+          setLoadingCars(false);
         });
     }
+
+    // If cars already were pulled, there's no need to wait for any fetch, so skeleton should disappear
+    setLoadingCars(false);
   }, []);
 
   useEffect(() => {
@@ -108,8 +122,19 @@ function Inventory() {
 
   useEffect(() => {
     setWindowWidth(window.innerWidth);
+    setWindowHeight(window.innerHeight - 80);
   }, []);
 
+  // Runs function that gets the scroll position
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  // Fixes the scrolling when the filters are shown
   useEffect(() => {
     if (showFilters && window.innerWidth < 990) {
       document.body.style.overflow = 'hidden';
@@ -117,6 +142,14 @@ function Inventory() {
       document.body.style.overflow = 'unset';
     }
   }, [showFilters]);
+
+  const handleScroll = () => {
+    setOffsetHeight(window.scrollY);
+  };
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   return (
     <main className='inventory_main'>
@@ -150,7 +183,7 @@ function Inventory() {
         </div>
       </div>
       <div className='inventory_hiddenBar'></div>
-      <div
+      <FlipMove
         style={{
           justifyContent: !activeGrid && windowWidth >= 990 && 'unset',
           flexDirection: !activeGrid && windowWidth >= 990 && 'column',
@@ -159,8 +192,10 @@ function Inventory() {
           !activeGrid && 'inventory_carsContainer-reducedGap'
         }`}
       >
-        {carsToRender.length === 0 ? (
+        {loadingCars ? (
           <InventorySkeleton />
+        ) : carsToRender.length === 0 ? (
+          <NoCarState />
         ) : (
           carsToRender?.map((car) => {
             return (
@@ -170,13 +205,24 @@ function Inventory() {
                 {...car}
                 activeGrid={activeGrid}
                 windowSize={windowWidth}
+                singleResult={carsToRender.length > 2 ? false : true}
               />
             );
           })
         )}
-      </div>
+      </FlipMove>
 
       <Filters />
+
+      <Fab
+        className='inventory_scrollToTop'
+        size='small'
+        aria-label='Scroll to top'
+        style={{ top: windowHeight, opacity: offsetHeight >= 2000 ? 1 : 0 }}
+        onClick={scrollToTop}
+      >
+        <KeyboardArrowUpIcon />
+      </Fab>
     </main>
   );
 }

@@ -5,7 +5,7 @@ import { createSearchParams, useSearchParams } from 'react-router-dom';
 
 import { useStateValue } from '../StateProvider';
 
-function SliderRange({ range, text, price }) {
+function SliderRange({ range, text, price, reset }) {
   const [{ minMaxPrice, minMaxMileage }] = useStateValue();
   const [searchParams, setSearchParams] = useSearchParams();
   const [value, setValue] = useState(range);
@@ -15,7 +15,7 @@ function SliderRange({ range, text, price }) {
 
   useEffect(() => {
     setValue([minPrice, maxPrice]);
-  }, [range]);
+  }, [range, reset]);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
