@@ -1,17 +1,19 @@
 // Cindy
-import React, { useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
-import db from '../firebase';
-import { useStateValue } from '../StateProvider';
+import db from "../firebase";
+import { useStateValue } from "../StateProvider";
 
 function Homepage() {
+  let navigate = useNavigate();
   const [{ carsResults, minMaxPrice, minMaxMileage }, dispatch] =
     useStateValue();
 
   useEffect(() => {
     if (carsResults.length === 0) {
-      db.collection('cars')
+      db.collection("cars")
         .get()
         .then((cars) => {
           const carsResults = cars.docs.map((car) => {
@@ -27,17 +29,17 @@ function Homepage() {
           const maxMileage = Math.max(...milesArray);
 
           dispatch({
-            type: 'SET_CARS_RESULTS',
+            type: "SET_CARS_RESULTS",
             carsResults,
           });
 
           dispatch({
-            type: 'SET_MIN_MAX_PRICE_FILTER',
+            type: "SET_MIN_MAX_PRICE_FILTER",
             minMaxPrice: [minPrice, maxPrice],
           });
 
           dispatch({
-            type: 'SET_MIN_MAX_MILEAGE_FILTER',
+            type: "SET_MIN_MAX_MILEAGE_FILTER",
             minMaxMileage: [minMileage, maxMileage],
           });
         });
@@ -50,6 +52,9 @@ function Homepage() {
           className="home-mainImage"
           src="homepageImages/main-l.jpg"
           alt=""
+          onClick={() => {
+            navigate("/");
+          }}
         />
       </div>
       <h1>Home</h1>
