@@ -7,11 +7,11 @@ class MessageParser {
     console.log(message);
     const lowerMessage = message.toLowerCase();
 
-    if (lowerMessage.includes('see inventory')) {
-      this.actionProvider.introInventory();
-    }
-
-    if (lowerMessage.includes('inventory')) {
+    if (
+      lowerMessage.includes('shop') ||
+      lowerMessage.includes('shop vehicle') ||
+      lowerMessage.includes('shop a vehicle')
+    ) {
       this.actionProvider.introInventory();
     }
   }
