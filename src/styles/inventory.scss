@@ -11,6 +11,7 @@
   }
 
   &_header {
+    background-color: white;
     display: grid;
     grid-template-columns: $px-24 1fr 1fr $px-24;
     row-gap: $px-24;
