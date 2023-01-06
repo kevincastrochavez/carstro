@@ -49,8 +49,24 @@ function Homepage() {
     <div className="homepage-container">
       <div className="main-image">
         <img
-          className="home-mainImage"
+          className="home-mainImage home-mainImage-l"
           src="homepageImages/main-l.jpg"
+          alt=""
+          onClick={() => {
+            navigate("/");
+          }}
+        />
+        <img
+          className="home-mainImage home-mainImage-m"
+          src="homepageImages/main-m.jpg"
+          alt=""
+          onClick={() => {
+            navigate("/");
+          }}
+        />
+        <img
+          className="home-mainImage home-mainImage-s"
+          src="homepageImages/main-s.jpg"
           alt=""
           onClick={() => {
             navigate("/");
