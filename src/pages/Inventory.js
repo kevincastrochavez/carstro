@@ -35,10 +35,13 @@ function Inventory() {
   const [searchParams, setSearchParams] = useSearchParams();
   const [loadingCars, setLoadingCars] = useState(false);
   const [offsetHeight, setOffsetHeight] = useState(0);
+  const [priceSorting, setPriceSorting] = useState('low');
   const location = useLocation();
 
   const showListLayout = () => setActiveGrid(false);
   const showGridLayout = () => setActiveGrid(true);
+
+  console.log(priceSorting);
 
   const displayFilters = () => {
     dispatch({
@@ -179,7 +182,14 @@ function Inventory() {
             text='Filter'
             bgColor='grey'
           />
-          <Button text='Price: Low' bgColor='grey' />
+
+          <select
+            className='btn btn__grey inventory_header-select'
+            onChange={(e) => setPriceSorting(e.target.value)}
+          >
+            <option value='low'>Price: Low to High</option>
+            <option value='high'>Price: High to Low</option>
+          </select>
         </div>
       </div>
       <div className='inventory_hiddenBar'></div>
