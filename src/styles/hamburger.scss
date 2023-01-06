@@ -13,7 +13,7 @@ body {
 .menu-bars {
   color: white;
   margin-right: 2rem;
-  font-size: 2rem;
+  height: 2.5rem;
   background: none;
 }
 
@@ -77,4 +77,8 @@ body {
   display: flex;
   justify-content: end;
   align-items: center;
+}
+
+.hamWrapper {
+  z-index: 1;
 }

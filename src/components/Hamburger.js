@@ -14,7 +14,6 @@ function Hamburger() {
   return (
     <div>
       <div className="navbar">
-        <div className="logoSide">logo</div>
         <a href="#" className="menu-bars">
           <MenuIcon onClick={showSidebar} />
         </a>
