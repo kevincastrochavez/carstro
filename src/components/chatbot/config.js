@@ -1,11 +1,12 @@
 import { createChatBotMessage } from 'react-chatbot-kit';
 
 import IntroductoryOptions from './options/IntroductoryOptions';
+import RepresentativeOptions from './options/RepresentativeOptions';
 
 const config = {
   botName: 'Digital Assistant',
   initialMessages: [
-    createChatBotMessage('Welcome to Carstro chatbot! How can we help you?', {
+    createChatBotMessage("I'm Carstro's chatbot! How can I help you?", {
       widget: 'introductoryOptions',
     }),
   ],
@@ -13,6 +14,10 @@ const config = {
     {
       widgetName: 'introductoryOptions',
       widgetFunc: (props) => <IntroductoryOptions {...props} />,
+    },
+    {
+      widgetName: 'representativeOptions',
+      widgetFunc: (props) => <RepresentativeOptions {...props} />,
     },
   ],
 };

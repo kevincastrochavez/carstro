@@ -7,8 +7,10 @@
 
   &_button {
     border: 2px solid $green;
+    cursor: pointer;
 
-    & a {
+    & a,
+    & span {
       display: block;
       color: black;
       margin: 0;

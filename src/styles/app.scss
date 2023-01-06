@@ -45,7 +45,7 @@
 
   &-message-container {
     overflow: scroll;
-    padding: 16px;
+    padding: 4px 16px 16px;
     flex: 1;
 
     -ms-overflow-style: none; // IE and Edge
@@ -88,6 +88,7 @@
     grid-template-columns: 32px 1fr;
     gap: 8px;
     margin-right: 40px;
+    margin-top: 24px;
   }
 
   &-bot-avatar {

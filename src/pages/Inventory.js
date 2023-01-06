@@ -218,7 +218,7 @@ function Inventory() {
         className='inventory_scrollToTop'
         size='small'
         aria-label='Scroll to top'
-        style={{ top: windowHeight, opacity: offsetHeight >= 2000 ? 1 : 0 }}
+        style={{ opacity: offsetHeight >= 2000 ? 1 : 0 }}
         onClick={scrollToTop}
       >
         <KeyboardArrowUpIcon />

@@ -82,8 +82,9 @@
   &_scrollToTop {
     transition: all 0.3s ease-in-out !important;
     position: fixed !important;
+    bottom: 24px;
     right: 24px;
-    z-index: 3;
+    z-index: 2000 !important;
     background-color: $green !important;
 
     & svg {
@@ -130,6 +131,7 @@
 
     &_scrollToTop {
       right: 32px;
+      bottom: 32px;
     }
   }
 }

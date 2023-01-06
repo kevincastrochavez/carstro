@@ -12,7 +12,7 @@ const IntroductoryOptions = (props) => {
         <Link
           to={`/inventory?minPrice=${minMaxPrice[0]}&maxPrice=${minMaxPrice[1]}&minMileage=${minMaxMileage[0]}&maxMileage=${minMaxMileage[1]}`}
         >
-          See Inventory
+          Shop a Vehicle
         </Link>
       ),
       handler: () => dispatch({ type: 'SHOW_CHAT', showChat: false }),
@@ -22,6 +22,11 @@ const IntroductoryOptions = (props) => {
       text: <Link to='/salesRepresentatives'>Find a dealer</Link>,
       handler: () => dispatch({ type: 'SHOW_CHAT', showChat: false }),
       id: 2,
+    },
+    {
+      text: <span>Chat with representative</span>,
+      handler: props.actionProvider.handleChatRepresentative,
+      id: 3,
     },
   ];
 
