@@ -18,7 +18,7 @@ const RepresentativeOptions = (props) => {
     },
     {
       text: <span>Chat with agent</span>,
-      handler: () => dispatch({ type: 'SHOW_CHAT', showChat: false }),
+      handler: props.actionProvider.handleChatWithAgent,
       id: 2,
     },
   ];

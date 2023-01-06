@@ -26,6 +26,25 @@ class ActionProvider {
 
     this.addMessageToState(message);
   };
+
+  handleChatWithAgent = () => {
+    const message = this.createChatbotMessage(
+      'Did not find what you were looking for? Let us know how we can help you'
+    );
+
+    this.addMessageToState(message);
+  };
+
+  handleLastText = () => {
+    const message = this.createChatbotMessage(
+      'We will work on your request as soon as possible. Thank you for choosing Carstro. If you can help in anything else, please select one of the options:',
+      {
+        widget: 'introductoryOptions',
+      }
+    );
+
+    this.addMessageToState(message);
+  };
 }
 
 export default ActionProvider;
