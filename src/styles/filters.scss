@@ -67,6 +67,7 @@
       height: $px-24;
       width: $px-24;
       cursor: pointer;
+      outline: none;
     }
 
     & label {
@@ -142,8 +143,25 @@
     height: 910px;
     background-color: $bgnd-lightgray;
 
+    // Styles in filters form to make the scrollbar visible at all times
     &_form {
-      // height: 100vh; Pending to review
+      &::-webkit-scrollbar {
+        -webkit-appearance: none;
+      }
+
+      &::-webkit-scrollbar:vertical {
+        width: 11px;
+      }
+
+      &::-webkit-scrollbar:horizontal {
+        height: 11px;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        border-radius: 8px;
+        border: 2px solid #f4f4f4;
+        background-color: rgba(0, 0, 0, 0.5);
+      }
     }
 
     &_button {

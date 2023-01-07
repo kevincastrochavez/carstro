@@ -30,11 +30,11 @@ function Inventory() {
   ] = useStateValue();
   const [activeGrid, setActiveGrid] = useState(true);
   const [windowWidth, setWindowWidth] = useState(0);
-  const [windowHeight, setWindowHeight] = useState(0);
   const [carsToRender, setCarsToRender] = useState([]);
   const [searchParams, setSearchParams] = useSearchParams();
   const [loadingCars, setLoadingCars] = useState(false);
   const [offsetHeight, setOffsetHeight] = useState(0);
+  const [priceSorting, setPriceSorting] = useState('low');
   const location = useLocation();
 
   const showListLayout = () => setActiveGrid(false);
@@ -58,49 +58,56 @@ function Inventory() {
   useEffect(() => {
     setLoadingCars(true);
 
-    if (carsResults.length === 0) {
-      db.collection('cars')
-        .get()
-        .then((cars) => {
-          const carsResults = cars.docs.map((car) => {
-            return { ...car.data(), carId: car.id };
-          });
-
-          const pricesArray = carsResults.map((car) => Number(car.price));
-          const minPrice = Math.min(...pricesArray);
-          const maxPrice = Math.max(...pricesArray);
-
-          const milesArray = carsResults.map((car) => Number(car.odometer));
-          const minMileage = Math.min(...milesArray);
-          const maxMileage = Math.max(...milesArray);
-
-          dispatch({
-            type: 'SET_CARS_RESULTS',
-            carsResults,
-          });
-
-          // Setting the min and max for the price and mileage
-          dispatch({
-            type: 'SET_MIN_MAX_PRICE_FILTER',
-            minMaxPrice: [minPrice, maxPrice],
-          });
-
-          dispatch({
-            type: 'SET_MIN_MAX_MILEAGE_FILTER',
-            minMaxMileage: [minMileage, maxMileage],
-          });
-
-          setLoadingCars(false);
+    // if (carsResults.length === 0) {
+    db.collection('cars')
+      .get()
+      .then((cars) => {
+        const carsResults = cars.docs.map((car) => {
+          return { ...car.data(), carId: car.id };
         });
-    }
+
+        const pricesArray = carsResults.map((car) => Number(car.price));
+        const minPrice = Math.min(...pricesArray);
+        const maxPrice = Math.max(...pricesArray);
+
+        const milesArray = carsResults.map((car) => Number(car.odometer));
+        const minMileage = Math.min(...milesArray);
+        const maxMileage = Math.max(...milesArray);
+
+        dispatch({
+          type: 'SET_CARS_RESULTS',
+          carsResults,
+        });
+
+        // Setting the min and max for the price and mileage
+        dispatch({
+          type: 'SET_MIN_MAX_PRICE_FILTER',
+          minMaxPrice: [minPrice, maxPrice],
+        });
+
+        dispatch({
+          type: 'SET_MIN_MAX_MILEAGE_FILTER',
+          minMaxMileage: [minMileage, maxMileage],
+        });
+
+        setLoadingCars(false);
+      });
+    // }
 
     // If cars already were pulled, there's no need to wait for any fetch, so skeleton should disappear
     setLoadingCars(false);
   }, []);
 
   useEffect(() => {
+    // Sorting the cars by price depending on the option selected
+    const carsFetched = carsResults.sort(
+      priceSorting === 'low'
+        ? (a, b) => a.price - b.price
+        : (a, b) => b.price - a.price
+    );
+
     // Performs the final filtering before rendering the CarInventory component
-    const filteredCars = carsResults.filter((car) => {
+    const filteredCars = carsFetched.filter((car) => {
       return (
         (brandsFilters.length > 0 ? brandsFilters.includes(car.brand) : car) &&
         (modelYearsFilters.length > 0
@@ -118,11 +125,19 @@ function Inventory() {
     });
 
     setCarsToRender(filteredCars);
-  }, [brandsFilters, modelYearsFilters, tireSize, colors, location]);
+  }, [
+    brandsFilters,
+    modelYearsFilters,
+    tireSize,
+    colors,
+    location,
+    priceSorting,
+  ]);
 
   useEffect(() => {
     setWindowWidth(window.innerWidth);
-    setWindowHeight(window.innerHeight - 80);
+
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }, []);
 
   // Runs function that gets the scroll position
@@ -147,6 +162,7 @@ function Inventory() {
     setOffsetHeight(window.scrollY);
   };
 
+  // Scrolls when the component loads
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -179,7 +195,14 @@ function Inventory() {
             text='Filter'
             bgColor='grey'
           />
-          <Button text='Price: Low' bgColor='grey' />
+
+          <select
+            className='btn btn__grey inventory_header-select'
+            onChange={(e) => setPriceSorting(e.target.value)}
+          >
+            <option value='low'>Price: Low to High</option>
+            <option value='high'>Price: High to Low</option>
+          </select>
         </div>
       </div>
       <div className='inventory_hiddenBar'></div>
@@ -218,7 +241,10 @@ function Inventory() {
         className='inventory_scrollToTop'
         size='small'
         aria-label='Scroll to top'
-        style={{ opacity: offsetHeight >= 2000 ? 1 : 0 }}
+        style={{
+          opacity: offsetHeight >= 2000 ? 1 : 0,
+          zIndex: offsetHeight >= 2000 ? 3000 : 0,
+        }}
         onClick={scrollToTop}
       >
         <KeyboardArrowUpIcon />
