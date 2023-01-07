@@ -120,6 +120,9 @@ function Homepage() {
                 value="View Inventory"
                 className="exploreInput"
                 id="exploreSubmit"
+                onClick={() => {
+                  navigate("/inventory");
+                }}
               />
             </form>
           </div>
@@ -152,7 +155,55 @@ function Homepage() {
           }}
         />
       </div>
-      <h2 className="homeSingleBrand">Browse by Brand</h2>
+      <div className="homeBrowseByBrand">
+        <h2 className="homeSingleBrand">Browse by Brand</h2>
+        <div className="homeBrandLogos">
+          <div className="homeBrandLogos-column">
+            <div className="homeBrandLogos-singleLogo">
+              <div className="homeBrandLogos-singleLogo-logo"></div>
+              <div className="homeBrandLogos-singleLogo-text">Kia Cars</div>
+            </div>
+            <div className="homeBrandLogos-singleLogo">
+              <div className="homeBrandLogos-singleLogo-logo"></div>
+              <div className="homeBrandLogos-singleLogo-text"> Renault</div>
+            </div>
+            <div className="homeBrandLogos-singleLogo">
+              <div className="homeBrandLogos-singleLogo-logo"></div>
+              <div className="homeBrandLogos-singleLogo-text">BMW Cars</div>
+            </div>
+          </div>
+          <div className="homeBrandLogos-column">
+            <div className="homeBrandLogos-singleLogo">
+              <div className="homeBrandLogos-singleLogo-logo"></div>
+              <div className="homeBrandLogos-singleLogo-text">Jeep</div>
+            </div>
+            <div className="homeBrandLogos-singleLogo">
+              <div className="homeBrandLogos-singleLogo-logo"></div>
+              <div className="homeBrandLogos-singleLogo-text">Audi Cars</div>
+            </div>
+            <div className="homeBrandLogos-singleLogo">
+              <div className="homeBrandLogos-singleLogo-logo"></div>
+              <div className="homeBrandLogos-singleLogo-text">
+                General Motors
+              </div>
+            </div>
+          </div>
+          <div className="homeBrandLogos-column">
+            <div className="homeBrandLogos-singleLogo">
+              <div className="homeBrandLogos-singleLogo-logo"></div>
+              <div className="homeBrandLogos-singleLogo-text">Porsche</div>
+            </div>
+            <div className="homeBrandLogos-singleLogo">
+              <div className="homeBrandLogos-singleLogo-logo"></div>
+              <div className="homeBrandLogos-singleLogo-text">Land Rover</div>
+            </div>
+            <div className="homeBrandLogos-singleLogo">
+              <div className="homeBrandLogos-singleLogo-logo"></div>
+              <div className="homeBrandLogos-singleLogo-text">Volkswagen</div>
+            </div>
+          </div>
+        </div>
+      </div>
       <SaleRepresentativeCard />
     </div>
   );

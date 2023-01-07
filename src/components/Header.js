@@ -29,9 +29,17 @@ function Header(props) {
 
   return (
     <div className="header">
-      <div className="leftSide">
-        <img className="header-logo" src="headerImages/logo.png" alt="" />
-        {/* <img
+      <div className="headerHeader">
+        <div className="leftSide">
+          <img
+            className="header-logo"
+            src="headerImages/logo.png"
+            alt=""
+            onClick={() => {
+              navigate("/");
+            }}
+          />
+          {/* <img
           className="logo"
           src="../../public/headerImages/logo.png"
           alt="logo"
@@ -39,63 +47,65 @@ function Header(props) {
             navigate("#");
           }}
         /> */}
-      </div>
-      <div className="rightSide">
-        <div className="links" id="showLinks">
-          <div className="dropdown">
-            <button
-              className="dropbtn"
-              onClick={() => {
-                navigate("/");
-              }}
-            >
-              Homepage
-            </button>
-            <div className="dropdown_content"></div>
-          </div>
-          <div className="dropdown">
-            <button
-              className="dropbtn"
-              onClick={() => {
-                navigate("/inventory");
-              }}
-            >
-              Inventory
-            </button>
-            <div className="dropdown_content"></div>
-          </div>
-          <div className="dropdown">
-            <button
-              className="dropbtn"
-              onClick={() => {
-                navigate("/salesrepresentatives");
-              }}
-            >
-              Sales Representatives
-            </button>
-            <div className="dropdown_content"></div>
-          </div>
-          <div className="dropdown">
-            <button
-              className="signOut"
-              id="dropbtn"
-              onClick={() => {
-                navigate("/aboutus");
-              }}
-            >
-              About Us
-            </button>
-            <div className="dropdown_content"></div>
-          </div>
         </div>
+        <div className="rightSide">
+          <div className="links" id="showLinks">
+            <div className="dropdown">
+              <button
+                className="dropbtn"
+                onClick={() => {
+                  navigate("/");
+                }}
+              >
+                Homepage
+              </button>
+              <div className="dropdown_content"></div>
+            </div>
+            <div className="dropdown">
+              <button
+                className="dropbtn"
+                onClick={() => {
+                  navigate("/inventory");
+                }}
+              >
+                Inventory
+              </button>
+              <div className="dropdown_content"></div>
+            </div>
+            <div className="dropdown">
+              <button
+                className="dropbtn"
+                onClick={() => {
+                  navigate("/salesrepresentatives");
+                }}
+              >
+                Sales Representatives
+              </button>
+              <div className="dropdown_content"></div>
+            </div>
+            <div className="dropdown">
+              <button
+                className="signOut"
+                id="dropbtn"
+                onClick={() => {
+                  navigate("/aboutus");
+                }}
+              >
+                About Us
+              </button>
+              <div className="dropdown_content"></div>
+            </div>
+          </div>
 
-        <div className="hamWrapper">
-          {/* <button className={outHam} onClick={() => setShowLinks(!showLinks)}>
+          <div className="hamWrapper">
+            {/* <button className={outHam} onClick={() => setShowLinks(!showLinks)}>
             <FaHamburger />
           </button> */}
-          <Hamburger />
+            <Hamburger />
+          </div>
         </div>
       </div>
+      <div className="headerBar"></div>
     </div>
   );
 }

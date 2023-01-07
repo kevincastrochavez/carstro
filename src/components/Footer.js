@@ -11,7 +11,14 @@ function Footer() {
   return (
     <div className="footerContainer">
       <div className="footerLogoBox">
-        <img className="footer-logo" src="footerImages/logoW.png" alt="" />
+        <img
+          className="footer-logo"
+          src="footerImages/logoW.png"
+          alt=""
+          onClick={() => {
+            navigate("/");
+          }}
+        />
       </div>
       <div className="footerInfoBox">
         <div className="footerInfoBoxSingle">

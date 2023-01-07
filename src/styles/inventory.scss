@@ -140,6 +140,7 @@
 @media screen and (min-width: 990px) {
   .inventory {
     &_main {
+      width: 100%;
       background-color: $bgnd-lightgray;
       display: grid;
       grid-template-columns:

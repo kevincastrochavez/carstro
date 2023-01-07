@@ -6,12 +6,15 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 473px;
-  justify-content: space-around;
+  justify-content: space-evenly;
 }
 
 .footerInfoBox {
   display: flex;
+}
+
+.footer-logo {
+  cursor: pointer;
 }
 
 .footerInfoBoxSingle-link {
@@ -20,6 +23,10 @@
   font-weight: 100;
   font-family: "Raleway";
   margin: 14px 0px;
+}
+
+.footerInfoBoxSingle-title {
+  cursor: default;
 }
 
 .footerRights {
@@ -55,12 +62,15 @@
 
 /* Desktop   V I E W -large */
 @media only screen and (min-width: 990px) and (max-width: 1439px) {
+  .footerContainer {
+    width: 1040px;
+    height: 492px;
+  }
   .footer-logo {
     height: 48px;
   }
   .footerInfoBox {
-    max-width: 1000px;
-    width: 75vw;
+    width: 100%;
     display: flex;
     justify-content: space-between;
   }
