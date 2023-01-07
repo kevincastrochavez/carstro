@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 
 import db from "../firebase";
 import { useStateValue } from "../StateProvider";
+import SaleRepresentativeCard from "../components/SaleRepresentativeCard";
 
 function Homepage() {
   let navigate = useNavigate();
@@ -73,12 +74,47 @@ function Homepage() {
           }}
         />
       </div>
-      <h1>Home</h1>
+      {/* <h1>Home</h1> */}
       <Link
         to={`/inventory?minPrice=${minMaxPrice[0]}&maxPrice=${minMaxPrice[1]}&minMileage=${minMaxMileage[0]}&maxMileage=${minMaxMileage[1]}`}
+        className="homeInventoryLink"
       >
         Inventory
       </Link>
+      <div className="exploreVehicles">
+        <div className="exploreVehicles-box">
+          <div className="exploreVehicles-text">Explore Vehicles</div>
+          <div className="exploreVehicles-input">
+            <form action="/action_page.php" className="homeForm">
+              <select name="brand" className="exploreInput" id="exploreBrand">
+                <option value="selectBrand">Select Brand</option>
+                <option value="volvo">Volvo</option>
+                <option value="saab">Saab</option>
+                <option value="opel">Opel</option>
+                <option value="audi">Audi</option>
+              </select>
+              <select
+                name="vehicle"
+                className="exploreInput"
+                id="exploreVehicle"
+              >
+                <option value="selectVehicle">Select Vehicle</option>
+                <option value="sedan">Sedan</option>
+                <option value="sports">Sports</option>
+                <option value="convetible">Convertible</option>
+              </select>
+              <input
+                type="submit"
+                value="View Inventory"
+                className="exploreInput"
+                id="exploreSubmit"
+              />
+            </form>
+          </div>
+        </div>
+      </div>
+      <h2 className="homeSingleBrand">Browse by Brand</h2>
+      <SaleRepresentativeCard />
     </div>
   );
 }
