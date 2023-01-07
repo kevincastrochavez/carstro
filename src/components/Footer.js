@@ -1,6 +1,9 @@
 // CINDY
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import FacebookOutlinedIcon from "@mui/icons-material/FacebookOutlined";
+import TwitterIcon from "@mui/icons-material/Twitter";
+import InstagramIcon from "@mui/icons-material/Instagram";
 
 function Footer() {
   let navigate = useNavigate();
@@ -98,9 +101,15 @@ function Footer() {
           <div className="footerInfoBoxSingle-links">
             <div className="footerRights">® 2023 ABC All Rights Reserved</div>
             <div className="footerSocialMediaIcons">
-              <div className="footerSocialMediaIcon">ic</div>
-              <div className="footerSocialMediaIcon">ic</div>
-              <div className="footerSocialMediaIcon">ic</div>
+              <div className="footerSocialMediaIcon">
+                <FacebookOutlinedIcon />
+              </div>
+              <div className="footerSocialMediaIcon">
+                <TwitterIcon />
+              </div>
+              <div className="footerSocialMediaIcon">
+                <InstagramIcon />
+              </div>
             </div>
           </div>
         </div>
