@@ -11,8 +11,8 @@ $lightgrayText: #5c5e62;
 //////////////////////////
 // FONTS
 
-$heading-font: 'Raleway', sans-serif;
-$body-font: 'Cabin', sans-serif;
+$heading-font: "Raleway", sans-serif;
+$body-font: "Cabin", sans-serif;
 
 h1,
 h2,
@@ -68,6 +68,14 @@ $px-100: 100px;
 
 h1 {
   font-size: $px-32;
+}
+
+p2r {
+  font-family: "Cabin";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 150%;
 }
 
 @media screen and (min-width: 720px) {
