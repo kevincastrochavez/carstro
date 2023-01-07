@@ -1,6 +1,6 @@
-.salesRepresentatives_main {
-  padding: 0px 24px;
-}
+// .salesRepresentatives_main {
+//   padding: 0px 24px;
+// }
 
 .main_h1 {
   padding: $px-24 0px $px-52;
@@ -19,9 +19,9 @@ body {
 
 //Laptop
 @media only screen and (min-width: 1200px) {
-  .salesRepresentatives_main {
-    padding: 0px 10%;
-  }
+  // .salesRepresentatives_main {
+  //   padding: 0px 10%;
+  // }
 
   .salesRepresentatives_section_h2 {
     display: none;
@@ -39,6 +39,26 @@ body {
   }
 
   .main_section_map {
-    width: 62%;
+    width: 64%;
   }
+}
+
+/* Mobile View -small */
+@media only screen and (max-width: 719px) {
+}
+
+/* Tablet View -madium */
+@media only screen and (min-width: 720px) and (max-width: 989px) {
+}
+
+/* Desktop   V I E W -large */
+@media only screen and (min-width: 990px) and (max-width: 1439px) {
+  .salesRepresentativesContainer {
+    max-width: 1000px;
+    width: 90vw;
+  }
+}
+
+/* 4 K   V I E W  -extralarge*/
+@media only screen and (min-width: 1440px) {
 }

@@ -1,0 +1,65 @@
+.footerContainer {
+  width: 100%;
+  background-color: #222222;
+  border-top: 1px solid #696969;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 473px;
+  justify-content: space-around;
+}
+
+.footerInfoBox {
+  display: flex;
+}
+
+.footerInfoBoxSingle-link {
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 100;
+  font-family: "Raleway";
+  margin: 14px 0px;
+}
+
+.footerInfoBoxSingle-title {
+  font-weight: bold;
+  margin: 20px 0px;
+  font-size: 0.9rem;
+  font-family: "Raleway";
+}
+
+.footerSocialMediaIcons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Mobile View -small */
+@media only screen and (max-width: 719px) {
+}
+
+/* Tablet View -madium */
+@media only screen and (min-width: 720px) and (max-width: 989px) {
+}
+
+/* Desktop   V I E W -large */
+@media only screen and (min-width: 990px) and (max-width: 1439px) {
+  .footer-logo {
+    height: 48px;
+  }
+  .footerInfoBox {
+    max-width: 1000px;
+    width: 75vw;
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+/* 4 K   V I E W  -extralarge*/
+@media only screen and (min-width: 1440px) {
+}
+// Mobile: Up to 719px
+// Tablet: From 720 up to 989
+// Desktop: From 990 up to 1439
+// 4K: After 1440
