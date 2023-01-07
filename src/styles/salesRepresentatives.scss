@@ -1,5 +1,7 @@
 .salesRepresentatives_main {
   padding: 0px 24px;
+  padding-bottom: 50px;
+  background-color: white;
 }
 
 .main_h1 {
@@ -20,7 +22,8 @@ body {
 //Laptop
 @media only screen and (min-width: 1200px) {
   .salesRepresentatives_main {
-    padding: 0px 10%;
+    padding: 0px 7%;
+    padding-bottom: 50px;
   }
 
   .salesRepresentatives_section_h2 {
