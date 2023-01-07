@@ -54,8 +54,16 @@ body {
 /* Desktop   V I E W -large */
 @media only screen and (min-width: 990px) and (max-width: 1439px) {
   .salesRepresentativesContainer {
-    max-width: 1000px;
-    width: 90vw;
+    padding-bottom: 80px;
+    width: 100%;
+    display: flex;
+    background-color: white;
+    justify-content: center;
+  }
+
+  .salesRepresentatives_main {
+    width: 1040px;
+    padding: 0;
   }
 }
 

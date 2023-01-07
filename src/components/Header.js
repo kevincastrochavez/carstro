@@ -65,7 +65,9 @@ function Header(props) {
               <button
                 className="dropbtn"
                 onClick={() => {
-                  navigate("/inventory");
+                  navigate(
+                    "/inventory?minPrice=23499&maxPrice=420000&minMileage=1300&maxMileage=240483"
+                  );
                 }}
               >
                 Inventory

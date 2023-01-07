@@ -128,61 +128,124 @@ function Homepage() {
           </div>
         </div>
       </div>
-
-      <div className="marketing-image">
-        <img
-          className="home-marketingImage home-marketingImage-l"
-          src="homepageImages/marketing-l.jpg"
-          alt=""
-          onClick={() => {
-            navigate("/marketing");
-          }}
-        />
-        <img
-          className="home-marketingImage home-marketingImage-m"
-          src="homepageImages/marketing-m.jpg"
-          alt=""
-          onClick={() => {
-            navigate("/marketing");
-          }}
-        />
-        <img
-          className="home-marketingImage home-marketingImage-s"
-          src="homepageImages/marketing-s.jpg"
-          alt=""
-          onClick={() => {
-            navigate("/marketing");
-          }}
-        />
+      <div className="home-marketing-section">
+        <div className="marketing-image">
+          <img
+            className="home-marketingImage home-marketingImage-l"
+            src="homepageImages/markLarge.png"
+            alt=""
+            onClick={() => {
+              navigate("/marketing");
+            }}
+          />
+          <img
+            className="home-marketingImage home-marketingImage-s"
+            src="homepageImages/markSmall.jpg"
+            alt=""
+            onClick={() => {
+              navigate("/marketing");
+            }}
+          />
+        </div>
+        <div className="marketing-text">
+          <div className="marketing-title-and-text">
+            <h1>2023 Corolla Hybrid</h1>
+            <p2r>Sleek and steady wins the race</p2r>
+          </div>
+          <div className="marketing-text-button">
+            <button className="home-marketing-button">
+              <h5>Learn More</h5>
+            </button>
+          </div>
+        </div>
       </div>
+
       <div className="homeBrowseByBrand">
         <h2 className="homeSingleBrand">Browse by Brand</h2>
         <div className="homeBrandLogos">
           <div className="homeBrandLogos-column">
             <div className="homeBrandLogos-singleLogo">
-              <div className="homeBrandLogos-singleLogo-logo"></div>
+              <div className="homeBrandLogos-singleLogo-logo">
+                <img
+                  className="singleBrandLogo"
+                  src="singleBrandImages/Kia.png"
+                  alt=""
+                  onClick={() => {
+                    navigate("/");
+                  }}
+                />
+              </div>
               <div className="homeBrandLogos-singleLogo-text">Kia Cars</div>
             </div>
             <div className="homeBrandLogos-singleLogo">
-              <div className="homeBrandLogos-singleLogo-logo"></div>
+              <div className="homeBrandLogos-singleLogo-logo">
+                <img
+                  className="singleBrandLogo"
+                  src="singleBrandImages/Renault.png"
+                  alt=""
+                  onClick={() => {
+                    navigate("/");
+                  }}
+                />
+              </div>
               <div className="homeBrandLogos-singleLogo-text"> Renault</div>
             </div>
             <div className="homeBrandLogos-singleLogo">
-              <div className="homeBrandLogos-singleLogo-logo"></div>
+              <div className="homeBrandLogos-singleLogo-logo">
+                {" "}
+                <img
+                  className="singleBrandLogo"
+                  src="singleBrandImages/BMW.png"
+                  alt=""
+                  onClick={() => {
+                    navigate("/");
+                  }}
+                />
+              </div>
               <div className="homeBrandLogos-singleLogo-text">BMW Cars</div>
             </div>
           </div>
           <div className="homeBrandLogos-column">
             <div className="homeBrandLogos-singleLogo">
-              <div className="homeBrandLogos-singleLogo-logo"></div>
-              <div className="homeBrandLogos-singleLogo-text">Jeep</div>
+              <div className="homeBrandLogos-singleLogo-logo">
+                {" "}
+                <img
+                  className="singleBrandLogo"
+                  src="singleBrandImages/Lamborghini.png"
+                  alt=""
+                  onClick={() => {
+                    navigate("/");
+                  }}
+                />
+              </div>
+              <div className="homeBrandLogos-singleLogo-text">Lamborghini</div>
             </div>
             <div className="homeBrandLogos-singleLogo">
-              <div className="homeBrandLogos-singleLogo-logo"></div>
+              <div className="homeBrandLogos-singleLogo-logo">
+                {" "}
+                <img
+                  className="singleBrandLogo"
+                  src="singleBrandImages/Audi.png"
+                  alt=""
+                  onClick={() => {
+                    navigate("/");
+                  }}
+                />
+              </div>
               <div className="homeBrandLogos-singleLogo-text">Audi Cars</div>
             </div>
             <div className="homeBrandLogos-singleLogo">
-              <div className="homeBrandLogos-singleLogo-logo"></div>
+              <div className="homeBrandLogos-singleLogo-logo">
+                {" "}
+                <img
+                  className="singleBrandLogo"
+                  src="singleBrandImages/GMC.png"
+                  alt=""
+                  onClick={() => {
+                    navigate("/");
+                  }}
+                />
+              </div>
               <div className="homeBrandLogos-singleLogo-text">
                 General Motors
               </div>
@@ -190,15 +253,45 @@ function Homepage() {
           </div>
           <div className="homeBrandLogos-column">
             <div className="homeBrandLogos-singleLogo">
-              <div className="homeBrandLogos-singleLogo-logo"></div>
-              <div className="homeBrandLogos-singleLogo-text">Porsche</div>
+              <div className="homeBrandLogos-singleLogo-logo">
+                {" "}
+                <img
+                  className="singleBrandLogo"
+                  src="singleBrandImages/Ferrari.png"
+                  alt=""
+                  onClick={() => {
+                    navigate("/");
+                  }}
+                />
+              </div>
+              <div className="homeBrandLogos-singleLogo-text">Ferrari</div>
             </div>
             <div className="homeBrandLogos-singleLogo">
-              <div className="homeBrandLogos-singleLogo-logo"></div>
+              <div className="homeBrandLogos-singleLogo-logo">
+                {" "}
+                <img
+                  className="singleBrandLogo"
+                  src="singleBrandImages/LandRover.png"
+                  alt=""
+                  onClick={() => {
+                    navigate("/");
+                  }}
+                />
+              </div>
               <div className="homeBrandLogos-singleLogo-text">Land Rover</div>
             </div>
             <div className="homeBrandLogos-singleLogo">
-              <div className="homeBrandLogos-singleLogo-logo"></div>
+              <div className="homeBrandLogos-singleLogo-logo">
+                {" "}
+                <img
+                  className="singleBrandLogo"
+                  src="singleBrandImages/Volkswagen.png"
+                  alt=""
+                  onClick={() => {
+                    navigate("/");
+                  }}
+                />
+              </div>
               <div className="homeBrandLogos-singleLogo-text">Volkswagen</div>
             </div>
           </div>

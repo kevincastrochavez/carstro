@@ -10,6 +10,25 @@
   width: 100vw !important;
 }
 
+.homeBrandLogos-singleLogo {
+  cursor: pointer;
+  margin: 12px 0px;
+}
+
+.homeBrandLogos-singleLogo-text {
+  transition: 0.2s;
+  margin-left: 10px;
+}
+
+.homeBrandLogos-singleLogo-text:hover {
+  text-shadow: 0 0 4px #ffffff;
+}
+
+.singleBrandLogo {
+  max-height: 48px;
+  max-width: 48px;
+}
+
 /* Mobile View -small */
 @media only screen and (max-width: 719px) {
   .home-mainImage-m {
@@ -57,7 +76,7 @@
     background: white;
     height: 212.5px;
     width: 75vw;
-    max-width: 1000px;
+    max-width: 1040px;
     padding: 30px;
     display: flex;
     flex-direction: column;
@@ -104,10 +123,11 @@
     height: 280px;
     left: 377px;
     top: 1431px;
+    margin-top: 80px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-around;
   }
 
   .homeSingleBrand {
@@ -145,6 +165,58 @@
     font-weight: 400;
     font-size: 16px;
     line-height: 24px;
+  }
+
+  .home-marketing-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .marketing-image {
+    width: 100%;
+    margin-top: 80px;
+  }
+
+  .marketing-text {
+    width: 1040px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .home-marketingImage {
+    width: 100%;
+  }
+
+  .marketing-title-and-text {
+    width: 1040px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+  }
+
+  .home-marketing-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 16px 24px;
+    gap: 10px;
+    width: 176px;
+    height: 50px;
+    background-color: #eff1ed !important;
+    cursor: pointer;
+    margin-top: 96px;
+    transition: 0.3s;
+  }
+
+  .home-marketing-button:hover {
+    box-shadow: 0 0 4px #ffffff;
   }
 }
 
