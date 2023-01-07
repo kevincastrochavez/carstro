@@ -48,6 +48,18 @@ function Homepage() {
   }, []);
   return (
     <div className="homepage-container">
+      {/* <div className="home-mainText">
+        <div className="home-main-Title">
+          <h1>Same quality, lower price</h1>
+        </div>
+        <div className="home-main-Subtitle">
+          <h2>
+            Our vision is to help more people to own their dream car, and we are
+            making it possible...
+          </h2>
+        </div>
+        <div className="home-main-Button"></div>
+      </div> */}
       <div className="main-image">
         <img
           className="home-mainImage home-mainImage-l"
@@ -74,7 +86,7 @@ function Homepage() {
           }}
         />
       </div>
-      {/* <h1>Home</h1> */}
+
       <Link
         to={`/inventory?minPrice=${minMaxPrice[0]}&maxPrice=${minMaxPrice[1]}&minMileage=${minMaxMileage[0]}&maxMileage=${minMaxMileage[1]}`}
         className="homeInventoryLink"
@@ -112,6 +124,33 @@ function Homepage() {
             </form>
           </div>
         </div>
+      </div>
+
+      <div className="marketing-image">
+        <img
+          className="home-marketingImage home-marketingImage-l"
+          src="homepageImages/marketing-l.jpg"
+          alt=""
+          onClick={() => {
+            navigate("/marketing");
+          }}
+        />
+        <img
+          className="home-marketingImage home-marketingImage-m"
+          src="homepageImages/marketing-m.jpg"
+          alt=""
+          onClick={() => {
+            navigate("/marketing");
+          }}
+        />
+        <img
+          className="home-marketingImage home-marketingImage-s"
+          src="homepageImages/marketing-s.jpg"
+          alt=""
+          onClick={() => {
+            navigate("/marketing");
+          }}
+        />
       </div>
       <h2 className="homeSingleBrand">Browse by Brand</h2>
       <SaleRepresentativeCard />
