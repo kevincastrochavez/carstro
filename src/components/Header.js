@@ -42,8 +42,6 @@ function Header(props) {
       </div>
       <div className="rightSide">
         <div className="links" id="showLinks">
-          {/* <a id={welcome}>Welcome {userFirstName} |</a> */}
-
           <div className="dropdown">
             <button
               className="dropbtn"
