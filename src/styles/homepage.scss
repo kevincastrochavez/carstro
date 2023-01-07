@@ -104,10 +104,11 @@
     height: 280px;
     left: 377px;
     top: 1431px;
+    margin-top: 80px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-around;
   }
 
   .homeSingleBrand {
@@ -145,6 +146,15 @@
     font-weight: 400;
     font-size: 16px;
     line-height: 24px;
+  }
+
+  .marketing-image {
+    width: 100%;
+    margin-top: 80px;
+  }
+
+  .home-marketingImage {
+    width: 100%;
   }
 }
 

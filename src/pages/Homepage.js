@@ -132,13 +132,13 @@ function Homepage() {
       <div className="marketing-image">
         <img
           className="home-marketingImage home-marketingImage-l"
-          src="homepageImages/marketing-l.jpg"
+          src="homepageImages/markLarge.png"
           alt=""
           onClick={() => {
             navigate("/marketing");
           }}
         />
-        <img
+        {/* <img
           className="home-marketingImage home-marketingImage-m"
           src="homepageImages/marketing-m.jpg"
           alt=""
@@ -153,7 +153,7 @@ function Homepage() {
           onClick={() => {
             navigate("/marketing");
           }}
-        />
+        /> */}
       </div>
       <div className="homeBrowseByBrand">
         <h2 className="homeSingleBrand">Browse by Brand</h2>
