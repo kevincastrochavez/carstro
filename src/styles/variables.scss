@@ -78,6 +78,14 @@ p2r {
   line-height: 150%;
 }
 
+p1 {
+  font-family: "Cabin";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 150%;
+}
+
 @media screen and (min-width: 720px) {
   h1 {
     font-size: $px-40;

@@ -15,7 +15,11 @@ function Hamburger() {
     <div>
       <div className="navbar">
         <a href="#" className="menu-bars">
-          <MenuIcon onClick={showSidebar} />
+          <MenuIcon
+            onClick={showSidebar}
+            className="hamBarsIcon"
+            styles="width: 100%; height: 40px;"
+          />
         </a>
       </div>
       <nav className={sidebar ? "nav-menu active" : "nav-menu "}>

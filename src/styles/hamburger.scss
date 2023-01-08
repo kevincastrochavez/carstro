@@ -12,9 +12,11 @@ body {
 
 .menu-bars {
   color: white;
-  margin-right: 2rem;
+  // margin-right: 2rem;
   height: 2.5rem;
   background: none;
+  align-items: center;
+  display: flex;
 }
 
 /* .menu-bars:nth-child(2) {
@@ -81,4 +83,13 @@ body {
 
 .hamWrapper {
   z-index: 1;
+}
+
+.css-i4bv87-MuiSvgIcon-root {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.menu-bars {
+  min-height: 40px !important;
 }

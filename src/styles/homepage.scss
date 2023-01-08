@@ -29,6 +29,20 @@
   max-width: 48px;
 }
 
+#homeFindYoursButton {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  padding: 16px 24px;
+  width: 327px;
+  height: 50px;
+  left: 24px;
+  top: 186px;
+  background: #006039;
+}
+
 /* Mobile View -small */
 @media only screen and (max-width: 719px) {
   .home-mainImage-m {
@@ -36,6 +50,116 @@
   }
   .home-mainImage-l {
     display: none;
+  }
+
+  .home-marketingImage-l {
+    display: none;
+  }
+  .home-mainText {
+    color: white;
+    margin-top: 24px;
+    width: 75vw;
+  }
+  .home-main-Title {
+    max-width: 205px;
+  }
+  .home-main-Subtitle {
+    max-width: 270px;
+    margin-top: 12px;
+  }
+
+  #homeFindYoursButton {
+    margin-top: 32px;
+    cursor: pointer;
+    max-width: 327px;
+    width: 75vw;
+  }
+
+  .homeInventoryLink {
+    display: none;
+  }
+
+  .exploreVehicles {
+    width: 75vw;
+    color: white;
+    margin-top: 45px;
+  }
+
+  .exploreVehicles-text {
+    font-family: "Raleway";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 125%;
+  }
+
+  .exploreVehicles-box {
+    display: flex;
+    flex-direction: column;
+    // align-items: center;
+    height: 304px;
+    justify-content: space-evenly;
+  }
+
+  .homeForm {
+    display: flex;
+    flex-direction: column;
+    width: 75vw;
+    // align-items: center;
+  }
+
+  #exploreVehicle {
+    display: flex;
+    // flex-direction: column;
+    justify-content: center;
+    // align-items: flex-start;
+    padding: 0px;
+    width: 75vw;
+    height: 44px;
+    background: #ffffff;
+    border: 1px solid #cbd2e0;
+    // border-radius: 6px;
+    margin-top: 16px;
+    max-width: 327px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+  }
+
+  #exploreBrand {
+    display: flex;
+    // flex-direction: column;
+    justify-content: center;
+    // align-items: flex-start;
+    padding: 0px;
+    width: 75vw;
+    height: 44px;
+    background: #ffffff;
+    border: 1px solid #cbd2e0;
+    // border-radius: 6px;
+    max-width: 327px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+  }
+
+  #exploreSubmit {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    padding: 16px 24px;
+    height: 50px;
+    left: 24px;
+    top: 186px;
+    margin-top: 32px;
+    cursor: pointer;
+    max-width: 327px;
+    width: 75vw;
+    background: #006039;
   }
 }
 
@@ -47,6 +171,9 @@
   .home-mainImage-l {
     display: none;
   }
+  .home-marketingImage-s {
+    display: none;
+  }
 }
 
 /* Desktop   V I E W -large */
@@ -55,6 +182,9 @@
     display: none;
   }
   .home-mainImage-m {
+    display: none;
+  }
+  .home-marketingImage-s {
     display: none;
   }
 
