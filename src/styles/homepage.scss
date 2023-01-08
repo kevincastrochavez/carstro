@@ -43,6 +43,38 @@
   background: #006039;
 }
 
+.home-marketing-section {
+  margin-bottom: 64px;
+}
+
+.marketing-text {
+  color: white;
+  width: 75vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  justify-content: space-around;
+}
+
+.marketing-title-and-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.home-main-Title {
+  margin-bottom: 10px;
+}
+
+.homeBrowseByBrand {
+  color: white;
+}
+
+#homeSingleBrandLogoLast3 {
+  border-bottom: none !important;
+}
+
 /* Mobile View -small */
 @media only screen and (max-width: 719px) {
   .home-mainImage-m {
@@ -58,7 +90,7 @@
   .home-mainText {
     color: white;
     margin-top: 24px;
-    width: 75vw;
+    // width: 75vw;
   }
   .home-main-Title {
     max-width: 205px;
@@ -80,7 +112,7 @@
   }
 
   .exploreVehicles {
-    width: 75vw;
+    // width: 75vw;
     color: white;
     margin-top: 45px;
   }
@@ -104,7 +136,7 @@
   .homeForm {
     display: flex;
     flex-direction: column;
-    width: 75vw;
+    // width: 75vw;
     // align-items: center;
   }
 
@@ -161,9 +193,51 @@
     width: 75vw;
     background: #006039;
   }
+
+  .homeSingleBrand {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .home-marketing-section {
+    height: 400px;
+  }
+
+  .home-marketing-button {
+    width: 129.17px;
+    height: 50px;
+    background: #eff1ed;
+    cursor: pointer;
+  }
+
+  .homeBrandLogos-singleLogo {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid white;
+    width: 75vw;
+    max-width: 241px;
+    height: 70px;
+  }
+
+  #homeSingleBrandLogoLast2 {
+    border-bottom: none !important;
+  }
+
+  .homeBrandLogos-singleLogo-logo {
+    min-width: 48px;
+  }
+
+  .css-i4bv87-MuiSvgIcon-root {
+    width: 1em !important;
+    height: 1em !important;
+  }
+
+  .homeBrandLogos-column:nth-child(3) {
+    display: none;
+  }
 }
 
-/* Tablet View -madium */
+/* Tablet View -medium */
 @media only screen and (min-width: 720px) and (max-width: 989px) {
   .home-mainImage-s {
     display: none;
