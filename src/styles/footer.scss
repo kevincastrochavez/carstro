@@ -23,6 +23,11 @@
   font-weight: 100;
   font-family: "Raleway";
   margin: 14px 0px;
+  transition: 0.2s;
+}
+
+.footerInfoBoxSingle-link:hover {
+  color: #006039;
 }
 
 .footerInfoBoxSingle-title {
@@ -50,6 +55,11 @@
 
 .footerSocialMediaIcon {
   cursor: pointer;
+  transition: 0.2s;
+}
+
+.footerSocialMediaIcon:hover {
+  color: #006039;
 }
 
 /* Mobile View -small */
@@ -85,13 +95,24 @@
     flex-direction: column;
   }
 
+  .footerInfoBoxSingle-link {
+    margin: 4px 0px;
+  }
+
   .footerSocialMediaIcons {
     margin-bottom: 43px;
+  }
+
+  .footerLogoBox {
+    margin: 32px 0px;
   }
 }
 
 /* Tablet View -madium */
 @media only screen and (min-width: 720px) and (max-width: 989px) {
+  .footerInfoBox {
+    width: 75vw;
+  }
 }
 
 /* Desktop   V I E W -large */
@@ -99,12 +120,18 @@
   .footerContainer {
     width: 1040px;
     height: 492px;
+    margin-bottom: 66px;
   }
 
   .footerInfoBox {
-    width: 100%;
+    width: 75vw;
     display: flex;
     justify-content: space-between;
+    gap: 190px;
+  }
+
+  .footerLogoBox {
+    margin: 32px 0px;
   }
 }
 
