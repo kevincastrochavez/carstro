@@ -2,7 +2,7 @@ import React from "react";
 
 function Marketing() {
   return (
-    <div>
+    <div className="marketingContainer">
       <div className="marketing-top-img-container">
         <img
           className="marketing-car-rock-img"

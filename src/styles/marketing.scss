@@ -1,161 +1,175 @@
-.marketing-top-img-container{
-    min-width: 375px;
+.marketingContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
 }
 
-.marketing-car-rock-img, .marketing-car-rock-img-ipad, .marketing-car-rock-img-large, .marketing-white-car-img-mobile, .marketing-white-car-img-ipad, .marketing-white-car-img-large{
-    width: 100%;
+.marketing-top-img-container {
+  min-width: 375px;
 }
 
-.marketing-h1-container{
-    width: 327px;
-    margin: 24px;
+.marketing-car-rock-img,
+.marketing-car-rock-img-ipad,
+.marketing-car-rock-img-large,
+.marketing-white-car-img-mobile,
+.marketing-white-car-img-ipad,
+.marketing-white-car-img-large {
+  width: 100%;
 }
 
-.marketing-quote-container{
-    width: 327px;
-    margin: 24px auto;
+.marketing-h1-container {
+  width: 327px;
+  margin: 24px 0px;
 }
 
-.marketing-h1{
-    line-height: 40px;
+.marketing-quote-container {
+  width: 327px;
+  margin: 24px auto;
 }
 
-.marketing-p-container{
-    padding: 0 24px;
-    margin: auto;
+.marketing-h1 {
+  line-height: 40px;
 }
 
-.marketing-p{
-    padding: 8px 0px;
-    text-align: justify;
-    font-size: 14px;
-    line-height: 21px;
-    font-weight: 400;
+.marketing-p-container {
+  //   padding: 0 24px;
+  margin: auto;
 }
 
-.marketing-p-quote{
-    padding: 8px 0px;
-    text-align: center;
-    font-size: 18px;
-    line-height: 22.5px;
+.marketing-p {
+  padding: 8px 0px;
+  text-align: justify;
+  font-size: 14px;
+  line-height: 21px;
+  font-weight: 400;
 }
 
-.marketing-bot-img-container{
-   padding-top: 40px; 
+.marketing-p-quote {
+  padding: 8px 0px;
+  text-align: center;
+  font-size: 18px;
+  line-height: 22.5px;
 }
 
-.marketing-white-car-img-ipad, .marketing-white-car-img-large, .marketing-car-rock-img-large, .marketing-car-rock-img-ipad{
-    display: none;
+.marketing-bot-img-container {
+  padding-top: 40px;
+}
+
+.marketing-white-car-img-ipad,
+.marketing-white-car-img-large,
+.marketing-car-rock-img-large,
+.marketing-car-rock-img-ipad {
+  display: none;
 }
 
 @media only screen and (min-width: 720px) {
+  .marketing-h1-info-wrap {
+    width: 704px;
+    margin: auto;
+  }
 
-    .marketing-h1-info-wrap{
-        width: 704px;
-        margin: auto;
-    }
+  .marketing-h1-container {
+    width: 537px;
+  }
 
-    .marketing-h1-container{
-        width: 537px;
-    }
-
-    .marketing-h1{
-        line-height: 50px;
-        font-size: 40px;
-        font-weight: 600;
-        width: 537px;
-    }
-
+  .marketing-h1 {
+    line-height: 50px;
+    font-size: 40px;
+    font-weight: 600;
+    width: 537px;
+  }
 }
 
 @media only screen and (min-width: 768px) {
-    .marketing-white-car-img-mobile, .marketing-car-rock-img{
-        display: none;
-    }
-   
-    .marketing-white-car-img-ipad{
-        display: block;
-        width: 375px;
-        padding-top: 8px;
-    }
+  .marketing-white-car-img-mobile,
+  .marketing-car-rock-img {
+    display: none;
+  }
 
-   
-    .marketing-h1-info-wrap {
-        width: 768px;
-    }
+  .marketing-white-car-img-ipad {
+    display: block;
+    width: 375px;
+    padding-top: 8px;
+  }
 
-    .marketing-car-rock-img-ipad{
-        display: block;
-    }
+  .marketing-h1-info-wrap {
+    width: 768px;
+  }
 
-    .marketing-wrap-text-img{
-        display: flex;
-        padding: 6px 31px 0 13px;
-        width: 768px;
-        margin: auto;
-    }
+  .marketing-car-rock-img-ipad {
+    display: block;
+  }
 
-    .marketing-p {
-        font-size: 15px;
-        line-height: 22.5px;
-    }
+  .marketing-wrap-text-img {
+    display: flex;
+    padding: 6px 31px 0 13px;
+    width: 768px;
+    margin: auto;
+  }
 
-    .marketing-p-container{
-        padding: 0 18px;
-        margin: 0;
-    }
+  .marketing-p {
+    font-size: 15px;
+    line-height: 22.5px;
+  }
 
-    .marketing-quote-container{
-        width: 506px;
-    }
+  .marketing-p-container {
+    padding: 0 18px;
+    margin: 0;
+  }
 
-    .marketing-bot-img-container {
-        padding-top: 0;
-    }
+  .marketing-quote-container {
+    width: 506px;
+  }
 
-    .marketing-h1-container {
-        margin: 32px 31px;
-    }
-    
-    .marketing-p-quote {
-        font-size: 24px;
-        line-height: 30px;
-    }
+  .marketing-bot-img-container {
+    padding-top: 0;
+  }
+
+  .marketing-h1-container {
+    margin: 32px 31px;
+  }
+
+  .marketing-p-quote {
+    font-size: 24px;
+    line-height: 30px;
+  }
 }
 
 @media only screen and (min-width: 990px) {
-    .marketing-white-car-img-ipad, .marketing-car-rock-img-ipad{
-        display: none;
-    }
+  .marketing-white-car-img-ipad,
+  .marketing-car-rock-img-ipad {
+    display: none;
+  }
 
-    .marketing-white-car-img-large{
-        display: block;
-        padding-top: 12px;
-    }
+  .marketing-white-car-img-large {
+    display: block;
+    padding-top: 12px;
+  }
 
-    .marketing-car-rock-img-large{
-        display: block;
-    }
+  .marketing-car-rock-img-large {
+    display: block;
+  }
 
-    .marketing-h1 {
-        width: 687px;
-    }
+  .marketing-h1 {
+    width: 687px;
+  }
 
-    .marketing-h1-container {
-        width: 678px;
-    }
-    
-    .marketing-wrap-text-img {
-        width: 985px;
-        margin: auto;
-    }
+  .marketing-h1-container {
+    width: 678px;
+  }
 
-    .marketing-h1-info-wrap {
-        width: 985px;
-    }
+  .marketing-wrap-text-img {
+    width: 985px;
+    margin: auto;
+  }
 
-    .marketing-p {
-        font-size: 16px;
-        line-height: 25px;
-    }
+  .marketing-h1-info-wrap {
+    width: 985px;
+  }
+
+  .marketing-p {
+    font-size: 16px;
+    line-height: 25px;
+  }
 }

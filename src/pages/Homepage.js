@@ -48,52 +48,54 @@ function Homepage() {
   }, []);
   return (
     <div className="homepage-container">
-      <div className="main-image">
-        <img
-          className="home-mainImage home-mainImage-l"
-          src="homepageImages/main-l.jpg"
-          alt=""
-          onClick={() => {
-            navigate("/");
-          }}
-        />
-        <img
-          className="home-mainImage home-mainImage-m"
-          src="homepageImages/main-m.jpg"
-          alt=""
-          onClick={() => {
-            navigate("/");
-          }}
-        />
-        <img
-          className="home-mainImage home-mainImage-s"
-          src="homepageImages/main-s.jpg"
-          alt=""
-          onClick={() => {
-            navigate("/");
-          }}
-        />
-      </div>
-      <div className="home-mainText">
-        <div className="home-main-Title">
-          <h1>Same quality, lower price</h1>
+      <div className="bannerContainer">
+        <div className="main-image">
+          <img
+            className="home-mainImage home-mainImage-l"
+            src="homepageImages/main-l.jpg"
+            alt=""
+            onClick={() => {
+              navigate("/");
+            }}
+          />
+          <img
+            className="home-mainImage home-mainImage-m"
+            src="homepageImages/main-m.jpg"
+            alt=""
+            onClick={() => {
+              navigate("/");
+            }}
+          />
+          <img
+            className="home-mainImage home-mainImage-s"
+            src="homepageImages/main-s.jpg"
+            alt=""
+            onClick={() => {
+              navigate("/");
+            }}
+          />
         </div>
-        <div className="home-main-Subtitle">
-          <p1>
-            Our vision is to help more people to own their dream car, and we are
-            making it possible...
-          </p1>
+        <div className="home-mainText">
+          <div className="home-main-Title">
+            <h1>Same quality, lower price</h1>
+          </div>
+          <div className="home-main-Subtitle">
+            <p1>
+              Our vision is to help more people to own their dream car, and we
+              are making it possible...
+            </p1>
+          </div>
+          <button
+            type="button"
+            className="exploreInput"
+            id="homeFindYoursButton"
+            onClick={() => {
+              navigate("/inventory");
+            }}
+          >
+            Find Yours
+          </button>
         </div>
-        <button
-          type="button"
-          className="exploreInput"
-          id="homeFindYoursButton"
-          onClick={() => {
-            navigate("/inventory");
-          }}
-        >
-          Find Yours
-        </button>
       </div>
 
       <Link
@@ -149,7 +151,7 @@ function Homepage() {
           />
           <img
             className="home-marketingImage home-marketingImage-s"
-            src="homepageImages/markSmall.jpg"
+            src="homepageImages/markSmall.png"
             alt=""
             onClick={() => {
               navigate("/marketing");

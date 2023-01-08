@@ -6,8 +6,14 @@
   align-items: center;
 }
 
+.homeInventoryLink {
+  display: none;
+}
+
 .home-mainImage {
   width: 100vw !important;
+  height: 400px;
+  object-fit: cover;
 }
 
 .homeBrandLogos-singleLogo {
@@ -75,8 +81,17 @@
   border-bottom: none !important;
 }
 
+.home-mainText {
+  color: white;
+}
+
 /* Mobile View -small */
 @media only screen and (max-width: 719px) {
+  .bannerContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
   .home-mainImage-m {
     display: none;
   }
@@ -84,11 +99,21 @@
     display: none;
   }
 
+  .home-marketingImage {
+    height: 400px !important;
+    width: 100vw !important;
+    object-fit: cover !important;
+  }
+
+  .marketing-text {
+    margin-top: -400px;
+  }
+
   .home-marketingImage-l {
     display: none;
   }
   .home-mainText {
-    color: white;
+    // color: white;
     margin-top: 24px;
     // width: 75vw;
   }
@@ -105,10 +130,6 @@
     cursor: pointer;
     max-width: 327px;
     width: 75vw;
-  }
-
-  .homeInventoryLink {
-    display: none;
   }
 
   .exploreVehicles {
@@ -201,6 +222,9 @@
 
   .home-marketing-section {
     height: 400px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
   }
 
   .home-marketing-button {
@@ -248,21 +272,203 @@
   .home-marketingImage-s {
     display: none;
   }
+
+  .home-mainImage {
+    height: 580px;
+    width: 100vw !important;
+    object-fit: cover;
+  }
+
+  .home-mainText {
+    width: 75vw;
+    margin-top: -355px;
+  }
+
+  .home-main-Title {
+    width: 316px;
+    margin-bottom: 8px;
+  }
+
+  .home-main-Subtitle {
+    width: 316px;
+    margin-bottom: 48px;
+  }
+
+  .bannerContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 580px;
+    margin-bottom: 64px;
+  }
+
+  .exploreVehicles {
+    margin-bottom: 64px;
+  }
+
+  .exploreVehicles-text {
+    font-family: "Raleway";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 125%;
+    color: white;
+    text-align: center;
+  }
+
+  .exploreVehicles-input {
+    margin-top: 32px;
+  }
+
+  .exploreInput {
+    width: 180px;
+    height: 44px;
+    cursor: pointer;
+  }
+  .homeForm {
+    display: flex;
+  }
+
+  #exploreSubmit {
+    background: #006039;
+    color: white;
+  }
+
+  .home-marketing-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .home-marketingImage {
+    height: 400px;
+    width: 100vw;
+    object-fit: cover;
+  }
+
+  .marketing-text {
+    margin-top: -400px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 400px;
+  }
+
+  .home-marketing-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 16px 24px;
+    gap: 10px;
+    width: 176px;
+    height: 50px;
+    background-color: #eff1ed !important;
+    cursor: pointer;
+    margin-top: 96px;
+    transition: 0.3s;
+  }
+
+  .home-marketing-button:hover {
+    box-shadow: 0 0 4px #ffffff;
+  }
+
+  .homeBrowseByBrand {
+    width: 75vw;
+    height: 280px;
+    left: 377px;
+    top: 1431px;
+    margin-top: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  .homeSingleBrand {
+    font-family: "Raleway";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 32px;
+  }
+
+  .homeBrandLogos {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .homeBrandLogos-column {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .homeBrandLogos-singleLogo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    gap: 10px;
+    width: 180px;
+    height: 48px;
+  }
+
+  .homeBrandLogos-singleLogo-logo {
+    max-width: 40px !important;
+    min-width: 40px !important;
+    max-height: 40px !important;
+  }
 }
 
 /* Desktop   V I E W -large */
 @media only screen and (min-width: 990px) and (max-width: 1439px) {
+  .bannerContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
   .home-mainImage-s {
     display: none;
   }
   .home-mainImage-m {
     display: none;
   }
-  .home-marketingImage-s {
-    display: none;
+
+  .home-mainImage {
+    height: 580px;
   }
 
-  .homeInventoryLink {
+  .home-mainText {
+    width: 75vw;
+    margin-top: -355px;
+  }
+
+  .home-main-Title {
+    width: 316px;
+    margin-bottom: 8px;
+  }
+
+  .home-main-Subtitle {
+    width: 316px;
+    margin-bottom: 48px;
+  }
+
+  #homeFindYoursButton {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    padding: 16px 24px;
+    width: 327px;
+    height: 50px;
+    left: 24px;
+    top: 186px;
+    background: #006039;
+  }
+
+  .home-marketingImage-s {
     display: none;
   }
 
@@ -273,7 +479,7 @@
   }
 
   .exploreVehicles {
-    margin-top: -58px;
+    margin-top: 50px;
   }
 
   .exploreVehicles-box {
@@ -422,6 +628,26 @@
   .home-marketing-button:hover {
     box-shadow: 0 0 4px #ffffff;
   }
+
+  #homeFindYoursButton {
+    border: none !important;
+  }
+
+  .marketing-text {
+    margin-top: -540px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 540px;
+  }
+
+  .home-marketingImage {
+    height: 540px;
+  }
+
+  .home-marketing-section {
+    margin-bottom: 0px;
+  }
 }
 
 /* 4 K   V I E W  -extralarge*/
@@ -437,3 +663,10 @@
 // Tablet: From 720 up to 989
 // Desktop: From 990 up to 1439
 // 4K: After 1440
+
+// E X T R A   S M A L L
+@media screen and (max-width: 300px) {
+  .home-mainText {
+    width: 75vw;
+  }
+}

@@ -26,23 +26,42 @@ function Hamburger() {
         <ul className="nav-menu-items">
           {" "}
           <li className="nav-text">
-            <a href="#">Inventory</a>
+            <a href="/inventory" className="nav-text-a">
+              Inventory
+            </a>
           </li>
           <li className="nav-text">
-            <a href="#">Sales Representatives</a>
+            <a href="/salesrepresentatives" className="nav-text-a">
+              Sales Representatives
+            </a>
           </li>
           <li className="nav-text">
-            <a href="#">About Us</a>
+            <a href="/aboutus" className="nav-text-a">
+              About Us
+            </a>
           </li>
           <li className="nav-text">
-            <a href="#">Marketing</a>
+            <a href="/marketing" className="nav-text-a">
+              Marketing
+            </a>
           </li>
-          <li className="nav-text">
-            <a href="#">.</a>
-          </li>
-          <li className="nav-text">
-            <a href="#">.</a>
-          </li>
+          <div className="hamQuickLinks">
+            <li className="hamQuickLinksSingle">
+              <a href="#">kia</a>
+            </li>
+            <li className="hamQuickLinksSingle">
+              <a href="#">BMW</a>
+            </li>
+            <li className="hamQuickLinksSingle">
+              <a href="#">General Motors</a>
+            </li>
+            <li className="hamQuickLinksSingle">
+              <a href="#">Renault</a>
+            </li>
+            <li className="hamQuickLinksSingle">
+              <a href="#">Audi</a>
+            </li>
+          </div>
         </ul>
       </nav>
     </div>
