@@ -48,18 +48,6 @@ function Homepage() {
   }, []);
   return (
     <div className="homepage-container">
-      {/* <div className="home-mainText">
-        <div className="home-main-Title">
-          <h1>Same quality, lower price</h1>
-        </div>
-        <div className="home-main-Subtitle">
-          <h2>
-            Our vision is to help more people to own their dream car, and we are
-            making it possible...
-          </h2>
-        </div>
-        <div className="home-main-Button"></div>
-      </div> */}
       <div className="main-image">
         <img
           className="home-mainImage home-mainImage-l"
@@ -85,6 +73,27 @@ function Homepage() {
             navigate("/");
           }}
         />
+      </div>
+      <div className="home-mainText">
+        <div className="home-main-Title">
+          <h1>Same quality, lower price</h1>
+        </div>
+        <div className="home-main-Subtitle">
+          <p1>
+            Our vision is to help more people to own their dream car, and we are
+            making it possible...
+          </p1>
+        </div>
+        <button
+          type="button"
+          className="exploreInput"
+          id="homeFindYoursButton"
+          onClick={() => {
+            navigate("/inventory");
+          }}
+        >
+          Find Yours
+        </button>
       </div>
 
       <Link
