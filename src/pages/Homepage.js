@@ -243,7 +243,10 @@ function Homepage() {
               </div>
               <div className="homeBrandLogos-singleLogo-text">Audi Cars</div>
             </div>
-            <div className="homeBrandLogos-singleLogo">
+            <div
+              className="homeBrandLogos-singleLogo"
+              id="homeSingleBrandLogoLast2"
+            >
               <div className="homeBrandLogos-singleLogo-logo">
                 {" "}
                 <img
@@ -289,7 +292,10 @@ function Homepage() {
               </div>
               <div className="homeBrandLogos-singleLogo-text">Land Rover</div>
             </div>
-            <div className="homeBrandLogos-singleLogo">
+            <div
+              className="homeBrandLogos-singleLogo"
+              id="homeSingleBrandLogoLast3"
+            >
               <div className="homeBrandLogos-singleLogo-logo">
                 {" "}
                 <img
