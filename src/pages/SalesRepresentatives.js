@@ -108,7 +108,7 @@ function SalesRepresentatives() {
         <h1 className="main_h1">Sales Representatives</h1>
         <div className="salesRepresentatives_main_div">
           <section className="main_section_representatives">
-            <div>
+            <div className="sales-scrollbarSeparation">
               <ul id="salesRepresentatives_ul">
                 {saleRepresntative.map((item) => (
                   <SaleRepresentativeCard {...item} />
