@@ -46,18 +46,9 @@
   align-items: center;
 }
 
-.saleRepresentativeCard_div--picturesContainer {
-  width: 90%;
-  padding-right: 5%;
-}
-
 .saleRepresentativeCard_div_img {
   border-radius: 300px;
   width: 100%;
-}
-
-.saleRepresentativeCard_div--locationsContainer {
-  width: 60%;
 }
 
 .saleRepresentativeCard_ul_li {
@@ -80,13 +71,6 @@
   margin-top: $px-20;
 }
 
-.btn_green {
-  font-family: $heading-font;
-  background-color: #006039;
-  width: 100%;
-  padding: 10px 0px;
-  color: white;
-}
 /********************************/
 // Modal Window
 /********************************/
@@ -376,4 +360,194 @@ input:focus {
     width: 30%;
     top: 1.5;
   }
+}
+
+// E X T R A   S M A L L
+@media screen and (max-width: 300px) {
+  .home-mainText {
+    width: 75vw;
+  }
+
+  .saleRepresentativeCard_div {
+    flex-direction: column;
+  }
+
+  .saleRepresentativeCard_div--locationsContainer {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .btn_green {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 16px 24px;
+
+    height: 34px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  .saleRepresentativeCard_div--button {
+    margin-top: 0 !important;
+  }
+
+  .saleRepresentativeCard_div {
+    display: flex !important;
+  }
+  .saleRepresentativeCard_div_img {
+    max-width: 180px;
+  }
+}
+
+// SALES REPRESENTATIVE SPECIAL MEDIA QUERY
+@media screen and (min-width: 300px) and (max-width: 600px) {
+  .saleRepresentativeCard_div--button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 400px;
+    margin-top: 0 !important;
+  }
+  .saleRepresentativeCard_div {
+    max-width: 400px;
+    justify-content: space-around;
+    display: flex;
+  }
+
+  .saleRCardSeparator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .saleRepresentativeCard_div_img {
+    width: 30vw;
+    height: unset;
+    max-width: 160px;
+  }
+
+  .saleRepresentativeCard_div--locationsContainer {
+    margin-left: 10px;
+    align-items: unset;
+  }
+}
+
+/* Mobile View -small */
+@media only screen and (min-width: 600px) and (max-width: 719px) {
+  .saleRepresentativeCard_div--picturesContainer {
+    width: unset !important;
+    padding: 0 !important;
+    max-width: 140px;
+  }
+
+  .saleRepresentativeCard_div--locationsContainer {
+    width: unset !important;
+  }
+
+  .saleRepresentativeCard_div {
+    display: flex !important;
+    width: 100%;
+    justify-content: space-evenly;
+  }
+
+  .saleRepresentativeCard_div--button {
+    margin-top: 0 !important;
+    max-width: 400px;
+    width: 75vw;
+  }
+
+  .saleRCardSeparator {
+    align-items: center;
+    width: 75vw;
+    display: flex;
+    flex-direction: column;
+  }
+
+  #sl,
+  #rx,
+  #la,
+  #dv {
+    display: flex;
+    justify-content: center;
+    width: 75vw;
+  }
+}
+
+/* Tablet View -medium */
+@media only screen and (min-width: 720px) and (max-width: 989px) {
+  .saleRepresentativeCard_div_img {
+    height: 170px;
+    width: unset;
+  }
+  .saleRepresentativeCard_div {
+    display: flex;
+  }
+  .saleRepresentativeCard_div--button {
+    width: 60%;
+    margin-top: -41px;
+  }
+  .saleRCardSeparator {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  .saleRepresentativeCard_div {
+    align-items: unset;
+    padding: 12px 0px 0px 0px;
+    gap: 20px;
+    width: 100%;
+  }
+
+  .saleRepresentativeCard_div--picturesContainer {
+    padding-right: 0;
+    height: 170px;
+  }
+}
+
+/* Desktop   V I E W -large */
+@media only screen and (min-width: 990px) and (max-width: 1439px) {
+  .saleRepresentativeCard_div_img {
+    width: 120px;
+  }
+
+  .saleRepresentativeCard_div {
+    justify-content: center;
+  }
+
+  .saleRepresentativeCard_div--picturesContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 230px;
+  }
+
+  .saleRepresentativeCard_div--locationsContainer {
+    min-width: 230px;
+  }
+}
+
+/* 4 K   V I E W  -extralarge*/
+@media only screen and (min-width: 1440px) {
+}
+
+.btn_green {
+  font-family: $heading-font;
+  background-color: #006039;
+  width: 100%;
+  padding: 10px 10px;
+  color: white;
+  cursor: pointer;
+}
+
+.saleRepresentativeCard_div--button {
+  transition: 0.3s;
+}
+
+.saleRepresentativeCard_div--button:hover {
+  opacity: 90%;
 }

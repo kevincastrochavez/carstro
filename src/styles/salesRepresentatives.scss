@@ -1,3 +1,8 @@
+.salesRepresentativesContainer {
+  background-color: white;
+  margin-top: 80px;
+}
+
 .salesRepresentatives_main {
   padding: 0px 24px;
 }
@@ -18,40 +23,75 @@ body {
 }
 
 //Laptop
-@media only screen and (min-width: 1200px) {
-  .salesRepresentatives_main {
-    padding: 0px 10%;
-  }
+// @media only screen and (min-width: 1200px) {
+//   .salesRepresentatives_main {
+//     padding: 0px 10%;
+//   }
 
-  .salesRepresentatives_section_h2 {
-    display: none;
-  }
+//   .salesRepresentatives_section_h2 {
+//     display: none;
+//   }
 
-  .salesRepresentatives_main_div {
+//   .salesRepresentatives_main_div {
+//     display: flex;
+//   }
+
+//   .main_section_representatives {
+//     width: 35%;
+//     height: 650px;
+//     margin-right: 1%;
+//     overflow-y: scroll;
+//   }
+
+//   .main_section_map {
+//     width: 64%;
+//   }
+// }
+
+#salesRepresentatives_ul {
+  cursor: pointer;
+}
+
+// E X T R A   S M A L L
+@media screen and (max-width: 300px) {
+  .salesRepresentativesContainer {
+    margin-top: 70px;
     display: flex;
+    width: 100%;
+    justify-content: center;
   }
 
-  .main_section_representatives {
-    width: 35%;
-    height: 650px;
-    margin-right: 1%;
-    overflow-y: scroll;
-  }
-
-  .main_section_map {
-    width: 64%;
+  .salesRepresentatives_main {
+    width: 75vw;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
   }
 }
 
-/* Mobile View -small */
+/* M O B I L E   V I E W -small */
 @media only screen and (max-width: 719px) {
+  .salesRepresentatives_main {
+    width: 75vw;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+  }
+
+  .main_h1 {
+    font-size: 1.5rem;
+  }
 }
 
-/* Tablet View -madium */
+/* T A B L E T   V I E W -medium */
 @media only screen and (min-width: 720px) and (max-width: 989px) {
+  .salesRepresentatives_main {
+    width: 75vw;
+    padding: 0;
+  }
 }
 
-/* Desktop   V I E W -large */
+/* D E S K T O P   V I E W -large */
 @media only screen and (min-width: 990px) and (max-width: 1439px) {
   .salesRepresentativesContainer {
     padding-bottom: 80px;
@@ -62,11 +102,28 @@ body {
   }
 
   .salesRepresentatives_main {
-    width: 1040px;
+    width: 100%;
+    margin: 0px 40px;
     padding: 0;
+  }
+
+  .salesRepresentatives_main_div {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    gap: 52px;
+  }
+
+  .salesRepresentatives_section_h2 {
+    display: none;
   }
 }
 
 /* 4 K   V I E W  -extralarge*/
 @media only screen and (min-width: 1440px) {
+}
+
+.salesRepresentativesContainer {
+  display: flex;
+  width: 100%;
+  justify-content: center;
 }

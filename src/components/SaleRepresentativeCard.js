@@ -63,35 +63,41 @@ function SaleRepresentativeCard({
       )}
       {(saleCardOpen || deviceWidth >= 990) && (
         <div id={id}>
-          <div className="saleRepresentativeCard_div">
-            <div className="saleRepresentativeCard_div--picturesContainer">
-              <img className="saleRepresentativeCard_div_img" src={image}></img>
+          <div className="saleRCardSeparator">
+            <div className="saleRepresentativeCard_div">
+              <div className="saleRepresentativeCard_div--picturesContainer">
+                <img
+                  className="saleRepresentativeCard_div_img"
+                  src={image}
+                ></img>
+              </div>
+              <div className="saleRepresentativeCard_div--locationsContainer">
+                <h4 className="saleRepresentativeCard_div_img_h4">{name}</h4>
+                <ul className="saleRepresentativeCard_ul">
+                  <div>
+                    <li className="saleRepresentativeCard_ul_li">
+                      <LocationOnIcon className="li_icon" />
+                      {location}
+                    </li>
+                    <li className="saleRepresentativeCard_ul_li">
+                      <MailIcon className="li_icon" />
+                      {email}
+                    </li>
+                  </div>
+                  <div>
+                    <li className="saleRepresentativeCard_ul_li">
+                      <WatchLaterIcon className="li_icon" />
+                      {hours}
+                    </li>
+                    <li className="saleRepresentativeCard_ul_li">
+                      <PhoneIcon className="li_icon" />
+                      {phone}
+                    </li>
+                  </div>
+                </ul>
+              </div>
             </div>
-            <div className="saleRepresentativeCard_div--locationsContainer">
-              <h4 className="saleRepresentativeCard_div_img_h4">{name}</h4>
-              <ul className="saleRepresentativeCard_ul">
-                <div>
-                  <li className="saleRepresentativeCard_ul_li">
-                    <LocationOnIcon className="li_icon" />
-                    {location}
-                  </li>
-                  <li className="saleRepresentativeCard_ul_li">
-                    <MailIcon className="li_icon" />
-                    {email}
-                  </li>
-                </div>
-                <div>
-                  <li className="saleRepresentativeCard_ul_li">
-                    <WatchLaterIcon className="li_icon" />
-                    {hours}
-                  </li>
-                  <li className="saleRepresentativeCard_ul_li">
-                    <PhoneIcon className="li_icon" />
-                    {phone}
-                  </li>
-                </div>
-              </ul>
-            </div>
+
             <div className="saleRepresentativeCard_div--button">
               <Button
                 onClick={() => setModalWindowOpen(!modalWindowOpen)}
