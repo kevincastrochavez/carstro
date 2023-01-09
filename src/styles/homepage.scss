@@ -85,6 +85,22 @@
   color: white;
 }
 
+#exploreSubmit {
+  transition: 0.3s;
+}
+
+#exploreSubmit:hover {
+  opacity: 85%;
+}
+
+#homeFindYoursButton {
+  transition: 0.3s;
+}
+
+#homeFindYoursButton:hover {
+  box-shadow: 0 0 3px #eff1ed;
+}
+
 /* Mobile View -small */
 @media only screen and (max-width: 719px) {
   .bannerContainer {

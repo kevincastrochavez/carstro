@@ -26,3 +26,26 @@
     height: 650px;
   }
 }
+
+/* Mobile View -small */
+@media only screen and (max-width: 719px) {
+  .map {
+    margin-bottom: 40px;
+  }
+}
+
+/* T A B L E T   V I E W -medium */
+@media only screen and (min-width: 720px) and (max-width: 989px) {
+  .map {
+    margin-bottom: 40px;
+    height: 300px;
+  }
+}
+
+/* D E S K T O P   V I E W -large */
+@media only screen and (min-width: 990px) and (max-width: 1439px) {
+  .map {
+    height: 624px;
+    margin-top: 0;
+  }
+}
