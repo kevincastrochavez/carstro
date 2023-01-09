@@ -523,11 +523,20 @@ input:focus {
     display: flex;
     align-items: center;
     justify-content: center;
-    min-width: 230px;
+    min-width: unset;
+    padding-right: 0;
+    grid-row-start: unset;
+    grid-row-end: unset;
   }
 
   .saleRepresentativeCard_div--locationsContainer {
-    min-width: 230px;
+    min-width: unset;
+    margin-left: 20px;
+  }
+
+  .main_section_representatives {
+    min-width: 320px;
+    width: 24vw;
   }
 }
 
