@@ -3,6 +3,7 @@ import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
 import db from '../firebase';
 import { useStateValue } from '../StateProvider';
@@ -54,17 +55,17 @@ function Homepage() {
           <img
             className='home-mainImage home-mainImage-l'
             src='homepageImages/main-l.jpg'
-            alt=''
+            alt='Audi car in road on Fall season'
           />
           <img
             className='home-mainImage home-mainImage-m'
             src='homepageImages/main-m.jpg'
-            alt=''
+            alt='Audi car in road on Fall season'
           />
           <img
             className='home-mainImage home-mainImage-s'
             src='homepageImages/main-s.jpg'
-            alt=''
+            alt='Audi car in road on Fall season'
           />
         </div>
         <div className='home-mainText'>
@@ -83,7 +84,7 @@ function Homepage() {
             id='homeFindYoursButton'
             onClick={() => {
               navigate(
-                '/inventory?minPrice=23499&maxPrice=420000&minMileage=1300&maxMileage=240483'
+                `/inventory?minPrice=${minMaxPrice[0]}&maxPrice=${minMaxPrice[1]}&minMileage=${minMaxMileage[0]}&maxMileage=${minMaxMileage[1]}`
               );
             }}
           >
@@ -92,34 +93,37 @@ function Homepage() {
         </div>
       </div>
 
-      <Link
-        to={`/inventory?minPrice=${minMaxPrice[0]}&maxPrice=${minMaxPrice[1]}&minMileage=${minMaxMileage[0]}&maxMileage=${minMaxMileage[1]}`}
-        className='homeInventoryLink'
-      >
-        Inventory
-      </Link>
       <div className='exploreVehicles'>
         <div className='exploreVehicles-box'>
           <div className='exploreVehicles-text'>Explore Vehicles</div>
           <div className='exploreVehicles-input'>
             <form action='/action_page.php' className='homeForm'>
-              <select name='brand' className='exploreInput' id='exploreBrand'>
-                <option value='selectBrand'>Select Brand</option>
-                <option value='volvo'>Volvo</option>
-                <option value='saab'>Saab</option>
-                <option value='opel'>Opel</option>
-                <option value='audi'>Audi</option>
-              </select>
-              <select
-                name='vehicle'
-                className='exploreInput'
-                id='exploreVehicle'
-              >
-                <option value='selectVehicle'>Select Vehicle</option>
-                <option value='sedan'>Sedan</option>
-                <option value='sports'>Sports</option>
-                <option value='convetible'>Convertible</option>
-              </select>
+              <div className='home__select'>
+                <select name='brand' className='exploreInput' id='exploreBrand'>
+                  <option value='selectBrand'>Select Brand</option>
+                  <option value='volvo'>Volvo</option>
+                  <option value='saab'>Saab</option>
+                  <option value='opel'>Opel</option>
+                  <option value='audi'>Audi</option>
+                </select>
+
+                <KeyboardArrowDownIcon />
+              </div>
+
+              <div className='home__select'>
+                <select
+                  name='vehicle'
+                  className='exploreInput'
+                  id='exploreVehicle'
+                >
+                  <option value='selectVehicle'>Select Vehicle</option>
+                  <option value='sedan'>Sedan</option>
+                  <option value='sports'>Sports</option>
+                  <option value='convetible'>Convertible</option>
+                </select>
+
+                <KeyboardArrowDownIcon />
+              </div>
               <input
                 type='submit'
                 value='View Inventory'
@@ -133,23 +137,17 @@ function Homepage() {
           </div>
         </div>
       </div>
-      <div className='home-marketing-section'>
+      <Link to='/marketing' className='home-marketing-section'>
         <div className='marketing-image'>
           <img
             className='home-marketingImage home-marketingImage-l'
             src='homepageImages/markLarge.png'
-            alt=''
-            onClick={() => {
-              navigate('/marketing');
-            }}
+            alt='Car in sand for marketing purposes'
           />
           <img
             className='home-marketingImage home-marketingImage-s'
             src='homepageImages/markSmall.png'
-            alt=''
-            onClick={() => {
-              navigate('/marketing');
-            }}
+            alt='Car in sand for marketing purposes'
           />
         </div>
         <div className='marketing-text'>
@@ -163,7 +161,7 @@ function Homepage() {
             </button>
           </div>
         </div>
-      </div>
+      </Link>
 
       <div className='homeBrowseByBrand'>
         <h2 className='homeSingleBrand'>Browse by Brand</h2>

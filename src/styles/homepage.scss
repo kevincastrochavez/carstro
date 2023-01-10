@@ -6,10 +6,6 @@
   align-items: center;
 }
 
-.homeInventoryLink {
-  display: none;
-}
-
 .home-mainImage {
   width: 100%;
   height: 300px;
@@ -127,6 +123,26 @@
   box-shadow: 0 0 3px #eff1ed;
 }
 
+.home {
+  &__select {
+    position: relative;
+
+    & select {
+      width: 100%;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      cursor: pointer;
+    }
+
+    & svg {
+      position: absolute;
+      right: 12px;
+      top: 8px;
+      color: $green;
+    }
+  }
+}
+
 /* Mobile View -small */
 @media only screen and (max-width: 719px) {
   .home-mainImage-m {
@@ -171,12 +187,10 @@
   .homeForm {
     display: flex;
     flex-direction: column;
-    // width: 75vw;
-    // align-items: center;
+    gap: 16px;
   }
 
   #exploreVehicle {
-    margin-top: 16px;
     height: 40px;
     padding: 8px;
     font-size: 16px;
@@ -196,7 +210,7 @@
     color: white;
     padding: 16px 0;
     height: 50px;
-    margin-top: 32px;
+    margin-top: 16px;
     cursor: pointer;
     background: #006039;
   }
