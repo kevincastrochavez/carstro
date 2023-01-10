@@ -1,5 +1,8 @@
 import React from "react";
+import { saleRepresntative } from "../utilities/srObject.js";
+import LocationOnIcon from "@mui/icons-material/LocationOn";
 import { useNavigate } from "react-router-dom";
+
 
 function AboutUs() {
   let navigate = useNavigate();
@@ -92,12 +95,16 @@ function AboutUs() {
       </div>
       <div className="about-us-our-team">
         <h1 className="about-us-team-h1-title">Our People</h1>
-        <div className="about-us-card-representative">
-          <section className="about-us-representative"></section>
-          <section className="about-us-representative"></section>
-          <section className="about-us-representative"></section>
-          <section className="about-us-representative"></section>
-        </div>
+
+        {saleRepresntative.map((item) => (
+          //Sales Representative Cards
+          <div className="about-us-card-representative">
+            <img src={item.image} alt="Representative Name" />
+            <p>{item.name}</p>
+            <p>{item.position}</p>
+          </div>
+        ))}
+
       </div>
     </div>
   );

@@ -50,14 +50,14 @@ function SaleRepresentativeCard({
       {!saleCardOpen && (
         <div className="li_div--locationContainer">
           {deviceWidth <= 990 && (
-            <div>
+            <>
               <span>
                 <LocationOnIcon className="saleRepresentativeCard_li_location" />
 
                 <p className="saleRepresentativeCard_li_p">{location}</p>
               </span>
               <ExpandMoreIcon className="saleRepresentativeCard_li_arrow" />
-            </div>
+            </>
           )}
         </div>
       )}
@@ -109,10 +109,7 @@ function SaleRepresentativeCard({
         </div>
       )}
       {modalWindowOpen && (
-        <div
-          className="modalWindow_overlay"
-          onClick={() => setModalWindowOpen(!modalWindowOpen)}
-        >
+        <div className="modalWindow_overlay">
           <form className="modalWindow_form" action="">
             <div className="form_div-closeContainer">
               <CloseIcon onClick={() => setModalWindowOpen(!modalWindowOpen)} />
