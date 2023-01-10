@@ -2,10 +2,11 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import LocationOnIcon from "@mui/icons-material/LocationOn";
 
 import db from "../firebase";
 import { useStateValue } from "../StateProvider";
-import SaleRepresentativeCard from "../components/SaleRepresentativeCard";
+import { saleRepresntative } from "../utilities/srObject.js";
 
 function Homepage() {
   let navigate = useNavigate();
@@ -314,7 +315,20 @@ function Homepage() {
           </div>
         </div>
       </div>
-      <SaleRepresentativeCard />
+      <h2 className="homeSingleBrand">Sales Representatives</h2>
+      <div>
+        {saleRepresntative.map((item) => (
+          //Sales Representative Cards
+          <div>
+            <img src={item.image} alt="Representative Name" />
+            <p>{item.name}</p>
+            <div>
+              <LocationOnIcon />
+              <span>{item.location}</span>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
