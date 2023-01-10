@@ -90,7 +90,9 @@ function Homepage() {
             className="exploreInput"
             id="homeFindYoursButton"
             onClick={() => {
-              navigate("/inventory");
+              navigate(
+                "/inventory?minPrice=23499&maxPrice=420000&minMileage=1300&maxMileage=240483"
+              );
             }}
           >
             Find Yours
