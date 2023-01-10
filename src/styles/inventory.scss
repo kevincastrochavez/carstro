@@ -220,3 +220,15 @@
     }
   }
 }
+
+@media screen and (max-width: 300px) {
+  .inventory_main {
+    margin-top: 70px;
+  }
+}
+
+@media screen and (min-width: 300px) {
+  .inventory_main {
+    margin-top: 80px;
+  }
+}
