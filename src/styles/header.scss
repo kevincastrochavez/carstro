@@ -22,8 +22,10 @@
 }
 
 .header {
-  position: fixed;
+  position: sticky;
+  top: 0;
   z-index: 10;
+  width: 100%;
 }
 
 .signOut {
@@ -35,7 +37,7 @@
   border-radius: 25px;
   border: none;
   background: none;
-  font-family: "Raleway";
+  font-family: 'Raleway';
   font-size: 0.9rem;
   cursor: pointer;
 }
@@ -51,27 +53,18 @@
 
 .headerHeader {
   display: flex;
-  width: 75vw;
+  width: 100%;
   max-width: 1040px;
   height: 80px;
-  // max-width: 1000px;
-  font-family: Arial, Helvetica, sans-serif;
-  // background: black;
-}
+  padding: 0 24px;
+  // font-family: Arial, Helvetica, sans-serif;
 
-.headerBar {
-  box-sizing: border-box;
-  position: fixed;
-  width: 1440px;
-  height: 80px;
-  left: 0px;
-  top: 0px;
+  // Glassmorphism effect
   background: radial-gradient(
-      97.57% 210.75% at 0.9% 2.98%,
-      rgba(0, 0, 0, 0.4) 0%,
-      rgba(0, 0, 0, 0.4) 100%
-    )
-    /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+    97.57% 210.75% at 0.9% 2.98%,
+    rgba(0, 0, 0, 0.4) 0%,
+    rgba(0, 0, 0, 0.4) 100%
+  );
   backdrop-filter: blur(5px);
 }
 
@@ -125,12 +118,6 @@
   width: 70px;
   font-size: 1em;
 }
-/* may not work */
-
-// a {
-//   margin: 10px 6px;
-// }
-/* need to be more specific */
 
 // E X T R A   S M A L L
 @media screen and (max-width: 300px) {
@@ -164,13 +151,6 @@
   }
   .rightSide {
     margin-right: 0px !important;
-  }
-
-  .header {
-    /* align-items: baseline; */
-    height: 90px;
-    // width: 85vw;
-    /* max-width: 260px; */
   }
 
   .rightSide .outHam {
@@ -253,7 +233,7 @@
 .dropbtn {
   color: white;
   background: none;
-  font-family: "Raleway";
+  font-family: 'Raleway';
   padding: 16px;
   font-size: 16px;
   border: none;
@@ -275,7 +255,7 @@
 .dropbtn::after {
   background: none repeat scroll 0 0 transparent;
   bottom: 0;
-  content: "";
+  content: '';
   display: block;
   height: 2px;
   left: 50%;
@@ -295,7 +275,7 @@
 /* Dropdown Button */
 #dropbtn {
   height: unset;
-  font-family: "Raleway";
+  font-family: 'Raleway';
   padding: 16px;
   font-size: 16px;
   border: none;
@@ -319,7 +299,7 @@
 #dropbtn::after {
   background: none repeat scroll 0 0 transparent;
   bottom: 0;
-  content: "";
+  content: '';
   display: block;
   height: 2px;
   left: 50%;
@@ -357,7 +337,7 @@
   padding: 0px;
   text-decoration: none;
   display: block;
-  font-family: "Raleway";
+  font-family: 'Raleway';
   font-size: 0.9rem;
   /* cursor: pointer; */
 }
