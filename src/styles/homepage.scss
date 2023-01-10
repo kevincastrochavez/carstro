@@ -11,9 +11,31 @@
 }
 
 .home-mainImage {
-  width: 100vw !important;
-  height: 400px;
+  width: 100%;
+  height: 300px;
   object-fit: cover;
+}
+
+.bannerContainer {
+  width: 100%;
+}
+
+.exploreVehicles {
+  width: 100%;
+  padding: 0 24px;
+}
+
+.exploreVehicles-text {
+  font-family: 'Raleway';
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 125%;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.exploreVehicles-input {
+  padding-bottom: 64px;
 }
 
 .homeBrandLogos-singleLogo {
@@ -36,17 +58,9 @@
 }
 
 #homeFindYoursButton {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
   color: white;
-  padding: 16px 24px;
-  width: 327px;
-  height: 50px;
-  left: 24px;
-  top: 186px;
-  background: #006039;
+  padding: 16px 0;
+  background: $green;
 }
 
 .home-marketing-section {
@@ -103,11 +117,6 @@
 
 /* Mobile View -small */
 @media only screen and (max-width: 719px) {
-  .bannerContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
   .home-mainImage-m {
     display: none;
   }
@@ -129,45 +138,26 @@
     display: none;
   }
   .home-mainText {
-    // color: white;
     margin-top: 24px;
-    // width: 75vw;
+    padding: 0 24px;
   }
   .home-main-Title {
     max-width: 205px;
   }
   .home-main-Subtitle {
-    max-width: 270px;
-    margin-top: 12px;
+    width: 270px;
+    margin-top: 8px;
   }
 
   #homeFindYoursButton {
     margin-top: 32px;
     cursor: pointer;
-    max-width: 327px;
-    width: 75vw;
+    width: 100%;
   }
 
   .exploreVehicles {
-    // width: 75vw;
     color: white;
-    margin-top: 45px;
-  }
-
-  .exploreVehicles-text {
-    font-family: "Raleway";
-    font-style: normal;
-    font-weight: 600;
-    font-size: 24px;
-    line-height: 125%;
-  }
-
-  .exploreVehicles-box {
-    display: flex;
-    flex-direction: column;
-    // align-items: center;
-    height: 304px;
-    justify-content: space-evenly;
+    margin-top: 56px;
   }
 
   .homeForm {
@@ -178,56 +168,28 @@
   }
 
   #exploreVehicle {
-    display: flex;
-    // flex-direction: column;
-    justify-content: center;
-    // align-items: flex-start;
-    padding: 0px;
-    width: 75vw;
-    height: 44px;
-    background: #ffffff;
-    border: 1px solid #cbd2e0;
-    // border-radius: 6px;
     margin-top: 16px;
-    max-width: 327px;
-    font-style: normal;
-    font-weight: 400;
+    height: 40px;
+    padding: 8px;
     font-size: 16px;
     line-height: 150%;
+    border-radius: 8px;
   }
 
   #exploreBrand {
-    display: flex;
-    // flex-direction: column;
-    justify-content: center;
-    // align-items: flex-start;
-    padding: 0px;
-    width: 75vw;
-    height: 44px;
-    background: #ffffff;
-    border: 1px solid #cbd2e0;
-    // border-radius: 6px;
-    max-width: 327px;
-    font-style: normal;
-    font-weight: 400;
+    height: 40px;
+    padding: 8px;
     font-size: 16px;
     line-height: 150%;
+    border-radius: 8px;
   }
 
   #exploreSubmit {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
     color: white;
-    padding: 16px 24px;
+    padding: 16px 0;
     height: 50px;
-    left: 24px;
-    top: 186px;
     margin-top: 32px;
     cursor: pointer;
-    max-width: 327px;
-    width: 75vw;
     background: #006039;
   }
 
@@ -323,7 +285,7 @@
   }
 
   .exploreVehicles-text {
-    font-family: "Raleway";
+    font-family: 'Raleway';
     font-style: normal;
     font-weight: 600;
     font-size: 32px;
@@ -402,7 +364,7 @@
   }
 
   .homeSingleBrand {
-    font-family: "Raleway";
+    font-family: 'Raleway';
     font-style: normal;
     font-weight: 600;
     font-size: 32px;
@@ -509,7 +471,7 @@
     justify-content: space-around;
   }
   .exploreVehicles-text {
-    font-family: "Raleway";
+    font-family: 'Raleway';
     font-style: normal;
     font-weight: 600;
     font-size: 32px;
@@ -517,7 +479,7 @@
   }
 
   .exploreInput {
-    font-family: "Raleway";
+    font-family: 'Raleway';
     padding: 15px;
     border: 1px solid #cbd2e0;
     height: 60px;
@@ -530,14 +492,14 @@
     font-size: 16px;
     line-height: 150%;
     letter-spacing: -0.01em;
-    font-feature-settings: "calt" off;
+    font-feature-settings: 'calt' off;
     cursor: pointer;
   }
 
   #exploreSubmit {
     background: #006039;
     color: white;
-    font-family: "Raleway";
+    font-family: 'Raleway';
     font-style: normal;
     font-weight: 600;
     font-size: 14px;
@@ -557,7 +519,7 @@
   }
 
   .homeSingleBrand {
-    font-family: "Raleway";
+    font-family: 'Raleway';
     font-style: normal;
     font-weight: 600;
     font-size: 32px;
@@ -587,7 +549,7 @@
 
   .homeBrandLogos-singleLogo-text {
     color: white;
-    font-family: "Cabin";
+    font-family: 'Cabin';
     font-weight: 400;
     font-size: 16px;
     line-height: 24px;
@@ -679,10 +641,3 @@
 // Tablet: From 720 up to 989
 // Desktop: From 990 up to 1439
 // 4K: After 1440
-
-// E X T R A   S M A L L
-@media screen and (max-width: 300px) {
-  .home-mainText {
-    width: 75vw;
-  }
-}

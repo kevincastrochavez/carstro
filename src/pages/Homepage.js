@@ -309,7 +309,7 @@ function Homepage() {
         </div>
       </div>
       <h2 className='homeSingleBrand'>Sales Representatives</h2>
-      <div>
+      {/* <div>
         {saleRepresntative.map((item) => (
           //Sales Representative Cards
           <div>
@@ -321,7 +321,7 @@ function Homepage() {
             </div>
           </div>
         ))}
-      </div>
+      </div> */}
     </div>
   );
 }
