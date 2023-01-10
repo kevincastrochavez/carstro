@@ -154,7 +154,7 @@ function Homepage() {
         </div>
         <div className='marketing-text'>
           <div className='marketing-title-and-text'>
-            <h1>2023 Corolla Hybrid</h1>
+            <h2>2023 Corolla Hybrid</h2>
             <p2r>Sleek and steady wins the race</p2r>
           </div>
           <div className='marketing-text-button'>
