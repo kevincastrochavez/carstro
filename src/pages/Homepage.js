@@ -9,6 +9,10 @@ import db from '../firebase';
 import { useStateValue } from '../StateProvider';
 import { saleRepresntative } from '../utilities/srObject.js';
 
+// TODO
+
+// Fix Find Yours button
+
 function Homepage() {
   let navigate = useNavigate();
   const [{ carsResults, minMaxPrice, minMaxMileage }, dispatch] =
@@ -137,7 +141,7 @@ function Homepage() {
           </div>
         </div>
       </div>
-      <Link to='/marketing' className='home-marketing-section'>
+      <div to='/marketing' className='home-marketing-section'>
         <div className='marketing-image'>
           <img
             className='home-marketingImage home-marketingImage-l'
@@ -155,13 +159,13 @@ function Homepage() {
             <h2>2023 Corolla Hybrid</h2>
             <p2r>Sleek and steady wins the race</p2r>
           </div>
-          <div className='marketing-text-button'>
+          <Link to='/marketing' className='marketing-text-button'>
             <button className='home-marketing-button'>
               <h5>Learn More</h5>
             </button>
-          </div>
+          </Link>
         </div>
-      </Link>
+      </div>
 
       <div className='homeBrowseByBrand'>
         <h2 className='homeSingleBrand'>Browse by Brand</h2>
@@ -173,9 +177,6 @@ function Homepage() {
                   className='singleBrandLogo'
                   src='singleBrandImages/Kia.png'
                   alt=''
-                  onClick={() => {
-                    navigate('/');
-                  }}
                 />
               </div>
               <div className='homeBrandLogos-singleLogo-text'>Kia Cars</div>
@@ -186,9 +187,6 @@ function Homepage() {
                   className='singleBrandLogo'
                   src='singleBrandImages/Renault.png'
                   alt=''
-                  onClick={() => {
-                    navigate('/');
-                  }}
                 />
               </div>
               <div className='homeBrandLogos-singleLogo-text'> Renault</div>
@@ -200,9 +198,6 @@ function Homepage() {
                   className='singleBrandLogo'
                   src='singleBrandImages/BMW.png'
                   alt=''
-                  onClick={() => {
-                    navigate('/');
-                  }}
                 />
               </div>
               <div className='homeBrandLogos-singleLogo-text'>BMW Cars</div>
@@ -216,9 +211,6 @@ function Homepage() {
                   className='singleBrandLogo'
                   src='singleBrandImages/Lamborghini.png'
                   alt=''
-                  onClick={() => {
-                    navigate('/');
-                  }}
                 />
               </div>
               <div className='homeBrandLogos-singleLogo-text'>Lamborghini</div>
@@ -230,9 +222,6 @@ function Homepage() {
                   className='singleBrandLogo'
                   src='singleBrandImages/Audi.png'
                   alt=''
-                  onClick={() => {
-                    navigate('/');
-                  }}
                 />
               </div>
               <div className='homeBrandLogos-singleLogo-text'>Audi Cars</div>
@@ -247,9 +236,6 @@ function Homepage() {
                   className='singleBrandLogo'
                   src='singleBrandImages/GMC.png'
                   alt=''
-                  onClick={() => {
-                    navigate('/');
-                  }}
                 />
               </div>
               <div className='homeBrandLogos-singleLogo-text'>
@@ -257,69 +243,27 @@ function Homepage() {
               </div>
             </div>
           </div>
-          <div className='homeBrandLogos-column'>
-            <div className='homeBrandLogos-singleLogo'>
-              <div className='homeBrandLogos-singleLogo-logo'>
-                {' '}
-                <img
-                  className='singleBrandLogo'
-                  src='singleBrandImages/Ferrari.png'
-                  alt=''
-                  onClick={() => {
-                    navigate('/');
-                  }}
-                />
-              </div>
-              <div className='homeBrandLogos-singleLogo-text'>Ferrari</div>
-            </div>
-            <div className='homeBrandLogos-singleLogo'>
-              <div className='homeBrandLogos-singleLogo-logo'>
-                {' '}
-                <img
-                  className='singleBrandLogo'
-                  src='singleBrandImages/LandRover.png'
-                  alt=''
-                  onClick={() => {
-                    navigate('/');
-                  }}
-                />
-              </div>
-              <div className='homeBrandLogos-singleLogo-text'>Land Rover</div>
-            </div>
-            <div
-              className='homeBrandLogos-singleLogo'
-              id='homeSingleBrandLogoLast3'
-            >
-              <div className='homeBrandLogos-singleLogo-logo'>
-                {' '}
-                <img
-                  className='singleBrandLogo'
-                  src='singleBrandImages/Volkswagen.png'
-                  alt=''
-                  onClick={() => {
-                    navigate('/');
-                  }}
-                />
-              </div>
-              <div className='homeBrandLogos-singleLogo-text'>Volkswagen</div>
-            </div>
-          </div>
         </div>
       </div>
+
       <h2 className='homeSingleBrand'>Sales Representatives</h2>
-      {/* <div>
+
+      <div className='home_salesRepresentative'>
         {saleRepresntative.map((item) => (
-          //Sales Representative Cards
-          <div>
-            <img src={item.image} alt='Representative Name' />
-            <p>{item.name}</p>
-            <div>
-              <LocationOnIcon />
-              <span>{item.location}</span>
+          <div className='home_salesRepresentative-card' key={item.id}>
+            <img src={item.image} alt={`${item.name} sales representative`} />
+
+            <div className='home_salesRepresentative-info'>
+              <p>{item.name}</p>
+
+              <div className='home_salesRepresentative-location'>
+                <LocationOnIcon />
+                <span>{item.location}</span>
+              </div>
             </div>
           </div>
         ))}
-      </div> */}
+      </div>
     </div>
   );
 }

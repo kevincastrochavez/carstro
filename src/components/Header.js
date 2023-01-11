@@ -68,9 +68,6 @@ function Header(props) {
           </div>
 
           <div className='hamWrapper'>
-            {/* <button className={outHam} onClick={() => setShowLinks(!showLinks)}>
-            <FaHamburger />
-          </button> */}
             <Hamburger />
           </div>
         </div>
