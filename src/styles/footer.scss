@@ -1,12 +1,14 @@
 .footerContainer {
-  width: 100%;
   background-color: #222222;
   border-top: 1px solid #696969;
   color: white;
+  padding: 0 24px;
+}
+
+.footerLogoBox {
+  margin: 32px 0;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-evenly;
+  justify-content: center;
 }
 
 .footerInfoBox {
@@ -19,10 +21,10 @@
 }
 .footerInfoBoxSingle-link {
   cursor: pointer;
-  font-size: 0.9rem;
-  font-weight: 100;
-  font-family: "Raleway";
-  margin: 14px 0px;
+  font-size: 16px;
+  font-weight: 400;
+  font-family: 'Raleway';
+  margin-bottom: 8px;
   transition: 0.2s;
 }
 
@@ -35,31 +37,46 @@
 }
 
 .footerRights {
-  font-family: "Raleway";
+  font-family: 'Raleway';
   margin: 14px 0px;
 }
 
 .footerInfoBoxSingle-title {
   font-weight: bold;
-  margin: 20px 0px;
-  font-size: 0.9rem;
-  font-family: "Raleway";
+  margin-bottom: 16px;
+  font-size: 16px;
+  font-family: 'Raleway';
 }
 
 .footerSocialMediaIcons {
+  align-self: center;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 14px 0px;
+  gap: 40px;
+  margin-bottom: 24px;
 }
 
 .footerSocialMediaIcon {
   cursor: pointer;
   transition: 0.2s;
+  width: 44px;
+  display: flex;
+  justify-content: center;
+  color: white;
+}
+
+.footerSocialMediaIcon:visited {
+  color: white;
 }
 
 .footerSocialMediaIcon:hover {
   color: #006039;
+}
+
+.footerInfoBoxSingle {
+  margin-bottom: 40px;
 }
 
 /* Mobile View -small */
@@ -70,20 +87,10 @@
 
   .footerInfoBox {
     flex-direction: column;
-    width: 75vw;
-    max-width: 300px;
-  }
-
-  .footerInfoBoxSingle {
-    margin-bottom: 32px;
   }
 
   .footerRights {
     text-align: center;
-  }
-
-  .footerSocialMediaIcons {
-    order: 1;
   }
 
   .footerRights {
@@ -93,18 +100,6 @@
   .footerInfoBoxSingle-links {
     display: flex;
     flex-direction: column;
-  }
-
-  .footerInfoBoxSingle-link {
-    margin: 4px 0px;
-  }
-
-  .footerSocialMediaIcons {
-    margin-bottom: 43px;
-  }
-
-  .footerLogoBox {
-    margin: 32px 0px;
   }
 }
 
