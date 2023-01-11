@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
-// import * as FaIcons from "react-icons/fa";
-// import * as AiIcons from "react-icons/ai";
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import MenuIcon from '@mui/icons-material/Menu';
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 
 // import "./hamburger.scss";
 
@@ -24,27 +23,26 @@ function Hamburger() {
       </div>
       <nav className={sidebar ? 'nav-menu active' : 'nav-menu '}>
         <ul className='nav-menu-items'>
-          {' '}
-          <li className='nav-text'>
-            <a href='/inventory' className='nav-text-a'>
-              Inventory
-            </a>
-          </li>
-          <li className='nav-text'>
-            <a href='/salesrepresentatives' className='nav-text-a'>
-              Sales Representatives
-            </a>
-          </li>
-          <li className='nav-text'>
-            <a href='/aboutus' className='nav-text-a'>
-              About Us
-            </a>
-          </li>
-          <li className='nav-text'>
-            <a href='/marketing' className='nav-text-a'>
-              Marketing
-            </a>
-          </li>
+          <Link to='/inventory' className='nav-text'>
+            <p className='nav-text-a'>Inventory</p>
+
+            <ArrowForwardIosIcon />
+          </Link>
+
+          <Link to='/salesrepresentatives' className='nav-text'>
+            <p className='nav-text-a'>Sales Representatives</p>
+            <ArrowForwardIosIcon />
+          </Link>
+
+          <Link to='/aboutUs' className='nav-text'>
+            <p className='nav-text-a'>About Us</p>
+            <ArrowForwardIosIcon />
+          </Link>
+
+          <Link to='/marketing' className='nav-text'>
+            <p className='nav-text-a'>Marketing</p>
+            <ArrowForwardIosIcon />
+          </Link>
           <div className='hamQuickLinks'>
             <li className='hamQuickLinksSingle'>
               <a href='#'>kia</a>
