@@ -1,4 +1,39 @@
 /* Mobile View -small */
+.aboutUs {
+  &_representativesContainer {
+    display: grid;
+    gap: 32px;
+    width: 100%;
+    margin-top: 48px;
+
+    & > div {
+      width: 200px;
+    }
+
+    & img {
+      width: 100%;
+      border-radius: 50%;
+      box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
+        rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+    }
+
+    & p {
+      text-align: center;
+      color: $lightgrayText;
+
+      &:first-of-type {
+        font-size: 20px;
+        color: black;
+      }
+    }
+  }
+}
+
+.about-us-team-h2-title {
+  font-size: 24px;
+  text-align: center;
+}
+
 @media only screen and (max-width: 719px) {
   .about-us-p {
     width: 75vw !important;
@@ -127,10 +162,8 @@
 
 .about-us-our-team {
   background-color: white;
-  padding-top: 39px;
-  padding-bottom: 79px;
-  width: 75vw;
-  height: 940px;
+  margin-top: 56px;
+  padding: 0 24px;
 }
 
 .aboutUsMainContainer {

@@ -81,12 +81,7 @@ function AboutUs() {
                 <h3 className='aboutUsSubtitle'>still lost?</h3>
                 Not sure where to start? That is perfectly fine!
                 <br /> We have
-                <a
-                  className='aboutUsLinkSalesR'
-                  onClick={() => {
-                    navigate('/salesrepresentatives');
-                  }}
-                >
+                <a className='aboutUsLinkSalesR' href='/salesrepresentatives'>
                   {' '}
                   representatives
                 </a>{' '}
@@ -98,16 +93,18 @@ function AboutUs() {
         </div>
       </div>
       <div className='about-us-our-team'>
-        <h1 className='about-us-team-h1-title'>Our People</h1>
+        <h2 className='about-us-team-h2-title'>Our People</h2>
 
-        {saleRepresntative.map((item) => (
-          //Sales Representative Cards
-          <div className='about-us-card-representative'>
-            <img src={item.image} alt='Representative Name' />
-            <p>{item.name}</p>
-            <p>{item.position}</p>
-          </div>
-        ))}
+        <div className='aboutUs_representativesContainer'>
+          {saleRepresntative.map((item) => (
+            //Sales Representative Cards
+            <div className='about-us-card-representative'>
+              <img src={item.image} alt='Representative Name' />
+              <p>{item.name}</p>
+              <p>{item.position}</p>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );

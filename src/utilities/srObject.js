@@ -37,7 +37,7 @@ const saleRepresntative = [
     hours: '8:00am - 5:00pm',
     phone: '123-543-5345',
     address: 'example 234 S 3456',
-    position: 'President and Chief Commercial Officer',
+    position: 'Chief Commercial Officer',
     image: '/salesRepresentatives/kevin.jpeg',
   },
 
