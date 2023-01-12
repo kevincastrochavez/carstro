@@ -18,7 +18,6 @@ import { saleRepresntative } from '../utilities/srObject.js';
 // Add functionality to the location links in the footer
 // Fix links in menu
 // Check accessibility
-// Fix header for black or white
 
 function Homepage() {
   let navigate = useNavigate();
