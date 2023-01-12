@@ -1,84 +1,25 @@
 .salesRepresentativesContainer {
   background-color: white;
-}
-
-.salesRepresentatives_main {
-  padding: 0px 24px;
+  padding: 0 24px;
 }
 
 .main_h1 {
-  padding: $px-24 0px $px-52;
+  padding: $px-24 0px $px-48;
 }
 
 // Google Map styles
 #map {
   height: 50%;
 }
-html,
-body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}
-
-//Laptop
-// @media only screen and (min-width: 1200px) {
-//   .salesRepresentatives_main {
-//     padding: 0px 10%;
-//   }
-
-//   .salesRepresentatives_section_h2 {
-//     display: none;
-//   }
-
-//   .salesRepresentatives_main_div {
-//     display: flex;
-//   }
-
-//   .main_section_representatives {
-//     width: 35%;
-//     height: 650px;
-//     margin-right: 1%;
-//     overflow-y: scroll;
-//   }
-
-//   .main_section_map {
-//     width: 64%;
-//   }
-// }
 
 #salesRepresentatives_ul {
   cursor: pointer;
 }
 
-// E X T R A   S M A L L
-@media screen and (max-width: 300px) {
-  .salesRepresentativesContainer {
-    margin-top: 70px;
-    display: flex;
-    width: 100%;
-    justify-content: center;
-  }
-
-  .salesRepresentatives_main {
-    width: 75vw;
-    display: flex;
-    flex-direction: column;
-    padding: 0;
-  }
-}
-
 /* M O B I L E   V I E W -small */
 @media only screen and (max-width: 719px) {
-  .salesRepresentatives_main {
-    width: 75vw;
-    display: flex;
-    flex-direction: column;
-    padding: 0;
-  }
-
   .main_h1 {
-    font-size: 1.5rem;
+    font-size: 32px;
   }
 }
 
@@ -119,14 +60,4 @@ body {
   .saleRepresentativeCard_ul {
     flex-direction: column;
   }
-}
-
-/* 4 K   V I E W  -extralarge*/
-@media only screen and (min-width: 1440px) {
-}
-
-.salesRepresentativesContainer {
-  display: flex;
-  width: 100%;
-  justify-content: center;
 }

@@ -10,6 +10,16 @@
   justify-content: space-between;
 }
 
+.saleRepresentativeCard {
+  &_horizontalLocation {
+    display: flex;
+
+    & svg {
+      margin-right: 4px;
+    }
+  }
+}
+
 .saleRepresentativeCard_li:last-of-type {
   border-bottom: 1px solid #c8c8c8;
   margin-bottom: 50px;
@@ -19,12 +29,11 @@
 .saleRepresentativeCard_li_p {
   color: #5c5e62;
   display: inline-block;
-  font-size: $px-20;
+  font-size: 18px;
 }
 
 .saleRepresentativeCard_li_location {
   color: #5c5e62;
-  padding-top: 5px;
 }
 
 // Icons arrow icon color
