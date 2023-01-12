@@ -1,124 +1,112 @@
 // CINDY
-import React from "react";
-import { useNavigate } from "react-router-dom";
-import FacebookOutlinedIcon from "@mui/icons-material/FacebookOutlined";
-import TwitterIcon from "@mui/icons-material/Twitter";
-import InstagramIcon from "@mui/icons-material/Instagram";
+import React from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import FacebookOutlinedIcon from '@mui/icons-material/FacebookOutlined';
+import TwitterIcon from '@mui/icons-material/Twitter';
+import InstagramIcon from '@mui/icons-material/Instagram';
+
+import { useStateValue } from '../StateProvider';
 
 function Footer() {
+  const [{ minMaxPrice, minMaxMileage }, dispatch] = useStateValue();
   let navigate = useNavigate();
 
   return (
-    <div className="footerContainer">
-      <div className="footerLogoBox">
+    <div className='footerContainer'>
+      <div className='footerLogoBox'>
         <img
-          className="footer-logo"
-          src="footerImages/logoW.png"
-          alt=""
+          className='footer-logo'
+          src='footerImages/logoW.png'
+          alt=''
           onClick={() => {
-            navigate("/");
+            navigate('/');
           }}
         />
       </div>
-      <div className="footerInfoBox">
-        <div className="footerInfoBoxSingle">
-          <div className="footerInfoBoxSingle-title">Site Map</div>
-          <div className="footerInfoBoxSingle-links">
-            <p
-              className="footerInfoBoxSingle-link"
-              onClick={() => {
-                navigate("/");
-              }}
-            >
+      <div className='footerInfoBox'>
+        <div className='footerInfoBoxSingle'>
+          <div className='footerInfoBoxSingle-title'>Site Map</div>
+          <div className='footerInfoBoxSingle-links'>
+            <Link to={'/'} className='footerInfoBoxSingle-link'>
               Homepage
-            </p>
-            <p
-              className="footerInfoBoxSingle-link"
+            </Link>
+            <Link
+              to={`/inventory?minPrice=${minMaxPrice[0]}&maxPrice=${minMaxPrice[1]}&minMileage=${minMaxMileage[0]}&maxMileage=${minMaxMileage[1]}`}
+              className='footerInfoBoxSingle-link'
               onClick={() => {
                 navigate(
-                  "/inventory?minPrice=23499&maxPrice=420000&minMileage=1300&maxMileage=240483"
+                  '/inventory?minPrice=23499&maxPrice=420000&minMileage=1300&maxMileage=240483'
                 );
               }}
             >
               Inventory
-            </p>
-            <p
-              className="footerInfoBoxSingle-link"
-              onClick={() => {
-                navigate("/salesrepresentatives");
-              }}
+            </Link>
+            <Link
+              to={'/salesrepresentatives'}
+              className='footerInfoBoxSingle-link'
             >
               Sales Representatives
-            </p>
-            <p
-              className="footerInfoBoxSingle-link"
-              onClick={() => {
-                navigate("/aboutus");
-              }}
-            >
+            </Link>
+            <Link to={'/aboutus'} className='footerInfoBoxSingle-link'>
               About Us
-            </p>
-            <p
-              className="footerInfoBoxSingle-link"
-              onClick={() => {
-                navigate("/marketing");
-              }}
-            >
+            </Link>
+            <Link to={'/marketing'} className='footerInfoBoxSingle-link'>
               Marketing
-            </p>
+            </Link>
           </div>
         </div>
-        <div className="footerInfoBoxSingle">
-          <div className="footerInfoBoxSingle-title">Office Locations</div>
-          <div className="footerInfoBoxSingle-links">
+        <div className='footerInfoBoxSingle'>
+          <div className='footerInfoBoxSingle-title'>Office Locations</div>
+          <div className='footerInfoBoxSingle-links'>
             <p
-              className="footerInfoBoxSingle-link"
+              className='footerInfoBoxSingle-link'
               onClick={() => {
-                navigate("/salesrepresentatives");
+                navigate('/salesrepresentatives');
               }}
             >
               80 Scott Ln, Jackson, WY 83002
             </p>
             <p
-              className="footerInfoBoxSingle-link"
+              className='footerInfoBoxSingle-link'
               onClick={() => {
-                navigate("/salesrepresentatives");
+                navigate('/salesrepresentatives');
               }}
             >
               5711 W Century Blvd, Los Angeles, CA 90045
             </p>
             <p
-              className="footerInfoBoxSingle-link"
+              className='footerInfoBoxSingle-link'
               onClick={() => {
-                navigate("/salesrepresentatives");
+                navigate('/salesrepresentatives');
               }}
             >
               1100 Congress Ave., Austin, TX 78701
             </p>
             <p
-              className="footerInfoBoxSingle-link"
+              className='footerInfoBoxSingle-link'
               onClick={() => {
-                navigate("/salesrepresentatives");
+                navigate('/salesrepresentatives');
               }}
             >
               50 N Temple, Salt Lake City, UT 84150
             </p>
           </div>
         </div>
-        <div className="footerInfoBoxSingle">
-          <div className="footerInfoBoxSingle-title"></div>
-          <div className="footerInfoBoxSingle-links">
-            <div className="footerRights">® 2023 ABC All Rights Reserved</div>
-            <div className="footerSocialMediaIcons">
-              <div className="footerSocialMediaIcon">
+        <div className='footerInfoBoxSingle'>
+          {/* <div className="footerInfoBoxSingle-title"></div> */}
+
+          <div className='footerInfoBoxSingle-links'>
+            <div className='footerRights'>® 2023 ABC All Rights Reserved</div>
+            <div className='footerSocialMediaIcons'>
+              <Link to='http://facebook.com' className='footerSocialMediaIcon'>
                 <FacebookOutlinedIcon />
-              </div>
-              <div className="footerSocialMediaIcon">
+              </Link>
+              <Link to='http://twitter.com' className='footerSocialMediaIcon'>
                 <TwitterIcon />
-              </div>
-              <div className="footerSocialMediaIcon">
+              </Link>
+              <Link to='http://instagram.com' className='footerSocialMediaIcon'>
                 <InstagramIcon />
-              </div>
+              </Link>
             </div>
           </div>
         </div>

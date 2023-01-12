@@ -1,67 +1,99 @@
-import React, { useState } from "react";
-// import * as FaIcons from "react-icons/fa";
-// import * as AiIcons from "react-icons/ai";
-import { useNavigate } from "react-router-dom";
-import MenuIcon from "@mui/icons-material/Menu";
+import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import MenuIcon from '@mui/icons-material/Menu';
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 
-// import "./hamburger.scss";
+import { useStateValue } from '../StateProvider';
 
 function Hamburger() {
+  const [{ minMaxPrice, minMaxMileage, brandsFilters }, dispatch] =
+    useStateValue();
   const [sidebar, setSidebar] = useState(false);
-  let navigate = useNavigate();
+  const navigate = useNavigate();
+
   const showSidebar = () => setSidebar(!sidebar);
+
+  const goToPage = (navigateTo) => {
+    setSidebar(false);
+    navigate(navigateTo);
+  };
+
+  // const filterByBrand = (brand) => {
+  //   dispatch({
+  //     type: 'SET_BRAND_FILTER',
+  //     brandsFilters: brand,
+  //   });
+
+  //   setSidebar(false);
+
+  //   navigate(
+  //     `/inventory?minPrice=${minMaxPrice[0]}&maxPrice=${minMaxPrice[1]}&minMileage=${minMaxMileage[0]}&maxMileage=${minMaxMileage[1]}`
+  //   );
+  // };
 
   return (
     <div>
-      <div className="navbar">
-        <a href="#" className="menu-bars">
+      <div className='navbar'>
+        <div className='menu-bars'>
           <MenuIcon
             onClick={showSidebar}
-            className="hamBarsIcon"
-            styles="width: 100%; height: 40px;"
+            className='hamBarsIcon'
+            styles='width: 100%; height: 40px;'
           />
-        </a>
+        </div>
       </div>
-      <nav className={sidebar ? "nav-menu active" : "nav-menu "}>
-        <ul className="nav-menu-items">
-          {" "}
-          <li className="nav-text">
-            <a href="/inventory" className="nav-text-a">
-              Inventory
-            </a>
-          </li>
-          <li className="nav-text">
-            <a href="/salesrepresentatives" className="nav-text-a">
-              Sales Representatives
-            </a>
-          </li>
-          <li className="nav-text">
-            <a href="/aboutus" className="nav-text-a">
-              About Us
-            </a>
-          </li>
-          <li className="nav-text">
-            <a href="/marketing" className="nav-text-a">
-              Marketing
-            </a>
-          </li>
-          <div className="hamQuickLinks">
-            <li className="hamQuickLinksSingle">
-              <a href="#">kia</a>
-            </li>
-            <li className="hamQuickLinksSingle">
-              <a href="#">BMW</a>
-            </li>
-            <li className="hamQuickLinksSingle">
-              <a href="#">General Motors</a>
-            </li>
-            <li className="hamQuickLinksSingle">
-              <a href="#">Renault</a>
-            </li>
-            <li className="hamQuickLinksSingle">
-              <a href="#">Audi</a>
-            </li>
+
+      <nav className={sidebar ? 'nav-menu active' : 'nav-menu '}>
+        <ul className='nav-menu-items'>
+          <div className='nav-text' onClick={() => goToPage('/')}>
+            <p className='nav-text-a'>Home</p>
+            <ArrowForwardIosIcon />
           </div>
+          <div
+            className='nav-text'
+            onClick={() =>
+              goToPage(
+                `/inventory?minPrice=${minMaxPrice[0]}&maxPrice=${minMaxPrice[1]}&minMileage=${minMaxMileage[0]}&maxMileage=${minMaxMileage[1]}`
+              )
+            }
+          >
+            <p className='nav-text-a'>Inventory</p>
+
+            <ArrowForwardIosIcon />
+          </div>
+
+          <div
+            className='nav-text'
+            onClick={() => goToPage('/salesrepresentatives')}
+          >
+            <p className='nav-text-a'>Sales Representatives</p>
+            <ArrowForwardIosIcon />
+          </div>
+
+          <div className='nav-text' onClick={() => goToPage('/aboutUs')}>
+            <p className='nav-text-a'>About Us</p>
+            <ArrowForwardIosIcon />
+          </div>
+
+          <div className='nav-text' onClick={() => goToPage('/marketing')}>
+            <p className='nav-text-a'>Marketing</p>
+            <ArrowForwardIosIcon />
+          </div>
+
+          {/* <div className='hamQuickLinks'>
+            <li className='hamQuickLinksSingle'>
+              <p onClick={() => filterByBrand('Audi')}>Audi</p>
+            </li>
+            <li className='hamQuickLinksSingle'>
+              <p onClick={() => filterByBrand('BMW')}>BMW</p>
+            </li>
+            <li className='hamQuickLinksSingle'>
+              <p onClick={() => filterByBrand('Lamborghini')}>Lamborghini</p>
+            </li>
+            <li className='hamQuickLinksSingle'>
+              <p onClick={() => filterByBrand('Ferrari')}>Ferrari</p>
+            </li>
+          </div> */}
         </ul>
       </nav>
     </div>

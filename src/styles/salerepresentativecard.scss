@@ -10,21 +10,36 @@
   justify-content: space-between;
 }
 
+.saleRepresentativeCard {
+  &_horizontalLocation {
+    display: flex;
+
+    & svg {
+      margin-right: 4px;
+    }
+  }
+}
+
+.saleRepresentativeCard_div--picturesContainer {
+  margin-right: 20px;
+}
+.saleRepresentativeCard_div--locationsContainer {
+  flex: 1;
+}
+
 .saleRepresentativeCard_li:last-of-type {
   border-bottom: 1px solid #c8c8c8;
-  margin-bottom: 50px;
 }
 
 // Location color and size
 .saleRepresentativeCard_li_p {
   color: #5c5e62;
   display: inline-block;
-  font-size: $px-20;
+  font-size: 18px;
 }
 
 .saleRepresentativeCard_li_location {
   color: #5c5e62;
-  padding-top: 5px;
 }
 
 // Icons arrow icon color
@@ -39,11 +54,13 @@
 }
 
 .saleRepresentativeCard_div {
-  padding: $px-12 0px;
-  display: grid;
-  grid-template-columns: 0.4fr 0.65fr;
-  grid-template-rows: 0.8fr 0.2fr;
-  align-items: center;
+  padding: $px-12 0px $px-24;
+  display: flex;
+
+  // display: grid;
+  // grid-template-columns: 0.4fr 0.65fr;
+  // grid-template-rows: 0.8fr 0.2fr;
+  // align-items: center;
 }
 
 .saleRepresentativeCard_div_img {
@@ -53,15 +70,20 @@
 
 .saleRepresentativeCard_ul_li {
   font-family: $body-font;
-  font-size: 11px;
+  font-size: 12px;
   color: #5c5e62;
+  line-height: 1.5;
+  margin-bottom: 2px;
+
+  display: flex;
+  align-items: center;
 }
 
 .saleRepresentativeCard_div_img_h4 {
   font-family: $heading-font;
-  font-size: $px-20;
+  font-size: 18px;
   font-weight: 600;
-  margin-bottom: $px-8;
+  margin-bottom: 10px;
 }
 
 .saleRepresentativeCard_div--button {
@@ -413,26 +435,11 @@ input:focus {
     max-width: 400px;
     margin-top: 0 !important;
   }
-  .saleRepresentativeCard_div {
-    max-width: 400px;
-    justify-content: space-around;
-    display: flex;
-  }
 
-  .saleRCardSeparator {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
   .saleRepresentativeCard_div_img {
     width: 30vw;
     height: unset;
     max-width: 160px;
-  }
-
-  .saleRepresentativeCard_div--locationsContainer {
-    margin-left: 10px;
-    align-items: unset;
   }
 }
 

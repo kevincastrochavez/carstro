@@ -1,24 +1,39 @@
 .homepage-container {
   margin-top: -80px;
   background-color: #1e1e1e;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.homeInventoryLink {
-  display: none;
 }
 
 .home-mainImage {
-  width: 100vw !important;
-  height: 400px;
+  width: 100%;
+  height: 300px;
   object-fit: cover;
+}
+
+.bannerContainer {
+  width: 100%;
+}
+
+.exploreVehicles {
+  width: 100%;
+  padding: 0 24px;
+}
+
+.exploreVehicles-text {
+  font-family: 'Raleway';
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 125%;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.exploreVehicles-input {
+  padding-bottom: 64px;
 }
 
 .homeBrandLogos-singleLogo {
   cursor: pointer;
-  margin: 12px 0px;
+  padding: 16px 0;
 }
 
 .homeBrandLogos-singleLogo-text {
@@ -31,36 +46,30 @@
 }
 
 .singleBrandLogo {
-  max-height: 48px;
-  max-width: 48px;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 #homeFindYoursButton {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
   color: white;
-  padding: 16px 24px;
-  width: 327px;
-  height: 50px;
-  left: 24px;
-  top: 186px;
-  background: #006039;
+  padding: 16px 0;
+  background: $green;
 }
 
 .home-marketing-section {
-  margin-bottom: 64px;
+  margin-bottom: 48px;
 }
 
 .marketing-text {
   color: white;
-  width: 75vw;
+  width: 100%;
+
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  height: 100%;
-  justify-content: space-around;
+  padding: 32px 0;
 }
 
 .marketing-title-and-text {
@@ -75,6 +84,7 @@
 
 .homeBrowseByBrand {
   color: white;
+  width: 100%;
 }
 
 #homeSingleBrandLogoLast3 {
@@ -83,6 +93,17 @@
 
 .home-mainText {
   color: white;
+}
+
+.home-marketing-section {
+  display: grid;
+  justify-items: center;
+}
+
+.marketing-image,
+.marketing-text {
+  grid-column: 1/2;
+  grid-row: 1/2;
 }
 
 #exploreSubmit {
@@ -101,13 +122,74 @@
   box-shadow: 0 0 3px #eff1ed;
 }
 
+.home {
+  &__select {
+    position: relative;
+
+    & select {
+      width: 100%;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      cursor: pointer;
+    }
+
+    & svg {
+      position: absolute;
+      right: 12px;
+      top: 8px;
+      color: $green;
+    }
+  }
+
+  &_salesRepresentative {
+    display: flex;
+    overflow: scroll;
+    gap: 32px;
+    padding: 0 24px;
+    padding-bottom: 64px;
+
+    &-card {
+      display: grid;
+      gap: 8px;
+
+      & img {
+        width: 110px;
+        height: 110px;
+        border-radius: 50%;
+      }
+    }
+
+    &-info {
+      & p {
+        font-size: 14px;
+        color: white;
+        text-align: center;
+      }
+    }
+
+    &-location {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      color: white;
+      font-size: 12px;
+
+      & svg {
+        margin-right: 4px;
+        font-size: 12px;
+      }
+    }
+  }
+}
+
+.homeBrandLogos {
+  width: calc(100% - 128px);
+  margin: 0 auto;
+}
+
 /* Mobile View -small */
 @media only screen and (max-width: 719px) {
-  .bannerContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
   .home-mainImage-m {
     display: none;
   }
@@ -121,126 +203,68 @@
     object-fit: cover !important;
   }
 
-  .marketing-text {
-    margin-top: -400px;
-  }
-
   .home-marketingImage-l {
     display: none;
   }
   .home-mainText {
-    // color: white;
     margin-top: 24px;
-    // width: 75vw;
+    padding: 0 24px;
   }
   .home-main-Title {
     max-width: 205px;
   }
   .home-main-Subtitle {
-    max-width: 270px;
-    margin-top: 12px;
+    width: 270px;
+    margin-top: 8px;
   }
 
   #homeFindYoursButton {
     margin-top: 32px;
     cursor: pointer;
-    max-width: 327px;
-    width: 75vw;
+    width: 100%;
   }
 
   .exploreVehicles {
-    // width: 75vw;
     color: white;
-    margin-top: 45px;
-  }
-
-  .exploreVehicles-text {
-    font-family: "Raleway";
-    font-style: normal;
-    font-weight: 600;
-    font-size: 24px;
-    line-height: 125%;
-  }
-
-  .exploreVehicles-box {
-    display: flex;
-    flex-direction: column;
-    // align-items: center;
-    height: 304px;
-    justify-content: space-evenly;
+    margin-top: 56px;
   }
 
   .homeForm {
     display: flex;
     flex-direction: column;
-    // width: 75vw;
-    // align-items: center;
+    gap: 16px;
   }
 
   #exploreVehicle {
-    display: flex;
-    // flex-direction: column;
-    justify-content: center;
-    // align-items: flex-start;
-    padding: 0px;
-    width: 75vw;
-    height: 44px;
-    background: #ffffff;
-    border: 1px solid #cbd2e0;
-    // border-radius: 6px;
-    margin-top: 16px;
-    max-width: 327px;
-    font-style: normal;
-    font-weight: 400;
+    height: 40px;
+    padding: 8px;
     font-size: 16px;
     line-height: 150%;
+    border-radius: 8px;
   }
 
   #exploreBrand {
-    display: flex;
-    // flex-direction: column;
-    justify-content: center;
-    // align-items: flex-start;
-    padding: 0px;
-    width: 75vw;
-    height: 44px;
-    background: #ffffff;
-    border: 1px solid #cbd2e0;
-    // border-radius: 6px;
-    max-width: 327px;
-    font-style: normal;
-    font-weight: 400;
+    height: 40px;
+    padding: 8px;
     font-size: 16px;
     line-height: 150%;
+    border-radius: 8px;
   }
 
   #exploreSubmit {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
     color: white;
-    padding: 16px 24px;
+    padding: 16px 0;
     height: 50px;
-    left: 24px;
-    top: 186px;
-    margin-top: 32px;
+    margin-top: 16px;
     cursor: pointer;
-    max-width: 327px;
-    width: 75vw;
     background: #006039;
   }
 
   .homeSingleBrand {
     text-align: center;
-    margin-bottom: 40px;
-  }
-
-  .home-marketing-section {
-    height: 400px;
-    align-items: center;
-    display: flex;
-    flex-direction: column;
+    margin-top: 64px;
+    margin-bottom: 32px;
+    color: white;
   }
 
   .home-marketing-button {
@@ -253,10 +277,7 @@
   .homeBrandLogos-singleLogo {
     display: flex;
     align-items: center;
-    border-bottom: 1px solid white;
-    width: 75vw;
-    max-width: 241px;
-    height: 70px;
+    border-bottom: 1px solid $divider;
   }
 
   #homeSingleBrandLogoLast2 {
@@ -264,7 +285,8 @@
   }
 
   .homeBrandLogos-singleLogo-logo {
-    min-width: 48px;
+    width: 48px;
+    height: 32px;
   }
 
   .css-i4bv87-MuiSvgIcon-root {
@@ -323,7 +345,7 @@
   }
 
   .exploreVehicles-text {
-    font-family: "Raleway";
+    font-family: 'Raleway';
     font-style: normal;
     font-weight: 600;
     font-size: 32px;
@@ -402,7 +424,7 @@
   }
 
   .homeSingleBrand {
-    font-family: "Raleway";
+    font-family: 'Raleway';
     font-style: normal;
     font-weight: 600;
     font-size: 32px;
@@ -509,7 +531,7 @@
     justify-content: space-around;
   }
   .exploreVehicles-text {
-    font-family: "Raleway";
+    font-family: 'Raleway';
     font-style: normal;
     font-weight: 600;
     font-size: 32px;
@@ -517,7 +539,7 @@
   }
 
   .exploreInput {
-    font-family: "Raleway";
+    font-family: 'Raleway';
     padding: 15px;
     border: 1px solid #cbd2e0;
     height: 60px;
@@ -530,14 +552,14 @@
     font-size: 16px;
     line-height: 150%;
     letter-spacing: -0.01em;
-    font-feature-settings: "calt" off;
+    font-feature-settings: 'calt' off;
     cursor: pointer;
   }
 
   #exploreSubmit {
     background: #006039;
     color: white;
-    font-family: "Raleway";
+    font-family: 'Raleway';
     font-style: normal;
     font-weight: 600;
     font-size: 14px;
@@ -557,7 +579,7 @@
   }
 
   .homeSingleBrand {
-    font-family: "Raleway";
+    font-family: 'Raleway';
     font-style: normal;
     font-weight: 600;
     font-size: 32px;
@@ -587,7 +609,7 @@
 
   .homeBrandLogos-singleLogo-text {
     color: white;
-    font-family: "Cabin";
+    font-family: 'Cabin';
     font-weight: 400;
     font-size: 16px;
     line-height: 24px;
@@ -679,10 +701,3 @@
 // Tablet: From 720 up to 989
 // Desktop: From 990 up to 1439
 // 4K: After 1440
-
-// E X T R A   S M A L L
-@media screen and (max-width: 300px) {
-  .home-mainText {
-    width: 75vw;
-  }
-}

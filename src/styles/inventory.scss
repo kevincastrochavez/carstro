@@ -7,7 +7,7 @@
     right: 0;
     background-color: rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(3px);
-    z-index: 1;
+    z-index: 11;
   }
 
   &_header {
@@ -74,7 +74,8 @@
     height: $px-8;
     background-color: $bgnd-lightgray;
     position: sticky;
-    top: 0;
+    top: 80px;
+    z-index: 2;
   }
 
   &_carsContainer {
@@ -218,17 +219,5 @@
     &_filtersBtn {
       display: none;
     }
-  }
-}
-
-@media screen and (max-width: 300px) {
-  .inventory_main {
-    margin-top: 70px;
-  }
-}
-
-@media screen and (min-width: 300px) {
-  .inventory_main {
-    margin-top: 80px;
   }
 }
