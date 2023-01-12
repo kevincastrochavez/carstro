@@ -12,6 +12,17 @@ import { saleRepresntative } from '../utilities/srObject.js';
 // TODO
 
 // Fix Find Yours button
+// Add functionality to the select inputs
+// Fix the scroll behavior when going to different page
+// Add functionality to the single brand section
+// Include Sales Representatives images
+// Include BPA logo
+// Fix footer links
+// Add functionality to the location links in the footer
+// Fix quick links in the menu
+// Fix links in menu
+// Check accessibility
+// Fix header for black or white
 
 function Homepage() {
   let navigate = useNavigate();
@@ -52,6 +63,7 @@ function Homepage() {
         });
     }
   }, []);
+
   return (
     <div className='homepage-container'>
       <div className='bannerContainer'>

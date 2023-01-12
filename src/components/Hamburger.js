@@ -3,46 +3,65 @@ import { Link, useNavigate } from 'react-router-dom';
 import MenuIcon from '@mui/icons-material/Menu';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 
-// import "./hamburger.scss";
+import { useStateValue } from '../StateProvider';
 
 function Hamburger() {
+  const [{ minMaxPrice, minMaxMileage }] = useStateValue();
   const [sidebar, setSidebar] = useState(false);
-  let navigate = useNavigate();
+  const navigate = useNavigate();
+
   const showSidebar = () => setSidebar(!sidebar);
+
+  const goToPage = (navigateTo) => {
+    setSidebar(false);
+    navigate(navigateTo);
+  };
 
   return (
     <div>
       <div className='navbar'>
-        <a href='#' className='menu-bars'>
+        <div className='menu-bars'>
           <MenuIcon
             onClick={showSidebar}
             className='hamBarsIcon'
             styles='width: 100%; height: 40px;'
           />
-        </a>
+        </div>
       </div>
+
       <nav className={sidebar ? 'nav-menu active' : 'nav-menu '}>
         <ul className='nav-menu-items'>
-          <Link to='/inventory' className='nav-text'>
+          <div
+            className='nav-text'
+            onClick={() =>
+              goToPage(
+                `/inventory?minPrice=${minMaxPrice[0]}&maxPrice=${minMaxPrice[1]}&minMileage=${minMaxMileage[0]}&maxMileage=${minMaxMileage[1]}`
+              )
+            }
+          >
             <p className='nav-text-a'>Inventory</p>
 
             <ArrowForwardIosIcon />
-          </Link>
+          </div>
 
-          <Link to='/salesrepresentatives' className='nav-text'>
+          <div
+            className='nav-text'
+            onClick={() => goToPage('/salesrepresentatives')}
+          >
             <p className='nav-text-a'>Sales Representatives</p>
             <ArrowForwardIosIcon />
-          </Link>
+          </div>
 
-          <Link to='/aboutUs' className='nav-text'>
+          <div className='nav-text' onClick={() => goToPage('/aboutUs')}>
             <p className='nav-text-a'>About Us</p>
             <ArrowForwardIosIcon />
-          </Link>
+          </div>
 
-          <Link to='/marketing' className='nav-text'>
+          <div className='nav-text' onClick={() => goToPage('/marketing')}>
             <p className='nav-text-a'>Marketing</p>
             <ArrowForwardIosIcon />
-          </Link>
+          </div>
+
           <div className='hamQuickLinks'>
             <li className='hamQuickLinksSingle'>
               <a href='#'>kia</a>
