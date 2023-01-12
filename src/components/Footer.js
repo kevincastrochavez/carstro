@@ -5,7 +5,10 @@ import FacebookOutlinedIcon from '@mui/icons-material/FacebookOutlined';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import InstagramIcon from '@mui/icons-material/Instagram';
 
+import { useStateValue } from '../StateProvider';
+
 function Footer() {
+  const [{ minMaxPrice, minMaxMileage }, dispatch] = useStateValue();
   let navigate = useNavigate();
 
   return (
@@ -24,15 +27,11 @@ function Footer() {
         <div className='footerInfoBoxSingle'>
           <div className='footerInfoBoxSingle-title'>Site Map</div>
           <div className='footerInfoBoxSingle-links'>
-            <p
-              className='footerInfoBoxSingle-link'
-              onClick={() => {
-                navigate('/');
-              }}
-            >
+            <Link to={'/'} className='footerInfoBoxSingle-link'>
               Homepage
-            </p>
-            <p
+            </Link>
+            <Link
+              to={`/inventory?minPrice=${minMaxPrice[0]}&maxPrice=${minMaxPrice[1]}&minMileage=${minMaxMileage[0]}&maxMileage=${minMaxMileage[1]}`}
               className='footerInfoBoxSingle-link'
               onClick={() => {
                 navigate(
@@ -41,31 +40,19 @@ function Footer() {
               }}
             >
               Inventory
-            </p>
-            <p
+            </Link>
+            <Link
+              to={'/salesrepresentatives'}
               className='footerInfoBoxSingle-link'
-              onClick={() => {
-                navigate('/salesrepresentatives');
-              }}
             >
               Sales Representatives
-            </p>
-            <p
-              className='footerInfoBoxSingle-link'
-              onClick={() => {
-                navigate('/aboutus');
-              }}
-            >
+            </Link>
+            <Link to={'/aboutus'} className='footerInfoBoxSingle-link'>
               About Us
-            </p>
-            <p
-              className='footerInfoBoxSingle-link'
-              onClick={() => {
-                navigate('/marketing');
-              }}
-            >
+            </Link>
+            <Link to={'/marketing'} className='footerInfoBoxSingle-link'>
               Marketing
-            </p>
+            </Link>
           </div>
         </div>
         <div className='footerInfoBoxSingle'>

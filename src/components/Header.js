@@ -5,7 +5,6 @@ import Hamburger from './Hamburger';
 // import PropTypes from "prop-types";
 
 function Header(props) {
-  // const [showLinks, setShowLinks] = useState(false);
   let navigate = useNavigate();
 
   return (
