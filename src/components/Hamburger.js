@@ -5,7 +5,7 @@ import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 
 import { useStateValue } from '../StateProvider';
 
-function Hamburger() {
+function Hamburger({ white }) {
   const [{ minMaxPrice, minMaxMileage, brandsFilters }, dispatch] =
     useStateValue();
   const [sidebar, setSidebar] = useState(false);
@@ -43,7 +43,10 @@ function Hamburger() {
         </div>
       </div>
 
-      <nav className={sidebar ? 'nav-menu active' : 'nav-menu '}>
+      <nav
+        className={sidebar ? 'nav-menu active' : 'nav-menu '}
+        id={white ? 'navMenu_white' : ''}
+      >
         <ul className='nav-menu-items'>
           <div className='nav-text' onClick={() => goToPage('/')}>
             <p className='nav-text-a'>Home</p>
