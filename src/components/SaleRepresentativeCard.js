@@ -32,78 +32,88 @@ function SaleRepresentativeCard({
   }, []);
 
   return (
-    <li
-      className='saleRepresentativeCard_li'
-      onClick={() => setSaleCarOpen(!saleCardOpen)}
-    >
-      {!saleCardOpen && (
-        <div className='li_div--locationContainer'>
-          {deviceWidth <= 990 && (
-            <>
-              <span className='saleRepresentativeCard_horizontalLocation'>
-                <LocationOnIcon className='saleRepresentativeCard_li_location' />
+    <>
+      <li
+        className='saleRepresentativeCard_li'
+        onClick={() => setSaleCarOpen(!saleCardOpen)}
+      >
+        {!saleCardOpen && (
+          <div className='li_div--locationContainer'>
+            {deviceWidth <= 990 && (
+              <>
+                <span className='saleRepresentativeCard_horizontalLocation'>
+                  <LocationOnIcon className='saleRepresentativeCard_li_location' />
 
-                <p className='saleRepresentativeCard_li_p'>{location}</p>
-              </span>
-              <ExpandMoreIcon className='saleRepresentativeCard_li_arrow' />
-            </>
-          )}
-        </div>
-      )}
-      {(saleCardOpen || deviceWidth >= 990) && (
-        <div id={id}>
-          <div className='saleRCardSeparator'>
-            <div className='saleRepresentativeCard_div'>
-              <div className='saleRepresentativeCard_div--picturesContainer'>
-                <img
-                  className='saleRepresentativeCard_div_img'
-                  src={image}
-                ></img>
+                  <p className='saleRepresentativeCard_li_p'>{location}</p>
+                </span>
+                <ExpandMoreIcon className='saleRepresentativeCard_li_arrow' />
+              </>
+            )}
+          </div>
+        )}
+        {(saleCardOpen || deviceWidth >= 990) && (
+          <div id={id}>
+            <div className='saleRCardSeparator'>
+              <div className='saleRepresentativeCard_div'>
+                <div className='saleRepresentativeCard_div--picturesContainer'>
+                  <img
+                    className='saleRepresentativeCard_div_img'
+                    src={image}
+                  ></img>
+                </div>
+                <div className='saleRepresentativeCard_div--locationsContainer'>
+                  <h4 className='saleRepresentativeCard_div_img_h4'>{name}</h4>
+                  <ul className='saleRepresentativeCard_ul'>
+                    <div>
+                      <li className='saleRepresentativeCard_ul_li'>
+                        <LocationOnIcon className='li_icon' />
+                        {location}
+                      </li>
+                      <li className='saleRepresentativeCard_ul_li'>
+                        <MailIcon className='li_icon' />
+                        {email}
+                      </li>
+                    </div>
+                    <div>
+                      <li className='saleRepresentativeCard_ul_li'>
+                        <WatchLaterIcon className='li_icon' />
+                        {hours}
+                      </li>
+                      <li className='saleRepresentativeCard_ul_li'>
+                        <PhoneIcon className='li_icon' />
+                        {phone}
+                      </li>
+                    </div>
+                  </ul>
+                </div>
               </div>
-              <div className='saleRepresentativeCard_div--locationsContainer'>
-                <h4 className='saleRepresentativeCard_div_img_h4'>{name}</h4>
-                <ul className='saleRepresentativeCard_ul'>
-                  <div>
-                    <li className='saleRepresentativeCard_ul_li'>
-                      <LocationOnIcon className='li_icon' />
-                      {location}
-                    </li>
-                    <li className='saleRepresentativeCard_ul_li'>
-                      <MailIcon className='li_icon' />
-                      {email}
-                    </li>
-                  </div>
-                  <div>
-                    <li className='saleRepresentativeCard_ul_li'>
-                      <WatchLaterIcon className='li_icon' />
-                      {hours}
-                    </li>
-                    <li className='saleRepresentativeCard_ul_li'>
-                      <PhoneIcon className='li_icon' />
-                      {phone}
-                    </li>
-                  </div>
-                </ul>
-              </div>
-            </div>
 
-            <div className='saleRepresentativeCard_div--button'>
-              <Button
-                onClick={() => setModalWindowOpen(!modalWindowOpen)}
-                text='Contact Dealer'
-                className='btn_green'
-              />
+              <div className='saleRepresentativeCard_div--button'>
+                <Button
+                  onClick={() => setModalWindowOpen(!modalWindowOpen)}
+                  text='Contact Dealer'
+                  className='btn_green'
+                />
+              </div>
             </div>
           </div>
-        </div>
-      )}
+        )}
+      </li>
+
       {modalWindowOpen && (
-        <div className='modalWindow_overlay'>
+        <div
+          onClick={() => setModalWindowOpen(false)}
+          className='modalWindow_overlay'
+        >
           <form className='modalWindow_form' action=''>
-            <div className='form_div-closeContainer'>
-              <CloseIcon onClick={() => setModalWindowOpen(!modalWindowOpen)} />
+            <div className='modalWindow_title'>
+              <div className='form_div-closeContainer'>
+                <CloseIcon
+                  onClick={() => setModalWindowOpen(!modalWindowOpen)}
+                />
+              </div>
+              <h1 className='modalWindow_form_h1'>Contact Dealer</h1>
             </div>
-            <h1 className='modalWindow_form_h1'>Contact Delaer</h1>
             <h4 className='modalWindow_form_h4'>{name}</h4>
             <p className='modalWindow_form_p--location'>{location}</p>
             <p className='modalWindow_form_p--address'>{address}</p>
@@ -134,7 +144,7 @@ function SaleRepresentativeCard({
                   name='spanish_representative'
                 />
                 <label htmlFor='spanish_representative'>
-                  Request a Spanish-speaker representative
+                  Spanish-speaker representative
                 </label>
               </div>
               <div>
@@ -175,12 +185,13 @@ function SaleRepresentativeCard({
           </form>
         </div>
       )}
+
       {confirmationModalOpen && (
         <div className='modal_confirmation'>
           <CheckCircleIcon /> <p>Message sent</p>
         </div>
       )}
-    </li>
+    </>
   );
 }
 
