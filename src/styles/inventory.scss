@@ -74,7 +74,8 @@
     height: $px-8;
     background-color: $bgnd-lightgray;
     position: sticky;
-    top: 0;
+    top: 80px;
+    z-index: 2;
   }
 
   &_carsContainer {
