@@ -49,6 +49,10 @@
       margin-bottom: $px-24;
     }
 
+    & section:last-of-type {
+      margin-bottom: 80px;
+    }
+
     & h5 {
       font-size: 14px;
       font-family: $body-font;

@@ -138,10 +138,12 @@
     }
 
     &_expand {
+      margin-top: 8px;
       grid-row: 4/5;
     }
 
     &_close {
+      margin-top: 8px;
       grid-row: 6/7;
     }
   }

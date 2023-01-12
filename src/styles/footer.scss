@@ -45,7 +45,7 @@
 
 .footerRights {
   font-family: 'Raleway';
-  margin: 14px 0px;
+  margin-bottom: 14px;
 }
 
 .footerInfoBoxSingle-title {
@@ -57,12 +57,10 @@
 
 .footerSocialMediaIcons {
   align-self: center;
-
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 40px;
-  margin-bottom: 24px;
 }
 
 .footerSocialMediaIcon {
@@ -83,7 +81,29 @@
 }
 
 .footerInfoBoxSingle {
-  margin-bottom: 40px;
+  margin-bottom: 60px;
+}
+
+.footer_bpa {
+  width: 80px;
+  align-self: center;
+  order: 2;
+
+  & img {
+    width: 100%;
+  }
+}
+
+.footerRights {
+  order: 3;
+}
+
+.footerInfoBoxSingle-links {
+  gap: 8px;
+}
+
+.footerInfoLast {
+  gap: 20px;
 }
 
 /* Mobile View -small */
@@ -98,10 +118,6 @@
 
   .footerRights {
     text-align: center;
-  }
-
-  .footerRights {
-    order: 2;
   }
 
   .footerInfoBoxSingle-links {
