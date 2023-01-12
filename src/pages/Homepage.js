@@ -16,7 +16,6 @@ import { saleRepresntative } from '../utilities/srObject.js';
 // Include BPA logo
 // Fix footer links
 // Add functionality to the location links in the footer
-// Fix quick links in the menu
 // Fix links in menu
 // Check accessibility
 // Fix header for black or white
