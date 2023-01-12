@@ -9,7 +9,6 @@ import CloseIcon from '@mui/icons-material/Close';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 
 import { useEffect } from 'react';
-import { height } from '@mui/system';
 
 function SaleRepresentativeCard({
   id,
@@ -25,15 +24,8 @@ function SaleRepresentativeCard({
 }) {
   const [saleCardOpen, setSaleCarOpen] = useState(false);
   const [modalWindowOpen, setModalWindowOpen] = useState(false);
-  const [confirmationModalOpen, setconfirmationModalOpen] = useState(false);
+  const [confirmationModalOpen, setConfirmationModalOpen] = useState(false);
   const [deviceWidth, setDeviceWidth] = useState(0);
-
-  const scrollToRep = (id) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
 
   useEffect(() => {
     setDeviceWidth(window.innerWidth);
@@ -171,9 +163,9 @@ function SaleRepresentativeCard({
                   className='btn_green modalWindow_button'
                   onClick={() => (
                     setModalWindowOpen(!modalWindowOpen),
-                    setconfirmationModalOpen(!confirmationModalOpen),
+                    setConfirmationModalOpen(!confirmationModalOpen),
                     setTimeout(() => {
-                      setconfirmationModalOpen(confirmationModalOpen);
+                      setConfirmationModalOpen(confirmationModalOpen);
                     }, 3000),
                     window.scrollTo({ top: 0, behavior: 'smooth' })
                   )}
