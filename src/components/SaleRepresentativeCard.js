@@ -101,10 +101,12 @@ function SaleRepresentativeCard({
       </li>
 
       {modalWindowOpen && (
-        <div
-          onClick={() => setModalWindowOpen(false)}
-          className='modalWindow_overlay'
-        >
+        <>
+          <div
+            onClick={() => setModalWindowOpen(false)}
+            className='modalWindow_overlay'
+          ></div>
+
           <form className='modalWindow_form' action=''>
             <div className='modalWindow_title'>
               <div className='form_div-closeContainer'>
@@ -183,7 +185,7 @@ function SaleRepresentativeCard({
               </div>
             </div>
           </form>
-        </div>
+        </>
       )}
 
       {confirmationModalOpen && (

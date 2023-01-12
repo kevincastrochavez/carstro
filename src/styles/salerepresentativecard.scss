@@ -107,11 +107,14 @@
 }
 
 .modalWindow_form {
-  position: relative;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
   background-color: white;
   margin: 48px 24px;
   padding: 24px;
-  z-index: 3;
+  z-index: 1000;
 }
 
 .modalWindow_title {
