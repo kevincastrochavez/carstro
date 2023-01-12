@@ -31,6 +31,10 @@ function Hamburger() {
 
       <nav className={sidebar ? 'nav-menu active' : 'nav-menu '}>
         <ul className='nav-menu-items'>
+          <div className='nav-text' onClick={() => goToPage('/')}>
+            <p className='nav-text-a'>Home</p>
+            <ArrowForwardIosIcon />
+          </div>
           <div
             className='nav-text'
             onClick={() =>
