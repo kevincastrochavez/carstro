@@ -1,5 +1,5 @@
 // CINDY
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import FacebookOutlinedIcon from '@mui/icons-material/FacebookOutlined';
 import TwitterIcon from '@mui/icons-material/Twitter';
@@ -9,7 +9,13 @@ import { useStateValue } from '../StateProvider';
 
 function Footer() {
   const [{ minMaxPrice, minMaxMileage }, dispatch] = useStateValue();
+  const [currentYear, setCurrentYear] = useState(0);
   let navigate = useNavigate();
+
+  useEffect(() => {
+    const date = new Date().getFullYear();
+    setCurrentYear(date);
+  });
 
   return (
     <div className='footerContainer'>
@@ -93,20 +99,45 @@ function Footer() {
           </div>
         </div>
         <div className='footerInfoBoxSingle'>
-          {/* <div className="footerInfoBoxSingle-title"></div> */}
+          <div className='footerInfoBoxSingle-links footerInfoLast'>
+            <div className='footerRights'>
+              ® {currentYear} Carstro. All Rights Reserved
+            </div>
 
-          <div className='footerInfoBoxSingle-links'>
-            <div className='footerRights'>® 2023 ABC All Rights Reserved</div>
+            <a
+              href='https://bpa.org'
+              target='_blank'
+              rel='noreferrer'
+              className='footer_bpa'
+            >
+              <img src='/footerImages/bpa.png' alt='BPA svg' />
+            </a>
+
             <div className='footerSocialMediaIcons'>
-              <Link to='http://facebook.com' className='footerSocialMediaIcon'>
+              <a
+                href='http://facebook.com'
+                target='_blank'
+                rel='noreferrer'
+                className='footerSocialMediaIcon'
+              >
                 <FacebookOutlinedIcon />
-              </Link>
-              <Link to='http://twitter.com' className='footerSocialMediaIcon'>
+              </a>
+              <a
+                href='http://twitter.com'
+                target='_blank'
+                rel='noreferrer'
+                className='footerSocialMediaIcon'
+              >
                 <TwitterIcon />
-              </Link>
-              <Link to='http://instagram.com' className='footerSocialMediaIcon'>
+              </a>
+              <a
+                href='http://instagram.com'
+                target='_blank'
+                rel='noreferrer'
+                className='footerSocialMediaIcon'
+              >
                 <InstagramIcon />
-              </Link>
+              </a>
             </div>
           </div>
         </div>
