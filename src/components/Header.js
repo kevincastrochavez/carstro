@@ -10,7 +10,8 @@ function Header() {
   useEffect(() => {
     if (
       window.location.href === 'http://localhost:3000/' ||
-      window.location.href === 'http://localhost:3000/aboutUs'
+      window.location.href === 'http://localhost:3000/aboutUs' ||
+      window.location.href === 'http://localhost:3000/marketing'
     ) {
       setHeaderClass('');
     } else {
