@@ -11,9 +11,7 @@ import { saleRepresntative } from '../utilities/srObject.js';
 
 // TODO
 
-// Fix Find Yours button
 // Add functionality to the select inputs
-// Fix the scroll behavior when going to different page
 // Add functionality to the single brand section
 // Include Sales Representatives images
 // Include BPA logo
@@ -62,6 +60,10 @@ function Homepage() {
           });
         });
     }
+  }, []);
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }, []);
 
   return (
