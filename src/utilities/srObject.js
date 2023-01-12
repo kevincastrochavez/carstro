@@ -52,8 +52,7 @@ const saleRepresntative = [
     phone: '123-543-3454',
     address: 'example 234 S 3456',
     position: 'Chief Legal Officer',
-    image:
-      'https://media.licdn.com/dms/image/D4E35AQEnqE5PgDgTvg/profile-framedphoto-shrink_400_400/0/1634319087952?e=1672855200&v=beta&t=8-7ioCj9LwSwYLSXKb9W6diL9iSby6U6mnKlJXmaMls',
+    image: '/salesRepresentatives/ignacio.jpeg',
   },
 ];
 
