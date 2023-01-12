@@ -1,15 +1,26 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
 import Hamburger from './Hamburger';
-// import PropTypes from "prop-types";
 
-function Header(props) {
-  let navigate = useNavigate();
+function Header() {
+  const [headerClass, setHeaderClass] = useState('');
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (
+      window.location.href === 'http://localhost:3000/' ||
+      window.location.href === 'http://localhost:3000/aboutUs'
+    ) {
+      setHeaderClass('');
+    } else {
+      setHeaderClass('headerWhite');
+    }
+  }, [window.location.href]);
 
   return (
     <div className='header'>
-      <div className='headerHeader'>
+      <div className={`headerHeader ${headerClass}`}>
         <div className='leftSide'>
           <Link to='/'>
             <img className='header-logo' src='headerImages/logo.png' alt='' />
