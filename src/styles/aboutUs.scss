@@ -2,6 +2,7 @@
 .aboutUs {
   &_representativesContainer {
     display: grid;
+    justify-items: center;
     gap: 32px;
     width: 100%;
     margin-top: 48px;
@@ -35,19 +36,19 @@
 }
 
 @media only screen and (max-width: 719px) {
-  .about-us-p {
-    width: 75vw !important;
-    padding: 0px 4px 0px 0px;
-  }
+  // .about-us-p {
+  //   width: 75vw !important;
+  //   padding: 0px 4px 0px 0px;
+  // }
   .aboutUsContainer {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
 
-  .about-us-car-mobile {
-    height: 580px;
-  }
+  // .about-us-car-mobile {
+  //   height: 580px;
+  // }
   .about-us-car-ipad {
     display: none;
   }
@@ -80,9 +81,9 @@
   .about-us-info-wrap {
     width: 35vw;
   }
-  .about-us-p {
-    width: 32vw !important;
-  }
+  // .about-us-p {
+  //   width: 32vw !important;
+  // }
 }
 
 /* Desktop   V I E W -large */
@@ -103,52 +104,35 @@
     height: 580px;
   }
 
-  .about-us-info-wrap {
-    width: 35vw;
-  }
+  // .about-us-info-wrap {
+  //   width: 35vw;
+  // }
 }
 
-/* 4 K   V I E W  -extralarge*/
-@media only screen and (min-width: 1440px) {
-  .about-us-info-wrap {
-    max-width: 500px;
-  }
-}
-// Mobile: Up to 719px
-// Tablet: From 720 up to 989
-// Desktop: From 990 up to 1439
-// 4K: After 1440
+// /* 4 K   V I E W  -extralarge*/
+// @media only screen and (min-width: 1440px) {
+//   .about-us-info-wrap {
+//     max-width: 500px;
+//   }
+// }
+
 .aboutUsContainer {
   margin-bottom: 50px;
-}
-.about-us-MainImage {
-  width: 100vw !important;
-  height: 896px;
-  object-fit: cover;
-  margin-top: 0;
+  margin-top: 24px;
+  padding: 0 24px;
 }
 
 .about-us-h1-info-wrap {
   color: white;
-  height: 704px;
-  width: 75vw;
-  margin-top: -758px;
 }
 
 .about-us-h1-title {
-  margin-bottom: 72px;
+  margin-bottom: 48px;
 }
 
 .aboutus-scrollbarSeparation {
   font-family: 'Cabin';
   line-height: 150%;
-}
-
-.about-us-p {
-  //   overflow: hidden;
-  overflow-y: scroll;
-  width: 436px;
-  height: 436px;
 }
 
 .about-us-p::-webkit-scrollbar {
@@ -162,21 +146,20 @@
 
 .about-us-our-team {
   background-color: white;
-  margin-top: 56px;
-  padding: 0 24px;
+  padding: 56px 24px 0;
 }
 
 .aboutUsMainContainer {
-  background-color: white;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  background-color: black;
   margin-top: -80px;
+  padding: 80px 0 0;
 }
 
 .aboutUsSubtitle {
   color: #006039 !important;
-  font-size: 26px;
+  font-size: 24px;
+  line-height: 1.5;
+  margin-bottom: 8px;
 }
 
 .aboutUsLinkSalesR {

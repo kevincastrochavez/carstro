@@ -14,7 +14,7 @@ function AboutUs() {
   return (
     <div className='aboutUsMainContainer'>
       <div className='aboutUsContainer'>
-        <div className='about-us-top-img-container'>
+        {/* <div className='about-us-top-img-container'>
           <img
             className='about-us-MainImage about-us-car-mobile'
             src='aboutUsImages/about-us-car-mobile.jpeg'
@@ -30,27 +30,27 @@ function AboutUs() {
             src='aboutUsImages/about-us-car-large.jpeg'
             alt=''
           />
-        </div>
+        </div> */}
         <div className='about-us-h1-info-wrap'>
           <h1 className='about-us-h1-title'>About Us</h1>
           <div className='about-us-info-wrap'>
             <div className='aboutus-scrollbarSeparation'>
               <p className='about-us-p'>
-                <h3 className='aboutUsSubtitle'>our purpose</h3> Carstro® was
+                <h3 className='aboutUsSubtitle'>Our purpose</h3> Carstro® was
                 founded with the purpose of becoming the leading provider of
                 used car buyers and dealers. Our vehicle database is the largest
                 in North America, providing confidence and the very best deals
                 to millions of customers per year.
                 <br />
                 <br />
-                <h3 className='aboutUsSubtitle'>our experience</h3> Our 50 years
+                <h3 className='aboutUsSubtitle'>Our experience</h3> Our 50 years
                 of experience in the market show that there is no better place
                 to get both an excellent quality car and a great price. These
                 years also allow us to guide customers better than any other
                 company in their search for their dream.
                 <br />
                 <br />
-                <h3 className='aboutUsSubtitle'>the benefits</h3> In addition to
+                <h3 className='aboutUsSubtitle'>The benefits</h3> In addition to
                 having the most extensive inventory of vehicles from dealerships
                 and private sellers, Carstro's® website offers you:
                 <br />
@@ -78,7 +78,7 @@ function AboutUs() {
                 </ul>
                 <br />
                 <br />
-                <h3 className='aboutUsSubtitle'>still lost?</h3>
+                <h3 className='aboutUsSubtitle'>Still lost?</h3>
                 Not sure where to start? That is perfectly fine!
                 <br /> We have
                 <a className='aboutUsLinkSalesR' href='/salesrepresentatives'>
