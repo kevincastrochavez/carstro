@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import MenuIcon from '@mui/icons-material/Menu';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 
@@ -9,14 +9,8 @@ function Hamburger({ white }) {
   const [{ minMaxPrice, minMaxMileage, brandsFilters }, dispatch] =
     useStateValue();
   const [sidebar, setSidebar] = useState(false);
-  const navigate = useNavigate();
 
   const showSidebar = () => setSidebar(!sidebar);
-
-  const goToPage = (navigateTo) => {
-    setSidebar(false);
-    navigate(navigateTo);
-  };
 
   // const filterByBrand = (brand) => {
   //   dispatch({

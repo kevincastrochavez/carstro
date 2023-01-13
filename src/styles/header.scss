@@ -1,9 +1,15 @@
-.dropbtn:hover {
+.dropbtn:hover,
+.signOut:hover {
   text-shadow: 0 0 10px #ffffff;
 }
 
 .dropbtn {
-  transition: 0.2s;
+  border-bottom: 2px solid transparent;
+}
+
+.dropbtn.active,
+.signOut.active {
+  border-bottom: 2px solid $green;
 }
 
 #dropbtn {
@@ -30,16 +36,10 @@
 
 .signOut {
   color: white;
-  height: unset;
-  padding: 10px;
+  padding: 10px 0;
   margin: 0px;
   height: 40px;
-  border-radius: 25px;
-  border: none;
-  background: none;
   font-family: 'Raleway';
-  font-size: 0.9rem;
-  cursor: pointer;
 }
 
 .signOut:hover {
@@ -89,14 +89,20 @@
 
 .links {
   max-height: 80px;
+  gap: 32px;
 }
 
 .rightSide .links a {
   text-decoration: none;
-  color: #006eb6;
+  color: white;
   font-size: 0.9em;
   cursor: pointer;
-  margin-left: 15px;
+}
+
+.headerWhite {
+  .rightSide .links a {
+    color: black;
+  }
 }
 
 .rightSide .outHam {
@@ -222,12 +228,10 @@
   padding: 16px;
   font-size: 16px;
   border: none;
-  font-size: 0.9rem;
-  font-weight: 100;
   transition: 3 sec;
   text-decoration: none;
   display: inline-block;
-  padding: 5px 20px;
+  padding: 5px 0;
   position: relative;
   cursor: pointer;
 }
@@ -299,8 +303,6 @@
   text-decoration: none;
   display: block;
   font-family: 'Raleway';
-  font-size: 0.9rem;
-  /* cursor: pointer; */
 }
 
 /* Change color of dropdown links on hover */
