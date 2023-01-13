@@ -328,104 +328,6 @@ input:focus {
   top: 8%;
 }
 
-//Laptop
-@media screen and (min-width: 1200px) {
-  .saleRepresentativeCard_li {
-    display: block;
-  }
-
-  .saleRepresentativeCard_div {
-    padding: $px-12 0px;
-    display: grid;
-    grid-template-columns: 0.4fr 0.65fr;
-    grid-template-rows: 0.8fr 0.2fr;
-    align-items: center;
-  }
-
-  .saleRepresentativeCard_ul {
-    display: block;
-  }
-
-  .saleRepresentativeCard_div--picturesContainer {
-    width: 90%;
-    padding-right: 3%;
-  }
-
-  .saleRepresentativeCard_div_img_h4 {
-    font-size: $px-16;
-    font-weight: 600;
-    margin-bottom: $px-8;
-  }
-
-  .saleRepresentativeCard_ul_li {
-    font-family: $body-font;
-    font-size: 14px;
-    color: #5c5e62;
-    padding-bottom: 5px;
-  }
-
-  .saleRepresentativeCard_div--button {
-    background-color: #006039;
-    grid-column-start: 1;
-    grid-column-end: 3;
-  }
-
-  // modal window
-  .modalWindow_form {
-    padding: 5% 10%;
-  }
-
-  .modalWindow_overlay {
-    bottom: 0;
-  }
-
-  .modal_confirmation {
-    width: 30%;
-    top: 1.5;
-  }
-}
-
-// E X T R A   S M A L L
-@media screen and (max-width: 300px) {
-  .home-mainText {
-    width: 75vw;
-  }
-
-  .saleRepresentativeCard_div {
-    flex-direction: column;
-  }
-
-  .saleRepresentativeCard_div--locationsContainer {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 100%;
-  }
-
-  .btn_green {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 16px 24px;
-
-    height: 34px;
-    cursor: pointer;
-    transition: 0.3s;
-  }
-
-  .saleRepresentativeCard_div--button {
-    margin-top: 0 !important;
-  }
-
-  .saleRepresentativeCard_div {
-    display: flex !important;
-  }
-  .saleRepresentativeCard_div_img {
-    max-width: 180px;
-  }
-}
-
 // SALES REPRESENTATIVE SPECIAL MEDIA QUERY
 @media screen and (min-width: 300px) and (max-width: 600px) {
   .saleRepresentativeCard_div--button {
@@ -506,7 +408,7 @@ input:focus {
 }
 
 /* Desktop   V I E W -large */
-@media only screen and (min-width: 990px) and (max-width: 1439px) {
+@media only screen and (min-width: 990px) {
   .saleRepresentativeCard_div_img {
     max-width: 120px;
     width: 10vw;
@@ -569,10 +471,19 @@ input:focus {
   .saleRepresentativeCard_div--button {
     margin-top: 0;
   }
-}
 
-/* 4 K   V I E W  -extralarge*/
-@media only screen and (min-width: 1440px) {
+  .saleRepresentativeCard_div--picturesContainer {
+    width: unset;
+    margin-right: 0;
+  }
+
+  .modalWindow_form {
+    margin-top: 120px;
+  }
+
+  .modalWindow_overlay {
+    height: 1285px;
+  }
 }
 
 .btn_green {
