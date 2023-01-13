@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import MenuIcon from '@mui/icons-material/Menu';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 
@@ -9,14 +9,8 @@ function Hamburger({ white }) {
   const [{ minMaxPrice, minMaxMileage, brandsFilters }, dispatch] =
     useStateValue();
   const [sidebar, setSidebar] = useState(false);
-  const navigate = useNavigate();
 
   const showSidebar = () => setSidebar(!sidebar);
-
-  const goToPage = (navigateTo) => {
-    setSidebar(false);
-    navigate(navigateTo);
-  };
 
   // const filterByBrand = (brand) => {
   //   dispatch({
@@ -48,40 +42,50 @@ function Hamburger({ white }) {
         id={white ? 'navMenu_white' : ''}
       >
         <ul className='nav-menu-items'>
-          <div className='nav-text' onClick={() => goToPage('/')}>
+          <NavLink
+            to={'/'}
+            className='nav-text'
+            onClick={() => setSidebar(false)}
+          >
             <p className='nav-text-a'>Home</p>
             <ArrowForwardIosIcon />
-          </div>
-          <div
+          </NavLink>
+          <NavLink
+            to={`/inventory?minPrice=${minMaxPrice[0]}&maxPrice=${minMaxPrice[1]}&minMileage=${minMaxMileage[0]}&maxMileage=${minMaxMileage[1]}`}
             className='nav-text'
-            onClick={() =>
-              goToPage(
-                `/inventory?minPrice=${minMaxPrice[0]}&maxPrice=${minMaxPrice[1]}&minMileage=${minMaxMileage[0]}&maxMileage=${minMaxMileage[1]}`
-              )
-            }
+            onClick={() => setSidebar(false)}
           >
             <p className='nav-text-a'>Inventory</p>
 
             <ArrowForwardIosIcon />
-          </div>
+          </NavLink>
 
-          <div
+          <NavLink
+            to={'/salesRepresentatives'}
             className='nav-text'
-            onClick={() => goToPage('/salesrepresentatives')}
+            onClick={() => setSidebar(false)}
           >
             <p className='nav-text-a'>Sales Representatives</p>
             <ArrowForwardIosIcon />
-          </div>
+          </NavLink>
 
-          <div className='nav-text' onClick={() => goToPage('/aboutUs')}>
+          <NavLink
+            to={'/aboutUs'}
+            className='nav-text'
+            onClick={() => setSidebar(false)}
+          >
             <p className='nav-text-a'>About Us</p>
             <ArrowForwardIosIcon />
-          </div>
+          </NavLink>
 
-          <div className='nav-text' onClick={() => goToPage('/marketing')}>
+          <NavLink
+            to={'/marketing'}
+            className='nav-text'
+            onClick={() => setSidebar(false)}
+          >
             <p className='nav-text-a'>Marketing</p>
             <ArrowForwardIosIcon />
-          </div>
+          </NavLink>
 
           {/* <div className='hamQuickLinks'>
             <li className='hamQuickLinksSingle'>

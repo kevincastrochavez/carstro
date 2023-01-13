@@ -143,6 +143,7 @@
     &_imgContainer {
       & img {
         width: 50%;
+        max-width: 300px;
       }
     }
 
@@ -193,6 +194,8 @@
     &_info {
       max-width: 1040px;
       margin: 0 auto;
+      padding-left: 0;
+      padding-right: 0;
     }
 
     &_iconsContainer {

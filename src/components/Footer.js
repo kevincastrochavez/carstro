@@ -53,7 +53,7 @@ function Footer() {
             >
               Sales Representatives
             </Link>
-            <Link to={'/aboutus'} className='footerInfoBoxSingle-link'>
+            <Link to={'/aboutUs'} className='footerInfoBoxSingle-link'>
               About Us
             </Link>
             <Link to={'/marketing'} className='footerInfoBoxSingle-link'>

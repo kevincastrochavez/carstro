@@ -127,52 +127,47 @@
 }
 
 /* Tablet View -medium */
-@media only screen and (min-width: 720px) and (max-width: 989px) {
+@media only screen and (min-width: 720px) {
+  .footerContainer {
+    padding: 0 32px 64px;
+  }
+
   .footerInfoBox {
-    width: 75vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: space-between;
+    gap: 48px;
   }
 
   .footerLogoBox {
-    margin: 32px 0px;
+    margin: 32px 0px 48px;
   }
 
-  .footerContainer {
-    width: 1040px;
-    margin-bottom: 66px;
+  .footerInfoBoxSingle {
+    margin-bottom: 0;
   }
 
+  .footerInfoBoxSingle-links {
+    display: grid;
+  }
+
+  .footerInfoBoxSingle-links a {
+    margin-bottom: 0;
+  }
+
+  .footerSocialMediaIcons {
+    width: 150px;
+  }
+}
+
+// /* Desktop   V I E W -large */
+@media only screen and (min-width: 990px) {
   .footerInfoBox {
-    width: 75vw;
-    display: flex;
-    justify-content: space-between;
-    gap: 50px;
+    max-width: 1040px;
+    margin: 0 auto;
+  }
+
+  .footerInfoLast {
+    gap: 24px;
   }
 }
-
-/* Desktop   V I E W -large */
-@media only screen and (min-width: 990px) and (max-width: 1439px) {
-  .footerContainer {
-    width: 1040px;
-    height: 492px;
-    margin-bottom: 66px;
-  }
-
-  .footerInfoBox {
-    width: 75vw;
-    display: flex;
-    justify-content: space-between;
-    gap: 190px;
-  }
-
-  .footerLogoBox {
-    margin: 32px 0px;
-  }
-}
-
-/* 4 K   V I E W  -extralarge*/
-@media only screen and (min-width: 1440px) {
-}
-// Mobile: Up to 719px
-// Tablet: From 720 up to 989
-// Desktop: From 990 up to 1439
-// 4K: After 1440

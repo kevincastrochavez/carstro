@@ -3,6 +3,10 @@
   background-color: #1e1e1e;
 }
 
+.home_heroOverlay {
+  display: none;
+}
+
 .home-mainImage {
   width: 100%;
   height: 300px;
@@ -192,6 +196,31 @@
   margin: 0 auto;
 }
 
+#exploreBrand {
+  height: 40px;
+  padding: 8px;
+  font-size: 16px;
+  line-height: 150%;
+  border-radius: 8px;
+}
+
+#exploreVehicle {
+  height: 40px;
+  padding: 8px;
+  font-size: 16px;
+  line-height: 150%;
+  border-radius: 8px;
+}
+
+#exploreSubmit {
+  color: white;
+  padding: 16px 0;
+  height: 50px;
+  margin-top: 16px;
+  cursor: pointer;
+  background: #006039;
+}
+
 /* Mobile View -small */
 @media only screen and (max-width: 719px) {
   .home-mainImage-m {
@@ -237,31 +266,6 @@
     display: flex;
     flex-direction: column;
     gap: 16px;
-  }
-
-  #exploreVehicle {
-    height: 40px;
-    padding: 8px;
-    font-size: 16px;
-    line-height: 150%;
-    border-radius: 8px;
-  }
-
-  #exploreBrand {
-    height: 40px;
-    padding: 8px;
-    font-size: 16px;
-    line-height: 150%;
-    border-radius: 8px;
-  }
-
-  #exploreSubmit {
-    color: white;
-    padding: 16px 0;
-    height: 50px;
-    margin-top: 16px;
-    cursor: pointer;
-    background: #006039;
   }
 
   .homeSingleBrand {
@@ -327,6 +331,20 @@
     display: none;
   }
 
+  .main-image {
+    // position: relative;
+  }
+
+  .home_heroOverlay {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 580px;
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+
   .home-mainImage {
     height: 580px;
     width: 100vw !important;
@@ -334,8 +352,9 @@
   }
 
   .home-mainText {
-    width: 75vw;
+    padding-left: 32px;
     margin-top: -355px;
+    z-index: 2;
   }
 
   .home-main-Title {
@@ -344,14 +363,14 @@
   }
 
   .home-main-Subtitle {
-    width: 316px;
+    width: 227px;
     margin-bottom: 48px;
   }
 
   .bannerContainer {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    // align-items: center;
     height: 580px;
     margin-bottom: 64px;
   }
@@ -372,26 +391,52 @@
 
   .exploreVehicles-input {
     margin-top: 32px;
+    padding-bottom: 0;
   }
 
   .exploreInput {
     width: 180px;
-    height: 44px;
     cursor: pointer;
   }
+
   .homeForm {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin: 0 auto;
+    width: 506px;
+  }
+
+  .home__select {
+    height: 44px;
+
+    & svg {
+      top: 10px;
+    }
   }
 
   #exploreSubmit {
     background: #006039;
     color: white;
+    margin-top: 0;
+    padding: 8px 0;
+    height: 44px;
+  }
+
+  #exploreBrand,
+  #exploreVehicle {
+    height: 44px;
+    border-radius: 0;
+    padding-left: 16px;
   }
 
   .home-marketing-section {
     display: flex;
     flex-direction: column;
     align-items: center;
+  }
+
+  .marketing-title-and-text h2 {
+    font-size: 32px;
   }
 
   .home-marketingImage {
@@ -406,6 +451,7 @@
     align-items: center;
     justify-content: space-around;
     height: 400px;
+    padding: 0;
   }
 
   .home-marketing-button {
@@ -428,33 +474,38 @@
   }
 
   .homeBrowseByBrand {
-    width: 75vw;
-    height: 280px;
-    left: 377px;
-    top: 1431px;
-    margin-top: 80px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
+    margin-top: 64px;
+    padding: 0 32px;
+  }
+
+  .home-marketing-button h5 {
+    font-size: 14px;
+  }
+
+  .home-marketing-section {
+    margin-bottom: 0;
   }
 
   .homeSingleBrand {
+    text-align: center;
     font-family: 'Raleway';
     font-style: normal;
     font-weight: 600;
     font-size: 32px;
+    color: white;
   }
 
   .homeBrandLogos {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 180px);
+    justify-content: center;
+    margin: 48px auto 64px;
   }
 
   .homeBrandLogos-column {
     display: flex;
     flex-direction: column;
+    gap: 24px;
   }
 
   .homeBrandLogos-singleLogo {
@@ -468,18 +519,32 @@
   }
 
   .homeBrandLogos-singleLogo-logo {
-    max-width: 40px !important;
-    min-width: 40px !important;
-    max-height: 40px !important;
+    width: 40px;
+  }
+
+  .home_salesRepresentative {
+    padding: 52px 32px 64px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    overflow: unset;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .home_salesRepresentative-card img {
+    justify-self: center;
   }
 }
 
 /* Desktop   V I E W -large */
-@media only screen and (min-width: 990px) and (max-width: 1439px) {
+@media only screen and (min-width: 990px) {
+  .homepage-container {
+    overflow-x: hidden;
+  }
+
   .bannerContainer {
     display: flex;
     flex-direction: column;
-    align-items: center;
   }
 
   .home-mainImage-s {
@@ -494,21 +559,28 @@
   }
 
   .home-mainText {
-    width: 75vw;
     margin-top: -355px;
+    display: grid;
+    grid-template-columns: minmax(32px, auto) minmax(926px, 1040px) minmax(
+        32px,
+        auto
+      );
   }
 
   .home-main-Title {
     width: 316px;
     margin-bottom: 8px;
+    grid-column: 2;
   }
 
   .home-main-Subtitle {
     width: 316px;
     margin-bottom: 48px;
+    grid-column: 2;
   }
 
   #homeFindYoursButton {
+    grid-column: 2;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -538,13 +610,7 @@
 
   .exploreVehicles-box {
     background: white;
-    height: 212.5px;
-    width: 75vw;
     max-width: 1040px;
-    padding: 30px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
   }
   .exploreVehicles-text {
     font-family: 'Raleway';
@@ -583,15 +649,7 @@
   }
 
   .homeBrowseByBrand {
-    width: 684px;
-    height: 280px;
-    left: 377px;
-    top: 1431px;
-    margin-top: 80px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
+    margin-top: 100px;
   }
 
   .homeSingleBrand {
@@ -601,6 +659,7 @@
     font-size: 32px;
     line-height: 125%;
     color: white;
+    text-align: center;
   }
 
   .homeBrandLogos {
@@ -643,6 +702,10 @@
     margin-top: 80px;
   }
 
+  .marketing-image img {
+    object-fit: cover;
+  }
+
   .marketing-text {
     width: 1040px;
     display: flex;
@@ -655,13 +718,8 @@
     width: 100%;
   }
 
-  .marketing-title-and-text {
-    width: 1040px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: white;
+  .marketing-title-and-text h2 {
+    font-size: 32px;
   }
 
   .home-marketing-button {
@@ -688,7 +746,7 @@
   }
 
   .marketing-text {
-    margin-top: -540px;
+    margin-top: -580px;
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -702,18 +760,59 @@
   .home-marketing-section {
     margin-bottom: 0px;
   }
-}
 
-/* 4 K   V I E W  -extralarge*/
-@media only screen and (min-width: 1440px) {
-  .home-mainImage-s {
-    display: none;
+  .marketing-text {
+    padding: 0;
   }
-  .home-mainImage {
-    width: 100vw !important;
+
+  .homeBrandLogos {
+    display: grid;
+    grid-template-columns: repeat(3, 180px);
+    justify-content: center;
+    margin: 48px auto 64px;
+  }
+
+  .singleBrandLogo {
+    width: 100%;
+    height: 100%;
+  }
+
+  .homeBrandLogos-singleLogo-logo {
+    width: 40px;
+  }
+
+  .homeBrandLogos-column {
+    gap: 24px;
+  }
+
+  .home_salesRepresentative {
+    width: 800px;
+    margin: 52px auto 0;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+    overflow: unset;
+  }
+
+  .home_salesRepresentative-card img {
+    justify-self: center;
+  }
+
+  .home_heroOverlay {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 580px;
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+
+  .home-main-Subtitle p {
+    font-size: 16px;
+  }
+
+  .home-mainText {
+    z-index: 2;
   }
 }
-// Mobile: Up to 719px
-// Tablet: From 720 up to 989
-// Desktop: From 990 up to 1439
-// 4K: After 1440

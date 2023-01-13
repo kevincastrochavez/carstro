@@ -67,6 +67,8 @@ function Homepage() {
     <div className='homepage-container'>
       <div className='bannerContainer'>
         <div className='main-image'>
+          <div className='home_heroOverlay'></div>
+
           <img
             className='home-mainImage home-mainImage-l'
             src='homepageImages/main-l.jpg'
@@ -202,6 +204,8 @@ function Homepage() {
               </div>
               <div className='homeBrandLogos-singleLogo-text'> Renault</div>
             </div>
+          </div>
+          <div className='homeBrandLogos-column'>
             <div className='homeBrandLogos-singleLogo'>
               <div className='homeBrandLogos-singleLogo-logo'>
                 {' '}
@@ -213,8 +217,6 @@ function Homepage() {
               </div>
               <div className='homeBrandLogos-singleLogo-text'>BMW Cars</div>
             </div>
-          </div>
-          <div className='homeBrandLogos-column'>
             <div className='homeBrandLogos-singleLogo'>
               <div className='homeBrandLogos-singleLogo-logo'>
                 {' '}
@@ -226,6 +228,8 @@ function Homepage() {
               </div>
               <div className='homeBrandLogos-singleLogo-text'>Lamborghini</div>
             </div>
+          </div>
+          <div className='homeBrandLogos-column'>
             <div className='homeBrandLogos-singleLogo'>
               <div className='homeBrandLogos-singleLogo-logo'>
                 {' '}

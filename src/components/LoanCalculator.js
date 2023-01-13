@@ -230,7 +230,7 @@ function LoanCalculator({ className, carInfo }) {
             include applicable taxes, title, licensing and fees. ACTUAL PRICES
             AND PAYMENTS MAY BE DIFFERENT. Financing payment calculations are
             based on APR and term. Available on approved credit to very well
-            qualified customers through Toyota Financial Services and
+            qualified customers through Carstro Financial Services and
             participating Toyota dealers on a new vehicle. Not all customers
             will qualify.
           </p>

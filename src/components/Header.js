@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, NavLink } from 'react-router-dom';
 
+import { useStateValue } from '../StateProvider';
 import Hamburger from './Hamburger';
 
 function Header() {
+  const [{ minMaxPrice, minMaxMileage }] = useStateValue();
   const [headerWhite, setHeaderWhite] = useState(false);
   const navigate = useNavigate();
 
@@ -36,50 +38,30 @@ function Header() {
         <div className='rightSide'>
           <div className='links' id='showLinks'>
             <div className='dropdown'>
-              <button
-                className='dropbtn'
-                onClick={() => {
-                  navigate('/');
-                }}
-              >
+              <NavLink to='/' className='dropbtn'>
                 Homepage
-              </button>
+              </NavLink>
               <div className='dropdown_content'></div>
             </div>
             <div className='dropdown'>
-              <button
+              <NavLink
                 className='dropbtn'
-                onClick={() => {
-                  navigate(
-                    '/inventory?minPrice=23499&maxPrice=420000&minMileage=1300&maxMileage=240483'
-                  );
-                }}
+                to={`/inventory?minPrice=${minMaxPrice[0]}&maxPrice=${minMaxPrice[1]}&minMileage=${minMaxMileage[0]}&maxMileage=${minMaxMileage[1]}`}
               >
                 Inventory
-              </button>
+              </NavLink>
               <div className='dropdown_content'></div>
             </div>
             <div className='dropdown'>
-              <button
-                className='dropbtn'
-                onClick={() => {
-                  navigate('/salesrepresentatives');
-                }}
-              >
+              <NavLink to={'/salesRepresentatives'} className='dropbtn'>
                 Sales Representatives
-              </button>
+              </NavLink>
               <div className='dropdown_content'></div>
             </div>
             <div className='dropdown'>
-              <button
-                className='signOut'
-                id='dropbtn'
-                onClick={() => {
-                  navigate('/aboutus');
-                }}
-              >
+              <NavLink to={'/aboutUs'} className='signOut'>
                 About Us
-              </button>
+              </NavLink>
               <div className='dropdown_content'></div>
             </div>
           </div>

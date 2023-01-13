@@ -1,9 +1,15 @@
-.dropbtn:hover {
+.dropbtn:hover,
+.signOut:hover {
   text-shadow: 0 0 10px #ffffff;
 }
 
 .dropbtn {
-  transition: 0.2s;
+  border-bottom: 2px solid transparent;
+}
+
+.dropbtn.active,
+.signOut.active {
+  border-bottom: 2px solid $green;
 }
 
 #dropbtn {
@@ -30,16 +36,10 @@
 
 .signOut {
   color: white;
-  height: unset;
-  padding: 10px;
+  padding: 10px 0;
   margin: 0px;
   height: 40px;
-  border-radius: 25px;
-  border: none;
-  background: none;
   font-family: 'Raleway';
-  font-size: 0.9rem;
-  cursor: pointer;
 }
 
 .signOut:hover {
@@ -54,7 +54,6 @@
 .headerHeader {
   display: flex;
   width: 100%;
-  max-width: 1040px;
   height: 80px;
   padding: 0 24px;
 
@@ -90,14 +89,20 @@
 
 .links {
   max-height: 80px;
+  gap: 32px;
 }
 
 .rightSide .links a {
   text-decoration: none;
-  color: #006eb6;
+  color: white;
   font-size: 0.9em;
   cursor: pointer;
-  margin-left: 15px;
+}
+
+.headerWhite {
+  .rightSide .links a {
+    color: black;
+  }
 }
 
 .rightSide .outHam {
@@ -135,31 +140,6 @@
   font-size: 1em;
 }
 
-// E X T R A   S M A L L
-@media screen and (max-width: 300px) {
-  .header-logo {
-    max-width: 158px;
-    height: unset;
-    margin-left: -10px;
-  }
-
-  .headerBar {
-    height: 68px;
-  }
-  .headerHeader {
-    height: 68px;
-  }
-  .navbar {
-    height: 68px !important;
-  }
-}
-
-@media screen and (max-width: 869px) {
-  .rightSide .links {
-    display: none;
-  }
-}
-
 /* Small View */
 @media screen and (max-width: 719px) {
   .header-logo {
@@ -192,10 +172,6 @@
     margin: 10px 0px;
   }
 
-  // .rightSide .hamWrapper {
-  //   margin-top: 10px;
-  // }
-
   .rightSide .hamWrapper .outHam {
     visibility: visible;
   }
@@ -215,6 +191,16 @@
     display: flex;
     align-items: center;
   }
+
+  .headerHeader {
+    padding: 0 32px;
+  }
+
+  .headerWhite {
+    .dropbtn {
+      color: black;
+    }
+  }
 }
 
 /* Large View */
@@ -222,17 +208,6 @@
   .rightSide .hamWrapper {
     display: none;
   }
-
-  /* .header {
-    width: 100vw;
-  }
-
-  .links {
-    display: flex;
-    color: red;
-    background: white;
-    align-items: center;
-  } */
 }
 
 .signOut {
@@ -253,12 +228,10 @@
   padding: 16px;
   font-size: 16px;
   border: none;
-  font-size: 0.9rem;
-  font-weight: 100;
   transition: 3 sec;
   text-decoration: none;
   display: inline-block;
-  padding: 5px 20px;
+  padding: 5px 0;
   position: relative;
   cursor: pointer;
 }
@@ -276,7 +249,6 @@
   height: 2px;
   left: 50%;
   position: absolute;
-  // background: #022d53;
   transition: width 0.3s ease 0s, left 0.3s ease 0s;
   width: 0;
 }
@@ -286,30 +258,8 @@
   left: 0;
 }
 
-/*  */
-/*  */
-/* Dropdown Button */
-#dropbtn {
-  height: unset;
-  font-family: 'Raleway';
-  padding: 16px;
-  font-size: 16px;
-  border: none;
-  font-size: 0.9rem;
-  font-weight: 100;
-  transition: 3 sec;
-  text-decoration: none;
-  display: inline-block;
-  position: relative;
-  padding: 5px 0px;
-  cursor: pointer;
-  min-width: 55px;
-}
-
 #dropbtn:hover {
-  /* background-color: white; */
   cursor: pointer;
-  /* columns: black; */
 }
 
 #dropbtn::after {
@@ -320,7 +270,6 @@
   height: 2px;
   left: 50%;
   position: absolute;
-  /* background: red; */
   transition: width 0.3s ease 0s, left 0.3s ease 0s;
   width: 0;
 }
@@ -354,8 +303,6 @@
   text-decoration: none;
   display: block;
   font-family: 'Raleway';
-  font-size: 0.9rem;
-  /* cursor: pointer; */
 }
 
 /* Change color of dropdown links on hover */
@@ -369,7 +316,7 @@
   display: block;
 }
 
-@media only screen and (max-width: 727px) {
+@media only screen and (max-width: 719px) {
   .rightSide .links {
     display: none;
   }
@@ -378,5 +325,17 @@
 @media only screen and (min-width: 870px) {
   .hamWrapper {
     display: none !important;
+  }
+}
+
+@media screen and (min-width: 990px) {
+  .header {
+    z-index: 101;
+  }
+
+  .headerHeader {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 186px minmax(740px, 854px);
   }
 }

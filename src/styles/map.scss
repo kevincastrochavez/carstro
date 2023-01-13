@@ -23,14 +23,6 @@
   font-weight: 700;
 }
 
-@media only screen and (min-width: 1200px) {
-  .map {
-    margin: 0;
-    width: 100%;
-    height: 650px;
-  }
-}
-
 /* Mobile View -small */
 @media only screen and (max-width: 719px) {
   .map {
@@ -47,9 +39,13 @@
 }
 
 /* D E S K T O P   V I E W -large */
-@media only screen and (min-width: 990px) and (max-width: 1439px) {
+@media only screen and (min-width: 990px) {
   .map {
     height: 600px;
+    margin-top: 0;
+  }
+
+  .main_section_map {
     margin-top: 0;
   }
 }
