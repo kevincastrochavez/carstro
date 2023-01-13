@@ -28,7 +28,15 @@ function LoanCalculator({ className, carInfo }) {
   }, [carInfo.price, cashDown, creditScore, termLength]);
 
   useEffect(() => {
-    setWindowWidth(window.innerWidth);
+    window.addEventListener('resize', () => {
+      setWindowWidth(window.innerWidth);
+    });
+
+    return () => {
+      window.removeEventListener('resize', () => {
+        console.log('Event listener for the window was removed');
+      });
+    };
   }, []);
 
   const handleCreditScoreChange = (e) => {

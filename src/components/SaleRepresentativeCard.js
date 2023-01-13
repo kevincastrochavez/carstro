@@ -28,7 +28,15 @@ function SaleRepresentativeCard({
   const [deviceWidth, setDeviceWidth] = useState(0);
 
   useEffect(() => {
-    setDeviceWidth(window.innerWidth);
+    window.addEventListener('resize', () => {
+      setDeviceWidth(window.innerWidth);
+    });
+
+    return () => {
+      window.removeEventListener('resize', () => {
+        console.log('Event listener for the window was removed');
+      });
+    };
   }, []);
 
   return (
