@@ -190,6 +190,12 @@
   .headerHeader {
     padding: 0 32px;
   }
+
+  .headerWhite {
+    .dropbtn {
+      color: black;
+    }
+  }
 }
 
 /* Large View */
@@ -251,7 +257,6 @@
   height: 2px;
   left: 50%;
   position: absolute;
-  // background: #022d53;
   transition: width 0.3s ease 0s, left 0.3s ease 0s;
   width: 0;
 }
@@ -261,30 +266,8 @@
   left: 0;
 }
 
-/*  */
-/*  */
-/* Dropdown Button */
-// #dropbtn {
-//   height: unset;
-//   font-family: 'Raleway';
-//   padding: 16px;
-//   font-size: 16px;
-//   border: none;
-//   font-size: 0.9rem;
-//   font-weight: 100;
-//   transition: 3 sec;
-//   text-decoration: none;
-//   display: inline-block;
-//   position: relative;
-//   padding: 5px 0px;
-//   cursor: pointer;
-//   min-width: 55px;
-// }
-
 #dropbtn:hover {
-  /* background-color: white; */
   cursor: pointer;
-  /* columns: black; */
 }
 
 #dropbtn::after {
@@ -295,7 +278,6 @@
   height: 2px;
   left: 50%;
   position: absolute;
-  /* background: red; */
   transition: width 0.3s ease 0s, left 0.3s ease 0s;
   width: 0;
 }

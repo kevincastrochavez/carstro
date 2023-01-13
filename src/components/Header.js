@@ -75,7 +75,7 @@ function Header() {
                 className='signOut'
                 class='dropbtn'
                 onClick={() => {
-                  navigate('/aboutus');
+                  navigate('/aboutUs');
                 }}
               >
                 About Us
