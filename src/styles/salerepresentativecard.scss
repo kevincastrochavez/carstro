@@ -283,7 +283,8 @@ input:focus {
   }
 
   .saleRepresentativeCard_div--locationsContainer {
-    width: 100%;
+    width: 85%;
+    justify-self: flex-start;
   }
 
   .saleRepresentativeCard_div_img_h4 {
@@ -298,7 +299,6 @@ input:focus {
 
   .saleRepresentativeCard_ul_li {
     font-size: 16px;
-    padding-bottom: 10px;
   }
 
   .saleRepresentativeCard_div--button {
@@ -460,7 +460,7 @@ input:focus {
 /* Tablet View -medium */
 @media only screen and (min-width: 720px) and (max-width: 989px) {
   .saleRepresentativeCard_div_img {
-    height: 170px;
+    height: 160px;
     width: unset;
   }
   .saleRepresentativeCard_div {
@@ -474,11 +474,12 @@ input:focus {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+    margin-bottom: 24px;
   }
 
   .saleRepresentativeCard_div {
     align-items: unset;
-    padding: 12px 0px 0px 0px;
+    padding: 24px 0px 0px 0px;
     gap: 20px;
     width: 100%;
     display: grid;
@@ -493,14 +494,13 @@ input:focus {
     width: 100%;
 
     & button {
-      width: 100%;
+      width: 85%;
       grid-column: 2;
     }
   }
 
-  .saleRepresentativeCard_div--picturesContainer {
-    padding-right: 0;
-    height: 170px;
+  .saleRepresentativeCard_li {
+    padding-bottom: 12px;
   }
 }
 
