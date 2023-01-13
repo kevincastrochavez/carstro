@@ -12,14 +12,14 @@ function Header() {
   useEffect(() => {
     if (
       // Development
-      window.location.href === 'http://localhost:3000/' ||
-      window.location.href === 'http://localhost:3000/aboutUs' ||
-      window.location.href === 'http://localhost:3000/marketing'
+      // window.location.href === 'http://localhost:3000/' ||
+      // window.location.href === 'http://localhost:3000/aboutUs' ||
+      // window.location.href === 'http://localhost:3000/marketing'
 
       // Production
-      // window.location.href === 'https://carstro-15495.web.app/' ||
-      // window.location.href === 'https://carstro-15495.web.app/aboutUs' ||
-      // window.location.href === 'https://carstro-15495.web.app/marketing'
+      window.location.href === 'https://carstro-15495.web.app/' ||
+      window.location.href === 'https://carstro-15495.web.app/aboutUs' ||
+      window.location.href === 'https://carstro-15495.web.app/marketing'
     ) {
       setHeaderWhite(false);
     } else {
