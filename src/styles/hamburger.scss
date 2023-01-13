@@ -22,12 +22,28 @@
   top: 80px;
 }
 
+.nav-text p {
+  color: white;
+}
+
+.nav-text.active {
+  & p {
+    color: $green;
+  }
+}
+
 #navMenu_white {
   background-color: white;
   opacity: 1;
 
   .nav-text-a {
     color: black !important;
+  }
+
+  .nav-text.active {
+    & p {
+      border-bottom: 1px solid $green;
+    }
   }
 }
 
@@ -47,15 +63,6 @@
 
 .nav-text svg {
   color: #929292;
-}
-
-.nav-text a {
-  text-decoration: none;
-  color: #fff;
-  font-size: 16px;
-  height: 100%;
-  display: flex;
-  align-items: center;
 }
 
 .nav-menu-items {
@@ -84,19 +91,6 @@
 .hamWrapper {
   z-index: 1;
 }
-
-// .hamQuickLinks {
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: space-evenly;
-//   gap: 16px;
-//   margin-top: 32px;
-// }
-
-// .hamQuickLinksSingle p {
-//   font-size: 12px;
-//   width: 64px;
-// }
 
 @media screen and (min-width: 720px) {
   .hamWrapper {
