@@ -8,6 +8,7 @@ export const initialState = {
   minMaxPrice: [0, 0],
   minMaxMileage: [0, 0],
   showChat: false,
+  singleBrand: '',
 };
 
 const reducer = (state, action) => {
@@ -83,6 +84,16 @@ const reducer = (state, action) => {
       return {
         ...state,
         minMaxMileage: action.minMaxMileage,
+      };
+    case 'SET_SINGLE_BRAND':
+      return {
+        ...state,
+        singleBrand: action.singleBrand,
+      };
+    case 'REMOVE_SINGLE_BRAND':
+      return {
+        ...state,
+        singleBrand: undefined,
       };
     case 'CLEAR_FILTERS':
       return {

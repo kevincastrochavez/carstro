@@ -1,5 +1,4 @@
-// Cindy
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
@@ -8,55 +7,71 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import db from '../firebase';
 import { useStateValue } from '../StateProvider';
 import { saleRepresntative } from '../utilities/srObject.js';
-
-// TODO
-
-// Add functionality to the select inputs
-// Add functionality to the single brand section
-// Fix footer links
-// Add functionality to the location links in the footer
-// Fix links in menu
-// Check accessibility
-// Modify Color Filters
+import BrowseByBrand from '../components/BrowseByBrand';
 
 function Homepage() {
-  let navigate = useNavigate();
+  const navigate = useNavigate();
   const [{ carsResults, minMaxPrice, minMaxMileage }, dispatch] =
     useStateValue();
+  const [carBrands, setCarBrands] = useState([]);
+  const [brandSelected, setBrandSelected] = useState('');
+
+  const getBrand = (e) => {
+    setBrandSelected(e.target.value);
+  };
+
+  const selectSingleBrand = () => {
+    dispatch({
+      type: 'SET_SINGLE_BRAND',
+      singleBrand: brandSelected,
+    });
+
+    navigate(
+      `/inventory?minPrice=${minMaxPrice[0]}&maxPrice=${minMaxPrice[1]}&minMileage=${minMaxMileage[0]}&maxMileage=${minMaxMileage[1]}`
+    );
+  };
 
   useEffect(() => {
-    if (carsResults.length === 0) {
-      db.collection('cars')
-        .get()
-        .then((cars) => {
-          const carsResults = cars.docs.map((car) => {
-            return { ...car.data(), carId: car.id };
-          });
-
-          const pricesArray = carsResults.map((car) => Number(car.price));
-          const minPrice = Math.min(...pricesArray);
-          const maxPrice = Math.max(...pricesArray);
-
-          const milesArray = carsResults.map((car) => Number(car.odometer));
-          const minMileage = Math.min(...milesArray);
-          const maxMileage = Math.max(...milesArray);
-
-          dispatch({
-            type: 'SET_CARS_RESULTS',
-            carsResults,
-          });
-
-          dispatch({
-            type: 'SET_MIN_MAX_PRICE_FILTER',
-            minMaxPrice: [minPrice, maxPrice],
-          });
-
-          dispatch({
-            type: 'SET_MIN_MAX_MILEAGE_FILTER',
-            minMaxMileage: [minMileage, maxMileage],
-          });
+    db.collection('cars')
+      .get()
+      .then((cars) => {
+        const carsResults = cars.docs.map((car) => {
+          return { ...car.data(), carId: car.id };
         });
-    }
+
+        // Getting just the brands
+        const carsResultsForBrands = cars.docs.map((car) => {
+          return car.data().brand;
+        });
+
+        setCarBrands([...new Set(carsResultsForBrands)]);
+
+        const pricesArray = carsResults.map((car) => Number(car.price));
+        const minPrice = Math.min(...pricesArray);
+        const maxPrice = Math.max(...pricesArray);
+
+        const milesArray = carsResults.map((car) => Number(car.odometer));
+        const minMileage = Math.min(...milesArray);
+        const maxMileage = Math.max(...milesArray);
+
+        dispatch({
+          type: 'SET_CARS_RESULTS',
+          carsResults,
+        });
+
+        dispatch({
+          type: 'SET_MIN_MAX_PRICE_FILTER',
+          minMaxPrice: [minPrice, maxPrice],
+        });
+
+        dispatch({
+          type: 'SET_MIN_MAX_MILEAGE_FILTER',
+          minMaxMileage: [minMileage, maxMileage],
+        });
+      })
+      .catch((error) => {
+        console.log('Error fetching the DB', error);
+      });
   }, []);
 
   useEffect(() => {
@@ -117,40 +132,38 @@ function Homepage() {
             <form action='/action_page.php' className='homeForm'>
               <div className='home__select'>
                 <label for='exploreBrand' hidden></label>
-                <select name='brand' className='exploreInput' id='exploreBrand'>
-                  <option value='selectBrand'>Select Brand</option>
-                  <option value='volvo'>Volvo</option>
-                  <option value='saab'>Saab</option>
-                  <option value='opel'>Opel</option>
-                  <option value='audi'>Audi</option>
-                </select>
-
-                <KeyboardArrowDownIcon />
-              </div>
-
-              <div className='home__select'>
-                <label for='exploreVehicle' hidden></label>
                 <select
-                  name='vehicle'
+                  name='brand'
                   className='exploreInput'
-                  id='exploreVehicle'
+                  id='exploreBrand'
+                  onChange={(e) => getBrand(e)}
                 >
-                  <option value='selectVehicle'>Select Vehicle</option>
-                  <option value='sedan'>Sedan</option>
-                  <option value='sports'>Sports</option>
-                  <option value='convetible'>Convertible</option>
+                  <option value='selectBrand'>Select Brand</option>
+                  {carBrands.map((brand) => (
+                    <option key={brand} value={brand}>
+                      {brand}
+                    </option>
+                  ))}
                 </select>
 
                 <KeyboardArrowDownIcon />
               </div>
+
               <input
                 type='submit'
                 value='View Inventory'
-                className='exploreInput'
+                disabled={
+                  brandSelected === 'selectBrand' || brandSelected === ''
+                    ? true
+                    : false
+                }
+                className={`${
+                  brandSelected === 'selectBrand' || brandSelected === ''
+                    ? 'btn-disabled'
+                    : 'btn-able'
+                } exploreInput`}
                 id='exploreSubmit'
-                onClick={() => {
-                  navigate('/inventory');
-                }}
+                onClick={selectSingleBrand}
               />
             </form>
           </div>
@@ -182,86 +195,7 @@ function Homepage() {
         </div>
       </div>
 
-      <div className='homeBrowseByBrand'>
-        <h2 className='homeSingleBrand'>Browse by Brand</h2>
-        <div className='homeBrandLogos'>
-          <div className='homeBrandLogos-column'>
-            <div className='homeBrandLogos-singleLogo'>
-              <div className='homeBrandLogos-singleLogo-logo'>
-                <img
-                  className='singleBrandLogo'
-                  src='singleBrandImages/Kia.png'
-                  alt=''
-                />
-              </div>
-              <div className='homeBrandLogos-singleLogo-text'>Kia Cars</div>
-            </div>
-            <div className='homeBrandLogos-singleLogo'>
-              <div className='homeBrandLogos-singleLogo-logo'>
-                <img
-                  className='singleBrandLogo'
-                  src='singleBrandImages/Renault.png'
-                  alt=''
-                />
-              </div>
-              <div className='homeBrandLogos-singleLogo-text'> Renault</div>
-            </div>
-          </div>
-          <div className='homeBrandLogos-column'>
-            <div className='homeBrandLogos-singleLogo'>
-              <div className='homeBrandLogos-singleLogo-logo'>
-                {' '}
-                <img
-                  className='singleBrandLogo'
-                  src='singleBrandImages/BMW.png'
-                  alt=''
-                />
-              </div>
-              <div className='homeBrandLogos-singleLogo-text'>BMW Cars</div>
-            </div>
-            <div className='homeBrandLogos-singleLogo'>
-              <div className='homeBrandLogos-singleLogo-logo'>
-                {' '}
-                <img
-                  className='singleBrandLogo'
-                  src='singleBrandImages/Lamborghini.png'
-                  alt=''
-                />
-              </div>
-              <div className='homeBrandLogos-singleLogo-text'>Lamborghini</div>
-            </div>
-          </div>
-          <div className='homeBrandLogos-column'>
-            <div className='homeBrandLogos-singleLogo'>
-              <div className='homeBrandLogos-singleLogo-logo'>
-                {' '}
-                <img
-                  className='singleBrandLogo'
-                  src='singleBrandImages/Audi.png'
-                  alt=''
-                />
-              </div>
-              <div className='homeBrandLogos-singleLogo-text'>Audi Cars</div>
-            </div>
-            <div
-              className='homeBrandLogos-singleLogo'
-              id='homeSingleBrandLogoLast2'
-            >
-              <div className='homeBrandLogos-singleLogo-logo'>
-                {' '}
-                <img
-                  className='singleBrandLogo'
-                  src='singleBrandImages/GMC.png'
-                  alt=''
-                />
-              </div>
-              <div className='homeBrandLogos-singleLogo-text'>
-                General Motors
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <BrowseByBrand />
 
       <h2 className='homeSingleBrand'>Sales Representatives</h2>
 

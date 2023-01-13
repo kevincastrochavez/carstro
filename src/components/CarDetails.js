@@ -30,6 +30,9 @@ function CarDetails() {
       .then((car) => {
         setCarDetailsInfo(car.data());
         setFetching(false);
+      })
+      .catch((error) => {
+        console.log('Error fetching the DB', error);
       });
   }, []);
 
@@ -65,6 +68,9 @@ function CarDetails() {
             type: 'SET_MIN_MAX_MILEAGE_FILTER',
             minMaxMileage: [minMileage, maxMileage],
           });
+        })
+        .catch((error) => {
+          console.log('Error fetching the DB', error);
         });
     }
   }, []);

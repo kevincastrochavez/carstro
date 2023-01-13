@@ -58,7 +58,6 @@ function Inventory() {
   useEffect(() => {
     setLoadingCars(true);
 
-    // if (carsResults.length === 0) {
     db.collection('cars')
       .get()
       .then((cars) => {
@@ -91,8 +90,10 @@ function Inventory() {
         });
 
         setLoadingCars(false);
+      })
+      .catch((error) => {
+        console.log('Error fetching the DB', error);
       });
-    // }
 
     // If cars already were pulled, there's no need to wait for any fetch, so skeleton should disappear
     setLoadingCars(false);

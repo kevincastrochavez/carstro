@@ -199,9 +199,10 @@
 #exploreBrand {
   height: 40px;
   padding: 8px;
+  padding-left: 16px;
   font-size: 16px;
   line-height: 150%;
-  border-radius: 8px;
+  border-radius: 4px;
 }
 
 #exploreVehicle {
@@ -219,6 +220,10 @@
   margin-top: 16px;
   cursor: pointer;
   background: #006039;
+}
+
+.singleLogo_none {
+  display: none !important;
 }
 
 /* Mobile View -small */
@@ -265,7 +270,6 @@
   .homeForm {
     display: flex;
     flex-direction: column;
-    gap: 16px;
   }
 
   .homeSingleBrand {
@@ -319,6 +323,19 @@
   color: black;
 }
 
+.btn-disabled {
+  opacity: 0.5;
+  cursor: unset !important;
+}
+
+.btn-disabled:hover {
+  opacity: 0.5 !important;
+}
+
+.btn-able {
+  opacity: 1;
+}
+
 /* Tablet View -medium */
 @media only screen and (min-width: 720px) and (max-width: 989px) {
   .home-mainImage-s {
@@ -329,10 +346,6 @@
   }
   .home-marketingImage-s {
     display: none;
-  }
-
-  .main-image {
-    // position: relative;
   }
 
   .home_heroOverlay {
@@ -401,7 +414,7 @@
 
   .homeForm {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     margin: 0 auto;
     width: 506px;
   }
@@ -420,6 +433,7 @@
     margin-top: 0;
     padding: 8px 0;
     height: 44px;
+    width: 100%;
   }
 
   #exploreBrand,
@@ -534,6 +548,10 @@
   .home_salesRepresentative-card img {
     justify-self: center;
   }
+
+  .singleLogo_none {
+    display: flex !important;
+  }
 }
 
 /* Desktop   V I E W -large */
@@ -559,7 +577,7 @@
   }
 
   .home-mainText {
-    margin-top: -355px;
+    margin-top: -425px;
     display: grid;
     grid-template-columns: minmax(32px, auto) minmax(926px, 1040px) minmax(
         32px,
@@ -599,18 +617,21 @@
   }
 
   .homeForm {
-    display: flex;
-    align-items: center;
+    display: grid;
+    grid-template-columns: 300px 300px;
     justify-content: center;
   }
 
   .exploreVehicles {
-    margin-top: 50px;
+    position: absolute;
+    top: 488px;
   }
 
   .exploreVehicles-box {
     background: white;
     max-width: 1040px;
+    margin: 0 auto;
+    padding: 48px 0;
   }
   .exploreVehicles-text {
     font-family: 'Raleway';
@@ -626,6 +647,10 @@
     border: 1px solid #cbd2e0;
     height: 60px;
     width: 310px;
+  }
+
+  .exploreVehicles-input {
+    padding-bottom: 0;
   }
 
   .exploreInput {
@@ -646,6 +671,15 @@
     font-weight: 600;
     font-size: 14px;
     line-height: 125%;
+    margin-top: 0;
+  }
+
+  #exploreBrand {
+    height: 50px;
+  }
+
+  .home__select svg {
+    top: 12px;
   }
 
   .homeBrowseByBrand {
@@ -759,6 +793,7 @@
 
   .home-marketing-section {
     margin-bottom: 0px;
+    margin-top: 290px;
   }
 
   .marketing-text {
@@ -814,5 +849,9 @@
 
   .home-mainText {
     z-index: 2;
+  }
+
+  .singleLogo_none {
+    display: flex !important;
   }
 }

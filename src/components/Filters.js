@@ -53,6 +53,9 @@ function Filters() {
         setColorsFilterOptions([...new Set(colors)]);
 
         setLoadingFilters(false);
+      })
+      .catch((error) => {
+        console.log('Error fetching the DB', error);
       });
   }, []);
 
