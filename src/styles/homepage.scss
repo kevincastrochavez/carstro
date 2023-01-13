@@ -222,6 +222,10 @@
   background: #006039;
 }
 
+.singleLogo_none {
+  display: none !important;
+}
+
 /* Mobile View -small */
 @media only screen and (max-width: 719px) {
   .home-mainImage-m {
@@ -544,6 +548,10 @@
   .home_salesRepresentative-card img {
     justify-self: center;
   }
+
+  .singleLogo_none {
+    display: flex !important;
+  }
 }
 
 /* Desktop   V I E W -large */
@@ -841,5 +849,9 @@
 
   .home-mainText {
     z-index: 2;
+  }
+
+  .singleLogo_none {
+    display: flex !important;
   }
 }

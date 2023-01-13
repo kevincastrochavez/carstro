@@ -8,6 +8,7 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import db from '../firebase';
 import { useStateValue } from '../StateProvider';
 import { saleRepresntative } from '../utilities/srObject.js';
+import BrowseByBrand from '../components/BrowseByBrand';
 
 // TODO
 
@@ -31,12 +32,6 @@ function Homepage() {
       type: 'SET_SINGLE_BRAND',
       singleBrand: brandSelected,
     });
-
-    // case 'SET_SINGLE_BRAND':
-    //   return {
-    //     ...state,
-    //     brandsFilters: action.singleBrand,
-    //   };
 
     navigate(
       `/inventory?minPrice=${minMaxPrice[0]}&maxPrice=${minMaxPrice[1]}&minMileage=${minMaxMileage[0]}&maxMileage=${minMaxMileage[1]}`
@@ -204,86 +199,7 @@ function Homepage() {
         </div>
       </div>
 
-      <div className='homeBrowseByBrand'>
-        <h2 className='homeSingleBrand'>Browse by Brand</h2>
-        <div className='homeBrandLogos'>
-          <div className='homeBrandLogos-column'>
-            <div className='homeBrandLogos-singleLogo'>
-              <div className='homeBrandLogos-singleLogo-logo'>
-                <img
-                  className='singleBrandLogo'
-                  src='singleBrandImages/Kia.png'
-                  alt=''
-                />
-              </div>
-              <div className='homeBrandLogos-singleLogo-text'>Kia Cars</div>
-            </div>
-            <div className='homeBrandLogos-singleLogo'>
-              <div className='homeBrandLogos-singleLogo-logo'>
-                <img
-                  className='singleBrandLogo'
-                  src='singleBrandImages/Renault.png'
-                  alt=''
-                />
-              </div>
-              <div className='homeBrandLogos-singleLogo-text'> Renault</div>
-            </div>
-          </div>
-          <div className='homeBrandLogos-column'>
-            <div className='homeBrandLogos-singleLogo'>
-              <div className='homeBrandLogos-singleLogo-logo'>
-                {' '}
-                <img
-                  className='singleBrandLogo'
-                  src='singleBrandImages/BMW.png'
-                  alt=''
-                />
-              </div>
-              <div className='homeBrandLogos-singleLogo-text'>BMW Cars</div>
-            </div>
-            <div className='homeBrandLogos-singleLogo'>
-              <div className='homeBrandLogos-singleLogo-logo'>
-                {' '}
-                <img
-                  className='singleBrandLogo'
-                  src='singleBrandImages/Lamborghini.png'
-                  alt=''
-                />
-              </div>
-              <div className='homeBrandLogos-singleLogo-text'>Lamborghini</div>
-            </div>
-          </div>
-          <div className='homeBrandLogos-column'>
-            <div className='homeBrandLogos-singleLogo'>
-              <div className='homeBrandLogos-singleLogo-logo'>
-                {' '}
-                <img
-                  className='singleBrandLogo'
-                  src='singleBrandImages/Audi.png'
-                  alt=''
-                />
-              </div>
-              <div className='homeBrandLogos-singleLogo-text'>Audi Cars</div>
-            </div>
-            <div
-              className='homeBrandLogos-singleLogo'
-              id='homeSingleBrandLogoLast2'
-            >
-              <div className='homeBrandLogos-singleLogo-logo'>
-                {' '}
-                <img
-                  className='singleBrandLogo'
-                  src='singleBrandImages/GMC.png'
-                  alt=''
-                />
-              </div>
-              <div className='homeBrandLogos-singleLogo-text'>
-                General Motors
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <BrowseByBrand />
 
       <h2 className='homeSingleBrand'>Sales Representatives</h2>
 
