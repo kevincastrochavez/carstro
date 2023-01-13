@@ -68,8 +68,7 @@
 
 .aboutUsContainer {
   margin-bottom: 50px;
-  margin-top: 24px;
-  padding: 0 24px;
+  padding: 24px 24px 0;
 }
 
 .about-us-h1-info-wrap {
@@ -126,7 +125,7 @@
 /* Tablet View -medium */
 @media only screen and (min-width: 720px) and (max-width: 989px) {
   .aboutUsContainer {
-    padding: 0 32px 48px;
+    padding: 24px 32px 60px;
     margin-bottom: 0;
     background-image: url('../../public/aboutUsImages/car-ipad.jpeg');
   }
@@ -148,6 +147,8 @@
 
   .aboutUs_representativesContainer {
     grid-template-columns: 1fr 1fr;
+    max-width: 600px;
+    margin: 48px auto 0;
   }
 }
 

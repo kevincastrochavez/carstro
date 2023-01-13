@@ -14,8 +14,8 @@
   object-fit: cover;
 }
 
-.marketing-h1-info-wrap {
-}
+// .marketing-h1-info-wrap {
+// }
 
 .marketing-h1-container {
   padding: 24px;
@@ -25,9 +25,13 @@
   line-height: 40px;
 }
 
-.marketing-p-container {
+.marketing-wrap-text-img {
   padding: 0 24px;
 }
+
+// .marketing-p-container {
+//   padding: 0 24px;
+// }
 
 .marketing-p {
   padding: 8px 0px;
@@ -58,24 +62,23 @@
 }
 
 @media only screen and (min-width: 720px) {
-  .marketing-h1-info-wrap {
-    width: 704px;
-    margin: auto;
+  .marketing-wrap-text-img {
+    padding: 0 32px;
   }
 
   .marketing-h1-container {
-    width: 537px;
+    padding: 32px;
   }
 
   .marketing-h1 {
     line-height: 50px;
     font-size: 40px;
     font-weight: 600;
-    width: 537px;
+    width: 700px;
   }
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 860px) {
   .marketing-white-car-img-mobile,
   .marketing-car-rock-img {
     display: none;
@@ -88,7 +91,6 @@
   }
 
   .marketing-h1-info-wrap {
-    width: 768px;
   }
 
   .marketing-car-rock-img-ipad {
@@ -97,9 +99,7 @@
 
   .marketing-wrap-text-img {
     display: flex;
-    padding: 6px 31px 0 13px;
-    width: 768px;
-    margin: auto;
+    gap: 20px;
   }
 
   .marketing-p {
@@ -107,21 +107,21 @@
     line-height: 22.5px;
   }
 
-  .marketing-p-container {
-    padding: 0 18px;
-    margin: 0;
-  }
+  // .marketing-p-container {
+  //   // margin: 0;
+  // }
 
   .marketing-quote-container {
     width: 506px;
+    margin: 0 auto;
   }
 
   .marketing-bot-img-container {
     padding-top: 0;
-  }
 
-  .marketing-h1-container {
-    margin: 32px 31px;
+    & img {
+      height: 100%;
+    }
   }
 
   .marketing-p-quote {

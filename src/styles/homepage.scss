@@ -529,15 +529,17 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     overflow: unset;
+    max-width: 800px;
+    margin: 0 auto;
   }
 
-  .home_salesRepresentative > div {
-    justify-items: center;
+  .home_salesRepresentative-card img {
+    justify-self: center;
   }
 }
 
 /* Desktop   V I E W -large */
-@media only screen and (min-width: 990px) and (max-width: 1439px) {
+@media only screen and (min-width: 990px) {
   .bannerContainer {
     display: flex;
     flex-direction: column;

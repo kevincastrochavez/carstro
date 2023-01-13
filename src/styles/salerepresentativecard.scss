@@ -295,6 +295,7 @@ input:focus {
   .saleRepresentativeCard_ul {
     display: flex;
     justify-content: space-between;
+    max-width: 400px;
   }
 
   .saleRepresentativeCard_ul_li {
@@ -495,6 +496,7 @@ input:focus {
 
     & button {
       width: 85%;
+      max-width: 400px;
       grid-column: 2;
     }
   }
