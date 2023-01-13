@@ -6,24 +6,10 @@ import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import { useStateValue } from '../StateProvider';
 
 function Hamburger({ white }) {
-  const [{ minMaxPrice, minMaxMileage, brandsFilters }, dispatch] =
-    useStateValue();
+  const [{ minMaxPrice, minMaxMileage }] = useStateValue();
   const [sidebar, setSidebar] = useState(false);
 
   const showSidebar = () => setSidebar(!sidebar);
-
-  // const filterByBrand = (brand) => {
-  //   dispatch({
-  //     type: 'SET_BRAND_FILTER',
-  //     brandsFilters: brand,
-  //   });
-
-  //   setSidebar(false);
-
-  //   navigate(
-  //     `/inventory?minPrice=${minMaxPrice[0]}&maxPrice=${minMaxPrice[1]}&minMileage=${minMaxMileage[0]}&maxMileage=${minMaxMileage[1]}`
-  //   );
-  // };
 
   return (
     <div>

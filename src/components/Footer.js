@@ -1,4 +1,3 @@
-// CINDY
 import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import FacebookOutlinedIcon from '@mui/icons-material/FacebookOutlined';

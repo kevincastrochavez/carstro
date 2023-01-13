@@ -31,12 +31,6 @@ function LoanCalculator({ className, carInfo }) {
     window.addEventListener('resize', () => {
       setWindowWidth(window.innerWidth);
     });
-
-    // return () => {
-    //   window.removeEventListener('resize', () => {
-    //     console.log('Event listener for the window was removed');
-    //   });
-    // };
   }, []);
 
   const handleCreditScoreChange = (e) => {

@@ -1,4 +1,3 @@
-// Cindy
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
@@ -9,12 +8,6 @@ import db from '../firebase';
 import { useStateValue } from '../StateProvider';
 import { saleRepresntative } from '../utilities/srObject.js';
 import BrowseByBrand from '../components/BrowseByBrand';
-
-// TODO
-
-// Add functionality to the select inputs
-// Add functionality to the single brand section
-// Add functionality to the location links in the footer
 
 function Homepage() {
   const navigate = useNavigate();

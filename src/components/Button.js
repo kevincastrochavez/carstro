@@ -1,5 +1,3 @@
-// ANDRES
-
 import React from 'react';
 
 function Button({ text, bgColor, className, onClick }) {
