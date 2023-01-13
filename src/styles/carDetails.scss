@@ -15,7 +15,7 @@
   }
 
   &_info {
-    padding: $px-16 $px-24 $px-24;
+    padding: 16px 24px 24px;
   }
 
   &_linkBack {
@@ -194,8 +194,6 @@
     &_info {
       max-width: 1040px;
       margin: 0 auto;
-      padding-left: 0;
-      padding-right: 0;
     }
 
     &_iconsContainer {
