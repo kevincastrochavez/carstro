@@ -47,11 +47,11 @@ function Marketing() {
               greenhouse gases, noise pollution, among others. However, few
               manufacturers offer 100% electric alternatives.
             </p>
-            <p className='marketing-p'>
+            {/* <p className='marketing-p'>
               These cars are present in the automotive market with models such
               as the Volkswagen ID3, the I Oniq Hyundai, among others.{' '}
-            </p>
-            <p className='marketing-p'>
+            </p> */}
+            {/* <p className='marketing-p'>
               On average, electric cars have a maintenance cost of 20% to 40%
               less than combustion vehicles. In addition, they help in the
               transition towards sustainable mobility through the use of
@@ -65,7 +65,7 @@ function Marketing() {
               with mining companies that extract cobalt and lithium, the two
               main battery components, and with other companies to secure
               supplies of the necessary materials.
-            </p>
+            </p> */}
           </div>
           <div className='marketing-bot-img-container'>
             <img

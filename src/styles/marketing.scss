@@ -107,10 +107,6 @@
     line-height: 22.5px;
   }
 
-  // .marketing-p-container {
-  //   // margin: 0;
-  // }
-
   .marketing-quote-container {
     width: 506px;
     margin: 0 auto;
@@ -149,21 +145,23 @@
     width: 687px;
   }
 
-  .marketing-h1-container {
-    width: 678px;
-  }
-
-  .marketing-wrap-text-img {
-    width: 985px;
-    margin: auto;
-  }
-
   .marketing-h1-info-wrap {
-    width: 985px;
+    max-width: 1040px;
+    margin: 0 auto;
   }
 
   .marketing-p {
     font-size: 16px;
-    line-height: 25px;
+    line-height: 1.5;
+  }
+
+  .marketing-h1-container {
+    padding-left: 0;
+  }
+
+  .marketing-wrap-text-img {
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
   }
 }
