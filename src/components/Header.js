@@ -73,7 +73,7 @@ function Header() {
             <div className='dropdown'>
               <button
                 className='signOut'
-                id='dropbtn'
+                class='dropbtn'
                 onClick={() => {
                   navigate('/aboutus');
                 }}

@@ -192,6 +192,31 @@
   margin: 0 auto;
 }
 
+#exploreBrand {
+  height: 40px;
+  padding: 8px;
+  font-size: 16px;
+  line-height: 150%;
+  border-radius: 8px;
+}
+
+#exploreVehicle {
+  height: 40px;
+  padding: 8px;
+  font-size: 16px;
+  line-height: 150%;
+  border-radius: 8px;
+}
+
+#exploreSubmit {
+  color: white;
+  padding: 16px 0;
+  height: 50px;
+  margin-top: 16px;
+  cursor: pointer;
+  background: #006039;
+}
+
 /* Mobile View -small */
 @media only screen and (max-width: 719px) {
   .home-mainImage-m {
@@ -237,31 +262,6 @@
     display: flex;
     flex-direction: column;
     gap: 16px;
-  }
-
-  #exploreVehicle {
-    height: 40px;
-    padding: 8px;
-    font-size: 16px;
-    line-height: 150%;
-    border-radius: 8px;
-  }
-
-  #exploreBrand {
-    height: 40px;
-    padding: 8px;
-    font-size: 16px;
-    line-height: 150%;
-    border-radius: 8px;
-  }
-
-  #exploreSubmit {
-    color: white;
-    padding: 16px 0;
-    height: 50px;
-    margin-top: 16px;
-    cursor: pointer;
-    background: #006039;
   }
 
   .homeSingleBrand {
@@ -372,25 +372,52 @@
 
   .exploreVehicles-input {
     margin-top: 32px;
+    padding-bottom: 0;
   }
 
   .exploreInput {
     width: 180px;
     cursor: pointer;
   }
+
   .homeForm {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin: 0 auto;
+    width: 506px;
+  }
+
+  .home__select {
+    height: 44px;
+
+    & svg {
+      top: 10px;
+    }
   }
 
   #exploreSubmit {
     background: #006039;
     color: white;
+    margin-top: 0;
+    padding: 8px 0;
+    height: 44px;
+  }
+
+  #exploreBrand,
+  #exploreVehicle {
+    height: 44px;
+    border-radius: 0;
+    padding-left: 16px;
   }
 
   .home-marketing-section {
     display: flex;
     flex-direction: column;
     align-items: center;
+  }
+
+  .marketing-title-and-text h2 {
+    font-size: 32px;
   }
 
   .home-marketingImage {
@@ -405,6 +432,7 @@
     align-items: center;
     justify-content: space-around;
     height: 400px;
+    padding: 0;
   }
 
   .home-marketing-button {
@@ -427,33 +455,38 @@
   }
 
   .homeBrowseByBrand {
-    width: 75vw;
-    height: 280px;
-    left: 377px;
-    top: 1431px;
-    margin-top: 80px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
+    margin-top: 64px;
+    padding: 0 32px;
+  }
+
+  .home-marketing-button h5 {
+    font-size: 14px;
+  }
+
+  .home-marketing-section {
+    margin-bottom: 0;
   }
 
   .homeSingleBrand {
+    text-align: center;
     font-family: 'Raleway';
     font-style: normal;
     font-weight: 600;
     font-size: 32px;
+    color: white;
   }
 
   .homeBrandLogos {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
+    width: 640px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin: 48px auto 64px;
   }
 
   .homeBrandLogos-column {
     display: flex;
     flex-direction: column;
+    gap: 24px;
   }
 
   .homeBrandLogos-singleLogo {
@@ -470,6 +503,17 @@
     max-width: 40px !important;
     min-width: 40px !important;
     max-height: 40px !important;
+  }
+
+  .home_salesRepresentative {
+    padding: 52px 32px 64px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    overflow: unset;
+  }
+
+  .home_salesRepresentative > div {
+    justify-items: center;
   }
 }
 

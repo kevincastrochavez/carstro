@@ -128,23 +128,35 @@
 
 /* Tablet View -medium */
 @media only screen and (min-width: 720px) and (max-width: 989px) {
+  .footerContainer {
+    padding: 0 32px 64px;
+  }
+
   .footerInfoBox {
-    width: 75vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: space-between;
+    gap: 48px;
   }
 
   .footerLogoBox {
-    margin: 32px 0px;
+    margin: 32px 0px 48px;
   }
 
-  .footerContainer {
-    margin-bottom: 66px;
+  .footerInfoBoxSingle {
+    margin-bottom: 0;
   }
 
-  .footerInfoBox {
-    width: 75vw;
-    display: flex;
-    justify-content: space-between;
-    gap: 50px;
+  .footerInfoBoxSingle-links {
+    display: grid;
+  }
+
+  .footerInfoBoxSingle-links a {
+    margin-bottom: 0;
+  }
+
+  .footerSocialMediaIcons {
+    width: 150px;
   }
 }
 
