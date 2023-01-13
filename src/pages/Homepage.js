@@ -67,6 +67,8 @@ function Homepage() {
     <div className='homepage-container'>
       <div className='bannerContainer'>
         <div className='main-image'>
+          <div className='home_heroOverlay'></div>
+
           <img
             className='home-mainImage home-mainImage-l'
             src='homepageImages/main-l.jpg'
