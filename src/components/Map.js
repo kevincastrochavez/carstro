@@ -1,10 +1,7 @@
-import React from "react";
-import GoogleMapReact from "google-map-react";
-import { google_key } from "../utilities/constants.js";
-import LocationOnIcon from "@mui/icons-material/LocationOn";
-import { useEffect, useState } from "react";
-
-const AnyReactComponent = ({ text }) => <div>{text}</div>;
+import React from 'react';
+import GoogleMapReact from 'google-map-react';
+import { google_key } from '../utilities/constants.js';
+import LocationOnIcon from '@mui/icons-material/LocationOn';
 
 export default function Map({ data }) {
   const defaultProps = {
@@ -17,22 +14,22 @@ export default function Map({ data }) {
   const scrollToRep = (id) => {
     const element = document.getElementById(id);
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+      element.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
   const PinMap = ({ text, id }) => {
     return (
-      <div className="pin_container">
-        <LocationOnIcon className="map_pin" onClick={() => scrollToRep(id)} />
-        <div className="pin_name">{text}</div>
+      <div className='pin_container'>
+        <LocationOnIcon className='map_pin' onClick={() => scrollToRep(id)} />
+        <div className='pin_name'>{text}</div>
       </div>
     );
   };
 
   return (
     // Important! Always set the container height explicitly
-    <div className="map">
+    <div className='map'>
       <GoogleMapReact
         bootstrapURLKeys={{ key: google_key }}
         defaultCenter={defaultProps.center}

@@ -7,7 +7,7 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 import { useStateValue } from '../StateProvider';
 
 function Footer() {
-  const [{ minMaxPrice, minMaxMileage }, dispatch] = useStateValue();
+  const [{ minMaxPrice, minMaxMileage }] = useStateValue();
   const [currentYear, setCurrentYear] = useState(0);
   let navigate = useNavigate();
 
@@ -114,7 +114,7 @@ function Footer() {
 
             <div className='footerSocialMediaIcons'>
               <a
-                href='http://facebook.com'
+                href='https://www.facebook.com/profile.php?id=100089596266124'
                 target='_blank'
                 rel='noreferrer'
                 className='footerSocialMediaIcon'
@@ -122,7 +122,7 @@ function Footer() {
                 <FacebookOutlinedIcon />
               </a>
               <a
-                href='http://twitter.com'
+                href='https://twitter.com/carstrov'
                 target='_blank'
                 rel='noreferrer'
                 className='footerSocialMediaIcon'
@@ -130,7 +130,7 @@ function Footer() {
                 <TwitterIcon />
               </a>
               <a
-                href='http://instagram.com'
+                href='https://www.instagram.com/carstrov.bpa/'
                 target='_blank'
                 rel='noreferrer'
                 className='footerSocialMediaIcon'

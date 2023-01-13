@@ -56,24 +56,6 @@ function App() {
           />
           <Route path='/aboutUs' element={<AboutUs />} />
         </Routes>
-        {/* <Header
-          logo='CAR | '
-          link1='first link, '
-          link2='second link, '
-          link3='third link, '
-          link4='fourth link, '
-          className='sHeader '
-          id='sHeader'
-        />
-        <Header
-          logo='CARSTRO | '
-          link1='first link, '
-          link2='second link, '
-          link3='third link, '
-          link4='fourth link, '
-          className='mlHeader'
-          id='mlHeader'
-        /> */}
 
         <Footer />
       </BrowserRouter>

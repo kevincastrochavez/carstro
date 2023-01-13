@@ -11,8 +11,7 @@ import BrowseByBrand from '../components/BrowseByBrand';
 
 function Homepage() {
   const navigate = useNavigate();
-  const [{ carsResults, minMaxPrice, minMaxMileage }, dispatch] =
-    useStateValue();
+  const [{ minMaxPrice, minMaxMileage }, dispatch] = useStateValue();
   const [carBrands, setCarBrands] = useState([]);
   const [brandSelected, setBrandSelected] = useState('');
 
@@ -184,7 +183,7 @@ function Homepage() {
         </div>
         <div className='marketing-text'>
           <div className='marketing-title-and-text'>
-            <h2>2023 Corolla Hybrid</h2>
+            <h2>2023 Toyota 4Runner</h2>
             <p2r>Sleek and steady wins the race</p2r>
           </div>
           <Link to='/marketing' className='marketing-text-button'>
