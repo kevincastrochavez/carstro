@@ -59,57 +59,6 @@
   }
 }
 
-/* Tablet View -medium */
-@media only screen and (min-width: 720px) and (max-width: 989px) {
-  .aboutUsContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    // height: 580px;
-    margin-bottom: 50px;
-  }
-  .about-us-car-mobile {
-    display: none;
-  }
-  .about-us-car-ipad {
-    height: 580px;
-  }
-
-  .about-us-car-large {
-    display: none;
-  }
-
-  .about-us-info-wrap {
-    width: 35vw;
-  }
-  // .about-us-p {
-  //   width: 32vw !important;
-  // }
-}
-
-/* Desktop   V I E W -large */
-@media only screen and (min-width: 990px) and (max-width: 1439px) {
-  .aboutUsContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .about-us-car-mobile {
-    display: none;
-  }
-  .about-us-car-ipad {
-    display: none;
-  }
-
-  .about-us-car-large {
-    height: 580px;
-  }
-
-  // .about-us-info-wrap {
-  //   width: 35vw;
-  // }
-}
-
 // /* 4 K   V I E W  -extralarge*/
 // @media only screen and (min-width: 1440px) {
 //   .about-us-info-wrap {
@@ -172,4 +121,55 @@
 
 .aboutUsLinkSalesR:hover {
   opacity: 70%;
+}
+
+/* Tablet View -medium */
+@media only screen and (min-width: 720px) and (max-width: 989px) {
+  .aboutUsContainer {
+    padding: 0 32px 48px;
+    margin-bottom: 0;
+    background-image: url('../../public/aboutUsImages/car-ipad.jpeg');
+  }
+
+  .about-us-car-mobile {
+    display: none;
+  }
+  .about-us-car-ipad {
+    height: 580px;
+  }
+
+  .about-us-car-large {
+    display: none;
+  }
+
+  .about-us-info-wrap {
+    width: 500px;
+  }
+
+  .aboutUs_representativesContainer {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Desktop   V I E W -large */
+@media only screen and (min-width: 990px) and (max-width: 1439px) {
+  .aboutUsContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .about-us-car-mobile {
+    display: none;
+  }
+  .about-us-car-ipad {
+    display: none;
+  }
+
+  .about-us-car-large {
+    height: 580px;
+  }
+
+  // .about-us-info-wrap {
+  //   width: 35vw;
+  // }
 }
