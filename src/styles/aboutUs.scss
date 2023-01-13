@@ -128,6 +128,7 @@
     padding: 24px 32px 60px;
     margin-bottom: 0;
     background-image: url('../../public/aboutUsImages/car-ipad.jpeg');
+    background-repeat: no-repeat;
   }
 
   .about-us-car-mobile {
@@ -153,15 +154,20 @@
 }
 
 /* Desktop   V I E W -large */
-@media only screen and (min-width: 990px) and (max-width: 1439px) {
+@media only screen and (min-width: 990px) {
   .aboutUsContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    background-image: url('../../public/aboutUsImages/about-us-car-large.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    padding-bottom: 50px;
+    margin-bottom: 0;
   }
+
   .about-us-car-mobile {
     display: none;
   }
+
   .about-us-car-ipad {
     display: none;
   }
@@ -170,7 +176,19 @@
     height: 580px;
   }
 
-  // .about-us-info-wrap {
-  //   width: 35vw;
-  // }
+  .about-us-h1-info-wrap {
+    max-width: 1040px;
+    margin: 0 auto;
+  }
+
+  .about-us-info-wrap {
+    width: 500px;
+  }
+
+  .aboutUs_representativesContainer {
+    grid-template-columns: 1fr 1fr;
+    max-width: 600px;
+    margin: 48px auto 0;
+    padding-bottom: 64px;
+  }
 }
