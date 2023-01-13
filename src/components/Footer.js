@@ -23,7 +23,7 @@ function Footer() {
         <img
           className='footer-logo'
           src='footerImages/logoW.png'
-          alt=''
+          alt='Carstro car'
           onClick={() => {
             navigate('/');
           }}
@@ -48,7 +48,7 @@ function Footer() {
               Inventory
             </Link>
             <Link
-              to={'/salesrepresentatives'}
+              to={'/salesRepresentatives'}
               className='footerInfoBoxSingle-link'
             >
               Sales Representatives
@@ -67,7 +67,7 @@ function Footer() {
             <p
               className='footerInfoBoxSingle-link'
               onClick={() => {
-                navigate('/salesrepresentatives');
+                navigate('/salesRepresentatives');
               }}
             >
               80 Scott Ln, Jackson, WY 83002
@@ -75,7 +75,7 @@ function Footer() {
             <p
               className='footerInfoBoxSingle-link'
               onClick={() => {
-                navigate('/salesrepresentatives');
+                navigate('/salesRepresentatives');
               }}
             >
               5711 W Century Blvd, Los Angeles, CA 90045
@@ -83,7 +83,7 @@ function Footer() {
             <p
               className='footerInfoBoxSingle-link'
               onClick={() => {
-                navigate('/salesrepresentatives');
+                navigate('/salesRepresentatives');
               }}
             >
               1100 Congress Ave., Austin, TX 78701
@@ -91,7 +91,7 @@ function Footer() {
             <p
               className='footerInfoBoxSingle-link'
               onClick={() => {
-                navigate('/salesrepresentatives');
+                navigate('/salesRepresentatives');
               }}
             >
               50 N Temple, Salt Lake City, UT 84150

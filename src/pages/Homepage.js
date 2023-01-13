@@ -116,6 +116,7 @@ function Homepage() {
           <div className='exploreVehicles-input'>
             <form action='/action_page.php' className='homeForm'>
               <div className='home__select'>
+                <label for='exploreBrand' hidden></label>
                 <select name='brand' className='exploreInput' id='exploreBrand'>
                   <option value='selectBrand'>Select Brand</option>
                   <option value='volvo'>Volvo</option>
@@ -128,6 +129,7 @@ function Homepage() {
               </div>
 
               <div className='home__select'>
+                <label for='exploreVehicle' hidden></label>
                 <select
                   name='vehicle'
                   className='exploreInput'
@@ -174,7 +176,7 @@ function Homepage() {
           </div>
           <Link to='/marketing' className='marketing-text-button'>
             <button className='home-marketing-button'>
-              <h5>Learn More</h5>
+              <h3>Learn More</h3>
             </button>
           </Link>
         </div>

@@ -1,12 +1,8 @@
 import React, { useEffect } from 'react';
-import LocationOnIcon from '@mui/icons-material/LocationOn';
-import { useNavigate } from 'react-router-dom';
 
 import { saleRepresntative } from '../utilities/srObject.js';
 
 function AboutUs() {
-  let navigate = useNavigate();
-
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, []);
@@ -14,43 +10,26 @@ function AboutUs() {
   return (
     <div className='aboutUsMainContainer'>
       <div className='aboutUsContainer'>
-        {/* <div className='about-us-top-img-container'>
-          <img
-            className='about-us-MainImage about-us-car-mobile'
-            src='aboutUsImages/about-us-car-mobile.jpeg'
-            alt=''
-          />
-          <img
-            className='about-us-MainImage about-us-car-ipad'
-            src='aboutUsImages/about-us-car-ipad.jpeg'
-            alt=''
-          />
-          <img
-            className='about-us-MainImage about-us-car-large'
-            src='aboutUsImages/about-us-car-large.jpeg'
-            alt=''
-          />
-        </div> */}
         <div className='about-us-h1-info-wrap'>
           <h1 className='about-us-h1-title'>About Us</h1>
           <div className='about-us-info-wrap'>
             <div className='aboutus-scrollbarSeparation'>
               <p className='about-us-p'>
-                <h3 className='aboutUsSubtitle'>Our purpose</h3> Carstro® was
+                <h2 className='aboutUsSubtitle'>Our purpose</h2> Carstro® was
                 founded with the purpose of becoming the leading provider of
                 used car buyers and dealers. Our vehicle database is the largest
                 in North America, providing confidence and the very best deals
                 to millions of customers per year.
                 <br />
                 <br />
-                <h3 className='aboutUsSubtitle'>Our experience</h3> Our 50 years
+                <h2 className='aboutUsSubtitle'>Our experience</h2> Our 50 years
                 of experience in the market show that there is no better place
                 to get both an excellent quality car and a great price. These
                 years also allow us to guide customers better than any other
                 company in their search for their dream.
                 <br />
                 <br />
-                <h3 className='aboutUsSubtitle'>The benefits</h3> In addition to
+                <h2 className='aboutUsSubtitle'>The benefits</h2> In addition to
                 having the most extensive inventory of vehicles from dealerships
                 and private sellers, Carstro's® website offers you:
                 <br />
@@ -78,10 +57,10 @@ function AboutUs() {
                 </ul>
                 <br />
                 <br />
-                <h3 className='aboutUsSubtitle'>Still lost?</h3>
+                <h2 className='aboutUsSubtitle'>Still lost?</h2>
                 Not sure where to start? That is perfectly fine!
                 <br /> We have
-                <a className='aboutUsLinkSalesR' href='/salesrepresentatives'>
+                <a className='aboutUsLinkSalesR' href='/salesRepresentatives'>
                   {' '}
                   representatives
                 </a>{' '}

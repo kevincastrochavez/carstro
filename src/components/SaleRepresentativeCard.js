@@ -59,6 +59,7 @@ function SaleRepresentativeCard({
                   <img
                     className='saleRepresentativeCard_div_img'
                     src={image}
+                    alt={id}
                   ></img>
                 </div>
                 <div className='saleRepresentativeCard_div--locationsContainer'>
