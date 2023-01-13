@@ -265,7 +265,6 @@
   .homeForm {
     display: flex;
     flex-direction: column;
-    gap: 16px;
   }
 
   .homeSingleBrand {
@@ -319,6 +318,19 @@
   color: black;
 }
 
+.btn-disabled {
+  opacity: 0.5;
+  cursor: unset !important;
+}
+
+.btn-disabled:hover {
+  opacity: 0.5 !important;
+}
+
+.btn-able {
+  opacity: 1;
+}
+
 /* Tablet View -medium */
 @media only screen and (min-width: 720px) and (max-width: 989px) {
   .home-mainImage-s {
@@ -329,10 +341,6 @@
   }
   .home-marketingImage-s {
     display: none;
-  }
-
-  .main-image {
-    // position: relative;
   }
 
   .home_heroOverlay {
@@ -401,7 +409,7 @@
 
   .homeForm {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     margin: 0 auto;
     width: 506px;
   }
@@ -420,6 +428,7 @@
     margin-top: 0;
     padding: 8px 0;
     height: 44px;
+    width: 100%;
   }
 
   #exploreBrand,
@@ -605,7 +614,7 @@
   }
 
   .exploreVehicles {
-    margin-top: 50px;
+    display: none;
   }
 
   .exploreVehicles-box {
