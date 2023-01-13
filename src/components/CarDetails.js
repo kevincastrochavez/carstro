@@ -15,7 +15,8 @@ import { useStateValue } from '../StateProvider';
 import CarDetailsSkeleton from './CarDetailsSkeleton';
 
 function CarDetails() {
-  const [{ minMaxPrice, minMaxMileage }, dispatch] = useStateValue();
+  const [{ minMaxPrice, minMaxMileage, carsResults }, dispatch] =
+    useStateValue();
   const { id } = useParams();
   const [carDetailsInfo, setCarDetailsInfo] = useState({});
   const [fetching, setFetching] = useState(false);
@@ -30,6 +31,42 @@ function CarDetails() {
         setCarDetailsInfo(car.data());
         setFetching(false);
       });
+  }, []);
+
+  useEffect(() => {
+    if (carsResults.length === 0) {
+      db.collection('cars')
+        .get()
+        .then((cars) => {
+          const carsResults = cars.docs.map((car) => {
+            return { ...car.data(), carId: car.id };
+          });
+
+          const pricesArray = carsResults.map((car) => Number(car.price));
+          const minPrice = Math.min(...pricesArray);
+          const maxPrice = Math.max(...pricesArray);
+
+          const milesArray = carsResults.map((car) => Number(car.odometer));
+          const minMileage = Math.min(...milesArray);
+          const maxMileage = Math.max(...milesArray);
+
+          dispatch({
+            type: 'SET_CARS_RESULTS',
+            carsResults,
+          });
+
+          // Setting the min and max for the price and mileage
+          dispatch({
+            type: 'SET_MIN_MAX_PRICE_FILTER',
+            minMaxPrice: [minPrice, maxPrice],
+          });
+
+          dispatch({
+            type: 'SET_MIN_MAX_MILEAGE_FILTER',
+            minMaxMileage: [minMileage, maxMileage],
+          });
+        });
+    }
   }, []);
 
   useEffect(() => {
