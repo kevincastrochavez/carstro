@@ -97,3 +97,9 @@
 //   font-size: 12px;
 //   width: 64px;
 // }
+
+@media screen and (min-width: 720px) {
+  .hamWrapper {
+    display: none;
+  }
+}

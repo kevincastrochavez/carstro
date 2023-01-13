@@ -334,7 +334,7 @@
   }
 
   .home-mainText {
-    width: 75vw;
+    padding-left: 64px;
     margin-top: -355px;
   }
 
@@ -344,14 +344,14 @@
   }
 
   .home-main-Subtitle {
-    width: 316px;
+    width: 227px;
     margin-bottom: 48px;
   }
 
   .bannerContainer {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    // align-items: center;
     height: 580px;
     margin-bottom: 64px;
   }
@@ -376,7 +376,6 @@
 
   .exploreInput {
     width: 180px;
-    height: 44px;
     cursor: pointer;
   }
   .homeForm {
