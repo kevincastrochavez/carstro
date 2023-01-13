@@ -702,6 +702,10 @@
     margin-top: 80px;
   }
 
+  .marketing-image img {
+    object-fit: cover;
+  }
+
   .marketing-text {
     width: 1040px;
     display: flex;
@@ -787,9 +791,28 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 32px;
+    overflow: unset;
   }
 
   .home_salesRepresentative-card img {
     justify-self: center;
+  }
+
+  .home_heroOverlay {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 580px;
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+
+  .home-main-Subtitle p {
+    font-size: 16px;
+  }
+
+  .home-mainText {
+    z-index: 2;
   }
 }
