@@ -327,6 +327,10 @@
 }
 
 @media screen and (min-width: 990px) {
+  .header {
+    z-index: 101;
+  }
+
   .headerHeader {
     display: grid;
     justify-content: center;
