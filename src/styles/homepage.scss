@@ -183,6 +183,10 @@
   }
 }
 
+.exploreInput {
+  color: black;
+}
+
 .homeBrandLogos {
   width: calc(100% - 128px);
   margin: 0 auto;
@@ -297,6 +301,18 @@
   .homeBrandLogos-column:nth-child(3) {
     display: none;
   }
+}
+
+#exploreSubmit {
+  border-radius: 0;
+}
+
+.home-marketing-button {
+  color: black;
+}
+
+.home-marketing-button:visited {
+  color: black;
 }
 
 /* Tablet View -medium */

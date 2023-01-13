@@ -15,12 +15,11 @@
   width: 100vw;
   height: 100vh;
   opacity: 90%;
-  display: flex;
-  justify-content: center;
   position: fixed;
   right: 100%;
   z-index: 1;
   transition: 850ms;
+  top: 80px;
 }
 
 #navMenu_white {
