@@ -28,9 +28,15 @@ function Homepage() {
 
   const selectSingleBrand = () => {
     dispatch({
-      type: 'SET_BRAND_FILTER',
-      brandsFilters: brandSelected,
+      type: 'SET_SINGLE_BRAND',
+      singleBrand: brandSelected,
     });
+
+    // case 'SET_SINGLE_BRAND':
+    //   return {
+    //     ...state,
+    //     brandsFilters: action.singleBrand,
+    //   };
 
     navigate(
       `/inventory?minPrice=${minMaxPrice[0]}&maxPrice=${minMaxPrice[1]}&minMileage=${minMaxMileage[0]}&maxMileage=${minMaxMileage[1]}`

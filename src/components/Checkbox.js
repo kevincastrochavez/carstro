@@ -3,13 +3,22 @@ import React, { useEffect, useState } from 'react';
 import { useStateValue } from '../StateProvider';
 
 function Checkbox({ id, name, value, clearAll, hidden }) {
-  const [{ brandsFilters }, dispatch] = useStateValue();
+  const [{ singleBrand }, dispatch] = useStateValue();
   const [isChecked, setIsChecked] = useState(false);
 
   useEffect(() => {
     // Checks if there is previous state, like coming from the links in Homepage
-    if (brandsFilters.includes(value)) {
-      setIsChecked(true);
+    if (singleBrand) {
+      if (singleBrand.includes(value)) {
+        setIsChecked(true);
+
+        // Waits to clean the state so second time it does not run
+        setTimeout(() => {
+          dispatch({
+            type: 'REMOVE_SINGLE_BRAND',
+          });
+        }, 500);
+      }
     }
 
     // First condition checks if the checkbox was checked and if it corresponds to the right form field according to the filters. If that is true, then adds its value to the state layer
