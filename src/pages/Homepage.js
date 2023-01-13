@@ -68,6 +68,9 @@ function Homepage() {
           type: 'SET_MIN_MAX_MILEAGE_FILTER',
           minMaxMileage: [minMileage, maxMileage],
         });
+      })
+      .catch((error) => {
+        console.log('Error fetching the DB', error);
       });
   }, []);
 
