@@ -138,6 +138,7 @@
     &_carsContainer {
       padding: $px-36 $px-32 $px-32 $px-32;
       gap: $px-32;
+      grid-template-columns: 1fr 1fr;
 
       &-reducedGap {
         gap: $px-8;
