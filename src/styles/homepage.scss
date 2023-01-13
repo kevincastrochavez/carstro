@@ -199,9 +199,10 @@
 #exploreBrand {
   height: 40px;
   padding: 8px;
+  padding-left: 16px;
   font-size: 16px;
   line-height: 150%;
-  border-radius: 8px;
+  border-radius: 4px;
 }
 
 #exploreVehicle {
@@ -568,7 +569,7 @@
   }
 
   .home-mainText {
-    margin-top: -355px;
+    margin-top: -425px;
     display: grid;
     grid-template-columns: minmax(32px, auto) minmax(926px, 1040px) minmax(
         32px,
@@ -608,18 +609,21 @@
   }
 
   .homeForm {
-    display: flex;
-    align-items: center;
+    display: grid;
+    grid-template-columns: 300px 300px;
     justify-content: center;
   }
 
   .exploreVehicles {
-    display: none;
+    position: absolute;
+    top: 488px;
   }
 
   .exploreVehicles-box {
     background: white;
     max-width: 1040px;
+    margin: 0 auto;
+    padding: 48px 0;
   }
   .exploreVehicles-text {
     font-family: 'Raleway';
@@ -635,6 +639,10 @@
     border: 1px solid #cbd2e0;
     height: 60px;
     width: 310px;
+  }
+
+  .exploreVehicles-input {
+    padding-bottom: 0;
   }
 
   .exploreInput {
@@ -655,6 +663,15 @@
     font-weight: 600;
     font-size: 14px;
     line-height: 125%;
+    margin-top: 0;
+  }
+
+  #exploreBrand {
+    height: 50px;
+  }
+
+  .home__select svg {
+    top: 12px;
   }
 
   .homeBrowseByBrand {
@@ -768,6 +785,7 @@
 
   .home-marketing-section {
     margin-bottom: 0px;
+    margin-top: 290px;
   }
 
   .marketing-text {
