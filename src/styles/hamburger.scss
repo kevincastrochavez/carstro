@@ -23,6 +23,15 @@
   transition: 850ms;
 }
 
+#navMenu_white {
+  background-color: white;
+  opacity: 1;
+
+  .nav-text-a {
+    color: black !important;
+  }
+}
+
 .nav-menu.active {
   right: 0;
   transition: 350ms;

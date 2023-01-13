@@ -13,7 +13,6 @@ import { saleRepresntative } from '../utilities/srObject.js';
 
 // Add functionality to the select inputs
 // Add functionality to the single brand section
-// Include BPA logo
 // Fix footer links
 // Add functionality to the location links in the footer
 // Fix links in menu

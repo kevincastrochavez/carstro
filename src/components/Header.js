@@ -4,24 +4,27 @@ import { Link, useNavigate } from 'react-router-dom';
 import Hamburger from './Hamburger';
 
 function Header() {
-  const [headerClass, setHeaderClass] = useState('');
+  const [headerWhite, setHeaderWhite] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
     if (
-      window.location.href === 'https://carstro-15495.web.app/' ||
-      window.location.href === 'https://carstro-15495.web.app/aboutUs' ||
-      window.location.href === 'https://carstro-15495.web.app/marketing'
+      window.location.href === 'http://localhost:3000/' ||
+      window.location.href === 'http://localhost:3000/aboutUs' ||
+      window.location.href === 'http://localhost:3000/marketing'
+      // window.location.href === 'https://carstro-15495.web.app/' ||
+      // window.location.href === 'https://carstro-15495.web.app/aboutUs' ||
+      // window.location.href === 'https://carstro-15495.web.app/marketing'
     ) {
-      setHeaderClass('');
+      setHeaderWhite(false);
     } else {
-      setHeaderClass('headerWhite');
+      setHeaderWhite(true);
     }
   }, [window.location.href]);
 
   return (
     <div className='header'>
-      <div className={`headerHeader ${headerClass}`}>
+      <div className={`headerHeader ${headerWhite ? 'headerWhite' : ''}`}>
         <div className='leftSide'>
           <Link to='/'>
             <img className='header-logo' src='headerImages/logo.png' alt='' />
@@ -79,7 +82,7 @@ function Header() {
           </div>
 
           <div className='hamWrapper'>
-            <Hamburger />
+            <Hamburger white={headerWhite} />
           </div>
         </div>
       </div>

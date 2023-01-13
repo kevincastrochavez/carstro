@@ -22,6 +22,7 @@
 
 .saleRepresentativeCard_div--picturesContainer {
   margin-right: 20px;
+  width: 120px;
 }
 .saleRepresentativeCard_div--locationsContainer {
   flex: 1;
@@ -98,7 +99,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 1500px;
+  height: 1690px;
   z-index: 10;
   // display: flex;
   // justify-content: center;
@@ -107,11 +108,14 @@
 }
 
 .modalWindow_form {
-  position: relative;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
   background-color: white;
   margin: 48px 24px;
   padding: 24px;
-  z-index: 3;
+  z-index: 1000;
 }
 
 .modalWindow_title {
@@ -429,12 +433,11 @@ input:focus {
     align-items: center;
     justify-content: center;
     width: 100%;
-    max-width: 400px;
     margin-top: 0 !important;
   }
 
   .saleRepresentativeCard_div_img {
-    width: 30vw;
+    width: 120px;
     height: unset;
     max-width: 160px;
   }
@@ -442,42 +445,15 @@ input:focus {
 
 /* Mobile View -small */
 @media only screen and (min-width: 600px) and (max-width: 719px) {
-  .saleRepresentativeCard_div--picturesContainer {
-    width: unset !important;
-    padding: 0 !important;
-    max-width: 140px;
-  }
-
-  .saleRepresentativeCard_div--locationsContainer {
-    width: unset !important;
-  }
-
   .saleRepresentativeCard_div {
-    display: flex !important;
-    width: 100%;
-    justify-content: space-evenly;
+    max-width: 400px;
+    margin: 0 auto;
   }
 
   .saleRepresentativeCard_div--button {
-    margin-top: 0 !important;
+    margin-top: 0;
     max-width: 400px;
-    width: 75vw;
-  }
-
-  .saleRCardSeparator {
-    align-items: center;
-    width: 75vw;
-    display: flex;
-    flex-direction: column;
-  }
-
-  #sl,
-  #rx,
-  #la,
-  #dv {
-    display: flex;
-    justify-content: center;
-    width: 75vw;
+    margin: 0 auto;
   }
 }
 
