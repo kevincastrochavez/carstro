@@ -540,6 +540,10 @@
 
 /* Desktop   V I E W -large */
 @media only screen and (min-width: 990px) {
+  .homepage-container {
+    overflow-x: hidden;
+  }
+
   .bannerContainer {
     display: flex;
     flex-direction: column;

@@ -54,7 +54,6 @@
 .headerHeader {
   display: flex;
   width: 100%;
-  max-width: 1040px;
   height: 80px;
   padding: 0 24px;
 
@@ -203,17 +202,6 @@
   .rightSide .hamWrapper {
     display: none;
   }
-
-  /* .header {
-    width: 100vw;
-  }
-
-  .links {
-    display: flex;
-    color: red;
-    background: white;
-    align-items: center;
-  } */
 }
 
 .signOut {
@@ -335,5 +323,13 @@
 @media only screen and (min-width: 870px) {
   .hamWrapper {
     display: none !important;
+  }
+}
+
+@media screen and (min-width: 990px) {
+  .headerHeader {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 186px 854px;
   }
 }
