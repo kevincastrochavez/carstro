@@ -30,42 +30,37 @@ function App() {
 
   return (
     <div className='app'>
-      <h1>Looking for something?</h1>
+      <BrowserRouter>
+        <Header />
+
+        <div className='app_fab' onClick={toggleChat}>
+          <TextsmsIcon />
+        </div>
+
+        {showChat && (
+          <Chatbot
+            config={config}
+            actionProvider={ActionProvider}
+            messageParser={MessageParser}
+          />
+        )}
+
+        <Routes>
+          <Route exact path='/' element={<Homepage />} />
+          <Route path='/inventory' element={<Inventory />} />
+          <Route path='/inventory/:id' element={<CarDetails />} />
+          <Route path='/marketing' element={<Marketing />} />
+          <Route
+            path='/salesRepresentatives'
+            element={<SalesRepresentatives />}
+          />
+          <Route path='/aboutUs' element={<AboutUs />} />
+        </Routes>
+
+        <Footer />
+      </BrowserRouter>
     </div>
   );
-  // return (
-  //   <div className='app'>
-  //     <BrowserRouter>
-  //       <Header />
-
-  //       <div className='app_fab' onClick={toggleChat}>
-  //         <TextsmsIcon />
-  //       </div>
-
-  //       {showChat && (
-  //         <Chatbot
-  //           config={config}
-  //           actionProvider={ActionProvider}
-  //           messageParser={MessageParser}
-  //         />
-  //       )}
-
-  //       <Routes>
-  //         <Route exact path='/' element={<Homepage />} />
-  //         <Route path='/inventory' element={<Inventory />} />
-  //         <Route path='/inventory/:id' element={<CarDetails />} />
-  //         <Route path='/marketing' element={<Marketing />} />
-  //         <Route
-  //           path='/salesRepresentatives'
-  //           element={<SalesRepresentatives />}
-  //         />
-  //         <Route path='/aboutUs' element={<AboutUs />} />
-  //       </Routes>
-
-  //       <Footer />
-  //     </BrowserRouter>
-  //   </div>
-  // );
 }
 
 export default App;
