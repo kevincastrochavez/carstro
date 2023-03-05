@@ -14,8 +14,6 @@ function SaleRepresentativeCard({
   id,
   name,
   location,
-  lat,
-  lng,
   image,
   email,
   hours,
@@ -28,6 +26,8 @@ function SaleRepresentativeCard({
   const [deviceWidth, setDeviceWidth] = useState(0);
 
   useEffect(() => {
+    setDeviceWidth(window.innerWidth);
+
     window.addEventListener('resize', () => {
       setDeviceWidth(window.innerWidth);
     });
