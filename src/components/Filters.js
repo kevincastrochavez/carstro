@@ -121,6 +121,52 @@ function Filters() {
 
           <div className='filters_form'>
             <section>
+              <h5>Price</h5>
+
+              <form className='filters_checkboxes'>
+                <SliderRange
+                  range={minMaxPrice}
+                  price
+                  text='price'
+                  reset={clearAllFilters}
+                />
+              </form>
+            </section>
+
+            <section>
+              <h5>Mileage</h5>
+
+              <form className='filters_checkboxes'>
+                <SliderRange
+                  range={minMaxMileage}
+                  text='mileage'
+                  reset={clearAllFilters}
+                />
+              </form>
+            </section>
+
+            <section>
+              <h5>Color</h5>
+
+              <form className='filters_checkboxes filters_colors'>
+                {colorsFilterOptions.map((color) => {
+                  return (
+                    <div key={color} className='filters_checkbox'>
+                      <Checkbox
+                        id={color}
+                        name='colors'
+                        value={color}
+                        clearAll={clearAllFilters}
+                        hidden
+                      />
+                      <FilterLabel option={color} colorsProp={true} />
+                    </div>
+                  );
+                })}
+              </form>
+            </section>
+
+            <section>
               <h5>Brand</h5>
 
               <form className='filters_checkboxes'>
@@ -178,52 +224,6 @@ function Filters() {
                     </div>
                   );
                 })}
-              </form>
-            </section>
-
-            <section>
-              <h5>Color</h5>
-
-              <form className='filters_checkboxes filters_colors'>
-                {colorsFilterOptions.map((color) => {
-                  return (
-                    <div key={color} className='filters_checkbox'>
-                      <Checkbox
-                        id={color}
-                        name='colors'
-                        value={color}
-                        clearAll={clearAllFilters}
-                        hidden
-                      />
-                      <FilterLabel option={color} colorsProp={true} />
-                    </div>
-                  );
-                })}
-              </form>
-            </section>
-
-            <section>
-              <h5>Price</h5>
-
-              <form className='filters_checkboxes'>
-                <SliderRange
-                  range={minMaxPrice}
-                  price
-                  text='price'
-                  reset={clearAllFilters}
-                />
-              </form>
-            </section>
-
-            <section>
-              <h5>Mileage</h5>
-
-              <form className='filters_checkboxes'>
-                <SliderRange
-                  range={minMaxMileage}
-                  text='mileage'
-                  reset={clearAllFilters}
-                />
               </form>
             </section>
           </div>
