@@ -34,7 +34,7 @@ const CarInventory = forwardRef(
     const [openPopover, setOpenPopover] = useState(false);
 
     const brandWordsQuantity = brand.split(' ').length;
-    const downPayment = 5000;
+    const downPayment = 3000;
     const principal = price - downPayment;
     const rate = 6.96 / 12 / 100;
     const termLength = 48;
@@ -137,7 +137,7 @@ const CarInventory = forwardRef(
               onClose={handlePopoverClose}
               disableRestoreFocus
             >
-              Calculated based on $5,000 down payment, excellent credit score,
+              Calculated based on $3,000 down payment, excellent credit score,
               and 48 months
             </Popover>
           </p>
