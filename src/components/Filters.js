@@ -114,7 +114,7 @@ function Filters() {
               windowWidth >= 990 && 'filters_button-desktop'
             }`}
             text={'Clear All'}
-            bgColor='green'
+            // bgColor='green'
           />
 
           <div className='filters_divider'></div>
