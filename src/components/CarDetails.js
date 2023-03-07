@@ -138,7 +138,7 @@ function CarDetails() {
             <div className='carDetails_features-offer'>
               <p>Special Offer</p>
               <span>
-                4.99% <span>APR</span>
+                6.96% <span>APR</span>
               </span>
             </div>
           </div>
