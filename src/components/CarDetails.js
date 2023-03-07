@@ -169,17 +169,23 @@ function CarDetails() {
 
           <div className='carDetails_icon'>
             <Shift />
-            <p>{carDetailsInfo.transmission}</p>
+            <p>
+              {carDetailsInfo.transmission} <br /> Transmission
+            </p>
           </div>
 
           <div className='carDetails_icon'>
             <HeatedSeat />
-            <p>Heated Seats</p>
+            <p>
+              Heated <br /> Seats
+            </p>
           </div>
 
           <div className='carDetails_icon'>
             <Breaks />
-            <p>ABS Breaks</p>
+            <p>
+              ABS <br /> Breaks
+            </p>
           </div>
         </div>
       </div>
