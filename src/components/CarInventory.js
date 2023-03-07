@@ -182,7 +182,7 @@ const CarInventory = forwardRef(
                 <p>
                   <b>{mpg.split('/')[1]}</b>mpg
                 </p>
-                <span>Range</span>
+                <span>Avg</span>
               </div>
             </div>
 
