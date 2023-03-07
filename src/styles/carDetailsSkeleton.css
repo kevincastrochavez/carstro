@@ -1,0 +1,59 @@
+.carDetailsSkeleton {
+  padding: 24px;
+}
+.carDetailsSkeleton_title {
+  margin-top: 24px !important;
+}
+.carDetailsSkeleton_info {
+  display: grid;
+  gap: 24px;
+}
+.carDetailsSkeleton_info-top, .carDetailsSkeleton_info-price {
+  display: grid;
+  gap: 8px;
+}
+.carDetailsSkeleton_info-price {
+  grid-template-columns: 1fr 1fr;
+}
+.carDetailsSkeleton_info-price span {
+  width: 100% !important;
+}
+.carDetailsSkeleton_info-price-offer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.carDetailsSkeleton_iconsContainer {
+  margin-top: 48px !important;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+  justify-items: center;
+}
+.carDetailsSkeleton_icon {
+  display: grid;
+  gap: 8px;
+}
+
+@media screen and (min-width: 720px) {
+  .carDetailsSkeleton {
+    padding: 32px;
+    max-width: 1040px;
+    margin: 0 auto;
+  }
+  .carDetailsSkeleton_info {
+    margin-top: 24px !important;
+    grid-template-columns: 1fr 250px 100px;
+    grid-template-rows: 52px;
+  }
+  .carDetailsSkeleton_info-top span {
+    margin-top: 0 !important;
+    width: 80% !important;
+  }
+  .carDetailsSkeleton_info-price > span {
+    height: 100% !important;
+  }
+  .carDetailsSkeleton_iconsContainer {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}/*# sourceMappingURL=carDetailsSkeleton.css.map */

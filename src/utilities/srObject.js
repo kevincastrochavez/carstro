@@ -9,7 +9,7 @@ const saleRepresntative = [
     hours: '8:00am - 5:00pm',
     phone: '385-354-1824',
     address: '50 N Temple. 84150',
-    position: 'Chief Executive Officer',
+    position: 'General Manager',
     image: '/salesRepresentatives/cindy.jpeg',
   },
 
@@ -23,7 +23,7 @@ const saleRepresntative = [
     hours: '8:00am - 5:00pm',
     phone: '307-777-6397',
     address: '80 Scott Ln. 83002',
-    position: 'Chief Financial Officer',
+    position: 'Sales Manager',
     image: '/salesRepresentatives/andres.jpeg',
   },
 
@@ -37,7 +37,7 @@ const saleRepresntative = [
     hours: '8:00am - 5:00pm',
     phone: '210-543-8397',
     address: '1100 Congress Ave. 78701',
-    position: 'Chief Commercial Officer',
+    position: 'Service Manager',
     image: '/salesRepresentatives/kevin.jpeg',
   },
 
@@ -51,7 +51,7 @@ const saleRepresntative = [
     hours: '8:00am - 5:00pm',
     phone: '310-398-2874',
     address: '5711 W Century Blvd. 90045',
-    position: 'Chief Legal Officer',
+    position: 'Finance Manager',
     image: '/salesRepresentatives/ignacio.jpeg',
   },
 ];

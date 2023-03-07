@@ -1,0 +1,22 @@
+.skeletonContainer {
+  display: grid;
+  gap: 48px;
+}
+.skeletonContainer_img {
+  margin: 24px 0 !important;
+  align-self: center;
+}
+.skeletonContainer_btn {
+  margin-top: 20px !important;
+}
+
+@media screen and (min-width: 990px) {
+  .skeletonContainer {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .skeletonContainer > div {
+    width: 300px;
+  }
+}/*# sourceMappingURL=skeletonContainer.css.map */

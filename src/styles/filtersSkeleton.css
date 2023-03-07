@@ -1,0 +1,23 @@
+.filtersSkeleton > span {
+  margin-bottom: 32px;
+}
+.filtersSkeleton_field {
+  margin-bottom: 24px !important;
+}
+.filtersSkeleton_field > span {
+  margin-bottom: 8px;
+}
+.filtersSkeleton_option {
+  margin: 4px 0;
+  display: flex;
+  gap: 8px;
+}
+.filtersSkeleton_colors {
+  gap: 24px;
+}
+
+@media screen and (min-width: 990px) {
+  .filtersSkeleton_colors {
+    flex-wrap: wrap;
+  }
+}/*# sourceMappingURL=filtersSkeleton.css.map */
