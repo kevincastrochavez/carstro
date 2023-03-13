@@ -10,12 +10,13 @@ import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 function LoanCalculator({ className, carInfo }) {
   const [creditScore, setCreditScore] = useState(6.96);
   const [termLength, setTermLength] = useState(24);
-  const [cashDown, setCashDown] = useState(5000);
+  const [cashDown, setCashDown] = useState(3000);
   const [monthlyPayment, setMonthlyPayment] = useState(0);
   const [windowWidth, setWindowWidth] = useState(0);
 
   useEffect(() => {
     const principal = +carInfo.price - cashDown;
+    console.log(carInfo.price);
     const rate = +creditScore / 12 / 100;
     const numberOfMonths = +termLength;
 
@@ -28,6 +29,8 @@ function LoanCalculator({ className, carInfo }) {
   }, [carInfo.price, cashDown, creditScore, termLength]);
 
   useEffect(() => {
+    setWindowWidth(window.innerWidth);
+
     window.addEventListener('resize', () => {
       setWindowWidth(window.innerWidth);
     });
@@ -109,8 +112,8 @@ function LoanCalculator({ className, carInfo }) {
             <label>Cash Down</label>
             <CurrencyInput
               name='cashDown'
-              placeholder='$5,000'
-              defaultValue={5000}
+              placeholder='$3,000'
+              defaultValue={3000}
               allowDecimals={false}
               allowNegativeValue={false}
               onValueChange={handleCashDownChange}

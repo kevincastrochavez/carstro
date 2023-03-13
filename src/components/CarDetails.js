@@ -138,7 +138,7 @@ function CarDetails() {
             <div className='carDetails_features-offer'>
               <p>Special Offer</p>
               <span>
-                4.99% <span>APR</span>
+                6.96% <span>APR</span>
               </span>
             </div>
           </div>
@@ -169,17 +169,23 @@ function CarDetails() {
 
           <div className='carDetails_icon'>
             <Shift />
-            <p>{carDetailsInfo.transmission}</p>
+            <p>
+              {carDetailsInfo.transmission} <br /> Transmission
+            </p>
           </div>
 
           <div className='carDetails_icon'>
             <HeatedSeat />
-            <p>Heated Seats</p>
+            <p>
+              Heated <br /> Seats
+            </p>
           </div>
 
           <div className='carDetails_icon'>
             <Breaks />
-            <p>ABS Breaks</p>
+            <p>
+              ABS <br /> Breaks
+            </p>
           </div>
         </div>
       </div>

@@ -511,7 +511,7 @@
 
   .homeBrandLogos {
     display: grid;
-    grid-template-columns: repeat(3, 180px);
+    grid-template-columns: repeat(2, 180px) 100px;
     justify-content: center;
     margin: 48px auto 64px;
   }
@@ -802,9 +802,10 @@
 
   .homeBrandLogos {
     display: grid;
-    grid-template-columns: repeat(3, 180px);
+    grid-template-columns: repeat(2, 180px) 100px;
     justify-content: center;
     margin: 48px auto 64px;
+    column-gap: 30px;
   }
 
   .singleBrandLogo {
