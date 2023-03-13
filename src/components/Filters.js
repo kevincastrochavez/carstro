@@ -104,17 +104,20 @@ function Filters() {
           <div className='filters_top'>
             {windowWidth < 990 && <h2>Filters</h2>}
             {windowWidth < 990 && (
-              <CloseIcon className='filters_closeBtn' onClick={hideFilters} />
+              <>
+                <span onClick={clearFilters}>Clear All</span>
+                <CloseIcon className='filters_closeBtn' onClick={hideFilters} />
+              </>
             )}
           </div>
 
           <Button
-            onClick={clearFilters}
+            onClick={windowWidth < 990 ? hideFilters : clearFilters}
             className={`filters_button ${
               windowWidth >= 990 && 'filters_button-desktop'
             }`}
-            text={'Clear All'}
-            // bgColor='green'
+            text={windowWidth < 990 ? 'Apply' : 'Clear All'}
+            bgColor='green'
           />
 
           <div className='filters_divider'></div>
