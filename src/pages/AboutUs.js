@@ -1,19 +1,19 @@
-import React, { useEffect } from "react";
+import React, { useEffect } from 'react';
 
-import { useStateValue } from "../StateProvider.js";
-import { saleRepresntative } from "../utilities/srObject.js";
-import db from "../firebase";
+import { useStateValue } from '../StateProvider.js';
+import { saleRepresntative } from '../utilities/srObject.js';
+import db from '../firebase';
 
 function AboutUs() {
   const [{ carsResults }, dispatch] = useStateValue();
 
   useEffect(() => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }, []);
 
   useEffect(() => {
     if (carsResults.length === 0) {
-      db.collection("cars")
+      db.collection('cars')
         .get()
         .then((cars) => {
           const carsResults = cars.docs.map((car) => {
@@ -29,104 +29,99 @@ function AboutUs() {
           const maxMileage = Math.max(...milesArray);
 
           dispatch({
-            type: "SET_CARS_RESULTS",
+            type: 'SET_CARS_RESULTS',
             carsResults,
           });
 
           // Setting the min and max for the price and mileage
           dispatch({
-            type: "SET_MIN_MAX_PRICE_FILTER",
+            type: 'SET_MIN_MAX_PRICE_FILTER',
             minMaxPrice: [minPrice, maxPrice],
           });
 
           dispatch({
-            type: "SET_MIN_MAX_MILEAGE_FILTER",
+            type: 'SET_MIN_MAX_MILEAGE_FILTER',
             minMaxMileage: [minMileage, maxMileage],
           });
         })
         .catch((error) => {
-          console.log("Error fetching the DB", error);
+          console.log('Error fetching the DB', error);
         });
     }
   }, []);
 
   return (
-    <div className="aboutUsMainContainer">
-      <div className="aboutUsContainer">
-        <div className="about-us-h1-info-wrap">
-          <h1 className="about-us-h1-title">About Us</h1>
-          <div className="about-us-info-wrap">
-            <div className="aboutus-scrollbarSeparation">
-              <p className="about-us-p">
-                <h2 className="aboutUsSubtitle">Our purpose</h2> The goal of
-                Carstro® is to establish itself as the foremost supplier of used
-                car services to both buyers and dealers. With the largest
-                vehicle database in North America, we offer millions of
-                customers per year the assurance and optimal deals they seek.
+    <div className='aboutUsMainContainer'>
+      <div className='aboutUsContainer'>
+        <div className='about-us-h1-info-wrap'>
+          <h1 className='about-us-h1-title'>About Us</h1>
+          <div className='about-us-info-wrap'>
+            <div className='aboutus-scrollbarSeparation'>
+              <p className='about-us-p'>
+                <h2 className='aboutUsSubtitle'>Our purpose</h2> Carstro® was
+                founded with the purpose of becoming the leading provider of
+                used car buyers and dealers. Our vehicle database is the largest
+                in North America, providing confidence and the very best deals
+                to millions of customers per year.
                 <br />
                 <br />
-                <h2 className="aboutUsSubtitle">Our experience</h2> With half a
-                century of experience in the industry, we have established
-                ourselves as the premier destination for top-quality cars at
-                unbeatable prices. Our extensive expertise also enables us to
-                provide unparalleled guidance to customers as they pursue their
-                dream car.
+                <h2 className='aboutUsSubtitle'>Our experience</h2> Our 50 years
+                of experience in the market show that there is no better place
+                to get both an excellent quality car and a great price. These
+                years also allow us to guide customers better than any other
+                company in their search for their dream.
                 <br />
                 <br />
-                <h2 className="aboutUsSubtitle">The benefits</h2> Apart from
-                boasting the largest collection of vehicles from both private
-                sellers and dealerships, Carstro's® website provides you with:
+                <h2 className='aboutUsSubtitle'>The benefits</h2> In addition to
+                having the most extensive inventory of vehicles from dealerships
+                and private sellers, Carstro's® website offers you:
                 <br />
                 <br />
-                <ul class="checkmark">
-                  <li>
-                    &#10003; Tools and resources to make vehicle comparisons
-                  </li>
+                <ul class='checkmark'>
+                  <li>&#10003; Resources and tools to compare vehicles</li>
 
                   <br />
-                  <li>&#10003; Precise photographs of our cars</li>
+                  <li>&#10003; Accurate photographs of our cars</li>
 
                   <br />
-                  <li>
-                    &#10003; Calculators that can be customized to your
-                    preferences
-                  </li>
+                  <li>&#10003; Calculators able to adjust to your needs</li>
 
                   <br />
                   <li>
-                    &#10003; Comprehensive reports on the history and safety
-                    details of each car
+                    &#10003; Reports on the history and safety information of
+                    each car
                   </li>
 
                   <br />
                   <li>
-                    &#10003; Support with financing, insurance, and warranties
+                    &#10003; Assistance with financing initiatives, insurance,
+                    and guarantees
                   </li>
                 </ul>
                 <br />
                 <br />
-                <h2 className="aboutUsSubtitle">Still lost?</h2>
-                Feeling unsure about where to begin? No problem! Our
-                <a className="aboutUsLinkSalesR" href="/salesRepresentatives">
-                  {" "}
-                  representatives{" "}
-                </a>
-                are eager to assist you every step of the way. Schedule an
-                appointment today at absolutely no cost to you!
-                <br />
+                <h2 className='aboutUsSubtitle'>Still lost?</h2>
+                Not sure where to start? That is perfectly fine!
+                <br /> We have
+                <a className='aboutUsLinkSalesR' href='/salesRepresentatives'>
+                  {' '}
+                  representatives
+                </a>{' '}
+                who are eager to guide you through this process. Schedule an
+                appointment today at no cost!
               </p>
             </div>
           </div>
         </div>
       </div>
-      <div className="about-us-our-team">
-        <h2 className="about-us-team-h2-title">Our People</h2>
+      <div className='about-us-our-team'>
+        <h2 className='about-us-team-h2-title'>Our People</h2>
 
-        <div className="aboutUs_representativesContainer">
+        <div className='aboutUs_representativesContainer'>
           {saleRepresntative.map((item) => (
             //Sales Representative Cards
-            <div className="about-us-card-representative">
-              <img src={item.image} alt="Representative Name" />
+            <div className='about-us-card-representative'>
+              <img src={item.image} alt='Representative Name' />
               <p>{item.name}</p>
               <p>{item.position}</p>
             </div>
