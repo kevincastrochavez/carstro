@@ -7,24 +7,6 @@
   display: none;
 }
 
-#marketingVideoHM {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
-
-#marketingVideoOverlay {
-  position: absolute;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-}
-
-.marketing-text {
-  z-index: 1;
-}
-
 .home-mainImage {
   width: 100%;
   height: 300px;
@@ -41,7 +23,7 @@
 }
 
 .exploreVehicles-text {
-  font-family: "Raleway";
+  font-family: 'Raleway';
   font-weight: 600;
   font-size: 24px;
   line-height: 125%;
@@ -411,7 +393,7 @@
   }
 
   .exploreVehicles-text {
-    font-family: "Raleway";
+    font-family: 'Raleway';
     font-style: normal;
     font-weight: 600;
     font-size: 32px;
@@ -520,7 +502,7 @@
 
   .homeSingleBrand {
     text-align: center;
-    font-family: "Raleway";
+    font-family: 'Raleway';
     font-style: normal;
     font-weight: 600;
     font-size: 32px;
@@ -652,7 +634,7 @@
     padding: 48px 0;
   }
   .exploreVehicles-text {
-    font-family: "Raleway";
+    font-family: 'Raleway';
     font-style: normal;
     font-weight: 600;
     font-size: 32px;
@@ -660,7 +642,7 @@
   }
 
   .exploreInput {
-    font-family: "Raleway";
+    font-family: 'Raleway';
     padding: 15px;
     border: 1px solid #cbd2e0;
     height: 60px;
@@ -677,14 +659,14 @@
     font-size: 16px;
     line-height: 150%;
     letter-spacing: -0.01em;
-    font-feature-settings: "calt" off;
+    font-feature-settings: 'calt' off;
     cursor: pointer;
   }
 
   #exploreSubmit {
     background: #006039;
     color: white;
-    font-family: "Raleway";
+    font-family: 'Raleway';
     font-style: normal;
     font-weight: 600;
     font-size: 14px;
@@ -705,7 +687,7 @@
   }
 
   .homeSingleBrand {
-    font-family: "Raleway";
+    font-family: 'Raleway';
     font-style: normal;
     font-weight: 600;
     font-size: 32px;
@@ -736,7 +718,7 @@
 
   .homeBrandLogos-singleLogo-text {
     color: white;
-    font-family: "Cabin";
+    font-family: 'Cabin';
     font-weight: 400;
     font-size: 16px;
     line-height: 24px;
