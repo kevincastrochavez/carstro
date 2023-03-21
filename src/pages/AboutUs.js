@@ -13,17 +13,16 @@ function AboutUs() {
 
   const cards = document.querySelectorAll(".card");
 
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        entry.target.classList.toggle("show", entry.isIntersecting);
-        if (entry.isIntersecting) observer.unobserve(entry.target);
-      });
-    },
-    {
-      rootMargin: "-340px",
-    }
-  );
+  const objectEntries = function (entries) {
+    entries.forEach((entry) => {
+      entry.target.classList.toggle("show", entry.isIntersecting);
+      if (entry.isIntersecting) observer.unobserve(entry.target);
+    });
+  };
+  
+  const observer = new IntersectionObserver(objectEntries, {
+    rootMargin: "-340px",
+  });
 
   useEffect(() => {
     if (carsResults.length === 0) {
