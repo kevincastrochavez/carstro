@@ -11,6 +11,20 @@ function AboutUs() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, []);
 
+  const cards = document.querySelectorAll(".card");
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        entry.target.classList.toggle("show", entry.isIntersecting);
+        if (entry.isIntersecting) observer.unobserve(entry.target);
+      });
+    },
+    {
+      rootMargin: "-340px",
+    }
+  );
+
   useEffect(() => {
     if (carsResults.length === 0) {
       db.collection("cars")
@@ -48,23 +62,9 @@ function AboutUs() {
           console.log("Error fetching the DB", error);
         });
     }
-  }, []);
 
-  const cards = document.querySelectorAll(".card");
-
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        entry.target.classList.toggle("show", entry.isIntersecting);
-        if (entry.isIntersecting) observer.unobserve(entry.target);
-      });
-    },
-    {
-      rootMargin: "-340px",
-    }
-  );
-
-  cards.forEach((card) => observer.observe(card));
+    cards.forEach((card) => observer.observe(card));
+  }, [cards]);
 
   return (
     <div className="aboutUsMainContainer">
