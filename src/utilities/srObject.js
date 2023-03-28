@@ -24,7 +24,7 @@ const saleRepresntative = [
     phone: "307-777-6397",
     address: "80 Scott Ln. 83002",
     position: "Sales Manager",
-    image: "/salesRepresentatives/andres.jpeg",
+    image: "/salesRepresentatives/andres.jpg",
   },
 
   {
@@ -38,7 +38,7 @@ const saleRepresntative = [
     phone: "210-543-8397",
     address: "1100 Congress Ave. 78701",
     position: "Service Manager",
-    image: "/salesRepresentatives/kevin.jpeg",
+    image: "/salesRepresentatives/kevin.jpg",
   },
 
   {
@@ -52,7 +52,7 @@ const saleRepresntative = [
     phone: "310-398-2874",
     address: "5711 W Century Blvd. 90045",
     position: "Finance Manager",
-    image: "/salesRepresentatives/ignacio.jpeg",
+    image: "/salesRepresentatives/ignacio.jpg",
   },
 ];
 
