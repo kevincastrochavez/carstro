@@ -3,7 +3,7 @@ import React, { useEffect } from "react";
 import { useStateValue } from "../StateProvider";
 import db from "../firebase";
 
-import marketingVideo from "../CARSTRO.mp4";
+import marketingVideo from "../optimized.mp4";
 
 function Marketing() {
   const [{ carsResults }, dispatch] = useStateValue();
