@@ -8,7 +8,7 @@ import db from "../firebase";
 import { useStateValue } from "../StateProvider";
 import { saleRepresntative } from "../utilities/srObject.js";
 import BrowseByBrand from "../components/BrowseByBrand";
-import marketingVideo from "../CARSTRO.mp4";
+import marketingVideo from "../optimized.mp4";
 
 function Homepage() {
   const navigate = useNavigate();
