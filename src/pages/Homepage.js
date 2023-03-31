@@ -179,16 +179,6 @@ function Homepage() {
             muted
             id="marketingVideoHM"
           ></video>
-          {/* <img
-            className="home-marketingImage home-marketingImage-l"
-            src="homepageImages/markLarge.png"
-            alt="Car in sand for marketing purposes"
-          />
-          <img
-            className="home-marketingImage home-marketingImage-s"
-            src="homepageImages/markSmall.png"
-            alt="Car in sand for marketing purposes"
-          /> */}
         </div>
         <div className="marketing-text">
           <div className="marketing-title-and-text">
