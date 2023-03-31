@@ -130,6 +130,10 @@
   grid-row: 1/2;
 }
 
+.marketing-image {
+  position: relative;
+}
+
 #exploreSubmit {
   transition: 0.3s;
 }
@@ -369,12 +373,12 @@
   }
 
   .home_heroOverlay {
-    display: block;
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
-    height: 580px;
+    bottom: 0;
+    // height: 580px;
     background-color: rgba(0, 0, 0, 0.4);
   }
 
@@ -855,7 +859,7 @@
   }
 
   .home_heroOverlay {
-    display: block;
+    // display: block;
     position: absolute;
     top: 0;
     left: 0;
