@@ -62,21 +62,6 @@ function Marketing() {
           muted
           id="marketingVideoMKG"
         ></video>
-        {/* <img
-          className="marketing-car-rock-img"
-          src="marketingImages/marketing-car-rock.jpg"
-          alt=""
-        />
-        <img
-          className="marketing-car-rock-img-ipad"
-          src="marketingImages/marketing-car-rock-ipad.jpg"
-          alt=""
-        />
-        <img
-          className="marketing-car-rock-img-large"
-          src="marketingImages/marketing-car-rock-large.jpg"
-          alt=""
-        /> */}
       </div>
       <div className="marketing-h1-info-wrap">
         <div className="marketing-h1-container">
