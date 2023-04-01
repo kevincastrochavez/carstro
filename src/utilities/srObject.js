@@ -43,7 +43,7 @@ const saleRepresntative = [
 
   {
     id: "la",
-    name: "Ignacio Villar ",
+    name: "Ignacio Villar",
     location: "Los Angeles, CA",
     lat: "34.0536909",
     lng: "-118.242766",
