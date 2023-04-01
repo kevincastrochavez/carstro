@@ -3,30 +3,29 @@
   padding: 0 24px;
 }
 
-.salesRepresentatives_main_div{
-margin-bottom: 60px;
+.salesRepresentatives_main_div {
+  margin-bottom: 60px;
 }
 
-.salesRepresentatives_main_div_divButtons{
- display: flex;
- flex-direction: row;
+.salesRepresentatives_main_div_divButtons {
+  display: flex;
+  flex-direction: row;
 }
 
-.salesRepresentatives_main_div_listButton{
+.salesRepresentatives_main_div_listButton {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 40px;
   width: 50%;
-  font-size: $body-font;
-  border: 1px solid #D9D9D9;
-  color:$lightgrayText;
+  border: 1px solid #d9d9d9;
+  color: $lightgrayText;
+  gap: 6px;
 }
 
-.grayBackground{
-  background-color: #D9D9D9;
+.grayBackground {
+  background-color: #d9d9d9;
 }
-
 
 .main_h1 {
   padding: $px-24 0px $px-48;
@@ -37,9 +36,9 @@ margin-bottom: 60px;
   height: 50%;
 }
 
-#salesRepresentatives_ul {
-  cursor: pointer;
-}
+// #salesRepresentatives_ul {
+//   cursor: pointer;
+// }
 
 /* M O B I L E   V I E W -small */
 @media only screen and (max-width: 719px) {
@@ -52,10 +51,9 @@ margin-bottom: 60px;
 @media only screen and (min-width: 720px) and (max-width: 989px) {
   .salesRepresentativesContainer {
     padding: 0 32px;
-    
   }
-  .salesRepresentatives_main_div_divButtons{
-    width: 40%;
+  .salesRepresentatives_main_div_divButtons {
+    width: 100%;
   }
 }
 
