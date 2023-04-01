@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 import db from "../firebase";
 import { useStateValue } from "../StateProvider";
@@ -83,21 +84,20 @@ function Homepage() {
       <div className="bannerContainer">
         <div className="main-image">
           <div className="home_heroOverlay"></div>
-
-          <img
+          <LazyLoadImage
             className="home-mainImage home-mainImage-l"
+            alt="Audi car in road on Fall season"
             src="homepageImages/main-l.jpg"
-            alt="Audi car in road on Fall season"
           />
-          <img
+          <LazyLoadImage
             className="home-mainImage home-mainImage-m"
+            alt="Audi car in road on Fall season"
             src="homepageImages/main-m.jpg"
-            alt="Audi car in road on Fall season"
           />
-          <img
+          <LazyLoadImage
             className="home-mainImage home-mainImage-s"
-            src="homepageImages/main-s.jpg"
             alt="Audi car in road on Fall season"
+            src="homepageImages/main-s.jpg"
           />
         </div>
         <div className="home-mainText">
@@ -200,7 +200,10 @@ function Homepage() {
       <div className="home_salesRepresentative">
         {saleRepresntative.map((item) => (
           <div className="home_salesRepresentative-card" key={item.id}>
-            <img src={item.image} alt={`${item.name} sales representative`} />
+            <LazyLoadImage
+              alt={`${item.name} sales representative`}
+              src={item.image}
+            />
 
             <div className="home_salesRepresentative-info">
               <p>{item.name}</p>
