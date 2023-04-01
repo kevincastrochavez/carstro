@@ -8,7 +8,7 @@ import db from "../firebase";
 import { useStateValue } from "../StateProvider";
 import { saleRepresntative } from "../utilities/srObject.js";
 import BrowseByBrand from "../components/BrowseByBrand";
-import marketingVideo from "../CARSTRO.mp4";
+import marketingVideo from "../optimized.mp4";
 
 function Homepage() {
   const navigate = useNavigate();
@@ -179,16 +179,6 @@ function Homepage() {
             muted
             id="marketingVideoHM"
           ></video>
-          {/* <img
-            className="home-marketingImage home-marketingImage-l"
-            src="homepageImages/markLarge.png"
-            alt="Car in sand for marketing purposes"
-          />
-          <img
-            className="home-marketingImage home-marketingImage-s"
-            src="homepageImages/markSmall.png"
-            alt="Car in sand for marketing purposes"
-          /> */}
         </div>
         <div className="marketing-text">
           <div className="marketing-title-and-text">

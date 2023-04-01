@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react';
-import CurrencyFormat from 'react-currency-format';
-import CurrencyInput from 'react-currency-input-field';
-import { Link } from 'react-router-dom';
-import CountUp from 'react-countup';
-import PlayArrowIcon from '@mui/icons-material/PlayArrow';
+import React, { useEffect, useState } from "react";
+import CurrencyFormat from "react-currency-format";
+import CurrencyInput from "react-currency-input-field";
+import { Link } from "react-router-dom";
+import CountUp from "react-countup";
+import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 
 // https://www.npmjs.com/package/react-countup
 
@@ -31,7 +31,7 @@ function LoanCalculator({ className, carInfo }) {
   useEffect(() => {
     setWindowWidth(window.innerWidth);
 
-    window.addEventListener('resize', () => {
+    window.addEventListener("resize", () => {
       setWindowWidth(window.innerWidth);
     });
   }, []);
@@ -50,48 +50,48 @@ function LoanCalculator({ className, carInfo }) {
 
   return (
     <section className={`${className} loanCalculator_container`}>
-      <div className='loanCalculator_estimator'>
+      <div className="loanCalculator_estimator">
         <h2>
           Payment Estimator {carInfo.year} {carInfo.brand}
         </h2>
 
         {windowWidth >= 720 && (
-          <div className='loanCalculator_estimator-details'>
-            <div className='loanCalculator_estimator-vin'>
+          <div className="loanCalculator_estimator-details">
+            <div className="loanCalculator_estimator-vin">
               VIN#: {carInfo.vin}
             </div>
 
-            <div className='loanCalculator_estimator-divider'></div>
+            <div className="loanCalculator_estimator-divider"></div>
 
-            <div className='loanCalculator_estimator-mileage'>
-              Mileage:{' '}
+            <div className="loanCalculator_estimator-mileage">
+              Mileage:{" "}
               {
                 <CurrencyFormat
                   value={carInfo.odometer}
-                  displayType={'text'}
+                  displayType={"text"}
                   thousandSeparator={true}
                 />
               }
             </div>
 
-            <div className='loanCalculator_estimator-divider'></div>
+            <div className="loanCalculator_estimator-divider"></div>
 
-            <div className='loanCalculator_estimator-price'>
+            <div className="loanCalculator_estimator-price">
               {
                 <CurrencyFormat
                   value={carInfo.price}
-                  displayType={'text'}
+                  displayType={"text"}
                   thousandSeparator={true}
-                  prefix='$'
+                  prefix="$"
                 />
-              }{' '}
+              }{" "}
               Estimated Price
             </div>
           </div>
         )}
 
-        <div className='loanCalculator_calculator'>
-          <div className='loanCalculator_field'>
+        <div className="loanCalculator_calculator">
+          <div className="loanCalculator_field">
             <label>Estimated Credit Score</label>
 
             <select onChange={handleCreditScoreChange}>
@@ -108,20 +108,20 @@ function LoanCalculator({ className, carInfo }) {
             <PlayArrowIcon />
           </div>
 
-          <div className='loanCalculator_field'>
+          <div className="loanCalculator_field">
             <label>Cash Down</label>
             <CurrencyInput
-              name='cashDown'
-              placeholder='$3,000'
+              name="cashDown"
+              placeholder="$3,000"
               defaultValue={3000}
               allowDecimals={false}
               allowNegativeValue={false}
               onValueChange={handleCashDownChange}
-              prefix='$'
+              prefix="$"
             />
           </div>
 
-          <div className='loanCalculator_field'>
+          <div className="loanCalculator_field">
             <label>Term Length</label>
 
             <select onChange={handleTermLengthChange}>
@@ -135,73 +135,73 @@ function LoanCalculator({ className, carInfo }) {
             <PlayArrowIcon />
           </div>
 
-          <div className='loanCalculator_field'>
+          <div className="loanCalculator_field">
             <label>Estimated APR</label>
-            <input type='text' value={`${creditScore}%`} disabled />
+            <input type="text" value={`${creditScore}%`} disabled />
           </div>
         </div>
       </div>
       {windowWidth >= 720 ? (
-        <div className='loanCalculator_resultExpanded'>
-          <div className='loanCalculator_resultExpanded-img'>
+        <div className="loanCalculator_resultExpanded">
+          <div className="loanCalculator_resultExpanded-img">
             <img
               src={`https://raw.githubusercontent.com/kevincastrochavez/carstro-cars-uploader/main/public/carPictures/${carInfo?.vin}.png`}
-              alt=''
+              alt=""
             />
           </div>
 
-          <div className='loanCalculator_resultExpanded-details'>
-            <div className='loanCalculator_resultExpanded-item'>
+          <div className="loanCalculator_resultExpanded-details">
+            <div className="loanCalculator_resultExpanded-item">
               <span>{termLength}</span>
               <p>Months</p>
             </div>
-            <div className='loanCalculator_resultExpanded-divider'></div>
-            <div className='loanCalculator_resultExpanded-item'>
+            <div className="loanCalculator_resultExpanded-divider"></div>
+            <div className="loanCalculator_resultExpanded-item">
               <span>{creditScore} %</span>
               <p>Estimated APR</p>
             </div>
-            <div className='loanCalculator_resultExpanded-divider'></div>
-            <div className='loanCalculator_resultExpanded-item'>
+            <div className="loanCalculator_resultExpanded-divider"></div>
+            <div className="loanCalculator_resultExpanded-item">
               <span>
                 {
                   <CurrencyFormat
                     value={cashDown}
-                    displayType={'text'}
+                    displayType={"text"}
                     thousandSeparator={true}
-                    prefix='$'
+                    prefix="$"
                   />
                 }
               </span>
               <p>Down Payment</p>
             </div>
-            <div className='loanCalculator_resultExpanded-divider'></div>
-            <div className='loanCalculator_resultExpanded-item'>
+            <div className="loanCalculator_resultExpanded-divider"></div>
+            <div className="loanCalculator_resultExpanded-item">
               <span>
                 {
                   <CountUp
                     end={monthlyPayment.toFixed(0)}
                     duration={2}
                     preserveValue={true}
-                    separator=','
-                    prefix='$'
+                    separator=","
+                    prefix="$"
                   />
-                }{' '}
+                }{" "}
                 <p>/month</p>
               </span>
             </div>
 
-            <p className='loanCalculator_resultExpanded-finance'>Finance for</p>
+            <p className="loanCalculator_resultExpanded-finance">Finance for</p>
           </div>
         </div>
       ) : (
-        <div className='loanCalculator_result'>
+        <div className="loanCalculator_result">
           <h3>
             {carInfo.year} {carInfo.brand}
           </h3>
 
-          <div className='loanCalculator_result-divider'></div>
+          <div className="loanCalculator_result-divider"></div>
 
-          <p className='loanCalculator_result-price'>
+          <p className="loanCalculator_result-price">
             <span>
               $
               {
@@ -209,7 +209,7 @@ function LoanCalculator({ className, carInfo }) {
                   end={monthlyPayment.toFixed(0)}
                   duration={2}
                   preserveValue={true}
-                  separator=','
+                  separator=","
                 />
               }
             </span>
@@ -222,12 +222,12 @@ function LoanCalculator({ className, carInfo }) {
         </div>
       )}
 
-      <div className='loanCalculator_link'>
-        <Link to='/salesRepresentatives'>Contact Dealer</Link>
+      <div className="loanCalculator_link">
+        <Link to="/salesRepresentatives">Contact Dealer</Link>
       </div>
 
       {windowWidth >= 720 && (
-        <div className='loanCalculator_terms'>
+        <div className="loanCalculator_terms">
           <h4>Finance Terms</h4>
 
           <p>
